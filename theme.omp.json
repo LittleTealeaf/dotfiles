@@ -4,11 +4,7 @@
       {
         "alignment": "left",
         "segments": [
-          {
-            "type": "os",
-            "template": "{{ .Icon }} \u276f",
-            "style": "plain"
-          },
+
           {
             "type": "path",
             "style": "plain",
