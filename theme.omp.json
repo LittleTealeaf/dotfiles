@@ -42,6 +42,22 @@
         "type": "prompt"
       }
     ],
+    "tooltips": [
+      {
+        "type": "git",
+        "tips": ["git", "g"],
+        "style": "diamond",
+        "foreground": "#193549",
+        "background": "#fffb38",
+        "leading_diamond": "",
+        "trailing_diamond": "",
+        "template": "{{ .HEAD }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}",
+        "properties": {
+          "fetch_status": true,
+          "fetch_upstream_icon": true
+        }
+      }
+    ],
     "final_space": true,
     "version": 2
   }
