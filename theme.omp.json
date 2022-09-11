@@ -7,13 +7,13 @@
         "segments": [
           {
             "type": "text",
-            "template": "\u256d",
+            "template": "\u256d ",
             "style": "plain"
           },
           {
             "type": "session",
             "style": "plain",
-            "template": " {{ if .SSHSession }}\uF817 {{ end }}{{ .UserName }}@{{ .HostName }} "
+            "template": "{{ if .SSHSession }}\uF817 {{ end }}{{ .UserName }}@{{ .HostName }} "
           },
           {
             "type": "path",
