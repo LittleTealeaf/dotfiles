@@ -42,11 +42,6 @@
             "style": "plain",
             "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
             "type": "git"
-          },
-          {
-            "type": "project",
-            "style": "plain",
-            "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}\u276f \uf487 {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
           }
         ]
       },
