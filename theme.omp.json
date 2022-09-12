@@ -21,7 +21,11 @@
             "properties": {
               "style": "full"
             },
-            "template": "\u276f {{ .Path }} \u276f"
+            "template": "\u276f {{ .Path }} "
+          },{
+          "type": "git",
+          "style": "plain",
+          "template": "\u276f"
           },
           {
             "foreground_templates": [
