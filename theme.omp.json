@@ -2,16 +2,30 @@
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "blocks": [
       {
+        "type": "prompt",
         "alignment": "left",
         "segments": [
-
+          {
+            "type": "text",
+            "template": "\u256d ",
+            "style": "plain"
+          },
+          {
+            "type": "session",
+            "style": "plain",
+            "template": "{{ if .SSHSession }}\uF817 {{ end }}{{ .UserName }}@{{ .HostName }} "
+          },
           {
             "type": "path",
             "style": "plain",
             "properties": {
               "style": "full"
             },
-            "template": " {{ .Path }} \u276f"
+            "template": "\u276f {{ .Path }} "
+          },{
+          "type": "git",
+          "style": "plain",
+          "template": "\u276f"
           },
           {
             "foreground_templates": [
@@ -28,30 +42,20 @@
             "style": "plain",
             "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
             "type": "git"
-          },
-          {
-            "type": "git",
-            "style": "plain",
-            "template": "\u276f"
           }
-        ],
-        "type": "prompt"
-      }
-    ],
-    "tooltips": [
+        ]
+      },
       {
-        "type": "git",
-        "tips": ["git", "g"],
-        "style": "diamond",
-        "foreground": "#193549",
-        "background": "#fffb38",
-        "leading_diamond": "",
-        "trailing_diamond": "",
-        "template": "{{ .HEAD }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}",
-        "properties": {
-          "fetch_status": true,
-          "fetch_upstream_icon": true
-        }
+        "type": "prompt",
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "style": "plain",
+            "template": "\u2570\u2500\u276f",
+            "type": "text"
+          }
+        ]
       }
     ],
     "final_space": true,
