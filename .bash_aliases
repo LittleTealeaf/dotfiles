@@ -1,1 +1,1 @@
-alias go='gio open'
+alias op='gio open'
