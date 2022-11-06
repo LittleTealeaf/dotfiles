@@ -1,25 +1,10 @@
-# dotfiles
+# dot files
+
+
+## Linux Installation
+in the original .bashrc:
+
 ```bash
-git clone https://github.com/LittleTealeaf/dotfiles .dotfiles
+export DOT_FILES="path/to/this/directory"
+source "$DOT_FILES/.bashrc"
 ```
-
-## Windows Installations
-```pwsh
-oh-my-posh init pwsh --config f:\.dotfiles\.theme.omp.json | Invoke-Expression
-```
-
-## Linux Installations
-<!-- ```bash
-echo 'eval "$(oh-my-posh init bash --config /path/to/repo/theme.omp.json)"' >> ~/.bashrc
-```
- -->
-Add to end of .bashrc script
-```bash
-. ./path/to/repo/.bashrc
-```
-
-## TODO
-
-https://arcolinux.com/everything-you-need-to-know-about-tmux-status-bar/
-
-Powerlines? Something like that?
