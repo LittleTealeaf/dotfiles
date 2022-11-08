@@ -40,8 +40,6 @@ require('packer').startup(function(use)
 
 	use {'neoclide/coc.nvim', branch = 'release' }
 
---	use {'jiangmiao/auto-pairs', requires = {'nvim-tree/nvim-web-devicons',},tag='nightly'}
-
 	use 'jiangmiao/auto-pairs'
 
 	use 'preservim/nerdtree'
@@ -81,5 +79,4 @@ vim.cmd('colorscheme onedark')
 vim.g.clipboard = 'unamedplus'
 vim.cmd("hi normal guibg=000000")
 vim.cmd("nmap <silent> <leader>t :NERDTreeTabsToggle<CR>")
-vim.cmd("let g:airline#extensions#tabline#enabled = 1")
 vim.cmd("set guicursor=")
