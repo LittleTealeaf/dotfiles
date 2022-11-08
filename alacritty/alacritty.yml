@@ -1,0 +1,14 @@
+cursor:
+  style:
+    shape: Beam
+window:
+  opacity: 0.5
+  decorations: none
+  padding:
+    x: 6
+    y: 6
+font:
+  normal:
+    family: Hack Nerd Font
+#    family: FiraCode Nerd Font
+#    family: FuraMono Nerd Font
