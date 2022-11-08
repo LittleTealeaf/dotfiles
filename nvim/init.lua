@@ -34,8 +34,6 @@ end
 require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
-	use 'joshdick/onedark.vim'
-
 	use 'nvim-lualine/lualine.nvim'
 
 	use {'neoclide/coc.nvim', branch = 'release' }
@@ -46,6 +44,8 @@ require('packer').startup(function(use)
 
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
+
+	use {"catppuccin/nvim", as = "catppuccin"}
 
 	if install_plugins then
 		require('packer').sync()
@@ -73,10 +73,17 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 
 -- Other Configuration
 
+require("catppuccin").setup({
+	flavor = "mocha",
+	transparent_background = true
+})
+
+vim.cmd("colorscheme catppuccin-mocha")
+
+
 vim.opt.termguicolors = true
-vim.cmd('colorscheme onedark')
 
 vim.g.clipboard = 'unamedplus'
 vim.cmd("hi normal guibg=000000")
 vim.cmd("nmap <silent> <leader>t :NERDTreeTabsToggle<CR>")
-vim.cmd("set guicursor=")
+-- vim.cmd("set guicursor=")
