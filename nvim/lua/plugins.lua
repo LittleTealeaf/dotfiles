@@ -58,7 +58,6 @@ function M.setup()
           }
         })
       end
-
     }
 
     use {
@@ -71,6 +70,11 @@ function M.setup()
         })
       end
     }
+
+--		use {
+--  		'romgrk/barbar.nvim',
+--  		requires = {'kyazdani42/nvim-web-devicons'}
+--		}
 
   end
 
