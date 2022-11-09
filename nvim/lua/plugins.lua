@@ -48,8 +48,18 @@ function M.setup()
 
     use {"preservim/nerdtree"}
 
-    use {"vim-airline/vim-airline"}
-    use {"vim-airline/vim-airline-themes"}
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      config = function()
+        require("lualine").setup({
+          options = {
+          theme = "codedark"
+          }
+        })
+      end
+
+    }
 
     use {
       "catppuccin/nvim",
