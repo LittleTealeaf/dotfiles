@@ -1,4 +1,5 @@
 require("plugins").setup()
+require("keymaps").setup()
 
 local opt = vim.opt
 local cmd = vim.cmd
