@@ -17,7 +17,9 @@ opt.cursorline = true
 
 g.clipboard = 'unamedplus'
 
-cmd [[set relativenumber number]]
+cmd [[
+	set relativenumber number
+]]
 
 
 cmd [[
