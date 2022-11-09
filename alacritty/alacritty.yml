@@ -1,6 +1,6 @@
-# cursor:
-#   style:
-#style:    shape: Beam
+cursor:
+  style:
+    shape: Beam
 window:
   opacity: 0.5
   decorations: none

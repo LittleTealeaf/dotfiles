@@ -53,8 +53,7 @@
             "properties": {
               "style": "full"
             },
-            "_template": "{{ .Path }} \u276f",
-						"template": "{{ .Path }} $"
+            "template": "{{ .Path }} \u276f"
           }
         ]
       },
