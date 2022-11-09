@@ -48,6 +48,8 @@ function M.setup()
 
     use {"preservim/nerdtree"}
 
+		use {"wakatime/vim-wakatime"}
+
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },

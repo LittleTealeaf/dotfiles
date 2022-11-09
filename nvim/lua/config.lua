@@ -29,6 +29,14 @@ function M.setup()
       \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
   ]]
 
+  -- Automatically set cursor on exit
+  cmd [[
+    augroup RestoreCursorShapeOnExit
+      autocmd!
+      autocmd VimLeave * set guicursor=a:ver10
+    augroup END
+  ]]
+
 
   cmd [[
     colorscheme catppuccin
