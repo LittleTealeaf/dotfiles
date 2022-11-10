@@ -2,13 +2,14 @@ cursor:
   style:
     shape: Beam
 window:
-  opacity: 0.5
+  opacity: 0.25
   decorations: none
   padding:
     x: 6
     y: 6
 font:
   normal:
-    family: Hack Nerd Font
+    family: JetBrainsMono NF
+    #    family: Hack Nerd Font
 #    family: FiraCode Nerd Font
 #    family: FuraMono Nerd Font
