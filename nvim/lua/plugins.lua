@@ -42,7 +42,10 @@ function M.setup()
 
     use {"lewis6991/impatient.nvim"}
 
-    use {"neoclide/coc.nvim", branch = "release"}
+    use {
+			"neoclide/coc.nvim", 
+			branch = "release"
+		}
 
     use {"jiangmiao/auto-pairs"}
 
@@ -52,14 +55,15 @@ function M.setup()
 				"nvim-tree/nvim-web-devicons"
 			},
 			config = function()
+
+				vim.cmd [[
+					autocmd StdinReadPre * let s:std_in=1
+					autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+						\ execute 'NvimTreeToggle' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+				]]			
+				
 				require("nvim-tree").setup({
 					sort_by = "case_sensitive",
-					offsets = {
-						filetype = "NvimTree",
-						text = "File Explorer" | function ,
-						text_align = "left" | "center" | "right",
-						separator = true
-					}
 				})
 			end
 
@@ -95,14 +99,18 @@ function M.setup()
 			tag = "v3.*", 
 			requires = 'nvim-tree/nvim-web-devicons',
 			config = function()
-				require("bufferline").setup({})
+				require("bufferline").setup({
+					options = {
+						offsets = {
+							filetype = "NvimTree",
+							text = "File Explorer",
+							text_align = "left", 
+							separator = true
+						}
+					}
+				})
 			end
 		}
-
---		use {
---  		'romgrk/barbar.nvim',
---  		requires = {'kyazdani42/nvim-web-devicons'}
---		}
 
   end
 
