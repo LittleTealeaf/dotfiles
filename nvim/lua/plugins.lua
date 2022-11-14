@@ -46,7 +46,19 @@ function M.setup()
 
     use {"jiangmiao/auto-pairs"}
 
-    use {"preservim/nerdtree"}
+		use {
+			"nvim-tree/nvim-tree.lua",
+			requires = {
+				"nvim-tree/nvim-web-devicons"
+			},
+			config = function()
+				require("nvim-tree").setup({
+					sort_by = "case_sensitive",
+
+				})
+			end
+
+		}	
 
 		use {"wakatime/vim-wakatime"}
 
