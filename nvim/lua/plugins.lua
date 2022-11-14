@@ -54,7 +54,12 @@ function M.setup()
 			config = function()
 				require("nvim-tree").setup({
 					sort_by = "case_sensitive",
-
+					offsets = {
+						filetype = "NvimTree",
+						text = "File Explorer" | function ,
+						text_align = "left" | "center" | "right",
+						separator = true
+					}
 				})
 			end
 
