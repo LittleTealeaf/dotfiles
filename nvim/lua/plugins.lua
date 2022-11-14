@@ -73,6 +73,15 @@ function M.setup()
       end
     }
 
+		use {
+			'akinsho/bufferline.nvim', 
+			tag = "v3.*", 
+			requires = 'nvim-tree/nvim-web-devicons',
+			config = function()
+				require("bufferline").setup({})
+			end
+		}
+
 --		use {
 --  		'romgrk/barbar.nvim',
 --  		requires = {'kyazdani42/nvim-web-devicons'}
@@ -84,6 +93,7 @@ function M.setup()
   packer.init(conf)
   packer.startup(plugins)
 
+	
 end
 
 return M
