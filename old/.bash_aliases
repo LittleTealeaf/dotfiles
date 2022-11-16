@@ -1,1 +1,0 @@
-alias op='gio open'
