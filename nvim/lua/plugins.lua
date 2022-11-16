@@ -112,6 +112,13 @@ function M.setup()
 			end
 		}
 
+
+		-- PROJECT SPECIFIC plugins
+
+		-- Platform IO
+
+		use {"normen/vim-pio"}
+
   end
 
   local packer = require("packer")

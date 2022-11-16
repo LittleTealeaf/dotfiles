@@ -56,8 +56,7 @@
             "template": "{{ .Path }} \u276f"
           }
         ]
-      },
-      {
+      },{
         "type": "rprompt",
         "alignment": "right",
         "segments": [
@@ -73,7 +72,9 @@
           }
         ]
       }
+
     ],
+    "_git_block": {},
     "final_space": true,
     "version": 2
   }
