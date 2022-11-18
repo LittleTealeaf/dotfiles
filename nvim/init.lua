@@ -6,3 +6,4 @@ local opt = vim.opt
 -- Setup Packer
 require("config.packer")
 require("config.plugins")
+require("config.cursorrestore")
