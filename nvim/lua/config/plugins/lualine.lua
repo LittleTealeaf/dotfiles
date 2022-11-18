@@ -1,0 +1,5 @@
+-- require("lualine").setup({
+--   options = {
+--     theme = require("themes").lualine()
+--   }
+-- })
