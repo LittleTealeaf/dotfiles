@@ -33,6 +33,10 @@ function M.setup()
     vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
   end
 
+	if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+		packer_init()
+	end
+
   local function plugins(use)
     -- Autoupdate
     use { "wbthomason/packer.nvim"}
@@ -43,7 +47,7 @@ function M.setup()
     use {"lewis6991/impatient.nvim"}
 
     use {
-			"neoclide/coc.nvim", 
+			"neoclide/coc.nvim",
 			branch = "release"
 		}
 
@@ -56,18 +60,21 @@ function M.setup()
 			},
 			config = function()
 
-				vim.cmd [[
-					autocmd StdinReadPre * let s:std_in=1
-					autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-						\ execute 'NvimTreeToggle' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-				]]			
-				
+--				vim.cmd [[
+--					autocmd StdinReadPre * let s:std_in=1
+--					autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+--						\ execute 'NvimTreeOpen '.argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+--				]]
+				vim.cmd([[
+					
+				]])
+
 				require("nvim-tree").setup({
 					sort_by = "case_sensitive",
 				})
 			end
 
-		}	
+		}
 
 		use {"wakatime/vim-wakatime"}
 
@@ -77,7 +84,7 @@ function M.setup()
       config = function()
         require("lualine").setup({
           options = {
-          theme = "codedark"
+	          theme = require("themes").lualine()
           }
         })
       end
@@ -95,8 +102,8 @@ function M.setup()
     }
 
 		use {
-			'akinsho/bufferline.nvim', 
-			tag = "v3.*", 
+			'akinsho/bufferline.nvim',
+			tag = "v3.*",
 			requires = 'nvim-tree/nvim-web-devicons',
 			config = function()
 				require("bufferline").setup({
@@ -104,7 +111,7 @@ function M.setup()
 						offsets = {
 							filetype = "NvimTree",
 							text = "File Explorer",
-							text_align = "left", 
+							text_align = "left",
 							separator = true
 						}
 					}
@@ -119,13 +126,16 @@ function M.setup()
 
 		use {"normen/vim-pio"}
 
+		-- Discord
+
+		use {'andweeb/presence.nvim'}
+
   end
 
   local packer = require("packer")
   packer.init(conf)
   packer.startup(plugins)
 
-	
 end
 
 return M
