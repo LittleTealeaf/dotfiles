@@ -25,6 +25,24 @@ require("packer").startup(function(use)
 		end
 	}
 
+	use {
+		'nvim-telescope/telescope.nvim',
+		tag='0.1.0',
+		requires = {
+			{
+				'nvim-lua/plenary.nvim'
+			}
+		},
+		config = function()
+			require("config.plugins.telescope")
+		end
+	}
+
+	-- git
+	use {
+		"tpope/vim-fugitive"
+	}
+
   -- EDITING
 
   use {
@@ -41,6 +59,11 @@ require("packer").startup(function(use)
 
 	use {
 		"othree/xml.vim"
+	}
+
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate"
 	}
 
   -- APPEARANCE
@@ -69,7 +92,6 @@ require("packer").startup(function(use)
 
 
 	-- PROJECT BASE
-	
 	use {"normen/vim-pio"}
 
 end)

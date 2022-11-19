@@ -2,6 +2,8 @@ local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
 
+g.mapleader = ';'
+
 opt.smartcase = true
 opt.ignorecase = true
 opt.wrap = true
