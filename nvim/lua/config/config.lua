@@ -15,7 +15,7 @@ opt.expandtab = false
 opt.termguicolors = true
 opt.cursorline = true
 
-g.clipboard = 'unamedplus'
+opt.clipboard = 'unnamedplus'
 
 cmd([[
   set relativenumber number

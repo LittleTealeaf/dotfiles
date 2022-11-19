@@ -26,3 +26,8 @@ db.custom_center = {
 		action="Telescope file_browser"
 	}
 }
+
+db.hide_statusline = false
+
+
+
