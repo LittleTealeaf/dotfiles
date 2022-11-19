@@ -56,6 +56,17 @@ require("packer").startup(function(use)
 		end
 	}
 
+	use {
+		'kdheepak/tabline.nvim',
+		requires = {
+			'hoob3rt/lualine.nvim',
+			'kyazdani42/nvim-web-devicons'
+		},
+		config = function()
+			require("config.plugins.tabline")
+		end
+	}
+
 	-- git
 	use {
 		"tpope/vim-fugitive"

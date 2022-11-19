@@ -12,3 +12,5 @@ set_key('n','<leader>fe', telescope.extensions.file_browser.file_browser, {})
 
 
 telescope.load_extension("file_browser")
+
+telescope.setup({})
