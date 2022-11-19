@@ -11,6 +11,12 @@ local colors = {
 }
 
 require("lualine").setup({
+	extensions = {
+		'nvim-tree',
+		'fzf',
+		'fugitive',
+		'toggleterm'
+	},
   options = {
     theme = {
       inactive = {

@@ -27,5 +27,8 @@ g.coc_global_extensions = {
 	"coc-yaml",
 }
 
+cmd([[
+	let g:coc_config_home = '$DOT_FILES/nvim'
+]])
 
 
