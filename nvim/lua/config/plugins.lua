@@ -4,6 +4,16 @@ require("packer").startup(function(use)
   -- PERFORMANCE
   use {"nvim-lua/plenary.nvim", module = "plenary"}
 
+	use {
+		"lewis6991/impatient.nvim",
+		config = function()
+			require("impatient")
+		end
+	}
+
+	use {
+		"nvim-lua/popup.nvim"
+	}
 
   -- WORKSPACE
   use {
@@ -29,9 +39,8 @@ require("packer").startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		tag='0.1.0',
 		requires = {
-			{
-				'nvim-lua/plenary.nvim'
-			}
+			'nvim-lua/plenary.nvim',
+			'nvim-lua/popup.nvim',
 		},
 		config = function()
 			require("config.plugins.telescope")
