@@ -25,10 +25,12 @@ g.coc_global_extensions = {
 	"coc-sql",
 	"coc-sh",
 	"coc-yaml",
+	"coc-prettier",
 }
 
 cmd([[
 	let g:coc_config_home = '$DOT_FILES/nvim'
+	command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 ]])
 
 

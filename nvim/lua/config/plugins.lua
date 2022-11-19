@@ -1,6 +1,14 @@
 require("packer").startup(function(use)
   use {"wbthomason/packer.nvim"}
 
+	-- LANDING PAGE
+	use {
+		"glepnir/dashboard-nvim",
+		config = function()
+			require("config.plugins.dashboard")
+		end
+	}
+
   -- PERFORMANCE
   use {"nvim-lua/plenary.nvim", module = "plenary"}
 
@@ -41,6 +49,7 @@ require("packer").startup(function(use)
 		requires = {
 			'nvim-lua/plenary.nvim',
 			'nvim-lua/popup.nvim',
+			"nvim-telescope/telescope-file-browser.nvim",
 		},
 		config = function()
 			require("config.plugins.telescope")
