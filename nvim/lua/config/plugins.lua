@@ -1,17 +1,39 @@
 require("packer").startup(function(use)
   use {"wbthomason/packer.nvim"}
 
+  -- PERFORMANCE
+  use {"nvim-lua/plenary.nvim", module = "plenary"}
+
+
+  -- WORKSPACE
+  use {
+    "nvim-tree/nvim-tree.lua",
+    requires = {
+      "nvim-tree/nvim-web-devicons"
+    },
+    config = function()
+      require("config.plugins.nvim-tree")
+    end
+
+  }
 
   -- EDITING
 
   use {
     "neoclide/coc.nvim",
-    branch = "release"
+    branch = "release",
+    config = function()
+      require("config.plugins.coc")
+    end
   }
 
   use {
     "jiangmiao/auto-pairs"
   }
+
+	use {
+		"othree/xml.vim"
+	}
 
   -- APPEARANCE
 
@@ -22,14 +44,6 @@ require("packer").startup(function(use)
       require("config.plugins.catppuccin")
     end
 
-  }
-
-  use {
-    "nvim-tree/nvim-tree.lua",
-    requires = {"nvim-tree/nvim-web-devicons"},
-    config = function()
-      require("config.plugins.tree")
-    end
   }
 
   use {
@@ -44,6 +58,8 @@ require("packer").startup(function(use)
   -- SOCIAL
 
   use {"wakatime/vim-wakatime"}
+
+
 
 
 end)
