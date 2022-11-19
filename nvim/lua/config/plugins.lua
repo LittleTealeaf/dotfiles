@@ -120,6 +120,7 @@ require("packer").startup(function(use)
 
   use {"wakatime/vim-wakatime"}
 
+	use {"andweeb/presence.nvim"}
 
 	-- PROJECT BASE
 	use {"normen/vim-pio"}
