@@ -50,6 +50,7 @@ require("packer").startup(function(use)
 			'nvim-lua/plenary.nvim',
 			'nvim-lua/popup.nvim',
 			"nvim-telescope/telescope-file-browser.nvim",
+			"nvim-telescope/telescope-github.nvim",
 		},
 		config = function()
 			require("config.plugins.telescope")
