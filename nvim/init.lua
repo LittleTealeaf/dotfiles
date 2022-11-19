@@ -1,10 +1,10 @@
-require("plugins").setup()
-require("keymaps").setup()
-require("config").setup()
-require("commands").setup()
+local cmd = vim.cmd
+local fn = vim.fn
+local g = vim.g
+local opt = vim.opt
 
-vim.cmd([[
-	let g:coc_node_path = '/home/tealeaf/.nvm/versions/node/v18.8.0/bin/node'
-]])
-
-
+-- Setup Packer
+require("config.packer-bootstrap")
+require("config.plugins")
+require("config.cursorrestore")
+require("config.config")
