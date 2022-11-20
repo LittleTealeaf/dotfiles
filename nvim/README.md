@@ -10,3 +10,6 @@ I've decided to use `Packer` for plugins. It seemed to be the easiest to include
 
 Some of the plugins do require you to have additional programs installed locally. Below is a list of requirements, their sources, and an installation script or link to help you meet the requirements
 
+| Source | Requirement | Help Steps |
+| :--: | :--: | :--: |
+| Wakatime | Wakatime | You will need to set up a wakatime account, and obtain the api key to paste in. I use this to track my coding stats, which is used in a few of my CI projects. If you do not wish to use this plugin, you can simply remove the wakatime plugin in `nvim/lua/config/plugins.lua` |
