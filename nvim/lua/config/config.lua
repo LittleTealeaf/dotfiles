@@ -19,8 +19,8 @@ opt.clipboard = 'unnamedplus'
 
 cmd([[
   set relativenumber number
+	colorscheme catppuccin
+	command! Q :q
+	command! W :w
 ]])
 
-cmd ([[
-  colorscheme catppuccin
-]])
