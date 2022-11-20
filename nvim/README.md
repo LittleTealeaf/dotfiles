@@ -44,3 +44,9 @@ Below is a complete list of all the keybinds that follow this format
 | `;gp` | Telescope (Github Extensions) | Open Github Pull Requests |
 | `;gg` | Telescope (Github Extension) | Open Gists |
 | `;gr` | Telescope (Github Extension) | Open Workflow Runs | 
+| `;cn` | Coc | Rename Symbol |
+| `;cd` | Coc | Goto Definition |
+| `;ct` | Coc | Goto Type Definition |
+| `;ci` | Coc | Goto Implementation |
+| `;cr` | Coc | Goto References | 
+| `;ca` | Coc | Code Action |
