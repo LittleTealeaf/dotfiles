@@ -14,8 +14,6 @@ set_key('n','<leader>fn', builtin.help_tags, {})
 set_key('n','<leader>fe', telescope.extensions.file_browser.file_browser, {})
 set_key('n','<leader>ft', require("telescope-tabs").list_tabs, {})
 
-set_key('n','<leader>fa', telescope.extensions.vim_bookmarks.all, {})
-set_key('n','<leader>fs', telescope.extensions.vim_bookmarks.current_file, {})
 
 set_key('n','<leader>gi', telescope.extensions.gh.issues, {})
 set_key('n','<leader>gp', telescope.extensions.gh.pull_request,{})

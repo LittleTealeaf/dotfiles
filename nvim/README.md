@@ -40,11 +40,19 @@ Below is a complete list of all the keybinds that follow this format
 | `;fe` | Telescope | Open the File Explorer |
 | `;fg` | Telescope  | Open the Grep Search | 
 | `;fb` | Telescope | Open the Buffer Search | 
-| `;ft` | Telescope (Tabs Extension) | Open the Tabs Search
+| `;ft` | Telescope (Tabs Extension) | Open the Tabs Search |
 | `;gi` | Telescope (Github Extension) | Open Github Issues |
 | `;gp` | Telescope (Github Extensions) | Open Github Pull Requests |
 | `;gg` | Telescope (Github Extension) | Open Gists |
-| `;gr` | Telescope (Github Extension) | Open Workflow Runs | 
+| `;gr` | Telescope (Github Extension) | Open Workflow Runs |
+| `;ba` | Bookmarks | Open all Bookmarks |
+| `;bs` | Bookmarks | Open All Bookmarks in File |
+| `;bb` | Bookmarks | Toggle Bookmark |
+| `;bt` | Bookmarks | Edit Bookmark Annotation |
+| `;bj` | Bookmarks | Next Bookmark |
+| `;bk` | Bookmarks | Previous Bookmark |
+| `;bc` | Bookmarks | Clear Bookmark |
+| `;bC` | Bookmarks | Clear All Bookmarks | 
 | `;cn` | Coc | Rename Symbol |
 | `;cd` | Coc | Goto Definition |
 | `;ct` | Coc | Goto Type Definition |
