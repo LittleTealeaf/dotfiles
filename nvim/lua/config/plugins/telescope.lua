@@ -20,8 +20,8 @@ set_key('n','<leader>gp', telescope.extensions.gh.pull_request,{})
 set_key('n','<leader>gg', telescope.extensions.gh.gist, {})
 set_key('n','<leader>gr', telescope.extensions.gh.run, {})
 
-set_key('n','<leader>ba', require("telescope").extensions.vim_bookmarks.all, {})
-set_key('n','<leader>bs', require("telescope").extensions.vim_bookmarks.current_file, {})
+set_key('n','<leader>ba', telescope.extensions.vim_bookmarks.all, {})
+set_key('n','<leader>bs', telescope.extensions.vim_bookmarks.current_file, {})
 
 
 telescope.setup({})
