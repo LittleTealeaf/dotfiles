@@ -10,7 +10,7 @@ require("packer").startup(function(use)
 	}
 
   -- PERFORMANCE
-  use {"nvim-lua/plenary.nvim", module = "plenary"}
+	use {"nvim-lua/plenary.nvim", module = "plenary"}
 
 	use {
 		"lewis6991/impatient.nvim",

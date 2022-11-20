@@ -1,13 +1,8 @@
 local g = vim.g
+local cmd = vim.cmd
 local api = vim.api
-local cmd = api.nvim_command
+local create_command = api.nvim_create_user_command
 local fn = vim.fn
-
-vim.cmd([[
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-  inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-  inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-]])
 
 g.coc_global_extensions = {
 	"coc-html",
@@ -28,7 +23,15 @@ g.coc_global_extensions = {
 	"coc-prettier",
 }
 
+create_command("Format", "call CocAction('format')", {})
+create_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
+
+
 cmd([[
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+  inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+  inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
 	let g:coc_config_home = '$DOT_FILES/nvim'
 	command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 ]])
