@@ -33,6 +33,10 @@ g.coc_global_extensions = {
 create_command("Format", "call CocAction('format')", {})
 create_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
 
+function _G.check_back_space()
+	local col = vim.fn.col('.') - 1
+	return col == 0 or fn.getline(.):sub(col, col):match('%s') ~= nil
+end
 
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 keyset("i","<TAB>",'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<Tab>" : coc#refresh()', opts)
