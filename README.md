@@ -44,6 +44,8 @@ eval "$(oh-my-posh init bash --config $DOT_FILES/omp/theme.omp.json)"
 
 The biggest focus of this repository is arguably for my neovim configuration. NeoVim is becoming my daily driver editor, and I have been working on extensivly customizing it with plugins and settings.
 
+If you want to see the details of my configuration, I have included (some...) documentation in the [Neovim README](./nvim/README.md)
+
 In order to use my configuration, you can either copy or make a symbolic link. I've personally opted to use symbolic links, as I am constantly changing it, and symbolic links makes it easier to simply update one of my devices.
 
 The configuration consists of a file and a folder that need to be copied over
