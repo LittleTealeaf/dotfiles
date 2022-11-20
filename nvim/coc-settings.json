@@ -1,3 +1,4 @@
 {
-	"html.autoCreateQuotes": false
+	"html.autoCreateQuotes": false,
+	"git.addGBlameToVirtualText": true
 }
