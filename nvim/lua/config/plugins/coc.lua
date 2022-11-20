@@ -4,6 +4,8 @@ local api = vim.api
 local create_command = api.nvim_create_user_command
 local fn = vim.fn
 local keyset = vim.keymap.set
+local bo = vim.bo
+local o = vim.o
 
 
 vim.opt.signcolumn = "yes"
@@ -39,13 +41,13 @@ keyset("i","<cr>",[[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=
 
 -- Documentation
 function _G.show_docs()
-    local cw = vim.fn.expand('<cword>')
-    if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
-        vim.api.nvim_command('h ' .. cw)
-    elseif vim.api.nvim_eval('coc#rpc#ready()') then
-        vim.fn.CocActionAsync('doHover')
+    local cw = fn.expand('<cword>')
+    if fn.index({'vim', 'help'}, bo.filetype) >= 0 then
+        api.nvim_command('h ' .. cw)
+    elseif api.nvim_eval('coc#rpc#ready()') then
+        fn.CocActionAsync('doHover')
     else
-        vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+        api.nvim_command('!' .. o.keywordprg .. ' ' .. cw)
     end
 end
 keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
