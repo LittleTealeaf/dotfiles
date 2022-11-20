@@ -29,6 +29,7 @@ g.coc_global_extensions = {
 	"coc-prettier",
 	"coc-snippets",
 	"coc-pairs",
+	"coc-r-lsp",
 }
 
 create_command("Format", "call CocAction('format')", {})
