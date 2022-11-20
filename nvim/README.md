@@ -13,3 +13,34 @@ Some of the plugins do require you to have additional programs installed locally
 | Source | Requirement | Help Steps |
 | :-- | :-- | :-- |
 | Wakatime | Wakatime | You will need to set up a wakatime account, and obtain the api key to paste in. I use this to track my coding stats, which is used in a few of my CI projects. If you do not wish to use this plugin, you can simply remove the wakatime plugin in `nvim/lua/config/plugins.lua` |
+
+
+## Keybinds
+
+### Plugins
+
+While in normal mode, many of the plugins have many useful keybinds. I've customized my keybinds in a tree-like structure. The keybinds will follow the following format (most of the time).
+
+```
+<leader> <key for plugin> <key for action>
+```
+
+In my configuration, the leader key is `;`.
+
+For a quick example, the two most used binds I use is "fuzzy search" and "file explorer" in the "telescope" plugin. Because the telscope plugin works with files, its keybinds have the `f` prefix.
+
+- `;ff` - Open the fuzzy File search
+- `;fe` - Open the file Explorer
+
+Below is a complete list of all the keybinds that follow this format
+
+| Keybind | Plugin | Action |
+| :--: | :--: | :-- |
+| `;ff` | Telescope | Open the Fuzzy File Search |
+| `;fe` | Telescope | Open the File Explorer |
+| `;fg` | Telescope  | Open the Grep Search | 
+| `;fb` | Telescope | Open the Buffer Search | 
+| `;gi` | Telescope (Github Extension) | Open Github Issues |
+| `;gp` | Telescope (Github Extensions) | Open Github Pull Requests |
+| `;gg` | Telescope (Github Extension) | Open Gists |
+| `;gr` | Telescope (Github Extension) | Open Workflow Runs | 
