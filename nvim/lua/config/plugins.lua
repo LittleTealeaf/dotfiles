@@ -51,6 +51,7 @@ require("packer").startup(function(use)
 			'nvim-lua/popup.nvim',
 			"nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-github.nvim",
+			"LukasPietzschmann/telescope-tabs",
 		},
 		config = function()
 			require("config.plugins.telescope")
