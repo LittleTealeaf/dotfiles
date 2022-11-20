@@ -35,7 +35,7 @@ create_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
 
 function _G.check_back_space()
 	local col = vim.fn.col('.') - 1
-	return col == 0 or fn.getline(.):sub(col, col):match('%s') ~= nil
+	return col == 0 or fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
