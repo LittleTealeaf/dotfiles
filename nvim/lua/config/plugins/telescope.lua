@@ -11,7 +11,9 @@ set_key('n','<leader>ff', builtin.find_files, {})
 set_key('n','<leader>fg', builtin.live_grep, {})
 set_key('n','<leader>fb', builtin.buffers, {})
 set_key('n','<leader>fn', builtin.help_tags, {})
-set_key('n','<leader>fe', telescope.extensions.file_browser.file_browser, {})
+set_key('n','<leader>fe', function()
+	telescope.extensions.file_browser.file_browser({hidden = true})
+end, {})
 set_key('n','<leader>ft', require("telescope-tabs").list_tabs, {})
 
 
