@@ -9,7 +9,6 @@ local ensure_packer = function()
       'https://github.com/wbthomason/packer.nvim',
       install_path
     })
-    vim.cmd([[packadd packer.nvim]])
     return true
   end
   return false
@@ -21,10 +20,9 @@ require('packer').startup(function(use)
 
   use {"wbthomason/packer.nvim"}
 
-  -- PERFORMANCE
+  -- CORE
 
-  use {"nvim-lua/plenary.nvim", module="plenary"}
-
+  use {"nvim-lua/plenary.nvim"}
 
   -- LANDING PAGE
 
@@ -57,8 +55,10 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     tag='0.1.0',
     requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-lua/popup.nvim'
+      {'nvim-lua/popup.nvim'}
+    },
+    after = {
+      "plenary.nvim"
     },
     config = function()
       require("plugins.telescope-conf")
@@ -70,6 +70,7 @@ require('packer').startup(function(use)
     after = 'telescope.nvim',
     config = function()
       require("telescope").load_extension("file_browser")
+      require("plugins.telescope-keymap")
     end
   }
 
@@ -108,23 +109,36 @@ require('packer').startup(function(use)
   }
 
   use {
+    'nvim-telescope/telescope-packer.nvim',
+    after = {
+      'packer.nvim',
+      'telescope.nvim'
+    },
+    config = function()
+      require("telescope").load_extension("packer")
+    end
+  }
+
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {"kyazdani42/nvim-web-devicons"},
+    config = function()
+      require("plugins.lualine-conf")
+    end
+  }
+
+  use {
     'kdheepak/tabline.nvim',
     requires = {
-      'hoob3rt/lualine.nvim',
-      'kyazdani42/nvim-web-devicons'
+      'kyazdani42/nvim-web-devicons',
+      'h00b3rt/lualine.nvim'
     },
     config = function()
       require("plugins.tabline-conf")
     end
   }
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {"kyazdani42/nvim-web-devicons",opt=true},
-    config = function()
-      require("plugins.lualine-conf")
-    end
-  }
+
 
   -- GIT
   use {"tpope/vim-fugitive"}
