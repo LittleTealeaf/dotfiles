@@ -6,6 +6,4 @@ local opt = vim.opt
 -- Setup Packer
 require("plugins")
 require("config")
-require("keymaps")
 require("cursorrestore")
-require("commands")

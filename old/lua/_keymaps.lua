@@ -8,13 +8,7 @@ local silent = {silent = true}
 ---- NORMAL MODE
 
 -- Bookmarks
-set_key('n','<leader>bb', '<Plug>BookmarkToggle', silent)
-set_key('n','<leader>bt', '<Plug>BookmarkAnnotate', silent)
-set_key('n','<leader>ba', '<Plug>BookmarkShowAll', silent)
-set_key('n','<leader>bj', '<Plug>BookmarkNext', silent)
-set_key('n','<leader>bk', '<Plug>BookmarkPrev', silent)
-set_key('n','<leader>bc', '<Plug>BookmarkClear', silent)
-set_key('n','<leader>bC', '<Plug>BookmarkClearAll', silent)
+
 
 -- Coc
 

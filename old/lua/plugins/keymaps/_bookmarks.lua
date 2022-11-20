@@ -1,0 +1,7 @@
+vim.keymap.set('n','<leader>bb', '<Plug>BookmarkToggle', {silent=true})
+vim.keymap.set('n','<leader>bt', '<Plug>BookmarkAnnotate', {silent=true})
+vim.keymap.set('n','<leader>ba', '<Plug>BookmarkShowAll', {silent=true})
+vim.keymap.set('n','<leader>bj', '<Plug>BookmarkNext', {silent=true})
+vim.keymap.set('n','<leader>bk', '<Plug>BookmarkPrev', {silent=true})
+vim.keymap.set('n','<leader>bc', '<Plug>BookmarkClear', {silent=true})
+vim.keymap.set('n','<leader>bC', '<Plug>BookmarkClearAll', {silent=true})
