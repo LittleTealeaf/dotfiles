@@ -17,7 +17,7 @@ Some of the plugins do require you to have additional programs installed locally
 
 ## Keybinds
 
-### Plugins
+### The Leader Key
 
 While in normal mode, many of the plugins have many useful keybinds. I've customized my keybinds in a tree-like structure. The keybinds will follow the following format (most of the time).
 
