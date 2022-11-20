@@ -53,18 +53,20 @@ require("packer").startup(function(use)
 			"nvim-telescope/telescope-github.nvim",
 			"LukasPietzschmann/telescope-tabs",
 			"tom-anders/telescope-vim-bookmarks.nvim",
+			"MattesGroeger/vim-bookmarks",
 		},
 		config = function()
 			require("config.plugins.telescope")
-		end
-	}
-
-	use {
-		"MattesGroeger/vim-bookmarks",
-		conifg = function()
 			require("config.plugins.bookmarks")
 		end
 	}
+
+--	use {
+--		"MattesGroeger/vim-bookmarks",
+--		conifg = function()
+--			require("config.plugins.bookmarks")
+--		end
+--	}
 
 	use {
 		'kdheepak/tabline.nvim',
