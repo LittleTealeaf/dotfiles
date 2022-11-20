@@ -83,9 +83,9 @@ require("packer").startup(function(use)
     end
   }
 
-  use {
-    "jiangmiao/auto-pairs"
-  }
+--  use {
+--    "jiangmiao/auto-pairs"
+--  }
 
 	use {
 		"othree/xml.vim"

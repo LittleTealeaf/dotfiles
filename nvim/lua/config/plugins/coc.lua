@@ -28,6 +28,7 @@ g.coc_global_extensions = {
 	"coc-yaml",
 	"coc-prettier",
 	"coc-snippets",
+	"coc-pairs",
 }
 
 create_command("Format", "call CocAction('format')", {})
@@ -71,8 +72,10 @@ keyset("n","<leader>ca", "<Plug>(coc-codeaction)", {silent = true})
 
 -- Snippets
 
-keyset("i","<C-l>","<Plug>(coc-snippets-expand)",{silent = true})
-keyset("i","<C-j>","<Plug>(coc-snippets-select)", {silent = true})
+
+
+-- keyset("i","<C-l>","<Plug>(coc-snippets-expand)",{silent = true})
+-- keyset("i","<C-j>","<Plug>(coc-snippets-select)", {silent = true})
 
 -- Final Configuration
 cmd([[

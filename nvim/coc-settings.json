@@ -3,5 +3,11 @@
   "git.addGBlameToVirtualText": true,
   "prettier.useTabs": true,
   "prettier.endOfLine": "lf",
-	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/"
+	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
+	"snippets.extends": {
+		"cpp": ["c"],
+		"javascriptreact": ["javascript"],
+		"typescript": ["typescript"],
+		"typescriptreact": ["typescript"]
+	}
 }
