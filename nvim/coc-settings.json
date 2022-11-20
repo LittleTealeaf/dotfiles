@@ -2,5 +2,6 @@
   "html.autoCreateQuotes": false,
   "git.addGBlameToVirtualText": true,
   "prettier.useTabs": true,
-  "prettier.endOfLine": "lf"
+  "prettier.endOfLine": "lf",
+	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/"
 }
