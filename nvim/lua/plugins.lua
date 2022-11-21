@@ -28,6 +28,14 @@ require('packer').startup(function(use)
   }
 
   -- PERFORMANCE
+	
+	-- SESSION MANAGERA
+	use {
+		"rmagatti/auto-session",
+		config = function()
+			require("plugins._auto-session")
+		end
+	}
 
   -- WORKSPACE
 
@@ -87,7 +95,7 @@ require('packer').startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons',
     },
-    after = {"tabline.nvim"},
+    after = {"tabline.nvim", "auto-session"},
     config = function()
       require("plugins._lualine")
     end
