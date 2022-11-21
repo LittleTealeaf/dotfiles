@@ -23,4 +23,3 @@ set_key('n','<leader>gr', telescope.extensions.gh.run, {})
 
 set_key('n','<leader>ba', telescope.extensions.vim_bookmarks.all, {})
 set_key('n','<leader>bs', telescope.extensions.vim_bookmarks.current_file, {})
-

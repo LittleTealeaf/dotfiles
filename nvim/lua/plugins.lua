@@ -28,12 +28,20 @@ require('packer').startup(function(use)
   }
 
   -- PERFORMANCE
-	
+
 	-- SESSION MANAGERA
 	use {
 		"rmagatti/auto-session",
 		config = function()
 			require("plugins._auto-session")
+		end
+	}
+
+	use {
+		'rmagatti/session-lens',
+		after = {"auto-session", "telescope.nvim"},
+		config = function()
+			require("plugins._session-lens")
 		end
 	}
 
@@ -73,10 +81,10 @@ require('packer').startup(function(use)
       'nvim-telescope/telescope-file-browser.nvim',
       'nvim-telescope/telescope-github.nvim',
       'LukasPietzschmann/telescope-tabs',
-      'tom-anders/telescope-vim-bookmarks.nvim'
+      'tom-anders/telescope-vim-bookmarks.nvim',
     },
     after = {
-      'vim-bookmarks'
+      'vim-bookmarks',
     },
     config = function()
         require("plugins._telescope")
