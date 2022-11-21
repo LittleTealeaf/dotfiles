@@ -23,6 +23,8 @@ set_key('n','<leader>gi', telescope.extensions.gh.issues, {})
 set_key('n','<leader>gp', telescope.extensions.gh.pull_request,{})
 set_key('n','<leader>gg', telescope.extensions.gh.gist, {})
 set_key('n','<leader>gr', telescope.extensions.gh.run, {})
+set_key('n','<leader>gc', builtin.git_commits, {})
+set_key('n','<leader>gs', builtin.git_status, {})
 
 set_key('n','<leader>ba', telescope.extensions.vim_bookmarks.all, {})
 set_key('n','<leader>bs', telescope.extensions.vim_bookmarks.current_file, {})

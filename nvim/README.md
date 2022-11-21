@@ -48,6 +48,8 @@ Below is a complete list of all the keybinds that follow this format
 | `;gp` | Telescope (Github Extensions) | Open Github Pull Requests |
 | `;gg` | Telescope (Github Extension) | Open Gists |
 | `;gr` | Telescope (Github Extension) | Open Workflow Runs |
+| `;gc` | Telescope | Open Git Commit List |
+| `;gs` | Telescope | Open Git Status | 
 | `;ba` | Bookmarks | Open all Bookmarks |
 | `;bs` | Bookmarks | Open All Bookmarks in File |
 | `;bb` | Bookmarks | Toggle Bookmark |
