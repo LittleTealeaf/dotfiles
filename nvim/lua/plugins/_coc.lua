@@ -29,6 +29,10 @@ g.coc_global_extensions = {
 	"coc-snippets",
 	"coc-pairs",
 	"coc-r-lsp",
+	"coc-cssmodules",
+	"coc-prisma",
+	"coc-marketplace",
+	"coc-bootstrap-classname",
 }
 
 g.coc_config_home = "$DOT_FILES/nvim"
