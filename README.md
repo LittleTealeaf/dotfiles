@@ -16,13 +16,13 @@ I currently use bash, but if/when I explore other shells, I will add instruction
 Modify and put the following at the bottom of your .bashrc
 ```bash
 export DOT_FILES="path/to/this/directory"
-source "$DOT_FILES/bash/.bashrc"
+source "$DOT_FILES/bash/bashrc"
 ```
 
 I have included a script in the bash directory that will do this for you, as long as you run the script in this directory
 
 ```bash
-./bash/init.sh >> .bashrc
+./bash/init.sh >> ~/.bashrc
 ```
 
 
