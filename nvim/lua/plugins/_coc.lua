@@ -7,7 +7,6 @@ local keyset = vim.keymap.set
 local bo = vim.bo
 local o = vim.o
 
-
 vim.opt.signcolumn = "yes"
 
 g.coc_global_extensions = {
@@ -31,8 +30,6 @@ g.coc_global_extensions = {
 	"coc-pairs",
 	"coc-r-lsp",
 }
-
--- let g:coc_config_home = '$DOT_FILES/nvim'
 
 g.coc_config_home = "$DOT_FILES/nvim"
 
@@ -63,7 +60,6 @@ function _G.show_docs()
 end
 keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 
-
 -- Rename
 keyset("n","<leader>cn", "<Plug>(coc-rename)", {silent = true})
 
@@ -72,15 +68,7 @@ keyset("n","<leader>cd", "<Plug>(coc-definition)", {silent = true})
 keyset("n","<leader>ct", "<Plug>(coc-type-defition)", {silent = true})
 keyset("n","<leader>ci", "<Plug>(coc-implementation)", {silent = true})
 keyset("n","<leader>cr", "<Plug>(coc-references)", {silent = true})
-
 keyset("n","<leader>ca", "<Plug>(coc-codeaction)", {silent = true})
-
--- Snippets
-
-
-
--- keyset("i","<C-l>","<Plug>(coc-snippets-expand)",{silent = true})
--- keyset("i","<C-j>","<Plug>(coc-snippets-select)", {silent = true})
 
 -- Final Configuration
 cmd([[

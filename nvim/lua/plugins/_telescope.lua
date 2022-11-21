@@ -16,7 +16,6 @@ set_key('n','<leader>fe', function()
 end, {})
 set_key('n','<leader>ft', require("telescope-tabs").list_tabs, {})
 
-
 set_key('n','<leader>gi', telescope.extensions.gh.issues, {})
 set_key('n','<leader>gp', telescope.extensions.gh.pull_request,{})
 set_key('n','<leader>gg', telescope.extensions.gh.gist, {})

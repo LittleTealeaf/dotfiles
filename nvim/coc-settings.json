@@ -1,9 +1,9 @@
 {
-  "html.autoCreateQuotes": false,
+	"html.autoCreateQuotes": false,
 	"html.autoClosingTags": true,
-  "git.addGBlameToVirtualText": true,
-  "prettier.useTabs": true,
-  "prettier.endOfLine": "lf",
+	"git.addGBlameToVirtualText": true,
+	"prettier.useTabs": true,
+	"prettier.endOfLine": "lf",
 	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
 	"snippets.extends": {
 		"cpp": ["c"],
