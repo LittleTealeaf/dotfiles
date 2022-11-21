@@ -1,40 +1,40 @@
-snippet v "var statement" b
+snippet v "var statement" 
 var ${0}
 endsnippet
 
-snippet v= "var assignment" b
+snippet v= "var assignment" 
 var ${1} = ${2}
 endsnippet
 
-snippet l "let statement" b
+snippet l "let statement" 
 let ${0}
 endsnippet
 
-snippet l= "let assignment" b
+snippet l= "let assignment"
 let ${1} = ${2}
 endsnippet
 
-snippet dl "deconstruct into let" b
+snippet dl "deconstruct into let" 
 let {${1}} = ${2}
 endsnippet
 
-snippet c "const statement" b
+snippet c "const statement" 
 const ${0}
 endsnippet
 
-snippet c= "const assignment" b
+snippet c= "const assignment" 
 const ${1} = ${2}
 endsnippet
 
-snippet dc "deconstruct into const" b
+snippet dc "deconstruct into const" 
 const {${1}} = ${2}
 endsnippet
 
-snippet ter "Ternary Operator" b
+snippet ter "Ternary Operator" 
 ${1:true} ? ${2:null} : ${3:null}
 endsnippet
 
-snippet tc "Try Catch" b
+snippet tc "Try Catch" 
 try {
 	${0}
 } catch (${1:error}) {
@@ -42,29 +42,29 @@ try {
 }
 endsnippet
 
-snippet fun "Anonymous Function" b
+snippet fun "Anonymous Function" 
 function (${1}) {
 	${0}
 }
 endsnippet
 
-snippet fn "Named Snippet" b
+snippet fn "Named Snippet" 
 function ${1:myFunction}(${2}) {
 	${0}
 }
 endsnippet
 
-snippet sef "Self Executing Function" b
+snippet sef "Self Executing Function" 
 (() => {
 	${0}
 })();
 endsnippet
 
-snippet af "Arrow Function" b
+snippet af "Arrow Function" 
 (${1}) => ${2}
 endsnippet
 
-snippet afb "Arrow Function with Body" b
+snippet afb "Arrow Function with Body" 
 (${1}) => {
 	${0}
 }
