@@ -1,0 +1,71 @@
+snippet v "var statement" b
+var ${0}
+endsnippet
+
+snippet v= "var assignment" b
+var ${1} = ${2}
+endsnippet
+
+snippet l "let statement" b
+let ${0}
+endsnippet
+
+snippet l= "let assignment" b
+let ${1} = ${2}
+endsnippet
+
+snippet dl "deconstruct into let" b
+let {${1}} = ${2}
+endsnippet
+
+snippet c "const statement" b
+const ${0}
+endsnippet
+
+snippet c= "const assignment" b
+const ${1} = ${2}
+endsnippet
+
+snippet dc "deconstruct into const" b
+const {${1}} = ${2}
+endsnippet
+
+snippet ter "Ternary Operator" b
+${1:true} ? ${2:null} : ${3:null}
+endsnippet
+
+snippet tc "Try Catch" b
+try {
+	${0}
+} catch (${1:error}) {
+
+}
+endsnippet
+
+snippet fun "Anonymous Function" b
+function (${1}) {
+	${0}
+}
+endsnippet
+
+snippet fn "Named Snippet" b
+function ${1:myFunction}(${2}) {
+	${0}
+}
+endsnippet
+
+snippet sef "Self Executing Function" b
+(() => {
+	${0}
+})();
+endsnippet
+
+snippet af "Arrow Function" b
+(${1}) => ${2}
+endsnippet
+
+snippet afb "Arrow Function with Body" b
+(${1}) => {
+	${0}
+}
+endsnippet
