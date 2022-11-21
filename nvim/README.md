@@ -41,6 +41,7 @@ Below is a complete list of all the keybinds that follow this format
 | `;fg` | Telescope  | Open the Grep Search | 
 | `;fw` | Telescope | Searches for the string currently under your cursor |
 | `;fb` | Telescope | Open the Buffer Search | 
+| `;fo` | Telescope | Search previously opened files |
 | `;ft` | Telescope (Tabs Extension) | Open the Tabs Search |
 | `;fs` | Telescope (Session Extension) | Open Sessions |
 | `;gi` | Telescope (Github Extension) | Open Github Issues |
