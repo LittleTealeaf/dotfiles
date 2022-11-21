@@ -39,6 +39,7 @@ Below is a complete list of all the keybinds that follow this format
 | `;ff` | Telescope | Open the Fuzzy File Search |
 | `;fe` | Telescope | Open the File Explorer |
 | `;fg` | Telescope  | Open the Grep Search | 
+| `;fw` | Telescope | Searches for the string currently under your cursor |
 | `;fb` | Telescope | Open the Buffer Search | 
 | `;ft` | Telescope (Tabs Extension) | Open the Tabs Search |
 | `;fs` | Telescope (Session Extension) | Open Sessions |

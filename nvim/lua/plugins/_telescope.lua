@@ -9,6 +9,7 @@ telescope.load_extension("vim_bookmarks")
 
 set_key('n','<leader>ff', builtin.find_files, {})
 set_key('n','<leader>fg', builtin.live_grep, {})
+set_key('n','<leader>fw', builtin.grep_string, {})
 set_key('n','<leader>fb', builtin.buffers, {})
 set_key('n','<leader>fn', builtin.help_tags, {})
 set_key('n','<leader>fe', function()
