@@ -82,6 +82,7 @@ require('packer').startup(function(use)
       'nvim-telescope/telescope-github.nvim',
       'LukasPietzschmann/telescope-tabs',
       'tom-anders/telescope-vim-bookmarks.nvim',
+			'fannheyward/telescope-coc.nvim',
     },
     after = {
       'vim-bookmarks',

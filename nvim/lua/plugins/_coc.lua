@@ -68,11 +68,11 @@ keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 keyset("n","<leader>cn", "<Plug>(coc-rename)", {silent = true})
 
 -- GOTO Navigation (;cg?)
-keyset("n","<leader>cd", "<Plug>(coc-definition)", {silent = true})
-keyset("n","<leader>ct", "<Plug>(coc-type-defition)", {silent = true})
-keyset("n","<leader>ci", "<Plug>(coc-implementation)", {silent = true})
-keyset("n","<leader>cr", "<Plug>(coc-references)", {silent = true})
-keyset("n","<leader>ca", "<Plug>(coc-codeaction)", {silent = true})
+--keyset("n","<leader>cd", "<Plug>(coc-definition)", {silent = true})
+--keyset("n","<leader>ct", "<Plug>(coc-type-defition)", {silent = true})
+--keyset("n","<leader>ci", "<Plug>(coc-implementation)", {silent = true})
+--keyset("n","<leader>cr", "<Plug>(coc-references)", {silent = true})
+--keyset("n","<leader>ca", "<Plug>(coc-codeaction)", {silent = true})
 
 -- Final Configuration
 cmd([[

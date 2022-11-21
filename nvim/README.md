@@ -64,3 +64,5 @@ Below is a complete list of all the keybinds that follow this format
 | `;ci` | Coc | Goto Implementation |
 | `;cr` | Coc | Goto References | 
 | `;ca` | Coc | Code Action |
+
+todo: finish adding coc keybinds
