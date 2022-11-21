@@ -3,23 +3,24 @@ vim.cmd([[
 	let g:bookmark_auto_save = 1
 	let g:bookmark_save_per_working_dir = 1
 	let g:bookmark_show_toggle_warning = 0
+
+function! g:BMWorkDirFileLocation()
+		let location = ''
+		if isdirectory('.git')
+			let location = getcwd().'/.git'
+		else
+			let location = finddir('.git','.;')
+		endif
+		if len(location) > 0
+			return location.'/vim-bookmarks'
+		else
+			return getcwd().'/.vim-boommarks'
+		endif
+	endfunction
 ]])
 
 
--- function! g:BMWorkDirFileLocation()
---   let filename = 'vim-bookmarks'
---   let location = ''
---   if isdirectory('.git')
---     let location = getcwd().'/.git'
---   else
---     let location = finddir('.git','.;')
---   endif
---   if len(location) > 0
---     return location .'/'.filename
---   else
---     return getcwd().'/.'filename
---   endif
--- endfunction
+
 
 local set_key = vim.keymap.set
 
