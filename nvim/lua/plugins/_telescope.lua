@@ -1,5 +1,4 @@
 local set_key = vim.keymap.set
-local map_key = vim.api.nvim_set_keymap
 local builtin = require("telescope.builtin")
 local telescope = require("telescope")
 
