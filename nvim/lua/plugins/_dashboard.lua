@@ -10,11 +10,11 @@ db.custom_header = {
 }
 
 db.custom_center = {
-  {
-    icon="ﮮ ",
-    desc="Update Plugins",
-    action="PackerSync"
-  },
+	{
+		icon="ﮮ ",
+		desc="Open Session",
+		action="SearchSession"
+	},
   {
     icon=" ",
     desc="Find File",
@@ -26,10 +26,9 @@ db.custom_center = {
     action="Telescope file_browser"
   },
 	{
-		icon=" ",
-		desc="Open dotfile configuration",
-		action="cd $DOT_FILES"
-	}
+    desc="Update Plugins",
+    action="PackerSync"
+  }
 }
 
 db.hide_statusline = false
