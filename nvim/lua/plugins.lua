@@ -107,8 +107,7 @@ require('packer').startup(function(use)
     end
   }
 
-  use {"othree/xml.vim"}
-
+--  use {"othree/xml.vim"}
 
   use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
 

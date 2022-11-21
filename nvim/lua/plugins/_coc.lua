@@ -32,6 +32,10 @@ g.coc_global_extensions = {
 	"coc-r-lsp",
 }
 
+-- let g:coc_config_home = '$DOT_FILES/nvim'
+
+g.coc_config_home = "$DOT_FILES/nvim"
+
 create_command("Format", "call CocAction('format')", {})
 create_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
 
@@ -80,7 +84,6 @@ keyset("n","<leader>ca", "<Plug>(coc-codeaction)", {silent = true})
 
 -- Final Configuration
 cmd([[
-	let g:coc_config_home = '$DOT_FILES/nvim'
 	command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 ]])
 

@@ -1,5 +1,6 @@
 {
   "html.autoCreateQuotes": false,
+	"html.autoClosingTags": true,
   "git.addGBlameToVirtualText": true,
   "prettier.useTabs": true,
   "prettier.endOfLine": "lf",
