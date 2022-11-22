@@ -17,7 +17,15 @@ Some of the plugins do require you to have additional programs installed locally
 
 ## Keybinds
 
-### The Leader Key
+### Changes from Normal Vim
+
+In order to use `;` as the leader key (as it is more natural and faster), I've swapped around a few of the vim keymaps, which also makes things more easier
+
+- `,` is "go to previous instance" (unchanged), and now `.` is "go to next instance" (new)
+- `\` is now used for "repeat last command"
+- `;` is the leader key
+
+### Leader Keybinds
 
 While in normal mode, many of the plugins have many useful keybinds. I've customized my keybinds in a tree-like structure. The keybinds will follow the following format (most of the time).
 
