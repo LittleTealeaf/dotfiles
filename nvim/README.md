@@ -14,6 +14,13 @@ Some of the plugins do require you to have additional programs installed locally
 | :-- | :-- | :-- |
 | Wakatime | Wakatime | You will need to set up a wakatime account, and obtain the api key to paste in. I use this to track my coding stats, which is used in a few of my CI projects. If you do not wish to use this plugin, you can simply remove the wakatime plugin in `nvim/lua/config/plugins.lua` |
 
+## Commands
+
+I've added some custom commands in order to streamline workflows
+
+| Command | What it does | 
+| :--: | :--: |
+| :BuffClear | Clears out all buffers |
 
 ## Keybinds
 
