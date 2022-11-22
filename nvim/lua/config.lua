@@ -25,5 +25,5 @@ cmd([[
   set relativenumber number
 	command! Q :q
 	command! W :w
-	command! BuffClear :bufdo bwipeout
+	command! Bdall :bufdo bwipeout
 ]])

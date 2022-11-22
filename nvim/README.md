@@ -20,7 +20,7 @@ I've added some custom commands in order to streamline workflows
 
 | Command | What it does | 
 | :--: | :--: |
-| :BuffClear | Clears out all buffers |
+| :Bdall | Clears out all buffers |
 
 ## Keybinds
 
