@@ -10,5 +10,5 @@
 		"javascriptreact": ["javascript"],
 		"typescript": ["typescript"],
 		"typescriptreact": ["typescript"]
-	}
+  }
 }

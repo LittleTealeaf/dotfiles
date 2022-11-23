@@ -138,6 +138,8 @@ require('packer').startup(function(use)
   use {"wakatime/vim-wakatime"}
   use {"andweeb/presence.nvim"}
 
-  use {"normen/vim-pio"}
+	-- PLATFORMIO
 
+  use {"normen/vim-pio"}
+	use {"coddingtonbear/neomake-platformio"}
 end)
