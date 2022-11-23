@@ -39,19 +39,6 @@ create_nvim_command(
 	{}
 )
 
-
-local colors = {
-  darkgray = "#16161d",
-  gray = "#727169",
-  innerbg = nil,
-  outerbg = "#16161D",
-  normal = "#7e9cd8",
-  insert = "#98bb6c",
-  visual = "#ffa066",
-  replace = "#e46876",
-  command = "#e6c384",
-}
-
 lualine.setup({
 	extensions = {
 		'nvim-tree',
