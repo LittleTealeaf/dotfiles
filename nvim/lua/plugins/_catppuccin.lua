@@ -1,6 +1,13 @@
 require('catppuccin').setup({
-  flavor = "mocha",
-  transparent_background = true
+  flavor = "macchiato",
+	transparent_background = true,
+	integrations = {
+		telescope = true,
+		nvimtree = true,
+		treesitter = true,
+		dashboard = true
+	},
+
 })
 
 vim.cmd([[
