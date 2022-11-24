@@ -69,3 +69,19 @@ snippet afb "Arrow Function with Body"
 	${0}
 }
 endsnippet
+
+snippet ce "New Element"
+document.createElement("${1:div}");
+endsnippet
+
+snippet ct "Create Text Node"
+document.createTextNode(${1});
+endsnippet
+
+
+snippet sce "Create Element in Self Executing Function" i
+(() => {
+	const node = document.createElement(${1});
+	${0}
+	return node;
+})();
