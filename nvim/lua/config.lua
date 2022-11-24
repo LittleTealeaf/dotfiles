@@ -8,6 +8,8 @@ cmd([[
 	nnoremap \ .
 ]])
 
+opt.scrolloff = 15
+
 opt.smartcase = true
 opt.ignorecase = true
 opt.wrap = true
