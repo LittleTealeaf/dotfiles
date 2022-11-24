@@ -135,6 +135,11 @@ require('packer').startup(function(use)
   }
 
 
+	use {"othree/xml.vim"}
+
+	-- SOCIAL
+
+
   use {"wakatime/vim-wakatime"}
   use {"andweeb/presence.nvim"}
 
