@@ -74,4 +74,9 @@ cmd([[
 	command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 ]])
 
+-- Disable < > autocomplete in html
+
+cmd([[
+	autocmd FileType html let b:coc_pairs_disabled = ['<']
+]])
 
