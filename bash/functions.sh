@@ -3,3 +3,7 @@
 function cdd() {
 	cd ..
 }
+
+function lless() {
+	ll | less
+}
