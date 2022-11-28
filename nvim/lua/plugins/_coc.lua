@@ -14,7 +14,7 @@ g.coc_global_extensions = {
 	"coc-tsserver",
 	"coc-emmet",
 	"coc-css",
-	"coc-clangd",
+--	"coc-clangd",
 	"coc-xml",
 	"coc-tailwindcss",
 	"coc-json",

@@ -9,5 +9,21 @@
 		"javascriptreact": ["javascript"],
 		"typescript": ["typescript"],
 		"typescriptreact": ["typescript"]
-  }
+	},
+	"clangd.path": "/usr/bin/clangd-14",
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+			"rootPatterns": [".ccls-root", "compile_commands.json"],
+			"initializationOptions": {
+				"cache": {
+					"directory": ".ccls-cache"
+				},
+				"client": {
+					"snippetSupport": true
+				}
+			}
+		}
+	}
 }
