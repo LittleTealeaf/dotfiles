@@ -13,6 +13,15 @@ I currently use bash, but if/when I explore other shells, I will add instruction
 
 ### Bash
 
+First, you'll want to make a `.bash_profile` in your home directory (`cd ~`). In here, you will put the following configuration:
+
+```bash
+export DOT_FILES=/path/to/this/repository
+(optional) export GITHUB_TOKEN=gituhb_token
+(optional) export WAKATIME_TOKEN=wakatime_token
+```
+
+
 Modify and put the following at the bottom of your .bashrc
 ```bash
 export DOT_FILES="path/to/this/directory"
@@ -22,7 +31,8 @@ source "$DOT_FILES/bash/bashrc"
 I have included a script in the bash directory that will do this for you, as long as you run the script in this directory
 
 ```bash
-./bash/init.sh >> ~/.bashrc
+./bash/init_profile.sh >> ~/.bash_profile
+./bash/init_bashrc.sh >> ~/.bashrc
 ```
 
 
