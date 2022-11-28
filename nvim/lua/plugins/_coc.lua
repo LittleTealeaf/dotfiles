@@ -68,6 +68,7 @@ keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 keyset("n","<leader>cn", "<Plug>(coc-rename)", {silent = true})
 
 keyset("n","<leader>ca", "<Plug>(coc-codeaction)", {silent = true})
+keyset("n","<leader>cf",":CocCommand prettier.forceFormatDocument<CR>", {silent = true})
 
 -- Final Configuration
 cmd([[
