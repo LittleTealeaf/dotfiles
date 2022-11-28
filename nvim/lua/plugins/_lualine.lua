@@ -5,9 +5,6 @@ local keybind = vim.keymap.set
 local create_nvim_command = vim.api.nvim_create_user_command
 
 tabline.setup({
-	options = {
-		show_tab_always = true,
-	}
 })
 
 keybind('n','<A-[>', tabline.buffer_previous ,{} )
@@ -47,14 +44,22 @@ lualine.setup({
 		'toggleterm'
 	},
   options = {
-    theme = 'catppuccin'
+    theme = 'catppuccin',
   },
+	sections = {
+		lualine_a = {'mode'},
+		lualine_b = {'branch', 'diff'},
+		lualine_c = {'filename'},
+		lualine_x = {'searchcount'},
+		lualine_y = {'filetype'},
+		lualine_z = {'location'},
+	},
 	tabline = {
-		lualine_a = {},
+		lualine_a = {tabline.tabline_buffers},
 		lualine_b = {},
-		lualine_c = {tabline.tabline_buffers},
+		lualine_c = {},
 		lualine_x = {tabline.tabline_tabs},
-		lualine_y = {autosession.current_session_name},
-		lualine_z = {}
+		lualine_y = {},
+		lualine_z = {autosession.current_session_name}
 	},
 })
