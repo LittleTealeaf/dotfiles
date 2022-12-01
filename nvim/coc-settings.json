@@ -10,7 +10,6 @@
 		"typescript": ["typescript"],
 		"typescriptreact": ["typescript"]
 	},
-	"clangd.path": "/usr/bin/clangd-14",
 	"languageserver": {
 		"ccls": {
 			"command": "ccls",
@@ -25,5 +24,6 @@
 				}
 			}
 		}
-	}
+	},
+	"python.pythonPath": "$DOT_FILES/nvim/python_setup.sh"
 }
