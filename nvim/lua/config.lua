@@ -6,6 +6,7 @@ g.mapleader = ';'
 cmd([[
 	nnoremap . ;
 	nnoremap \ .
+	inoremap A+; <C-Bslash>
 ]])
 
 opt.scrolloff = 20
@@ -29,3 +30,8 @@ cmd([[
 	command! W :w
 	command! Bdall :bufdo bwipeout
 ]])
+
+
+-- TODO add ;w ;q shortcuts
+-- Also, could make a "post-plugins" and figure out how to make something run after
+
