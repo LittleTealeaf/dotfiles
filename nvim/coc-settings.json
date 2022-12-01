@@ -25,5 +25,5 @@
 			}
 		}
 	},
-	"python.pythonPath": "$DOT_FILES/nvim/python_setup.sh"
+	"python.pythonPath": "$DOT_FILES/nvim/python_init.sh"
 }
