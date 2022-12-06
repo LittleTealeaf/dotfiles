@@ -33,6 +33,7 @@ g.coc_global_extensions = {
 	"coc-prisma",
 	"coc-marketplace",
 	"coc-bootstrap-classname",
+	"coc-explorer",
 }
 
 g.coc_config_home = "$DOT_FILES/nvim"
