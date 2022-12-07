@@ -41,7 +41,7 @@ lualine.setup({
 		'nvim-tree',
 		'fzf',
 		'fugitive',
-		'toggleterm'
+		'toggleterm',
 	},
   options = {
     theme = 'catppuccin',
@@ -55,9 +55,9 @@ lualine.setup({
 		lualine_z = {'location'},
 	},
 	tabline = {
-		lualine_a = {tabline.tabline_buffers},
+		lualine_a = {},
 		lualine_b = {},
-		lualine_c = {},
+		lualine_c = {tabline.tabline_buffers},
 		lualine_x = {tabline.tabline_tabs},
 		lualine_y = {},
 		lualine_z = {autosession.current_session_name}
