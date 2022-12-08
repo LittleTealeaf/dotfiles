@@ -9,7 +9,7 @@ cmd([[
 	inoremap A+; <C-Bslash>
 ]])
 
-opt.scrolloff = 20
+opt.scrolloff = 15
 
 opt.smartcase = true
 opt.ignorecase = true
