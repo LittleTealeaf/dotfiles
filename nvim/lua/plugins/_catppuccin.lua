@@ -3,7 +3,7 @@ require('catppuccin').setup({
 	transparent_background = true,
 	integrations = {
 		telescope = true,
-		nvimtree = true,
+		neotree = true,
 		treesitter = true,
 		dashboard = true
 	},
