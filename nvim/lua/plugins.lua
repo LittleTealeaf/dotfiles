@@ -150,6 +150,10 @@ require('packer').startup(function(use)
 
 	use {"othree/xml.vim"}
 
+	use {
+		"haya14busa/is.vim"
+	}
+
 	-- SOCIAL
 
 
