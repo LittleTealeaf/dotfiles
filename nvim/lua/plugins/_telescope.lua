@@ -26,7 +26,7 @@ set_key('n','<leader>fo', builtin.oldfiles, {})
 set_key('n','<leader>fe', function()
 	telescope.extensions.file_browser.file_browser({hidden = true})
 end, {})
-set_key('n','<leader>ft', require("telescope-tabs").list_tabs, {})
+-- set_key('n','<leader>ft', require("telescope-tabs").list_tabs, {})
 
 set_key('n','<leader>gi', telescope.extensions.gh.issues, {})
 set_key('n','<leader>gp', telescope.extensions.gh.pull_request,{})

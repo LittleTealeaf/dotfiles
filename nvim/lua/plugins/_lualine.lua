@@ -39,10 +39,11 @@ create_nvim_command(
 
 lualine.setup({
 	extensions = {
-		'nvim-tree',
+		--'nvim-tree',
 		'fzf',
 		'fugitive',
 		'toggleterm',
+		"neo-tree"
 	},
   options = {
     theme = 'catppuccin',
