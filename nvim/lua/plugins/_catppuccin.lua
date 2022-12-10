@@ -8,7 +8,7 @@ require('catppuccin').setup({
 		dashboard = true
 	},
 	dim_inactive = {
-		enabled = true,
+		enabled = false,
 		percentage = 0.70,
 	},
 	styles = {
