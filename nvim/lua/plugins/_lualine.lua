@@ -49,7 +49,12 @@ lualine.setup({
 	sections = {
 		lualine_a = {'mode'},
 		lualine_b = {'branch', 'diff'},
-		lualine_c = {'filename'},
+		lualine_c = {
+			{
+				'filename',
+				path = 1
+			}
+		},
 		lualine_x = {'searchcount'},
 		lualine_y = {'filetype'},
 		lualine_z = {'location'},
