@@ -28,7 +28,14 @@ cmd([[
   set relativenumber number
 	command! Q :q
 	command! W :w
-	command! Bdall :bufdo bwipeout
+	command! BD :bufdo bwipeout
+	command! NH :noh
+]])
+
+-- Neovide Configuration
+cmd([[
+	let g:neovide_transparency = 0.5
+	let g:neovide_hide_mouse_while_typing = v:true
 ]])
 
 
