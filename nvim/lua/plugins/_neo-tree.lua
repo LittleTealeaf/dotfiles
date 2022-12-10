@@ -9,5 +9,7 @@ neotree.setup({
 	}
 })
 
-set_key('n','<leader>te',':Neotree position=left toggle<CR>', {silent = true})
+set_key('n','<leader>tt',':NeoTreeShowToggle<CR>',{silent=true})
+set_key('n','<leader>te',':Neotree position=left <CR>', {silent = true})
+set_key('n','<leader>th',':NeoTreeClose<CR>', {silent=true})
 set_key('n','<leader>tg', ':Neotree float git_status toggle<CR>', {silent = true})

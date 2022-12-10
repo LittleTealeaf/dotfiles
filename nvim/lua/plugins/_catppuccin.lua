@@ -7,7 +7,22 @@ require('catppuccin').setup({
 		treesitter = true,
 		dashboard = true
 	},
-
+	dim_inactive = {
+		enabled = true,
+		percentage = 0.70,
+	},
+	styles = {
+		comments = {"italic"},
+		conditionals = {"italic"},
+		functions = {"bold"},
+		strings = {"italic"},
+		variables = {},
+		types = {},
+		operators = {},
+		loops = {},
+		keywords = {},
+		properties = {}
+	}
 })
 
 vim.cmd([[
