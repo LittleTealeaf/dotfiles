@@ -1,3 +1,6 @@
+pcall(function()
+	require("system")
+end)
 require("plugins")
 require("config")
 require("cursorrestore")

@@ -2,6 +2,7 @@ local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
 
+
 g.mapleader = ';'
 cmd([[
 	nnoremap . ;
@@ -38,7 +39,4 @@ cmd([[
 	let g:neovide_hide_mouse_while_typing = v:true
 ]])
 
-
--- TODO add ;w ;q shortcuts
--- Also, could make a "post-plugins" and figure out how to make something run after
 

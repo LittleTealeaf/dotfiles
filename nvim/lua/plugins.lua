@@ -158,7 +158,12 @@ require('packer').startup(function(use)
 
 
   use {"wakatime/vim-wakatime"}
-  use {"andweeb/presence.nvim"}
+  use {
+		"andweeb/presence.nvim",
+		config = function()
+			require("plugins._presence")
+		end
+	}
 
 	-- PLATFORMIO
 

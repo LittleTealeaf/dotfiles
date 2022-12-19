@@ -2,8 +2,15 @@ local neotree = require("neo-tree")
 local set_key = vim.keymap.set
 
 neotree.setup({
-	close_if_last_window = false,
+	close_if_last_window = true,
 	follow_current_file = true,
+	filesystem = {
+		filtered_items = {
+			visible = true,
+			hide_dotfiles = false,
+			hide_gitignored = false,
+		}
+	},
 	mappings = {
 		["t"] = "",
 	}
