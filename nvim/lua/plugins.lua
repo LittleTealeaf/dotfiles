@@ -60,15 +60,12 @@ require('packer').startup(function(use)
 		end
 	}
 
---  use {
---    "nvim-tree/nvim-tree.lua",
---    requires = {
---      "nvim-tree/nvim-web-devicons",
---    },
---    config = function()
---      require("plugins._nvim-tree")
---    end
---  }
+	use {
+		"jeffkreeftmeijer/vim-numbertoggle",
+		config = function()
+			require("plugins._numbertoggle")
+		end
+	}
 
   use {
     "akinsho/toggleterm.nvim",
