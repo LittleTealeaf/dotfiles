@@ -16,3 +16,5 @@ function cdnew() {
 function rmr() {
 	rm -r $1
 }
+
+alias :Git=git
