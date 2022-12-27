@@ -9,33 +9,33 @@ local o = vim.o
 
 vim.opt.signcolumn = "yes"
 
-g.coc_global_extensions = {
-	"coc-html",
-	"coc-tsserver",
-	"coc-emmet",
-	"coc-css",
+--g.coc_global_extensions = {
+--	"coc-html",
+--	"coc-tsserver",
+--	"coc-emmet",
+--	"coc-css",
 --	"coc-clangd",
-	"coc-xml",
-	"coc-tailwindcss",
-	"coc-json",
-	"coc-lua",
-	"coc-pyright",
-	"coc-jedi",
-	"coc-java",
-	"coc-git",
-	"coc-sql",
-	"coc-sh",
-	"coc-yaml",
-	"coc-prettier",
-	"coc-snippets",
-	"coc-pairs",
-	"coc-r-lsp",
-	"coc-cssmodules",
-	"coc-prisma",
-	"coc-marketplace",
-	"coc-bootstrap-classname",
+--	"coc-xml",
+--	"coc-tailwindcss",
+--	"coc-json",
+--	"coc-lua",
+--	"coc-pyright",
+--	"coc-jedi",
+--	"coc-java",
+--	"coc-git",
+--	"coc-sql",
+--	"coc-sh",
+--	"coc-yaml",
+--	"coc-prettier",
+--	"coc-snippets",
+--	"coc-pairs",
+--	"coc-r-lsp",
+--	"coc-cssmodules",
+--	"coc-prisma",
+--	"coc-marketplace",
+--	"coc-bootstrap-classname",
 --	"coc-explorer",
-}
+--}
 
 g.coc_config_home = "$DOT_FILES/nvim"
 
