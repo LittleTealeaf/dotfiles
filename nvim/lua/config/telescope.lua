@@ -4,11 +4,16 @@ local setkey = vim.keymap.set
 local actions = require('telescope.builtin')
 
 telescope.setup({
-
+	extensiosn = {
+		coc = {
+			theme = 'ivy'
+		}
+	}
 })
 
 telescope.load_extension("file_browser")
 telescope.load_extension("gh")
+telescope.load_extension('coc')
 
 
 setkey('n','<leader>ff', actions.find_files, {})
@@ -30,4 +35,13 @@ setkey('n','<leader>gs', actions.git_status, {})
 setkey('n','<leader>gf', actions.git_files,{})
 setkey('n','<leader>gb', actions.git_branches, {})
 
+
+setkey('n','<leader>cc',telescope.extensions.coc.commands, {})
+setkey('n','<leader>cd',telescope.extensions.coc.definitions,{})
+setkey('n','<leader>ci',telescope.extensions.coc.implementations, {})
+setkey('n','<leader>cl',telescope.extensions.coc.locations, {})
+setkey('n','<leader>ct',telescope.extensions.coc.type_definitions, {})
+setkey('n','<leader>cs',telescope.extensions.coc.document_symbols, {})
+setkey('n','<leader>ce',telescope.extensions.coc.diagnostics, {})
+setkey('n','<leader>cE',telescope.extensions.coc.workspace_diagnostics,{})
 
