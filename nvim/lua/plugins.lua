@@ -24,6 +24,9 @@ require('packer').startup(function(use)
   -- Search
   use {
     "nvim-telescope/telescope.nvim",
+		after = {
+			"coc"
+		},
     requires = {
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
@@ -70,13 +73,20 @@ require('packer').startup(function(use)
 		config = [[require('config.coc')]]
 	}
 
+	-- Incremental Search
+	use {'haya14busa/is.vim'}
+
 	-- Git
 	use {'tpope/vim-fugitive'}
 
 	-- Number Toggle
-	use {
-		'jeffkreeftmeijer/vim-numbertoggle',
-	}
+	use {'jeffkreeftmeijer/vim-numbertoggle'}
+
+	-- XML
+	use {'othree/xml.vim'}
+
+	-- Treesitter
+	use {'nvim-treesitter/nvim-treesitter', run=":TSUpdate"}
 
 	-- Wakatime
   use {'wakatime/vim-wakatime'}
