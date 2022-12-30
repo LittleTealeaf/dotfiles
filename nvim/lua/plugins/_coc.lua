@@ -9,6 +9,10 @@ local o = vim.o
 
 vim.opt.signcolumn = "yes"
 
+g.coc_global_extensions = {
+	"coc-marketplace"
+}
+
 --g.coc_global_extensions = {
 --	"coc-html",
 --	"coc-tsserver",
