@@ -62,5 +62,12 @@ require('packer').startup(function(use)
     config = [[require("config.neo-tree")]]
   }
 
+	-- Coc
+	use {
+		'neoclide/coc.nvim',
+		branch = 'release',
+		config = [[require('config.coc')]]
+	}
+
   use {'wakatime/vim-wakatime'}
 end)
