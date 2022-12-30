@@ -27,8 +27,8 @@ require('packer').startup(function(use)
     requires = {
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-frecency.nvim",
-      "nvim-telescope/telescope-ui-select.nvim"
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-file-browser.nvim"
     },
     config = [[require('config.telescope')]]
   }
