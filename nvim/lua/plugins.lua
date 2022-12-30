@@ -40,5 +40,15 @@ require('packer').startup(function(use)
     config = [[require("config.catppuccin")]]
   }
 
+  -- Lualine
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      'kdheepak/tabline.nvim'
+    },
+    config = [[require("config.lualine")]]
+  }
+
   use {'wakatime/vim-wakatime'}
 end)
