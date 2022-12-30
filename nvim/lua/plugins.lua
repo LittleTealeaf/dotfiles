@@ -13,4 +13,32 @@ end
 
 require('packer').startup(function(use)
   use {"wbthomason/packer.nvim"}
+
+  --Terminal
+  use {
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+    config = [[require('config.toggleterm')]]
+  }
+
+  -- Search
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
+      "nvim-telescope/telescope-ui-select.nvim"
+    },
+    config = [[require('config.telescope')]]
+  }
+
+  -- Theme
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = [[require("config.catppuccin")]]
+  }
+
+  use {'wakatime/vim-wakatime'}
 end)
