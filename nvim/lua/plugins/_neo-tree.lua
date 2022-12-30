@@ -2,7 +2,7 @@ local neotree = require("neo-tree")
 local set_key = vim.keymap.set
 
 neotree.setup({
-	close_if_last_window = true,
+	close_if_last_window = false,
 	follow_current_file = true,
 	filesystem = {
 		filtered_items = {
