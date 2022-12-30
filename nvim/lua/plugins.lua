@@ -25,7 +25,7 @@ require('packer').startup(function(use)
   use {
     "nvim-telescope/telescope.nvim",
 		after = {
-			"coc"
+			"coc.nvim"
 		},
     requires = {
       "nvim-lua/popup.nvim",
