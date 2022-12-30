@@ -31,7 +31,7 @@ neotree.setup({
 
 
 
-setkey('n','<leader>tt', ':NeoTreeShowToggle<CR>', {silent=true})
-setkey('n','<leader>te', ':Neotree position=left filesystem <CR>', {silent=true})
-setkey('n','<leader>th', ':NeoTreeClose<CR>', {silent=true})
-setkey('n','<leader>tg', ':Neotree position=left git_status<CR>', {silent=true})
+setkey('n','<leader>et', ':NeoTreeShowToggle<CR>', {silent=true})
+setkey('n','<leader>ef', ':Neotree position=left filesystem <CR>', {silent=true})
+setkey('n','<leader>eh', ':NeoTreeClose<CR>', {silent=true})
+setkey('n','<leader>eg', ':Neotree position=left git_status<CR>', {silent=true})
