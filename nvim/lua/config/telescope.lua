@@ -17,6 +17,10 @@ setkey('n','<leader>fw', actions.grep_string, {})
 setkey('n','<leader>fb', actions.buffers, {})
 setkey('n','<leader>fo', actions.oldfiles, {})
 
+setkey('n','<leader>fe', function()
+	telescope.extensions.file_browser.file_browser({hidden=true})
+end, {})
+
 setkey('n','<leader>gi', telescope.extensions.gh.issues, {})
 setkey('n','<leader>gp', telescope.extensions.gh.pull_request, {})
 setkey('n','<leader>gg', telescope.extensions.gh.gist, {})
@@ -25,3 +29,5 @@ setkey('n','<leader>gc', actions.git_commits, {})
 setkey('n','<leader>gs', actions.git_status, {})
 setkey('n','<leader>gf', actions.git_files,{})
 setkey('n','<leader>gb', actions.git_branches, {})
+
+

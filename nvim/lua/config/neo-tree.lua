@@ -26,12 +26,13 @@ neotree.setup({
         vim.cmd('highlight! Cursor guibg=#5f87af blend=0')
       end
     }
-  }
+  },
 })
 
 
 
 setkey('n','<leader>et', ':NeoTreeShowToggle<CR>', {silent=true})
-setkey('n','<leader>ef', ':Neotree position=left filesystem <CR>', {silent=true})
+setkey('n','<leader>ef', ':Neotree filesystem <CR>', {silent=true})
 setkey('n','<leader>eh', ':NeoTreeClose<CR>', {silent=true})
-setkey('n','<leader>eg', ':Neotree position=left git_status<CR>', {silent=true})
+setkey('n','<leader>eg', ':Neotree git_status<CR>', {silent=true})
+setkey('n','<leader>eb', ':Neotree buffers<CR>', {silent=true})
