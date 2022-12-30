@@ -69,5 +69,11 @@ require('packer').startup(function(use)
 		config = [[require('config.coc')]]
 	}
 
+	-- Number Toggle
+	use {
+		'jeffkreeftmeijer/vim-numbertoggle',
+	}
+
+	-- Wakatime
   use {'wakatime/vim-wakatime'}
 end)
