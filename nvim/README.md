@@ -2,6 +2,9 @@
 
 As it stands, this is the first mostly complete configuration setup for neovim. I am a relatively new user, so I am sure there are flaws.
 
+## Todo:
+Restart from scratch, now that I have a decently working version of neovim
+
 ## Plugins
 
 I've decided to use `Packer` for plugins. It seemed to be the easiest to include in configuration files, which made this whole dotfile repository possible
