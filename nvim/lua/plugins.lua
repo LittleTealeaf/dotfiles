@@ -28,7 +28,8 @@ require('packer').startup(function(use)
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      "nvim-telescope/telescope-file-browser.nvim"
+      "nvim-telescope/telescope-file-browser.nvim",
+			"nvim-telescope/telescope-github.nvim",
     },
     config = [[require('config.telescope')]]
   }
@@ -68,6 +69,9 @@ require('packer').startup(function(use)
 		branch = 'release',
 		config = [[require('config.coc')]]
 	}
+
+	-- Git
+	use {'tpope/vim-fugitive'}
 
 	-- Number Toggle
 	use {
