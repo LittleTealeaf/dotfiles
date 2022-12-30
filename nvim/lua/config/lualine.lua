@@ -2,22 +2,19 @@ local tabline = require('tabline')
 local lualine = require('lualine')
 local keybind = vim.keymap.set
 
-
-
-
-
-
 tabline.setup({
   enable = false
 })
 
 keybind('n','<A-[>', tabline.buffer_previous, {})
 keybind('n','<A-]>', tabline.buffer_next, {})
+keybind('n','<A-{>', 'tabprev', {silent=true})
+keybind('n','<A-}>', 'tabnext', {silent=true})
 
 
 lualine.setup({
   extensions = {
-    'fzf','toggleterm'
+    'fzf','toggleterm', 'neo-tree'
   },
   options = {
     theme = 'catppuccin',
@@ -37,6 +34,5 @@ lualine.setup({
     lualine_c = {tabline.tabline_buffers},
     lualine_x = {tabline.tabline_tabs},
     lualine_y = {'branch'},
-
   }
 })
