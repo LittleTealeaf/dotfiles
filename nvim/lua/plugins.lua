@@ -37,6 +37,7 @@ require('packer').startup(function(use)
 			"nvim-telescope/telescope-github.nvim",
 			"fannheyward/telescope-coc.nvim",
 			"rmagatti/session-lens",
+			"tom-anders/telescope-vim-bookmarks.nvim"
     },
     config = [[require('config.telescope')]]
   }

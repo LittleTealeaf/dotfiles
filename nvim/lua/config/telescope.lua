@@ -4,6 +4,7 @@ local actions = require('telescope.builtin')
 local coc_actions = telescope.extensions.coc
 local gh_actions = telescope.extensions.gh
 local session_lens = require('session-lens')
+local themes = require('telescope.themes')
 
 telescope.setup({
 	extensions = {
@@ -13,36 +14,10 @@ telescope.setup({
 		file_browser = {
 			theme = 'ivy'
 		},
-	},
-	pickers = {
-		find_files = {
-			theme = 'ivy'
-		},
-		live_grep = {
-			theme = 'ivy'
-		},
-		grep_string = {
-			theme = 'ivy',
-		},
-		buffers = {
-			theme = 'ivy'
-		},
-		oldfiles = {
-			theme = 'ivy'
-		},
-		git_files = {
-			theme = 'ivy'
-		},
-		git_commits = {
-			theme = 'ivy'
-		},
-		git_branches = {
-			theme = 'ivy'
-		},
-		git_status = {
+		vim_bookmarks = {
 			theme = 'ivy'
 		}
-	}
+	},
 })
 
 session_lens.setup({
@@ -56,27 +31,35 @@ telescope.load_extension("file_browser")
 telescope.load_extension("gh")
 telescope.load_extension('coc')
 telescope.load_extension('session-lens')
+telescope.load_extension('vim_bookmarks')
 
+local use_ivy = function(action)
+	return function(args)
+		action(themes.get_ivy(args))
+	end
+end
 
-setkey('n','<leader>ff', actions.find_files, {})
-setkey('n','<leader>fg', actions.live_grep, {})
-setkey('n','<leader>fw', actions.grep_string, {})
-setkey('n','<leader>fb', actions.buffers, {})
-setkey('n','<leader>fo', actions.oldfiles, {})
+setkey('n','<leader>ff', use_ivy(actions.find_files), {})
+setkey('n','<leader>fg', use_ivy(actions.live_grep), {})
+setkey('n','<leader>fw', use_ivy(actions.grep_string), {})
+setkey('n','<leader>fb', use_ivy(actions.buffers), {})
+setkey('n','<leader>fo', use_ivy(actions.oldfiles), {})
 
 setkey('n','<leader>fe', function()
 	telescope.extensions.file_browser.file_browser({hidden=true})
 end, {})
 
-setkey('n','<leader>gi', gh_actions.issues, {})
-setkey('n','<leader>gp', gh_actions.pull_request, {})
-setkey('n','<leader>gg', gh_actions.gist, {})
-setkey('n','<leader>gr', gh_actions.run, {})
-setkey('n','<leader>gc', actions.git_commits, {})
-setkey('n','<leader>gs', actions.git_status, {})
-setkey('n','<leader>gf', actions.git_files,{})
-setkey('n','<leader>gb', actions.git_branches, {})
+setkey('n','<leader>gi', use_ivy(gh_actions.issues), {})
+setkey('n','<leader>gp', use_ivy(gh_actions.pull_request), {})
+setkey('n','<leader>gg', use_ivy(gh_actions.gist), {})
+setkey('n','<leader>gr', use_ivy(gh_actions.run), {})
+setkey('n','<leader>gc', use_ivy(actions.git_commits), {})
+setkey('n','<leader>gs', use_ivy(actions.git_status), {})
+setkey('n','<leader>gf', use_ivy(actions.git_files),{})
+setkey('n','<leader>gb', use_ivy(actions.git_branches), {})
 
+setkey('n','<leader>ba',use_ivy(telescope.extensions.vim_bookmarks.all),{})
+setkey('n','<leader>bs',use_ivy(telescope.extensions.vim_bookmarks.current_file),{})
 
 setkey('n','<leader>cc',':Telescope coc commands<CR>', {silent=true})
 setkey('n','<leader>cd',':Telescope coc definitions<CR>',{silent=true})
