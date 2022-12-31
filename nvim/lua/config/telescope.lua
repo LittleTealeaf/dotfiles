@@ -3,18 +3,47 @@ local setkey = vim.keymap.set
 local actions = require('telescope.builtin')
 local coc_actions = telescope.extensions.coc
 local gh_actions = telescope.extensions.gh
+local session_lens = require('session-lens')
 
 telescope.setup({
-	extensiosn = {
+	extensions = {
 		coc = {
 			theme = 'ivy'
+		},
+		file_browser = {
+			theme = 'ivy'
 		}
+	},
+	pickers = {
+		find_files = {
+			theme = 'ivy'
+		},
+		live_grep = {
+			theme = 'ivy'
+		},
+		grep_string = {
+			theme = 'ivy',
+		},
+		buffers = {
+			theme = 'ivy'
+		},
+		oldfiles = {
+			theme = 'ivy'
+		},
+	}
+})
+
+session_lens.setup({
+	path_display = {'shorten'},
+	theme_conf = {
+		border = true
 	}
 })
 
 telescope.load_extension("file_browser")
 telescope.load_extension("gh")
 telescope.load_extension('coc')
+telescope.load_extension('session-lens')
 
 
 setkey('n','<leader>ff', actions.find_files, {})
@@ -37,12 +66,13 @@ setkey('n','<leader>gf', actions.git_files,{})
 setkey('n','<leader>gb', actions.git_branches, {})
 
 
-setkey('n','<leader>cc',coc_actions.commands, {})
-setkey('n','<leader>cd',coc_actions.definitions,{})
-setkey('n','<leader>ci',coc_actions.implementations, {})
-setkey('n','<leader>cl',coc_actions.locations, {})
-setkey('n','<leader>ct',coc_actions.type_definitions, {})
-setkey('n','<leader>cs',coc_actions.document_symbols, {})
-setkey('n','<leader>ce',coc_actions.diagnostics, {})
-setkey('n','<leader>cE',coc_actions.workspace_diagnostics,{})
+setkey('n','<leader>cc',':Telescope coc commands<CR>', {silent=true})
+setkey('n','<leader>cd',':Telescope coc definitions<CR>',{silent=true})
+setkey('n','<leader>ci',':Telescope coc implementations<CR>', {silent=true})
+setkey('n','<leader>cl',':Telescope coc locations<CR>', {silent=true})
+setkey('n','<leader>ct',':Telescope coc type_definitions<CR>', {silent=true})
+setkey('n','<leader>cs',':Telescope coc document_symbols<CR>', {silent=true})
+setkey('n','<leader>ce',':Telescope coc diagnostics<CR>', {silent=true})
+setkey('n','<leader>cE',':Telescope coc workspace_diagnostics<CR>',{silent=true})
 
+setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})

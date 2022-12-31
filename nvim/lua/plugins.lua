@@ -25,7 +25,9 @@ require('packer').startup(function(use)
   use {
     "nvim-telescope/telescope.nvim",
 		after = {
-			"coc.nvim"
+			"coc.nvim",
+			"auto-session",
+			"vim-bookmarks",
 		},
     requires = {
       "nvim-lua/popup.nvim",
@@ -34,6 +36,7 @@ require('packer').startup(function(use)
       "nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-github.nvim",
 			"fannheyward/telescope-coc.nvim",
+			"rmagatti/session-lens",
     },
     config = [[require('config.telescope')]]
   }
@@ -91,4 +94,15 @@ require('packer').startup(function(use)
 
 	-- Wakatime
   use {'wakatime/vim-wakatime'}
+
+	-- Auto Sessions
+	use {
+		'rmagatti/auto-session',
+		config = [[require("config.auto-session")]]
+	}
+
+	use {
+		"MattesGroeger/vim-bookmarks",
+		config = [[require("config.vim-bookmarks")]]
+	}
 end)
