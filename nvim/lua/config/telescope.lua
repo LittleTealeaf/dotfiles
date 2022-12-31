@@ -12,7 +12,7 @@ telescope.setup({
 		},
 		file_browser = {
 			theme = 'ivy'
-		}
+		},
 	},
 	pickers = {
 		find_files = {
@@ -30,6 +30,18 @@ telescope.setup({
 		oldfiles = {
 			theme = 'ivy'
 		},
+		git_files = {
+			theme = 'ivy'
+		},
+		git_commits = {
+			theme = 'ivy'
+		},
+		git_branches = {
+			theme = 'ivy'
+		},
+		git_status = {
+			theme = 'ivy'
+		}
 	}
 })
 
