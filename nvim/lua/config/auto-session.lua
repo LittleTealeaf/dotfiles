@@ -6,7 +6,8 @@ vim.cmd([[
 
 require("auto-session").setup({
 	auto_session_supress_dirs = {
-		"~/",
+		"~",
+		"~/*",
 		"~/Downloads",
 		"/",
 		"~/tmp/*"
