@@ -36,10 +36,8 @@ require('packer').startup(function(use)
       "nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-github.nvim",
 			"fannheyward/telescope-coc.nvim",
-			--"rmagatti/session-lens",
 			"tom-anders/telescope-vim-bookmarks.nvim",
 			"cljoly/telescope-repo.nvim",
-			"LinArcX/telescope-env.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				run = "make"
@@ -97,11 +95,11 @@ require('packer').startup(function(use)
 	use {'othree/xml.vim'}
 
 	-- Treesitter
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run=":TSUpdate",
-		config = [[require('config.treesitter')]]
-	}
+	--use {
+--		'nvim-treesitter/nvim-treesitter',
+--		run=":TSUpdate",
+--		config = [[require('config.treesitter')]]
+--	}
 
 	-- Wakatime
   use {'wakatime/vim-wakatime'}

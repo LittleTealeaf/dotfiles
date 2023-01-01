@@ -43,7 +43,7 @@ telescope.load_extension('coc')
 --telescope.load_extension('session-lens')
 telescope.load_extension('vim_bookmarks')
 telescope.load_extension('repo')
-telescope.load_extension('env')
+--telescope.load_extension('env')
 
 local use_ivy = function(action)
 	return function(args)
@@ -84,4 +84,3 @@ setkey('n','<leader>cE',':Telescope coc workspace_diagnostics<CR>',{silent=true}
 
 --setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})
 setkey('n','<leader>sg', use_ivy(telescope.extensions.repo.list), {})
-setkey('n','<leader>se', use_ivy(telescope.extensions.env.env), {})
