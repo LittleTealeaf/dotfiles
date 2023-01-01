@@ -1,7 +1,7 @@
 local tabline = require('tabline')
 local lualine = require('lualine')
 local keybind = vim.keymap.set
---local autosession = require('auto-session-library')
+local autosession = require('auto-session-library')
 
 tabline.setup({
   enable = false
@@ -42,6 +42,6 @@ lualine.setup({
     lualine_c = {tabline.tabline_buffers},
     lualine_x = {tabline.tabline_tabs},
     lualine_y = {'branch'},
---		lualine_z = {autosession.current_session_name}
+		lualine_z = {autosession.current_session_name}
   }
 })

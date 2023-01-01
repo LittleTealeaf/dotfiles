@@ -18,7 +18,7 @@ g.coc_config_home = "$DOT_FILES/nvim"
 create_command("Format","call CocAction('format')",{})
 create_command("Fold","call CocAction('fold', <f-args>)", {nargs = '?'})
 
-cmd([[autocmd FileType html let b:coc_pairs_disabled = ['<']])
+cmd("autocmd FileType html let b:coc_pairs_disabled = ['<']")
 
 
 function _G.check_back_space()
