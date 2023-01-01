@@ -28,12 +28,7 @@ lualine.setup({
     },
     lualine_c = {'searchcount'},
     lualine_x = {'diagnostics'},
-    lualine_y = {
-			{
-				'filetype',
-				icon = {align = 'right'}
-			},
-		},
+    lualine_y = {'filetype'},
     lualine_z = {'location'}
   },
   tabline = {
