@@ -39,6 +39,7 @@ require('packer').startup(function(use)
 			"rmagatti/session-lens",
 			"tom-anders/telescope-vim-bookmarks.nvim",
 			"cljoly/telescope-repo.nvim",
+			"LinArcX/telescope-env.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				run = "make"

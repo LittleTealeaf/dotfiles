@@ -33,6 +33,7 @@ keyset('i','<S-TAB>','coc#pum#visible() ? coc#pum#prev(1) : "<C-h>"', opts)
 keyset('i','<cr>','coc#pum#visible() ? coc#pum#confirm() : "<C-g>u<CR><c-r>=coc#on_enter()<CR>"',opts)
 
 keyset('n','<leader>cn','<Plug>(coc-rename)', {silent=true})
+keyset('n','<leader>ca','<Plug>(coc-codeaction)', {silent=true})
 
 function _G.show_docs()
 	local cw = fn.expand('<cword>')
