@@ -26,7 +26,7 @@ require('packer').startup(function(use)
     "nvim-telescope/telescope.nvim",
 		after = {
 			"coc.nvim",
-			"auto-session",
+			--"auto-session",
 			"vim-bookmarks",
 		},
     requires = {
@@ -36,7 +36,7 @@ require('packer').startup(function(use)
       "nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-github.nvim",
 			"fannheyward/telescope-coc.nvim",
-			"rmagatti/session-lens",
+			--"rmagatti/session-lens",
 			"tom-anders/telescope-vim-bookmarks.nvim",
 			"cljoly/telescope-repo.nvim",
 			"LinArcX/telescope-env.nvim",
@@ -97,16 +97,20 @@ require('packer').startup(function(use)
 	use {'othree/xml.vim'}
 
 	-- Treesitter
-	use {'nvim-treesitter/nvim-treesitter', run=":TSUpdate"}
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run=":TSUpdate",
+		config = [[require('config.treesitter')]]
+	}
 
 	-- Wakatime
   use {'wakatime/vim-wakatime'}
 
 	-- Auto Sessions
-	use {
-		'rmagatti/auto-session',
-		config = [[require("config.auto-session")]]
-	}
+	--use {
+--		'rmagatti/auto-session',
+--		config = [[require("config.auto-session")]]
+--	}
 
 	-- Bookmarks
 	use {

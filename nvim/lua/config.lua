@@ -4,6 +4,8 @@ local g = vim.g
 
 g.mapleader = ';'
 
+g.do_filetype_lua = 1
+
 opt.scrolloff = 15
 opt.smartcase = true
 opt.ignorecase = true

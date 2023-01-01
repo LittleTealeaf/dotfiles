@@ -3,7 +3,7 @@ local setkey = vim.keymap.set
 local actions = require('telescope.builtin')
 local coc_actions = telescope.extensions.coc
 local gh_actions = telescope.extensions.gh
-local session_lens = require('session-lens')
+--local session_lens = require('session-lens')
 local themes = require('telescope.themes')
 
 telescope.setup({
@@ -29,18 +29,18 @@ telescope.setup({
 	},
 })
 
-session_lens.setup({
-	path_display = {'shorten'},
-	theme_conf = {
-		border = true
-	}
-})
+--session_lens.setup({
+--	path_display = {'shorten'},
+--	theme_conf = {
+--		border = true
+--	}
+--})
 
 telescope.load_extension('fzf')
 telescope.load_extension("file_browser")
 telescope.load_extension("gh")
 telescope.load_extension('coc')
-telescope.load_extension('session-lens')
+--telescope.load_extension('session-lens')
 telescope.load_extension('vim_bookmarks')
 telescope.load_extension('repo')
 telescope.load_extension('env')
@@ -82,6 +82,6 @@ setkey('n','<leader>cs',':Telescope coc document_symbols<CR>', {silent=true})
 setkey('n','<leader>ce',':Telescope coc diagnostics<CR>', {silent=true})
 setkey('n','<leader>cE',':Telescope coc workspace_diagnostics<CR>',{silent=true})
 
-setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})
+--setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})
 setkey('n','<leader>sg', use_ivy(telescope.extensions.repo.list), {})
 setkey('n','<leader>se', use_ivy(telescope.extensions.env.env), {})
