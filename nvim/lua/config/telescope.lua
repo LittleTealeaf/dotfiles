@@ -8,6 +8,8 @@ local themes = require('telescope.themes')
 
 telescope.setup({
 	extensions = {
+		fzf = {
+		},
 		coc = {
 			theme = 'ivy'
 		},
@@ -33,6 +35,7 @@ session_lens.setup({
 	}
 })
 
+telescope.load_extension('fzf')
 telescope.load_extension("file_browser")
 telescope.load_extension("gh")
 telescope.load_extension('coc')
