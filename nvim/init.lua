@@ -1,6 +1,9 @@
-pcall(function()
-	require("system")
-end)
-require("plugins")
 require("config")
-require("cursorrestore")
+require("plugins")
+
+vim.cmd([[
+	augroup RestoreCursorShapeOnExit
+		autocmd!
+		autocmd VimLeave * set guicursor=a:ver10
+	augroup END
+]])

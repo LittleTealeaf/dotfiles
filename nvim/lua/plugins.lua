@@ -1,169 +1,119 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({
-      'git',
-      'clone',
-      '--depth', '1',
-      'https://github.com/wbthomason/packer.nvim',
-      install_path
-    })
-    return true
-  end
-  return false
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path
+  })
 end
-
-local packer_bootstrap = ensure_packer()
 
 require('packer').startup(function(use)
   use {"wbthomason/packer.nvim"}
 
-  -- LANDING PAGE
+  --Terminal
   use {
-    "glepnir/dashboard-nvim",
-    config = function()
-      require("plugins._dashboard")
-    end
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+    config = [[require('config.toggleterm')]]
   }
 
-  -- PERFORMANCE
-
-	-- SESSION MANAGERA
-	use {
-		"rmagatti/auto-session",
-		config = function()
-			require("plugins._auto-session")
-		end
-	}
-
-	use {
-		'rmagatti/session-lens',
-		after = {"auto-session", "telescope.nvim"},
-		config = function()
-			require("plugins._session-lens")
-		end
-	}
-
-  -- WORKSPACE
-
-	use {
-		'nvim-neo-tree/neo-tree.nvim',
-		branch = 'v2.x',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons',
-			'MunifTanjim/nui.nvim'
-		},
-		config = function()
-			require("plugins._neo-tree")
-		end
-	}
-
-	use {
-		"jeffkreeftmeijer/vim-numbertoggle",
-		config = function()
-			require("plugins._numbertoggle")
-		end
-	}
-
-  use {
-    "akinsho/toggleterm.nvim",
-    tag = "*",
-    config = function()
-      require("plugins._toggleterm")
-    end
-  }
-
-  use {
-    'MattesGroeger/vim-bookmarks',
-    config = function()
-      require("plugins._bookmarks")
-    end
-  }
-
+  -- Search
   use {
     "nvim-telescope/telescope.nvim",
-    tag = '0.1.0',
+		after = {
+			"coc.nvim",
+			"auto-session",
+			"vim-bookmarks",
+		},
     requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-lua/popup.nvim',
-      'nvim-telescope/telescope-file-browser.nvim',
-      'nvim-telescope/telescope-github.nvim',
-      'LukasPietzschmann/telescope-tabs',
-      'tom-anders/telescope-vim-bookmarks.nvim',
-			'fannheyward/telescope-coc.nvim',
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+			"nvim-telescope/telescope-github.nvim",
+			"fannheyward/telescope-coc.nvim",
+			"tom-anders/telescope-vim-bookmarks.nvim",
+			"cljoly/telescope-repo.nvim",
+      "rmagatti/session-lens",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				run = "make"
+			}
     },
-    after = {
-      'vim-bookmarks',
-    },
-    config = function()
-        require("plugins._telescope")
-    end
+    config = [[require('config.telescope')]]
   }
 
-  use {
-    "kdheepak/tabline.nvim",
-    requires = {
-      "kyazdani42/nvim-web-devicons",
-    }
-  }
-
-  use {
-    "nvim-lualine/lualine.nvim",
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-    },
-    after = {"tabline.nvim", "auto-session"},
-    config = function()
-      require("plugins._lualine")
-    end
-  }
-
-  -- GIT
-
-  use {"tpope/vim-fugitive"}
-
-  -- EDITING
-
-  use {
-    "neoclide/coc.nvim",
-    branch = "release",
-    config = function()
-      require("plugins._coc")
-    end
-  }
-
-  use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
-
+  -- Theme
   use {
     "catppuccin/nvim",
     as = "catppuccin",
-    config = function()
-      require("plugins._catppuccin")
-    end
+    config = [[require("config.catppuccin")]]
   }
 
-
-	use {"othree/xml.vim"}
-
-	use {
-		"haya14busa/is.vim"
-	}
-
-	-- SOCIAL
-
-
-  use {"wakatime/vim-wakatime"}
+  -- Lualine
   use {
-		"andweeb/presence.nvim",
-		config = function()
-			require("plugins._presence")
-		end
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      'kdheepak/tabline.nvim'
+    },
+    config = [[require("config.lualine")]]
+  }
+
+  -- Neo Tree
+  use {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim'
+    },
+    config = [[require("config.neo-tree")]]
+  }
+
+	-- Coc
+	use {
+		'neoclide/coc.nvim',
+		branch = 'release',
+		config = [[require('config.coc')]]
 	}
 
-	-- PLATFORMIO
+	-- Incremental Search
+	use {'haya14busa/is.vim'}
 
-  use {"normen/vim-pio"}
-	use {"coddingtonbear/neomake-platformio"}
+	-- Git
+	use {'tpope/vim-fugitive'}
+
+	-- Number Toggle
+	use {'jeffkreeftmeijer/vim-numbertoggle'}
+
+	-- XML
+	use {'othree/xml.vim'}
+
+	-- Treesitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run=":TSUpdate",
+		config = [[require('config.treesitter')]]
+	}
+
+	-- Wakatime
+  use {'wakatime/vim-wakatime'}
+
+	-- Auto Sessions
+	use {
+		'rmagatti/auto-session',
+		config = [[require("config.auto-session")]]
+	}
+
+	-- Bookmarks
+	use {
+		"MattesGroeger/vim-bookmarks",
+		config = [[require("config.vim-bookmarks")]]
+	}
 end)

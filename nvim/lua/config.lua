@@ -2,16 +2,11 @@ local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
 
-
 g.mapleader = ';'
-cmd([[
-	nnoremap . ;
-	nnoremap \ .
-	inoremap A+; <C-Bslash>
-]])
+
+g.do_filetype_lua = 1
 
 opt.scrolloff = 15
-
 opt.smartcase = true
 opt.ignorecase = true
 opt.wrap = true
@@ -22,21 +17,13 @@ opt.shiftwidth = 2
 opt.expandtab = false
 opt.termguicolors = true
 opt.signcolumn = "yes"
-
 opt.clipboard = 'unnamedplus'
 
 cmd([[
+  nnoremap . ;
+  nnoremap \ .
+  inoremap A+; <C-Bslash>
   set relativenumber number
-	command! Q :q
-	command! W :w
-	command! BD :bufdo bwipeout
-	command! NH :noh
+  command! Q :q
+  command! W :w
 ]])
-
--- Neovide Configuration
-cmd([[
-	let g:neovide_transparency = 0.5
-	let g:neovide_hide_mouse_while_typing = v:true
-]])
-
-
