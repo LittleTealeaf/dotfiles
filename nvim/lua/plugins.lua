@@ -41,7 +41,7 @@ require('packer').startup(function(use)
       "rmagatti/session-lens",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
-				run = "make"
+				run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
 			}
     },
     config = [[require('config.telescope')]]
