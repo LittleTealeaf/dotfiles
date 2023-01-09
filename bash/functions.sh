@@ -17,4 +17,8 @@ function rmr() {
 	rm -r $1
 }
 
+function lsg() {
+	ls | grep $1
+}
+
 alias :Git=git
