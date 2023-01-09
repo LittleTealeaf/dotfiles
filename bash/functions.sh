@@ -20,4 +20,12 @@ function mkcd() {
 	mkdir $1 && cd $1
 }
 
+function vimff() {
+	vim $(find * -type f | fzf)
+}
+
+function c() {
+	cd $(find * -type d | fzf --preview='ls {}' || echo ".")
+}
+
 alias :Git=git
