@@ -76,5 +76,5 @@ ln -sf "$DOT_FILES/nvim/lua" ~/.config/nvim/lua
 If you are using the kitty terminal, use the following command to sym-link your kitty configuration
 
 ```shell
-ln -sf "$DOT_FILES/kitty/kitty.conf" ~/.config/kitty/kitty.conf
+ln -sf "$DOT_FILES/kitty/" ~/.config/
 ```
