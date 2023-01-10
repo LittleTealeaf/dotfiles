@@ -62,5 +62,11 @@ fgb() {
 }
 
 
+# lsfzf - Fuzzy search directory
+lsfzf() {
+	ls | fzf
+}
+
+
 alias :Git=git
 alias :q=exit
