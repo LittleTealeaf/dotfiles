@@ -63,4 +63,4 @@ fgb() {
 
 
 alias :Git=git
-alias :quit=exit
+alias :q=exit
