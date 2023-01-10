@@ -38,7 +38,7 @@ I have included a script in the bash directory that will do this for you, as lon
 
 ## Oh-My-Posh Setup
 
-I use [Oh-My-Posh](ohmyposh.dev) to customize my shell look. You can see instructors to install it [here](ohmyposh.dev/docs/installation/linux).
+I use [Oh-My-Posh](https://ohmyposh.dev) to customize my shell look. You can see instructors to install it [here](ohmyposh.dev/docs/installation/linux).
 
 In order to apply the configuration, you will need to follow instructions [here](ohmyposh.dev/docs/installation/customize). The configuration file will be located at `$DOT_FILES/omp/theme.omp.json`
 
