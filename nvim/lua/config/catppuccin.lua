@@ -5,6 +5,7 @@ require("catppuccin").setup({
     telescope = true,
     neotree = true,
     treesitter = true,
+		dashboard = true,
   },
   dim_inactive = {
     enabled = false,

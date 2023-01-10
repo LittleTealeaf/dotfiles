@@ -116,4 +116,10 @@ require('packer').startup(function(use)
 		"MattesGroeger/vim-bookmarks",
 		config = [[require("config.vim-bookmarks")]]
 	}
+
+	-- Dashboard
+	use {
+		"glepnir/dashboard-nvim",
+		config = [[require("config.dashboard")]]
+	}
 end)

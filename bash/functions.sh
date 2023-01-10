@@ -12,46 +12,37 @@ rmr() {
 	rm -r $1
 }
 
-lsg() {
-	ls | grep $1
-}
-
 mkcd() {
 	mkdir $1 && cd $1
 }
 
-vimff() {
+# Install fd with cargo install fd-find
+
+ffvim() {
 	local file
-	file=$(find * -type f | fzf --preview='cat {}') && vim "$file"
+	file=$(find ${1:-.} -type f | fzf --preview='cat {}') && vim "$file"
 }
 
-vimfd() {
+fdvim() {
 	local file
-	file=$(find * -type d | fzf --preview='ls -l {}') && vim "$file"
+	file=$(find ${1:-.} -type d | fzf --preview='ls -l {}') && vim "$file"
 }
 
-nvimff() {
+ffnvim() {
 	local file
-	file=$(find * -type f | fzf --preview='cat {}') && nvim "$file"
+	file=$(find ${1:-.} -type f | fzf --preview='cat {}') && nvim "$file"
 }
 
-nvimfd() {
+fdnvim() {
 	local dir
-	dir=$(find * -type d | fzf --preview='ls -l {}') && nvim "$dir"
+	dir=$(find ${1:-.} -type d | fzf --preview='ls -l {}') && nvim "$dir"
 }
 
 # fdf - find directory
-fdf() {
-	local dir
-	dir=$(find * -type d 2> /dev/null | fzf --preview='ls {}') && cd "$dir"
-}
-
-# fda - find all directories
-fda() {
+fcd() {
 	local dir
 	dir=$(find ${1:-.} -type d 2> /dev/null | fzf --preview='ls {}') && cd "$dir"
 }
-
 
 # fgb - checkout git branch
 fgb() {
