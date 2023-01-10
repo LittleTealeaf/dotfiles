@@ -25,9 +25,19 @@ vimff() {
 	file=$(find * -type f | fzf --preview='cat {}') && vim "$file"
 }
 
+vimfd() {
+	local file
+	file=$(find * -type d | fzf --preview='ls -l {}') && vim "$file"
+}
+
 nvimff() {
 	local file
 	file=$(find * -type f | fzf --preview='cat {}') && nvim "$file"
+}
+
+nvimfd() {
+	local dir
+	dir=$(find * -type d | fzf --preview='ls -l {}') && nvim "$dir"
 }
 
 # fdf - find directory
