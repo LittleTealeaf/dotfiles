@@ -4,7 +4,15 @@ local keybind = vim.keymap.set
 local autosession = require('auto-session-library')
 
 tabline.setup({
-  enable = false
+  enable = false,
+	options = {
+		section_separators = {
+			'',''
+		},
+		component_separators = {
+			'', ''
+		}
+	}
 })
 
 keybind('n','<A-[>', tabline.buffer_previous, {})
@@ -19,6 +27,14 @@ lualine.setup({
   },
   options = {
     theme = 'catppuccin',
+		section_separators = {
+			left = '',
+			right = ''
+		},
+		component_separators = {
+			left = '',
+			right = ''
+		}
   },
   sections = {
     lualine_a = {'mode'},
