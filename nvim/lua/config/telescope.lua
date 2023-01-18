@@ -25,6 +25,9 @@ telescope.setup({
 				"~/git",
 				"~/tmp"
 			}
+		},
+		["ui-select"] = {
+
 		}
 	},
 })
@@ -43,6 +46,7 @@ telescope.load_extension('coc')
 telescope.load_extension('session-lens')
 telescope.load_extension('vim_bookmarks')
 telescope.load_extension('repo')
+telescope.load_extension('ui-select')
 
 local use_ivy = function(action)
 	return function(args)
