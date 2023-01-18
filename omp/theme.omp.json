@@ -52,39 +52,6 @@
 			]
 		}
 	],
-
-	"old_blocks": [
-		{
-			"type": "prompt",
-			"alignment": "left",
-			"segments": [
-				{
-					"type": "path",
-					"style": "plain",
-					"properties": {
-						"style": "full"
-					},
-					"template": "{{ .Path }} \u276f"
-				}
-			]
-		},
-		{
-			"type": "rprompt",
-			"alignment": "right",
-			"segments": [
-				{
-					"properties": {
-						"fetch_stash_count": true,
-						"fetch_status": true,
-						"fetch_upstream_icon": true
-					},
-					"style": "plain",
-					"template": "\u276e {{ .UpstreamIcon }}{{ .HEAD }} {{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} \u276f",
-					"type": "git"
-				}
-			]
-		}
-	],
 	"final_space": true,
 	"version": 2
 }
