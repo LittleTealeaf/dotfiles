@@ -1,4 +1,4 @@
-# dot files
+# dotfiles
 
 Welcome to my dot files! This repository contains all of my configuration for any of my linux based setups (however, in a format that can be used on windows with enough effort).
 
