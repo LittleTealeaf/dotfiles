@@ -84,6 +84,7 @@ setkey('n','<leader>ct',':Telescope coc type_definitions<CR>', {silent=true})
 setkey('n','<leader>cs',':Telescope coc document_symbols<CR>', {silent=true})
 setkey('n','<leader>ce',':Telescope coc diagnostics<CR>', {silent=true})
 setkey('n','<leader>cE',':Telescope coc workspace_diagnostics<CR>',{silent=true})
+setkey('n','<leader>ca',':Telescope coc code_actions<CR>', {silent=true})
 
 setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})
 setkey('n','<leader>sg', use_ivy(telescope.extensions.repo.list), {})

@@ -38,7 +38,7 @@ keyset('i','<cr>','coc#pum#visible() ? coc#pum#confirm() : "<C-g>u<CR><c-r>=coc#
 keyset('n','<leader>cn','<Plug>(coc-rename)', {silent=true})
 
 -- Code Actions
-keyset('n','<leader>ca','<Plug>(coc-codeaction)', {silent=true})
+--keyset('n','<leader>ca','<Plug>(coc-codeaction)', {silent=true})
 
 -- Open Outline
 keyset('n','<leader>co',':<C-u>CocList outline<cr>', {silent=true, nowait=true})
