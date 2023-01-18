@@ -8,3 +8,10 @@ source $DOT_FILES/bash/functions.sh
 
 alias :Git=git
 alias :q=exit
+
+
+if command -v oh-my-posh > /dev/null; then
+	eval "$(oh-my-posh init bash --config $DOT_FILES/omp/theme.omp.json)"
+else
+	echo "Please install oh-my-posh to properly set up configurations"
+fi

@@ -4,6 +4,12 @@ Welcome to my dot files! This repository contains all of my configuration for an
 
 The following sections of this document highlight installation steps in order to get everything up and running!
 
+## Using the Install Script
+
+If you would like, you can use the install script to automatically install all of these options. I will try to make this script as robust as possible in order to avoid any overwriting.
+
+This setup script is targetted towards bash.
+
 
 ## Initial Shell Setup
 
