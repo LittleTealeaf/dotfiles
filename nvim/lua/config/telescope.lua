@@ -26,9 +26,6 @@ telescope.setup({
 				"~/tmp"
 			}
 		},
-		["ui-select"] = {
-
-		}
 	},
 })
 
