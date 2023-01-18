@@ -35,6 +35,11 @@ I have included a script in the bash directory that will do this for you, as lon
 ./bash/init_bashrc.sh >> ~/.bashrc
 ```
 
+## Git
+
+```bash
+ln -sf "$DOT_FILES/git/gitconfig" ~/.gitconfig
+```
 
 ## Oh-My-Posh Setup
 

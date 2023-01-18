@@ -1,0 +1,17 @@
+[credential]
+	helper = store
+[user]
+	email = thomaskwashnak@gmail.com
+	name = Thomas Kwashnak
+[core]
+	editor = nvim
+[push]
+	autoSetupRemote = true
+	default = current
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
