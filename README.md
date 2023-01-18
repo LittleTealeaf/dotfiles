@@ -41,6 +41,21 @@ I have included a script in the bash directory that will do this for you, as lon
 ln -sf "$DOT_FILES/git/gitconfig" ~/.gitconfig
 ```
 
+## Nerd Fonts
+
+Many of the programs and setups used in these dotfiles are reliant on the presence of a nerd font. Nerd Fonts add additional symbols and ligatures that can be used to make better looking terminal applications. 
+
+To install nerd fonts, first download the nerd font repository
+
+```bash
+git clone https://www.github.com/ryanosis/nerd-fonts
+```
+Then, navigate into the repository and execute the following command (which will install nerd fonts used)
+
+```bash
+./install.sh JetBrainsMono FiraCode
+```
+
 ## Oh-My-Posh Setup
 
 I use [Oh-My-Posh](https://ohmyposh.dev) to customize my shell look. You can see instructors to install it [here](https://ohmyposh.dev/docs/installation/linux).
