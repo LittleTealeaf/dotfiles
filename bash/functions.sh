@@ -59,5 +59,3 @@ lsfzf() {
 }
 
 
-alias :Git=git
-alias :q=exit
