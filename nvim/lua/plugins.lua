@@ -122,4 +122,8 @@ require('packer').startup(function(use)
 		"glepnir/dashboard-nvim",
 		config = [[require("config.dashboard")]]
 	}
+
+
+	-- CSS Colors
+	use {"norcalli/nvim-colorizer.lua", config=[[require('colorizer').setup()]]}
 end)
