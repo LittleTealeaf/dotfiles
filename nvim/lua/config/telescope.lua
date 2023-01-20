@@ -87,4 +87,4 @@ setkey('n','<leader>ca',':Telescope coc code_actions<CR>', {silent=true})
 setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})
 setkey('n','<leader>sg', use_ivy(telescope.extensions.repo.list), {})
 
-setkey('n','<leader>nn',':Telescope notify<CR>', {silent=true})
+setkey('n','<leader>nn',use_ivy(telescope.extensions.notify.notify), {})
