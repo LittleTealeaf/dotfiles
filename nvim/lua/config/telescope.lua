@@ -44,6 +44,7 @@ telescope.load_extension('session-lens')
 telescope.load_extension('vim_bookmarks')
 telescope.load_extension('repo')
 telescope.load_extension('ui-select')
+telescope.load_extension('notify')
 
 local use_ivy = function(action)
 	return function(args)
@@ -85,3 +86,5 @@ setkey('n','<leader>ca',':Telescope coc code_actions<CR>', {silent=true})
 
 setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=true})
 setkey('n','<leader>sg', use_ivy(telescope.extensions.repo.list), {})
+
+setkey('n','<leader>nn',':Telescope notify<CR>', {silent=true})
