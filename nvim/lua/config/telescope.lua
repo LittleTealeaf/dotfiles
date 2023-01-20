@@ -7,6 +7,7 @@ local session_lens = require('session-lens')
 local themes = require('telescope.themes')
 
 telescope.setup({
+	theme = 'ivy',
 	extensions = {
 		env = {
 			theme = 'ivy'

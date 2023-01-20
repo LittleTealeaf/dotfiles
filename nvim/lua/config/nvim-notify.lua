@@ -5,7 +5,7 @@ notify.setup({
 	background_colour = "#00000000",
 	stages = "fade",
 	fps=60,
-	max_width = 75,
+	max_width = 100,
 })
 
 vim.notify = notify
