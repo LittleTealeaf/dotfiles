@@ -34,5 +34,5 @@
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
   "snippets.ultisnips.pythonPrompt": false,
-	"coc.preferences.enableMessageDialog": true,
+	"coc.preferences.enableMessageDialog": true
 }
