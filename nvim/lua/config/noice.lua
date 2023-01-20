@@ -7,9 +7,13 @@ require("noice").setup({
 		}
 	},
 	views = {
-		noice = {
+		notify = {
 			replace = true,
-			merge = true
+			merge = true,
+		},
+		messages = {
+			view = "popup"
 		}
-	}
+	},
+	routes = {},
 })
