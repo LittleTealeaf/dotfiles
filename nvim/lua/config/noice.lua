@@ -13,7 +13,20 @@ require("noice").setup({
 		},
 		messages = {
 			view = "popup"
+		},
+		popup = {
+			win_options = {
+				winhighlight = {
+					Normal = "Normal",
+					FloatBorder = "FloatBorder"
+				}
+			}
+		},
+		cmdline_popup = {
 		}
 	},
 	routes = {},
+	presets = {
+		command_palette = true
+	}
 })
