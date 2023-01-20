@@ -7,12 +7,16 @@ require("noice").setup({
 		}
 	},
 	cmdline = {
-		view = "cmdline"
+		view = "cmdline",
+		format = {
+			cmdline = {
+				icon = "$"
+			}
+		}
 	},
 	views = {
 		notify = {
 			replace = true,
-			merge = true,
 		},
 		messages = {
 			view = "popup"
