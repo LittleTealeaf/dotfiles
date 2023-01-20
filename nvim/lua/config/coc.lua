@@ -126,10 +126,6 @@ function! s:StatusNotify() abort
   call v:lua.coc_status_notify(l:status, l:level)
 endfunction
 
-function! s:InitCoc() abort
-  execute "lua vim.notify('Initialized coc.nvim for LSP support', 'info', { title = 'LSP Status' })"
-endfunction
-
 " notifications
 autocmd User CocNvimInit call s:InitCoc()
 autocmd User CocDiagnosticChange call s:DiagnosticNotify()
