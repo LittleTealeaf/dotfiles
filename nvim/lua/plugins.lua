@@ -39,6 +39,7 @@ require('packer').startup(function(use)
 			"tom-anders/telescope-vim-bookmarks.nvim",
 			"cljoly/telescope-repo.nvim",
       "rmagatti/session-lens",
+			"nvim-telescope/telescope-packer.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"

@@ -26,6 +26,9 @@ telescope.setup({
 				"~/tmp"
 			}
 		},
+		packer = {
+			theme = 'ivy'
+		}
 	},
 })
 
@@ -46,6 +49,7 @@ telescope.load_extension('repo')
 telescope.load_extension('ui-select')
 telescope.load_extension('notify')
 telescope.load_extension('noice')
+telescope.load_extension('packer')
 
 local use_ivy = function(action)
 	return function(args)
