@@ -5,5 +5,11 @@ require("noice").setup({
 			["vim.lsp.util.stylize_markdown"] = true,
 			["cmp.entry.get_documentation"] = true
 		}
+	},
+	views = {
+		noice = {
+			replace = true,
+			merge = true
+		}
 	}
 })
