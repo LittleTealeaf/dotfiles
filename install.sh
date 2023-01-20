@@ -46,8 +46,8 @@ echo "Installing Nerd Fonts"
 # Neovim
 echo "Setting up neovim configuration"
 mkdir -p ~/.config/nvim/
-ln -sf "$DOT_FILES/nvim/init.lua" ~/.config/nvim/init.lua
-ln -sf "$DOT_FILES/nvim/lua" ~/.config/nvim/lua
+ln -sf "$DOT_FILES/nvim/init.lua" ~/.config/nvim/
+ln -sf "$DOT_FILES/nvim/lua" ~/.config/nvim/
 
 # Alacritty
 echo "Setting up alacritty configuration"
