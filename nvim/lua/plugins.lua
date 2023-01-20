@@ -135,5 +135,9 @@ require('packer').startup(function(use)
 	use {"rcarriga/nvim-notify", config=[[require('config.nvim-notify')]]}
 
 	-- Noice
-	use {"folke/noice.nvim", config=[[require('config.noice')]]}
+	use {
+		"folke/noice.nvim",
+		requires={'MunifTanjim/nui.nvim'},
+		config=[[require('config.noice')]]
+	}
 end)
