@@ -1,11 +1,11 @@
 local notify = require('notify')
 
 notify.setup({
-	timeout = 100,
+	timeout = 500,
 	background_colour = "#00000000",
 	stages = "fade",
 	fps=60,
-	max_width = 100,
+	max_width = 75,
 })
 
 vim.notify = notify
