@@ -57,6 +57,9 @@ require('packer').startup(function(use)
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
+		after = {
+			'noice.nvim'
+		},
     requires = {
       'kyazdani42/nvim-web-devicons',
       'kdheepak/tabline.nvim'
@@ -130,4 +133,7 @@ require('packer').startup(function(use)
 
 	-- nvim notify
 	use {"rcarriga/nvim-notify", config=[[require('config.nvim-notify')]]}
+
+	-- Noice
+	use {"folke/noice.nvim", config=[[require('config.noice')]]}
 end)

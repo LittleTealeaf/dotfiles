@@ -2,6 +2,7 @@ local tabline = require('tabline')
 local lualine = require('lualine')
 local keybind = vim.keymap.set
 local autosession = require('auto-session-library')
+local noice = require('noice')
 
 tabline.setup({
   enable = false,
@@ -42,8 +43,19 @@ lualine.setup({
       {'filename', path = 1},
       'diff'
     },
-    lualine_c = {'searchcount'},
-    lualine_x = {'diagnostics'},
+    lualine_c = {
+			{
+				noice.api.status.search.get,
+				cond = noice.api.status.search.has
+			},
+			{
+				noice.api.status.command.get,
+				cond = noice.api.status.command.has
+			}
+		},
+    lualine_x = {
+			'diagnostics',
+		},
     lualine_y = {'filetype'},
     lualine_z = {'location'}
   },

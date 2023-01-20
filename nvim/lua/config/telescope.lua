@@ -45,6 +45,7 @@ telescope.load_extension('vim_bookmarks')
 telescope.load_extension('repo')
 telescope.load_extension('ui-select')
 telescope.load_extension('notify')
+telescope.load_extension('noice')
 
 local use_ivy = function(action)
 	return function(args)
