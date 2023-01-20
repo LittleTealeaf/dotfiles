@@ -47,12 +47,16 @@ lualine.setup({
 			{
 				noice.api.status.command.get_hl,
 				cond = noice.api.status.command.has
+			},
+			{
+				noice.api.status.search.get_hl,
+				cond = noice.api.status.search.has
 			}
 		},
     lualine_x = {
 			{
-				noice.api.status.search.get_hl,
-				cond = noice.api.status.search.has
+				noice.api.status.message.get_hl,
+				cond = noice.api.status.message.has
 			},
 			'diagnostics',
 		},
