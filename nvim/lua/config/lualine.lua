@@ -45,11 +45,11 @@ lualine.setup({
     },
     lualine_c = {
 			{
-				noice.api.status.search.get,
+				noice.api.status.search.get_hl,
 				cond = noice.api.status.search.has
 			},
 			{
-				noice.api.status.command.get,
+				noice.api.status.command.get_hl,
 				cond = noice.api.status.command.has
 			}
 		},
