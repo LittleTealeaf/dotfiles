@@ -6,6 +6,9 @@ require("noice").setup({
 			["cmp.entry.get_documentation"] = true
 		}
 	},
+	cmdline = {
+		view = "cmdline"
+	},
 	views = {
 		notify = {
 			replace = true,
@@ -14,19 +17,33 @@ require("noice").setup({
 		messages = {
 			view = "popup"
 		},
+		popupmenu = {
+			win_options = {
+				cursorline = true,
+				cursorlineopt = "line",
+				winhighlight = {
+					Normal = "FloatNormal",
+					FloatBorder = "TelescopeBorder",
+				}
+			}
+		},
 		popup = {
 			win_options = {
 				winhighlight = {
 					Normal = "Normal",
-					FloatBorder = "FloatBorder"
+					FloatBorder = "TelescopeBorder",
 				}
 			}
 		},
-		cmdline_popup = {
-		}
+		cmdline = {
+			win_options = {
+				winhighlight = {
+					Normal = "Normal",
+					IncSearch = "",
+					Search = ""
+				}
+			}
+		},
 	},
 	routes = {},
-	presets = {
-		command_palette = true
-	}
 })

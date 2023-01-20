@@ -3,9 +3,9 @@ require("catppuccin").setup({
   transparent_background = true,
   integrations = {
     telescope = true,
-    neotree = true,
     treesitter = true,
 		dashboard = true,
+		neotree = true
   },
   dim_inactive = {
     enabled = false,
