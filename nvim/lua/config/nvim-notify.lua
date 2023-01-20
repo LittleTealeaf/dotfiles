@@ -1,5 +1,5 @@
 require('notify').setup({
-	background_color = "#00000000"
+	background_colour = "#00000000"
 })
 
 vim.notify = require('notify')
