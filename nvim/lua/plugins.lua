@@ -151,6 +151,7 @@ require('packer').startup(function(use)
 		end,
 		ft = {
 			"markdown"
-		}
+		},
+		config = [[require('config.markdown-preview')]]
 	}
 end)
