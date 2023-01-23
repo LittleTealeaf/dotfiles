@@ -1,37 +1,42 @@
 {
 	"git.addGBlameToVirtualText": true,
-	"prettier.useTabs": true,
-	"prettier.endOfLine": "lf",
-	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
-	"snippets.extends": {
-		"cpp": ["c"],
-		"javascriptreact": ["javascript"],
-		"typescript": ["typescript"],
-		"typescriptreact": ["typescript"]
-	},
-	"languageserver": {
-		"ccls": {
-			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls", "compile_commands.json", ".vim/",".git/",".hg/"],
-			"initializationOptions": {
-				"cache": {
-					"directory": ".ccls-cache"
-				},
-				"client": {
-					"snippetSupport": true
-				}
-			}
-		}
-	},
-	"inlayHint.enable": true,
-	"javascript.inlayHints.variableTypes.enabled": true,
-	"javascript.inlayHints.parameterNames.enabled": "none",
-	"javascript.inlayHints.enumMemberValues.enabled": true,
-	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-	"typescript.inlayHints.variableTypes.enabled": true,
-	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "prettier.useTabs": true,
+  "prettier.endOfLine": "lf",
+  "snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["typescript"],
+    "typescriptreact": ["typescript"]
+  },
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache"
+        },
+        "client": {
+          "snippetSupport": true
+        }
+      }
+    }
+  },
+  "inlayHint.enable": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "none",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
-  "snippets.ultisnips.pythonPrompt": false,
-	"html.autoCreateQuotes": false,
+  "html.autoCreateQuotes": false
 }

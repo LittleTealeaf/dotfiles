@@ -161,14 +161,4 @@ require('packer').startup(function(use)
 		"andweeb/presence.nvim",
 		config = [[require('config.presence')]]
 	}
-
-	-- Scrollbar
-	use {
-		"petertriho/nvim-scrollbar",
-		requires = {
-			"kevinhwang91/nvim-hlslens",
-			"lewis6991/gitsigns.nvim"
-		},
-		config = [[require('config.scrollbar')]]
-	}
 end)
