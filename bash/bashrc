@@ -15,3 +15,7 @@ if command -v oh-my-posh > /dev/null; then
 else
 	echo "Please install oh-my-posh to properly set up configurations"
 fi
+
+
+# Kitty Alias
+alias icat="kitty +kitten icat"
