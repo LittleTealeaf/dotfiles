@@ -1,4 +1,5 @@
 {
+  "html.autoCreateQuotes": false,
 	"git.addGBlameToVirtualText": true,
   "prettier.useTabs": true,
   "prettier.endOfLine": "lf",
@@ -30,13 +31,5 @@
       }
     }
   },
-  "inlayHint.enable": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "none",
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "html.autoCreateQuotes": false
+  "inlayHint.enable": true
 }
