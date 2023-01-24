@@ -2,7 +2,7 @@ cursor:
   style:
     shape: Beam
 window:
-  opacity: 0.25
+  opacity: 0.5
   decorations: none
   padding:
     x: 6
