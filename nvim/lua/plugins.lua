@@ -83,7 +83,6 @@ require('packer').startup(function(use)
 	-- Coc
 	use {
 		'neoclide/coc.nvim',
-		after = {'nvim-notify'},
 		branch = 'release',
 		config = [[require('config.coc')]]
 	}
