@@ -1,4 +1,3 @@
-local g = vim.g
 local cmd = vim.cmd
 local api = vim.api
 local create_command = api.nvim_create_user_command
@@ -7,8 +6,8 @@ local fn = vim.fn
 local bo = vim.bo
 local o = vim.o
 
-g.coc_config_home = "$DOT_FILES/nvim"
-g.coc_global_extensions = {
+vim.g.coc_config_home = "$DOT_FILES/nvim"
+vim.g.coc_global_extensions = {
 	'coc-marketplace',
 }
 

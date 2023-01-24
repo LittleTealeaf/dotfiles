@@ -10,7 +10,7 @@ require("noice").setup({
 		view = "cmdline",
 		format = {
 			cmdline = {
-				icon = "$"
+				icon = ">"
 			}
 		}
 	},
