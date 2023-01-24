@@ -1,6 +1,5 @@
 {
   "html.autoCreateQuotes": false,
-	"git.addGBlameToVirtualText": true,
   "prettier.useTabs": true,
   "prettier.endOfLine": "lf",
   "snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
@@ -10,26 +9,7 @@
     "typescript": ["typescript"],
     "typescriptreact": ["typescript"]
   },
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": ".ccls-cache"
-        },
-        "client": {
-          "snippetSupport": true
-        }
-      }
-    }
-  },
-  "inlayHint.enable": true
+  "inlayHint.enable": true,
+	"git.addGBlameToVirtualText": true,
+	"html.autoClosingTags": false
 }

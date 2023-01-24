@@ -14,6 +14,8 @@ require('nvim-treesitter.configs').setup({
 		'c',
 		'json',
 		'rust',
+		'vim',
+		'help'
 	}
 })
 

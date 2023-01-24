@@ -7,11 +7,10 @@ local fn = vim.fn
 local bo = vim.bo
 local o = vim.o
 
-
+g.coc_config_home = "$DOT_FILES/nvim"
 g.coc_global_extensions = {
 	'coc-marketplace',
 }
-g.coc_config_home = "$DOT_FILES/nvim"
 
 
 create_command("Format","call CocAction('format')",{})
