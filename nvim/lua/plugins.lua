@@ -129,7 +129,7 @@ require('packer').startup(function(use)
 
 
 	-- CSS Colors
-	use {"norcalli/nvim-colorizer.lua", config=[[require('colorizer').setup()]]}
+	use {"norcalli/nvim-colorizer.lua", config=[[require('config.colorizer')]]}
 
 	-- nvim notify
 	use {"rcarriga/nvim-notify", config=[[require('config.nvim-notify')]]}
