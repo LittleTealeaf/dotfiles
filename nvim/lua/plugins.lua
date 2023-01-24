@@ -160,4 +160,11 @@ require('packer').startup(function(use)
 		"andweeb/presence.nvim",
 		config = [[require('config.presence')]]
 	}
+
+	-- Magma (Python Programs)
+	use {
+		"dccsillag/magma-nvim",
+		run = ":UpdateRemotePlugins",
+		config = [[require('config.magma')]]
+	}
 end)
