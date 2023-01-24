@@ -160,4 +160,13 @@ require('packer').startup(function(use)
 		"andweeb/presence.nvim",
 		config = [[require('config.presence')]]
 	}
+
+	-- Repl
+	use {
+		"pappasam/nvim-repl",
+		requires = {
+			"tpope/vim-repeat"
+		},
+		config = [[require('config.nvim-repl')]]
+	}
 end)
