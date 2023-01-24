@@ -40,8 +40,6 @@ keyset('n','<leader>cn','<Plug>(coc-rename)', {silent=true})
 keyset('n','<leader>co',':<C-u>CocList outline<cr>', {silent=true, nowait=true})
 
 
-
-
 function _G.show_docs()
 	local cw = fn.expand('<cword>')
 	if fn.index({'vim','help'}, bo.filetype) >= 0 then
