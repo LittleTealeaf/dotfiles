@@ -21,6 +21,5 @@
 	"typescript.inlayHints.parameterNames.enabled": "none",
 	"typescript.inlayHints.enumMemberValues.enabled": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-	"coc.preferences.enableMessageDialog": true,
-	"diagnostic.virtualText": true
+	"coc.preferences.enableMessageDialog": true
 }
