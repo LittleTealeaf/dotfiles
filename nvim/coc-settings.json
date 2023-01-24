@@ -1,15 +1,26 @@
 {
-  "html.autoCreateQuotes": false,
-  "prettier.useTabs": true,
-  "prettier.endOfLine": "lf",
-  "snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
-  "snippets.extends": {
-    "cpp": ["c"],
-    "javascriptreact": ["javascript"],
-    "typescript": ["typescript"],
-    "typescriptreact": ["typescript"]
-  },
-  "inlayHint.enable": true,
+	"html.autoCreateQuotes": false,
+	"prettier.useTabs": true,
+	"prettier.endOfLine": "lf",
+	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
+	"snippets.extends": {
+		"cpp": ["c"],
+		"javascriptreact": ["javascript"],
+		"typescript": ["typescript"],
+		"typescriptreact": ["typescript"]
+	},
+	"inlayHint.enable": true,
 	"git.addGBlameToVirtualText": true,
-	"html.autoClosingTags": false
+	"html.autoClosingTags": false,
+	"inlayHint.display": true,
+	"javascript.inlayHints.variableTypes.enabled": true,
+	"javascript.inlayHints.parameterNames.enabled": "none",
+	"javascript.inlayHints.enumMemberValues.enabled": true,
+	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+	"typescript.inlayHints.variableTypes.enabled": true,
+	"typescript.inlayHints.parameterNames.enabled": "none",
+	"typescript.inlayHints.enumMemberValues.enabled": true,
+	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+	"coc.preferences.enableMessageDialog": true,
+	"diagnostic.virtualText": true
 }
