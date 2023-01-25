@@ -71,3 +71,7 @@ nvimg() {
 	dir=$(ls ~/git/ | fzf --preview='ls -l {}') && cd ~/git && cd "$dir" && nvim
 }
 
+nvimdot() {
+	cd $DOT_FILES && nvim
+}
+
