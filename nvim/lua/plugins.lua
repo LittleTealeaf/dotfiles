@@ -177,6 +177,14 @@ require('packer').startup({function(use)
 		'stevearc/aerial.nvim',
 		config = [[require('config.aerial')]]
 	}
+
+	-- Comments
+	use {
+		"numToStr/Comment.nvim",
+		config = [[require('config.comment')]]
+	}
+
+
 end,
 config = {
 	display = {
