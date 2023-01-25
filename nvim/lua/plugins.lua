@@ -12,16 +12,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
+	-- Packer
   use {"wbthomason/packer.nvim"}
 
-  --Terminal
+  -- Toggleterm
   use {
     'akinsho/toggleterm.nvim',
     tag = '*',
     config = [[require('config.toggleterm')]]
   }
 
-  -- Search
+  -- Telescope
   use {
     "nvim-telescope/telescope.nvim",
 		after = {
@@ -48,7 +49,7 @@ require('packer').startup(function(use)
     config = [[require('config.telescope')]]
   }
 
-  -- Theme
+  -- Catppuccin Theme
   use {
     "catppuccin/nvim",
     as = "catppuccin",
@@ -102,7 +103,7 @@ require('packer').startup(function(use)
 	-- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
-		run=":TSUpdate",
+		run = ":TSUpdate",
 		config = [[require('config.treesitter')]]
 	}
 
@@ -129,28 +130,29 @@ require('packer').startup(function(use)
 
 
 	-- CSS Colors
-	use {"norcalli/nvim-colorizer.lua", config=[[require('config.colorizer')]]}
+	use {
+		"norcalli/nvim-colorizer.lua",
+		config = [[require('config.colorizer')]]
+	}
 
 	-- nvim notify
-	use {"rcarriga/nvim-notify", config=[[require('config.nvim-notify')]]}
+	use {
+		"rcarriga/nvim-notify",
+		config = [[require('config.nvim-notify')]]
+	}
 
 	-- Noice
 	use {
 		"folke/noice.nvim",
-		requires={'MunifTanjim/nui.nvim'},
-		config=[[require('config.noice')]]
+		requires = {'MunifTanjim/nui.nvim'},
+		config = [[require('config.noice')]]
 	}
 
 	-- Markdown Preview
 	use {
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = {"markdown"}
-		end,
-		ft = {
-			"markdown"
-		},
+		ft = { "markdown" },
 		config = [[require('config.markdown-preview')]]
 	}
 
@@ -164,9 +166,7 @@ require('packer').startup(function(use)
 	-- Repl
 	use {
 		"pappasam/nvim-repl",
-		requires = {
-			"tpope/vim-repeat"
-		},
+		requires = { "tpope/vim-repeat" },
 		config = [[require('config.nvim-repl')]]
 	}
 end)
