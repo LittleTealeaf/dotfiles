@@ -2,7 +2,7 @@ local g = vim.g
 local setkey = vim.keymap.set
 
 g.repl_filetype_commands = {
-	python =  'ipython --no-autoindent'
+	python = 'ipython --no-autoindent'
 }
 
 g.repl_split = 'bottom'
