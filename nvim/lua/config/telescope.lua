@@ -29,6 +29,9 @@ telescope.setup({
 		},
 		packer = {
 			theme = 'ivy'
+		},
+		aerial = {
+
 		}
 	},
 })
@@ -51,6 +54,8 @@ telescope.load_extension('ui-select')
 telescope.load_extension('notify')
 telescope.load_extension('noice')
 telescope.load_extension('packer')
+telescope.load_extension('aerial')
+
 
 local use_ivy = function(action)
 	return function(args)
@@ -94,3 +99,6 @@ setkey('n','<leader>ss', ':Telescope session-lens search_session<CR>', {silent=t
 setkey('n','<leader>sg', use_ivy(telescope.extensions.repo.list), {})
 
 setkey('n','<leader>nn',use_ivy(telescope.extensions.notify.notify), {})
+
+
+setkey('n','<leader>fs', use_ivy(telescope.extensions.aerial.aerial), {})

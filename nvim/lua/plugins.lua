@@ -29,6 +29,7 @@ require('packer').startup(function(use)
 			"coc.nvim",
 			"auto-session",
 			"vim-bookmarks",
+			"aerial.nvim"
 		},
     requires = {
       "nvim-lua/popup.nvim",
@@ -60,7 +61,8 @@ require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
 		after = {
-			'noice.nvim'
+			'noice.nvim',
+			"aerial.nvim"
 		},
     requires = {
       'kyazdani42/nvim-web-devicons',
@@ -168,5 +170,11 @@ require('packer').startup(function(use)
 		"pappasam/nvim-repl",
 		requires = { "tpope/vim-repeat" },
 		config = [[require('config.nvim-repl')]]
+	}
+
+	-- Aerial
+	use {
+		'stevearc/aerial.nvim',
+		config = [[require('config.aerial')]]
 	}
 end)

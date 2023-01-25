@@ -7,6 +7,7 @@ require("noice").setup({
 		}
 	},
 	cmdline = {
+		view = "cmdline",
 		format = {
 			cmdline = {
 				icon = ">"
@@ -22,7 +23,4 @@ require("noice").setup({
 		},
 	},
 	routes = {},
-	presets = {
-		command_palette = true
-	}
 })

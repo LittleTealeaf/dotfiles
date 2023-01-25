@@ -9,7 +9,7 @@ require("catppuccin").setup({
 		noice = true,
 		notify = true,
 		markdown = true,
-
+		aerial = true,
   },
   dim_inactive = {
     enabled = false,
