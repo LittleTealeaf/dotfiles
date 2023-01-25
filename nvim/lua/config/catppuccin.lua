@@ -4,7 +4,7 @@ require("catppuccin").setup({
   integrations = {
     telescope = true,
     treesitter = true,
-		dashboard = true,
+		-- dashboard = true,
 		neotree = true,
 		noice = true,
 		notify = true,

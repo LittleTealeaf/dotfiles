@@ -125,10 +125,10 @@ require('packer').startup({function(use)
 	}
 
 	-- Dashboard
-	use {
-		"glepnir/dashboard-nvim",
-		config = [[require("config.dashboard")]]
-	}
+	-- use {
+	-- 	"glepnir/dashboard-nvim",
+	-- 	config = [[require("config.dashboard")]]
+	-- }
 
 
 	-- CSS Colors
