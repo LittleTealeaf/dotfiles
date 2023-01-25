@@ -63,12 +63,12 @@ lsfzf() {
 # CD to a project
 cdg() {
 	local dir
-	dir=$(ls ~/git/ | fzf --preview='ls -l ~/git/{}') && cd ~/git && cd "$dir"
+	dir=$(ls ~/git/ | fzf --preview='ls -l ~/git/{}' --header-first --header="Open Git Project") && cd ~/git && cd "$dir"
 }
 
 nvimg() {
 	local dir
-	dir=$(ls ~/git/ | fzf --preview='ls -l ~/git/{}') && cd ~/git && cd "$dir" && nvim
+	dir=$(ls ~/git/ | fzf --preview='ls -l ~/git/{}' --header-first --header="Open Git Project in Neovim") && cd ~/git && cd "$dir" && nvim
 }
 
 nvimdot() {
