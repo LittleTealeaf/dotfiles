@@ -7,7 +7,6 @@ require("noice").setup({
 		}
 	},
 	cmdline = {
-		view = "cmdline",
 		format = {
 			cmdline = {
 				icon = ">"
@@ -21,33 +20,9 @@ require("noice").setup({
 		messages = {
 			view = "popup"
 		},
-		popupmenu = {
-			win_options = {
-				cursorline = true,
-				cursorlineopt = "line",
-				winhighlight = {
-					Normal = "FloatNormal",
-					FloatBorder = "TelescopeBorder",
-				}
-			}
-		},
-		popup = {
-			win_options = {
-				winhighlight = {
-					Normal = "Normal",
-					FloatBorder = "TelescopeBorder",
-				}
-			}
-		},
-		cmdline = {
-			win_options = {
-				winhighlight = {
-					Normal = "Normal",
-					IncSearch = "",
-					Search = ""
-				}
-			}
-		},
 	},
 	routes = {},
+	presets = {
+		command_palette = true
+	}
 })
