@@ -39,7 +39,7 @@ fdnvim() {
 }
 
 # fdf - find directory
-fcd() {
+cdf() {
 	local dir
 	dir=$(find ${1:-.} -type d 2> /dev/null | fzf --preview='ls {}') && cd "$dir"
 }
@@ -63,12 +63,12 @@ lsfzf() {
 # CD to a project
 cdg() {
 	local dir
-	dir=$(ls ~/git/ | fzf --preview='ls -l {}') && cd ~/git && cd "$dir"
+	dir=$(ls ~/git/ | fzf --preview='ls -l ~/git/{}') && cd ~/git && cd "$dir"
 }
 
 nvimg() {
 	local dir
-	dir=$(ls ~/git/ | fzf --preview='ls -l {}') && cd ~/git && cd "$dir" && nvim
+	dir=$(ls ~/git/ | fzf --preview='ls -l ~/git/{}') && cd ~/git && cd "$dir" && nvim
 }
 
 nvimdot() {
