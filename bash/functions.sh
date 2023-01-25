@@ -59,3 +59,15 @@ lsfzf() {
 }
 
 
+
+# CD to a project
+cdg() {
+	local dir
+	dir=$(ls ~/git/ | fzf --preview='ls -l {}') && cd ~/git && cd "$dir"
+}
+
+nvimg() {
+	local dir
+	dir=$(ls ~/git/ | fzf --preview='ls -l {}') && cd ~/git && cd "$dir" && nvim
+}
+
