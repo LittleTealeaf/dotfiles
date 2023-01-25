@@ -5,7 +5,8 @@ g.repl_filetype_commands = {
 	python =  'ipython --no-autoindent'
 }
 
-g.repl_split = 'right'
+g.repl_split = 'bottom'
+g.repl_height = 20
 
 setkey('n','<leader>ro', ':ReplOpen<CR>', {silent=true})
 setkey('n','<leader>rs',':ReplRunCell<CR>',{silent=true})
