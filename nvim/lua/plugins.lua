@@ -11,7 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   })
 end
 
-require('packer').startup(function(use)
+require('packer').startup({function(use)
 	-- Packer
   use {"wbthomason/packer.nvim"}
 
@@ -177,4 +177,11 @@ require('packer').startup(function(use)
 		'stevearc/aerial.nvim',
 		config = [[require('config.aerial')]]
 	}
-end)
+end,
+config = {
+	display = {
+		open_fn = function()
+			return require('packer.util').float({border = 'single'})
+		end,
+	}
+}})
