@@ -1,6 +1,6 @@
 
 vim.cmd([[
-	let g:auto_session_pre_save_cmds = ["NeoTreeClose"]
+	let g:auto_session_pre_save_cmds = ["NeoTreeClose","AerialCloseAll"]
 ]])
 
 require("auto-session").setup({

@@ -6,3 +6,4 @@
 - Organize Telescope Extensions to load only when that plugin is loaded
 - Deep organize how things work.. like [This dotfiles](https://github.com/wbthomason/dotfiles/tree/linux/neovim/.config/nvim/lua/config)
 - Only load fzf based functions if fzf exists
+- Create aerial keybinds using `;a_`
