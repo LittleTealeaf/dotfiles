@@ -45,7 +45,8 @@ lualine.setup({
     lualine_c = {
 			{
 				"aerial",
-				dense = true
+				dense = true,
+				dense_sep = '  '
 			}
 		},
     lualine_x = {
