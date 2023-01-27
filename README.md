@@ -103,6 +103,6 @@ If you are using the kitty terminal, use the following command to sym-link your 
 
 ```shell
 mkdir -p ~/.config/kitty/
-echo "source $DOT_FILES/kitty/kitty.conf" >> ~/.config/kitty/kitty.conf
+echo "include $DOT_FILES/kitty/kitty.conf" >> ~/.config/kitty/kitty.conf
 # ln -sf "$DOT_FILES/kitty/" ~/.config/
 ```
