@@ -8,3 +8,4 @@
 - [ ] Only load fzf based functions if fzf exists
 - [ ] Create aerial keybinds using `;a_`
 - [ ] Remove `.bashrc`
+- [ ] Add "current branch" to fzf\_git\_project
