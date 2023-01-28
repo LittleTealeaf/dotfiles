@@ -55,8 +55,12 @@ ln -sf "$DOT_FILES/alacritty/alacritty.yml" ~/.alacritty.yml
 
 # Kitty
 echo "Setting up kitty configuration"
-ln -sf "$DOT_FILES/kitty/" ~/.config/
+mkdir -p ~/.config/kitty/
+echo "include $DOT_FILES/kitty/kitty.conf" >> ~/.config/kitty/kitty.conf
 
 # Tmux
 echo "Setting up tmux configuration"
 ln -sf "$DOT_FILES/tmux/tmux.conf" ~/.tmux.conf
+
+# Vim
+ln -sf "$DOT_FILES/vim/vimrc" ~/.vimrc

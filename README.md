@@ -106,3 +106,12 @@ mkdir -p ~/.config/kitty/
 echo "include $DOT_FILES/kitty/kitty.conf" >> ~/.config/kitty/kitty.conf
 # ln -sf "$DOT_FILES/kitty/" ~/.config/
 ```
+
+
+## Vim Setup
+
+The theology behind having vim and nvim set up is to have both the super fast and the largely customized option. Neovim is set up to be more like an IDE, with many of the plugins that make programming easy. Vim, on the other hand, is set up to be the bare bones requirements for editing. 
+
+```sh
+ln -sf "$DOT_FILES/vim/vimrc" ~/.vimrc
+```
