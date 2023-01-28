@@ -13,8 +13,6 @@ Plugin 'wakatime/vim-wakatime'
 call vundle#end()
 filetype plugin indent on
 
-set guicursor=
-
 augroup RestoreCursorShapeOnExit
 	autocmd!
 	autocmd VimLeave * set guicursor=a:ver10
