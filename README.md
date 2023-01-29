@@ -47,6 +47,8 @@ I have included a script in the bash directory that will do this for you, as lon
 ln -sf "$DOT_FILES/git/gitconfig" ~/.gitconfig
 ```
 
+**Make sure to update the git config with the user.name and user.email**
+
 ## Nerd Fonts
 
 Many of the programs and setups used in these dotfiles are reliant on the presence of a nerd font. Nerd Fonts add additional symbols and ligatures that can be used to make better looking terminal applications. 
