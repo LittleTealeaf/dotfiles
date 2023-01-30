@@ -1,4 +1,4 @@
-# export PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
+export PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 export FZF_DEFAULT_OPTS="
 	--border --layout=reverse --info=inline
 	--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 
