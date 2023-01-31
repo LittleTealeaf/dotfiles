@@ -184,6 +184,12 @@ require('packer').startup({function(use)
 		config = [[require('config.comment')]]
 	}
 
+	-- Lazygit
+	use {
+		'kdheepak/lazygit.nvim',
+		config = [[require('config.lazygit')]]
+	}
+
 
 end,
 config = {

@@ -75,10 +75,10 @@ end, {})
 
 -- Git commands
 --
-setkey('n','<leader>gi', use_ivy(gh_actions.issues), {})
-setkey('n','<leader>gp', use_ivy(gh_actions.pull_request), {})
--- setkey('n','<leader>gg', use_ivy(gh_actions.gist), {})
-setkey('n','<leader>gr', use_ivy(gh_actions.run), {})
+setkey('n','<leader>ghi', use_ivy(gh_actions.issues), {})
+setkey('n','<leader>ghp', use_ivy(gh_actions.pull_request), {})
+setkey('n','<leader>ghg', use_ivy(gh_actions.gist), {})
+setkey('n','<leader>ghr', use_ivy(gh_actions.run), {})
 setkey('n','<leader>gc', use_ivy(actions.git_commits), {})
 setkey('n','<leader>gs', use_ivy(actions.git_status), {})
 setkey('n','<leader>gf', use_ivy(actions.git_files),{})
