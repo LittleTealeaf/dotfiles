@@ -73,9 +73,11 @@ setkey('n','<leader>fe', function()
 	telescope.extensions.file_browser.file_browser({hidden=true})
 end, {})
 
+-- Git commands
+--
 setkey('n','<leader>gi', use_ivy(gh_actions.issues), {})
 setkey('n','<leader>gp', use_ivy(gh_actions.pull_request), {})
-setkey('n','<leader>gg', use_ivy(gh_actions.gist), {})
+-- setkey('n','<leader>gg', use_ivy(gh_actions.gist), {})
 setkey('n','<leader>gr', use_ivy(gh_actions.run), {})
 setkey('n','<leader>gc', use_ivy(actions.git_commits), {})
 setkey('n','<leader>gs', use_ivy(actions.git_status), {})
