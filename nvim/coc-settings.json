@@ -20,5 +20,9 @@
 	"typescript.inlayHints.parameterNames.enabled": "none",
 	"typescript.inlayHints.enumMemberValues.enabled": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-	"codeLens.enable": true
+	"codeLens.enable": true,
+	"markdown-preview-enhanced.enableScriptExecution": true,
+	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown-preview-enhanced.mermaidTheme": "dark",
+  "git.enableGutters": false
 }

@@ -9,3 +9,4 @@
 - [ ] Create aerial keybinds using `;a_`
 - [ ] Remove `.bashrc`
 - [ ] Add "current branch" to fzf\_git\_project
+- [ ] Add `;gl` to open git lazy in a floating terminal
