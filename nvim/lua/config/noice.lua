@@ -22,5 +22,15 @@ require("noice").setup({
 			view = "popup"
 		},
 	},
-	routes = {},
+	routes = {
+		{
+			filter = {
+				event = "msg_show",
+				kind = "search_count",
+			},
+			opts = {
+				skip = true
+			}
+		}
+	},
 })
