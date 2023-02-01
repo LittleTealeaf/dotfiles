@@ -27,5 +27,5 @@
   "git.enableGutters": true,
 	"pyright.disableDocumentation": true,
 	"pyright.disableCompletion": false,
-	"jedi.completion.ignorePatterns": ["*"]
+	"jedi.completion.ignorePatterns": ["[\\s\\S]+"]
 }
