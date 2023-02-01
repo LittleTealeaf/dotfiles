@@ -1,6 +1,5 @@
 {
 	"html.autoCreateQuotes": false,
-	"prettier.useTabs": true,
 	"prettier.endOfLine": "lf",
 	"snippets.userSnippetsDirectory": "$DOT_FILES/nvim/snippets/",
 	"snippets.extends": {
@@ -10,7 +9,7 @@
 		"typescriptreact": ["typescript"]
 	},
 	"inlayHint.enable": true,
-	"git.addGBlameToVirtualText": true,
+	"git.addGBlameToVirtualText": false,
 	"inlayHint.display": true,
 	"javascript.inlayHints.variableTypes.enabled": true,
 	"javascript.inlayHints.parameterNames.enabled": "none",
@@ -20,12 +19,13 @@
 	"typescript.inlayHints.parameterNames.enabled": "none",
 	"typescript.inlayHints.enumMemberValues.enabled": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-	"codeLens.enable": true,
+	"codeLens.enable": false,
 	"markdown-preview-enhanced.enableScriptExecution": true,
 	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
   "markdown-preview-enhanced.mermaidTheme": "dark",
   "git.enableGutters": true,
 	"pyright.disableDocumentation": true,
 	"pyright.disableCompletion": false,
-	"jedi.completion.ignorePatterns": ["[\\s\\S]+"]
+	"jedi.completion.ignorePatterns": ["[\\s\\S]+"],
+	"diagnostic.checkCurrentLine": true
 }
