@@ -27,6 +27,11 @@ mkdir -p ~/tmp
 echo "Linking gitconfig to dotfiles"
 ln -sf "$DOT_FILES/git/gitconfig" ~/.gitconfig
 
+# Brew
+if ! command -v brew &>/dev/null; then
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+fi
+bash -c "brew install neovim oh-my-posh gh tree-sitter"
 
 # Nerd Fonts
 if [ ! -d "$(echo ~/git/nerd-fonts)" ]; then
@@ -63,4 +68,10 @@ echo "Setting up tmux configuration"
 ln -sf "$DOT_FILES/tmux/tmux.conf" ~/.tmux.conf
 
 # Vim
+echo "Setting up vim"
 ln -sf "$DOT_FILES/vim/vimrc" ~/.vimrc
+
+# Lazygit
+echo "Setting up lazygit"
+mkdir -p ~/.config/lazygit
+ln -sf "$DOT_FILES/lazygit/config.yml" ~/.config/lazygit/
