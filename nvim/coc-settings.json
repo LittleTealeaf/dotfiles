@@ -24,5 +24,8 @@
 	"markdown-preview-enhanced.enableScriptExecution": true,
 	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
   "markdown-preview-enhanced.mermaidTheme": "dark",
-  "git.enableGutters": true
+  "git.enableGutters": true,
+	"pyright.disableDocumentation": true,
+	"pyright.disableCompletion": false,
+	"jedi.completion.ignorePatterns": ["*"]
 }
