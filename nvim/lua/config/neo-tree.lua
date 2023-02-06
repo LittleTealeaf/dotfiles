@@ -7,6 +7,7 @@ vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSig
 vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
 
 neotree.setup({
+	enable_diagnostics = true,
   follow_current_file = true,
   filesystem = {
     filtered_items = {
