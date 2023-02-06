@@ -1,7 +1,8 @@
 
-vim.cmd([[
-	let g:auto_session_pre_save_cmds = ["NeoTreeClose","AerialCloseAll"]
-]])
+-- vim.cmd([[
+-- 	let g:auto_session_pre_save_cmds = ["NeoTreeClose","AerialCloseAll"]
+-- ]])
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions"
 
 require("auto-session").setup({
 	log_level = "error",
@@ -12,4 +13,8 @@ require("auto-session").setup({
 		"/",
 		"~/tmp/*"
 	},
+	auto_session_pre_save_cmds = {
+		"AerialCloseAll",
+		"NeoTreeClose"
+	}
 })
