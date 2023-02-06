@@ -15,6 +15,7 @@ require("auto-session").setup({
 	},
 	auto_session_pre_save_cmds = {
 		"AerialCloseAll",
-		"NeoTreeClose"
+		"NeoTreeClose",
+		"ReplClose",
 	}
 })

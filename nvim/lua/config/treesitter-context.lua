@@ -1,3 +1,4 @@
--- require('treesitter-context').setup({
-
---})
+require('treesitter-context').setup({
+	mode = 'topline',
+	--separator = '-'
+})
