@@ -109,6 +109,14 @@ require('packer').startup({function(use)
 		config = [[require('config.treesitter')]]
 	}
 
+
+	-- Treesitter Context
+	use {
+		'nvim-treesitter/nvim-treesitter-context',
+		after = 'nvim-treesitter',
+		config = [[require('config.treesitter-context')]]
+	}
+
 	-- Wakatime
   use {'wakatime/vim-wakatime'}
 
@@ -130,6 +138,14 @@ require('packer').startup({function(use)
 	-- 	config = [[require("config.dashboard")]]
 	-- }
 
+	-- Alpha Nvim (Dashboard)
+	-- use {
+	-- 	'goolord/alpha-nvim',
+	-- 	requires = {
+	-- 		'nvim-tree/nvim-web-devicons'
+	-- 	},
+	-- 	config = [[require('config.alpha-nvim')]]
+	-- }
 
 	-- CSS Colors
 	use {
