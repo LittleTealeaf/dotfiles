@@ -1,4 +1,9 @@
 local opt = vim.opt
+local opt = vim.opt
+local cmd = vim.cmd
+local g = vim.g
+
+g.mapleader = ';'
 local cmd = vim.cmd
 local g = vim.g
 
