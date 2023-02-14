@@ -105,6 +105,9 @@ require('packer').startup({function(use)
 	-- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
+		requires = {
+			'nvim-treesitter/nvim-treesitter-textobjects'
+		},
 		run = ":TSUpdate",
 		config = [[require('config.treesitter')]]
 	}
@@ -213,7 +216,6 @@ require('packer').startup({function(use)
 		after = 'nvim-treesitter',
 		config = [[require('config.tree-climber')]]
 	}
-
 
 end,
 config = {
