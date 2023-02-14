@@ -135,21 +135,6 @@ require('packer').startup({function(use)
 		config = [[require("config.vim-bookmarks")]]
 	}
 
-	-- Dashboard
-	-- use {
-	-- 	"glepnir/dashboard-nvim",
-	-- 	config = [[require("config.dashboard")]]
-	-- }
-
-	-- Alpha Nvim (Dashboard)
-	-- use {
-	-- 	'goolord/alpha-nvim',
-	-- 	requires = {
-	-- 		'nvim-tree/nvim-web-devicons'
-	-- 	},
-	-- 	config = [[require('config.alpha-nvim')]]
-	-- }
-
 	-- CSS Colors
 	use {
 		"norcalli/nvim-colorizer.lua",
