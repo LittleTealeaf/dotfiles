@@ -20,6 +20,8 @@ require('nvim-treesitter.configs').setup({
 				['iC'] = '@call.inner',
 				['aC'] = '@call.outer',
 				['is'] = '@scopename.inner',
+				['al'] = '@loop.outer',
+				['il'] = '@loop.inner',
 
 				-- ['af'] = '@function.outer',
 				-- ['if'] = '@function.inner',
