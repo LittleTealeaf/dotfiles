@@ -207,6 +207,14 @@ require('packer').startup({function(use)
 	}
 
 
+	-- Tree Climber
+	use {
+		'drybalka/tree-climber.nvim',
+		after = 'nvim-treesitter',
+		config = [[require('config.tree-climber')]]
+	}
+
+
 end,
 config = {
 	display = {
