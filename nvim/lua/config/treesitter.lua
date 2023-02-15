@@ -4,7 +4,6 @@ require('nvim-treesitter.configs').setup({
 			enable = true,
 			lookahead = true,
 			keymaps = {
-
 				['in'] = '@number.inner',
 				['af'] = '@function.outer',
 				['if'] = '@function.inner',
