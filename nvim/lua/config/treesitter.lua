@@ -22,22 +22,6 @@ require('nvim-treesitter.configs').setup({
 				['is'] = '@scopename.inner',
 				['al'] = '@loop.outer',
 				['il'] = '@loop.inner',
-
-				-- ['af'] = '@function.outer',
-				-- ['if'] = '@function.inner',
-				-- ['ac'] = '@class.outer',
-				-- ['ic'] = '@class.inner',
-				-- ['al'] = '@loop.around',
-				-- ['il'] = '@loop.inner',
-				-- ['ia'] = '@assignment.inner',
-				-- ['aa'] = '@assignment.outer',
-				-- ['ai'] = '@conditional.outer',
-				-- ['ii'] = '@conditional.inner',
-				-- ['in'] = '@number.inner',
-				-- ['ao'] = '@parameter.outer',
-				-- ['io'] = '@parameter.inner',
-				-- ['ab'] = '@block.outer',
-				-- ['ib'] = '@block.inner'
 			}
 		}
 	},
