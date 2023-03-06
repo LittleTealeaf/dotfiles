@@ -1,8 +1,8 @@
 return {
 	'glepnir/lspsaga.nvim',
 	dependencies = {
-		{ "catppuccin/nvim", name = 'catppuccin' },
-		'neovim/nvim-lspconfig',
+		{ "catppuccin/nvim",      name = 'catppuccin' },
+		{ 'neovim/nvim-lspconfig' },
 	},
 	event = 'BufRead',
 	config = function()
@@ -31,9 +31,8 @@ return {
 		keymap('n', '<leader>cr', '<cmd>Lspsaga rename<CR>')
 		keymap('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>')
 		keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>')
-		keymap('n','<leader>cdb', '<cmd>Lspsaga show_buf_diagnostics<CR>')
-		keymap('n','<leader>cdl', '<cmd>Lspsaga show_line_diagnostics<CR>')
-		keymap('n','<leader>cdc', '<cmd>Lspsaga show_cursor_diagnostics<CR>')
-
+		keymap('n', '<leader>cdb', '<cmd>Lspsaga show_buf_diagnostics<CR>')
+		keymap('n', '<leader>cdl', '<cmd>Lspsaga show_line_diagnostics<CR>')
+		keymap('n', '<leader>cdc', '<cmd>Lspsaga show_cursor_diagnostics<CR>')
 	end,
 }
