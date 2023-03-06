@@ -57,11 +57,11 @@ return {
 			-- Noice
 			setkey('n', '<leader>nn', telescope.extensions.notify.notify, {})
 		end,
-		lazy = true,
-		keys = {
-			'<leader>ff', '<leader>fg', '<leader>fw', '<leader>fb', '<leader>fo', '<leader>sf', '<leader>sw', '<leader>cd',
-			'<leader>ca', '<leader>nn'
-		}
+		-- lazy = true,
+		-- keys = {
+		-- 	'<leader>ff', '<leader>fg', '<leader>fw', '<leader>fb', '<leader>fo', '<leader>sf', '<leader>sw', '<leader>cd',
+		-- 	'<leader>ca', '<leader>nn'
+		-- }
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",

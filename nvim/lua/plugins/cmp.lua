@@ -1,13 +1,8 @@
 return {
 	'hrsh7th/nvim-cmp',
-	event = 'InsertEnter',
-	dependencies = {
-		'hrsh7th/cmp-nvim-lsp',
-	},
 	config = function()
 		local cmp = require('cmp')
-		local luasnip = require "luasnip"
-
+		local luasnip = require("luasnip")
 
 		local has_words_before = function()
 			unpack = unpack or table.unpack
