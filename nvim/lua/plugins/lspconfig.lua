@@ -8,9 +8,9 @@ return {
 			config = true
 		},
 		{ 'lukas-reineke/lsp-format.nvim', config = true },
-		'simrat39/rust-tools.nvim',
-		'hrsh7th/nvim-cmp',
-		'hrsh7th/cmp-nvim-lsp',
+		{ 'simrat39/rust-tools.nvim' },
+		{ 'hrsh7th/nvim-cmp' },
+		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'lvimuser/lsp-inlayhints.nvim',  opts = { inlay_hints = { highlight = "Comment" } }, config = true }
 	},
 	config = function()
