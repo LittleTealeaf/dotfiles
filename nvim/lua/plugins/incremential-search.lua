@@ -1,5 +1,3 @@
 return {
-	'haya14busa/is.vim',
-	lazy = true,
-	keys = { "/", "?" }
+	'haya14busa/is.vim'
 }
