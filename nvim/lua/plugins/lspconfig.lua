@@ -2,22 +2,29 @@ return {
 	'neovim/nvim-lspconfig',
 	event = 'BufRead',
 	dependencies = {
-		'williamboman/mason-lspconfig.nvim',
-		'williamboman/mason.nvim',
-		'lukas-reineke/lsp-format.nvim',
+		{
+			'williamboman/mason-lspconfig.nvim',
+			dependencies = { { 'williamboman/mason.nvim', config = true } },
+			config = true
+		},
+		{ 'lukas-reineke/lsp-format.nvim', config = true },
 		'simrat39/rust-tools.nvim',
-		'simrat39/inlay-hints.nvim',
 		'hrsh7th/nvim-cmp',
 		'hrsh7th/cmp-nvim-lsp',
+		-- { 'simrat39/inlay-hints.nvim',     opts = { only_current_line = false } },
+		{ 'lvimuser/lsp-inlayhints.nvim',  opts = { inlay_hints = { highlight = "Comment" } }, config = true }
 	},
 	config = function()
-		require('mason').setup()
-		require('mason-lspconfig').setup()
-		require('lsp-format').setup()
-
 		local lspconfig = require('lspconfig')
 
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+		local with_inlay = function(attach)
+			return function(client, bufnr)
+				require('lsp-inlayhints').on_attach(client, bufnr)
+				attach(client, bufnr)
+			end
+		end
 
 
 		local on_attach = function(client, bufnr)
@@ -30,7 +37,6 @@ return {
 
 
 		local lsp_flags = {
-			-- This is the default in Nvim 0.7+
 			debounce_text_changes = 150,
 		}
 
@@ -45,9 +51,7 @@ return {
 			rust_analyzer = function()
 				require('rust-tools').setup({
 					server = {
-						on_attach = function(client, bufnr)
-							on_attach(client, bufnr)
-						end
+						on_attach = on_attach
 					}
 				})
 			end,
@@ -64,33 +68,38 @@ return {
 						}
 					}
 				})
+			end,
+			tsserver = function()
+				lspconfig.tsserver.setup({
+					on_attach = with_inlay(on_attach),
+					flags = lsp_flags,
+					capabilities = capabilities,
+					settings = {
+						typescript = {
+							inlayHints = {
+								includeInlayParameterNameHints = 'all',
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = true,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							}
+						},
+						javascript = {
+							inlayHints = {
+								includeInlayParameterNameHints = 'all',
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = true,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							}
+						}
+					}
+				})
 			end
 		})
-
-
-		-- lspconfig['pyright'].setup {
-		-- 	on_attach = on_attach,
-		-- 	flags = lsp_flags,
-		-- 	capabilities = capabilities,
-		-- }
-		--
-		-- lspconfig['tsserver'].setup {
-		-- 	-- → typescript.inlayHints.variableTypes.enabled                                    default: false
-		-- 	on_attach = on_attach,
-		-- 	flags = lsp_flags,
-		-- 	capabilities = capabilities,
-		-- 	settings = {
-		-- 				['typescript.inlayHints.variableTypes.enabled'] = true
-		-- 	}
-		-- }
-		--
-		-- lspconfig['html-lsp'].setup {
-		-- 	on_attach = on_attach,
-		-- 	flags = lsp_flags,
-		-- 	capabilities = capabilities,
-		-- 	settings = {
-		--
-		-- 	}
-		-- }
 	end
 }
