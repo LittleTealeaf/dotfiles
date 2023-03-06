@@ -1,7 +1,5 @@
 return {
 	'nvim-neo-tree/neo-tree.nvim',
-	lazy = true,
-	event = 'BufEnter',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		'kyazdani42/nvim-web-devicons',
@@ -38,5 +36,10 @@ return {
 		setkey('n', '<leader>eh', ':NeoTreeClose<CR>', { silent = true })
 		setkey('n', '<leader>eg', ':Neotree git_status<CR>', { silent = true })
 		setkey('n', '<leader>eb', ':Neotree buffers<CR>', { silent = true })
-	end
+	end,
+	lazy = true,
+	keys = {
+		'<leader>ef', '<leader>et', '<leader>eg', '<leader>eb',
+	},
+	cmd = 'Neotree'
 }
