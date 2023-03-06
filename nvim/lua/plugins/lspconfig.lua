@@ -18,13 +18,14 @@ return {
 
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+		vim.api.nvim_create_user_command('Format', 'lua vim.lsp.buf.format()', {})
+
 		local with_inlay = function(attach)
 			return function(client, bufnr)
 				require('lsp-inlayhints').on_attach(client, bufnr)
 				attach(client, bufnr)
 			end
 		end
-
 
 		local on_attach = function(_, bufnr)
 			local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -95,6 +96,13 @@ return {
 							}
 						}
 					}
+				})
+			end,
+			jdtls = function()
+				lspconfig.jdtls.setup({
+					on_attach = with_inlay(on_attach),
+					flags = lsp_flags,
+					capabilities = capabilities,
 				})
 			end
 		})

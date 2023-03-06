@@ -51,7 +51,7 @@ return {
 			setkey('n', '<leader>sw', use_dropdown(actions.lsp_workspace_symbols), {})
 
 			-- LSP
-			setkey('n', '<leader>cd', use_dropdown(actions.diagnostics))
+			setkey('n', '<leader>cdw', use_dropdown(actions.diagnostics))
 			setkey('n', '<leader>ca', vim.lsp.buf.code_action, {})
 
 			-- Noice
