@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	lazy = true,
 	dependencies = {
 		"nvim-lua/popup.nvim",
 		"nvim-lua/plenary.nvim",
@@ -78,5 +79,19 @@ return {
 		-- Noice
 
 		setkey('n', '<leader>nn', telescope.extensions.notify.notify, {})
-	end
+	end,
+	keys = {
+		'<leader>fe',
+		'<leader>ff',
+		'<leader>fg',
+		'<leader>fw',
+		'<leader>fb',
+		'<leader>fo',
+		'<leader>sf',
+		'<leader>sw',
+		'<leader>ca',
+		'<leader>cd',
+		'<leader>dv',
+		'<leader>nn'
+	}
 }

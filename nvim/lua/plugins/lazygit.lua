@@ -1,5 +1,7 @@
 return {
 	'kdheepak/lazygit.nvim',
+	lazy = true,
+	keys = { '<leader>gl' },
 	config = function()
 		local setkey = vim.keymap.set
 
