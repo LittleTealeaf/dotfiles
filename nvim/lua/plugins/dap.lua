@@ -13,7 +13,8 @@ return {
 		local setkey = vim.keymap.set
 
 
-		setkey('n', '<leader>dt', dapui.toggle)
+		setkey('n', '<leader>du', dapui.toggle)
+		setkey('n', '<leader>dt', ':DapTerminate<CR>', { silent = true })
 		setkey('n', '<leader>db', ':DapToggleBreakpoint<CR>', { silent = true })
 		setkey('n', '<leader>dc', ':DapContinue<CR>', { silent = true })
 		setkey('n', '<leader>dsi', ':DapStepInto<CR>', { silent = true })
