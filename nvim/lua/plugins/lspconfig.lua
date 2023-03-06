@@ -57,7 +57,7 @@ return {
 			end,
 			lua_ls = function()
 				lspconfig['lua_ls'].setup({
-					on_attach = on_attach,
+					on_attach = with_inlay(on_attach),
 					flags = lsp_flags,
 					capabilities = capabilities,
 					settings = {
