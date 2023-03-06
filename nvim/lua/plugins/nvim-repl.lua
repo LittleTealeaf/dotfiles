@@ -5,7 +5,7 @@ return {
 		local setkey = vim.keymap.set
 
 		g.repl_filetype_commands = {
-			python = 'ipython --no-autoident'
+			python = 'ipython --no-autoindent'
 		}
 
 		g.repl_split = 'bottom'
