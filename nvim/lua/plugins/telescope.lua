@@ -29,8 +29,8 @@ return {
 			})
 
 			telescope.load_extension('fzf')
-			telescope.load_extension('ui-select')
 			telescope.load_extension('noice')
+			telescope.load_extension('ui-select')
 
 
 			local use_dropdown = function(action)
@@ -115,5 +115,21 @@ return {
 		keys = {
 			'<leader>dv'
 		}
-	}
+	},
+	{
+		"benfowler/telescope-luasnip.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			local telescope = require('telescope')
+			local setkey = vim.keymap.set
+
+			telescope.load_extension('luasnip')
+
+			setkey('n', '<leader>cls', telescope.extensions.luasnip.luasnip)
+		end,
+		lazy = true,
+		keys = { '<leader>cls' }
+	},
 }

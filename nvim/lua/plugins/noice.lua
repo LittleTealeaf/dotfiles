@@ -36,6 +36,10 @@ return {
 						skip = true
 					}
 				}
+			},
+			notify = {
+				enabled = true,
+				view = "notify"
 			}
 		})
 	end
