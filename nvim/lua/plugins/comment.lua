@@ -8,5 +8,5 @@ return {
 				extra = true
 			}
 		})
-	end
+	end,
 }

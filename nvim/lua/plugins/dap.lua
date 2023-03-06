@@ -20,5 +20,9 @@ return {
 		setkey('n', '<leader>dso', ':DapStepOut<CR>', { silent = true })
 		setkey('n', '<leader>dsa', ':DapStepOver<CR>', { silent = true })
 		setkey('n', '<leader>dr', ':DapRestartFrame<CR>', { silent = true })
-	end
+	end,
+	lazy = true,
+	keys = {
+		'<leader>dt'
+	}
 }

@@ -9,6 +9,7 @@ return {
 				border = 'curved'
 			}
 		})
-	end
+	end,
+	lazy = true,
+	keys = { '<c-\\>' }
 }
-
