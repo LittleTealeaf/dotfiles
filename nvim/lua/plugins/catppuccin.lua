@@ -22,9 +22,7 @@ return {
 					virutal_text = {
 						errors = { 'italic' },
 						hints = { 'italic' },
-						warnings = {
-							'italic'
-						},
+						warnings = { 'italic' },
 						information = { 'italic' }
 					},
 					underlines = {
