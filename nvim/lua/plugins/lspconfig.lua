@@ -11,7 +11,6 @@ return {
 		'simrat39/rust-tools.nvim',
 		'hrsh7th/nvim-cmp',
 		'hrsh7th/cmp-nvim-lsp',
-		-- { 'simrat39/inlay-hints.nvim',     opts = { only_current_line = false } },
 		{ 'lvimuser/lsp-inlayhints.nvim',  opts = { inlay_hints = { highlight = "Comment" } }, config = true }
 	},
 	config = function()
@@ -27,9 +26,7 @@ return {
 		end
 
 
-		local on_attach = function(client, bufnr)
-			require('lsp-format').on_attach(client)
-
+		local on_attach = function(_, bufnr)
 			local bufopts = { noremap = true, silent = true, buffer = bufnr }
 			local keymap = vim.keymap.set
 			keymap('n', 'K', vim.lsp.buf.hover, bufopts)
