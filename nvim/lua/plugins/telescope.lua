@@ -6,6 +6,8 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
 		"nvim-telescope/telescope-github.nvim",
+		"nvim-telescope/telescope-dap.nvim",
+		'folke/noice.nvim',
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build =
@@ -14,23 +16,39 @@ return {
 	},
 	config = function()
 		local telescope = require('telescope')
+		local themes = require('telescope.themes')
 		local actions = require('telescope.builtin')
 		local setkey = vim.keymap.set
 
 		telescope.setup({
-			theme = 'ivy',
 			extensions = {
 						['ui-select'] = {
-					require('telescope.themes').get_dropdown {
-
-					}
+					require('telescope.themes').get_dropdown()
+				},
+				file_browser = {
+					theme = 'dropdown'
 				}
-			}
+			},
 		})
+
+		local use_ivy = function(action)
+			return function(args)
+				action(themes.get_ivy(args))
+			end
+		end
+
+		local use_dropdown = function(action)
+			return function(args)
+				action(themes.get_dropdown(args))
+			end
+		end
+
 
 		telescope.load_extension('fzf')
 		telescope.load_extension('file_browser')
 		telescope.load_extension('ui-select')
+		telescope.load_extension('dap')
+		telescope.load_extension('noice')
 
 		setkey('n', '<leader>fe', function()
 			telescope.extensions.file_browser.file_browser({ hidden = true })
@@ -43,12 +61,22 @@ return {
 		setkey('n', '<leader>fo', actions.oldfiles, {})
 
 		-- Symbols
-		setkey('n', '<leader>sf', actions.lsp_document_symbols, {})
-		setkey('n', '<leader>sw', actions.lsp_workspace_symbols, {})
+		setkey('n', '<leader>sf', use_dropdown(actions.lsp_document_symbols), {})
+		setkey('n', '<leader>sw', use_dropdown(actions.lsp_workspace_symbols), {})
 
 		-- Coding
 		setkey('n', '<leader>ca', vim.lsp.buf.code_action, {})
 
 		-- LSP
+		setkey('n', '<leader>cd', use_dropdown(actions.diagnostics))
+
+
+		-- Dap
+		setkey('n', '<leader>dv', telescope.extensions.dap.variables, {})
+
+
+		-- Noice
+
+		setkey('n', '<leader>nn', telescope.extensions.notify.notify, {})
 	end
 }
