@@ -1,14 +1,13 @@
 return {
 	'rmagatti/auto-session',
-	config = function()
-		require('auto-session').setup({
-			log_level = 'error',
-			auto_session_suppress_dirs = {
-				'~',
-				'~/Documents',
-				'/',
-				'~/tmp/*'
-			}
-		})
-	end
+	event = 'VeryLazy',
+	opts = {
+		log_level = 'error',
+		auto_session_suppress_dirs = {
+			'~',
+			'~/Documents',
+			'/',
+			'~/tmp/*'
+		}
+	}
 }
