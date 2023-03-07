@@ -34,6 +34,3 @@ local options = {
 }
 
 require('lazy').setup(config, options)
-
-
-vim.cmd([[colorscheme catppuccin]])
