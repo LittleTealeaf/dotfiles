@@ -24,6 +24,6 @@ return {
 	end,
 	lazy = true,
 	keys = {
-		'<leader>dt'
+		'<leader>du'
 	}
 }
