@@ -1,17 +1,33 @@
 return {
 	'neovim/nvim-lspconfig',
-	event = 'BufRead',
+	event = 'VeryLazy',
 	dependencies = {
 		{
 			'williamboman/mason-lspconfig.nvim',
-			dependencies = { { 'williamboman/mason.nvim', config = true } },
+			dependencies = {
+				{
+					'williamboman/mason.nvim',
+					config = true
+				}
+			},
 			config = true
 		},
-		{ 'lukas-reineke/lsp-format.nvim', config = true },
+		{
+			'lukas-reineke/lsp-format.nvim',
+			config = true
+		},
 		{ 'simrat39/rust-tools.nvim' },
 		{ 'hrsh7th/nvim-cmp' },
 		{ 'hrsh7th/cmp-nvim-lsp' },
-		{ 'lvimuser/lsp-inlayhints.nvim',  opts = { inlay_hints = { highlight = "Comment" } }, config = true }
+		{
+			'lvimuser/lsp-inlayhints.nvim',
+			opts = {
+				inlay_hints = {
+					highlight = "Comment"
+				}
+			},
+			config = true
+		}
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
