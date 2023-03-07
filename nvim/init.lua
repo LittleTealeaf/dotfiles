@@ -28,7 +28,8 @@ local options = {
 		notify = false
 	},
 	install = {
-		colorscheme = { 'catppuccin' }
+		colorscheme = { 'catppuccin' },
+		missing = false
 	}
 }
 
