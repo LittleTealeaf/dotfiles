@@ -17,6 +17,15 @@ return {
     dependnecies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'VeryLazy',
     config = true,
-  }
-
+  },
+	{
+		'numToStr/Comment.nvim',
+		event = 'VeryLazy',
+		opts = {
+			mappings = {
+				basic = true,
+				extra = true
+			}
+		}
+	}
 }
