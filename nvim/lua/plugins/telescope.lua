@@ -1,16 +1,16 @@
-local use_dropdown = function(action)
+local in_dropdown = function(action)
 	return function(args)
 		action(require('telescope.themes').get_dropdown(args))
 	end
 end
 
-local use_ivy = function(action)
+local in_ivy = function(action)
 	return function(args)
 		action(require('telescope.themes').get_ivy(args))
 	end
 end
 
-local use_action = function(name)
+local use_builtin = function(name)
 	return function(args)
 		require('telescope.builtin')[name](args)
 	end
@@ -72,15 +72,16 @@ return {
 			telescope.load_extension('ui-select')
 		end,
 		keys = {
-			{ '<leader>ff', use_dropdown(use_action('find_files')),            desc = 'Find files' },
-			{ '<leader>fg', use_action('live_grep'),                           desc = 'Live grep' },
+			{ '<leader>ff', in_dropdown(use_builtin('find_files')),                desc = 'Find files' },
+			{ '<leader>fg', use_builtin('live_grep'),                              desc = 'Live grep' },
 			-- { '<leader>fw', use_action('grep_string'), desc = 'Grep String' },
-			{ '<leader>fb', use_dropdown(use_action('buffers')),                             desc = 'List Buffers' },
-			{ '<leader>fo', use_action('oldfiles'),                            desc = 'List Old Files' },
-			{ '<leader>sf', use_dropdown(use_action('lsp_document_symbols')),  desc = 'List Document Symbols' },
-			{ '<leader>sw', use_dropdown(use_action('lsp_workspace_symbols')), desc = 'List Workspace Symbols' },
-			{ '<leader>ca', vim.lsp.buf.code_action,                           desc = 'List Code Actions' },
-			{ '<leader>nn', use_dropdown(use_extension('notify', 'notify')),   desc = 'Show Notifications' },
+			{ '<leader>fb', in_dropdown(use_builtin('buffers')),                   desc = 'List Buffers' },
+			{ '<leader>fo', use_builtin('oldfiles'),                               desc = 'List Old Files' },
+			{ '<leader>sf', in_dropdown(use_builtin('lsp_document_symbols')),      desc = 'List Document Symbols' },
+			{ '<leader>sw', in_dropdown(use_builtin('lsp_workspace_symbols')),     desc = 'List Workspace Symbols' },
+			{ '<leader>ca', vim.lsp.buf.code_action,                               desc = 'List Code Actions' },
+			{ '<leader>nn', in_dropdown(use_extension('notify', 'notify')),        desc = 'Show Notifications' },
+			{ '<leader>fl', in_dropdown(use_builtin('current_buffer_fuzzy_find')), desc = 'Fuzzy Find in Current Buffer' }
 		}
 	},
 	{
@@ -89,8 +90,11 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('file_browser'),
 		keys = {
-			{ '<leader>fe', with_args(use_ivy(use_extension('file_browser', 'file_browser')), { hidden = true }),
-				desc = 'File Browser' }
+			{
+				'<leader>fe',
+				with_args(in_ivy(use_extension('file_browser', 'file_browser')), { hidden = true }),
+				desc = 'File Browser'
+			}
 		}
 	},
 	{
