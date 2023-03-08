@@ -74,7 +74,6 @@ return {
 		keys = {
 			{ '<leader>ff', in_dropdown(use_builtin('find_files')),                desc = 'Find files' },
 			{ '<leader>fg', use_builtin('live_grep'),                              desc = 'Live grep' },
-			-- { '<leader>fw', use_action('grep_string'), desc = 'Grep String' },
 			{ '<leader>fb', in_dropdown(use_builtin('buffers')),                   desc = 'List Buffers' },
 			{ '<leader>fo', use_builtin('oldfiles'),                               desc = 'List Old Files' },
 			{ '<leader>sf', in_dropdown(use_builtin('lsp_document_symbols')),      desc = 'List Document Symbols' },
