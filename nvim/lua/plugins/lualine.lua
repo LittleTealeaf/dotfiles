@@ -7,7 +7,6 @@ return {
     name = 'tabline',
     opts = {
       enable = false,
-
       options = {
         section_separators = {'',''},
         component_separators = { '', '' }
