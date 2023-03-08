@@ -1,7 +1,7 @@
 return {
 	{
 		'lvimuser/lsp-inlayhints.nvim',
-		event = 'BufEnter',
+		event = 'VeryLazy',
 		opts = {
 			inlay_hints = {
 				highlight = "Comment"
@@ -10,6 +10,7 @@ return {
 	},
 	{
 		'neovim/nvim-lspconfig',
+		event = 'VeryLazy',
 		keys = {
 			{ 'K', vim.lsp.buf.hover, }
 		}
@@ -22,6 +23,7 @@ return {
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
+		event = 'VeryLazy',
 		dependencies = {
 			{
 				'hrsh7th/cmp-nvim-lsp',
@@ -103,7 +105,7 @@ return {
 			{ 'catppuccin/nvim',      name = 'catppuccin' },
 			{ 'neovim/nvim-lspconfig' },
 		},
-		lazy = false,
+		event = 'VeryLazy',
 		opts = function()
 			local catppuccin_theme = require('catppuccin.groups.integrations.lsp_saga')
 			return {
