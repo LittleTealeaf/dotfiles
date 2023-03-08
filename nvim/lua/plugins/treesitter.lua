@@ -1,3 +1,15 @@
+local treeclimber_movement = function(fun)
+	return function()
+		require('tree-climber')[fun]({
+			skip_comments = true,
+			highlight = true,
+			timeout = 300,
+			higroup = 'Search'
+		})
+	end
+end
+
+
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -13,33 +25,33 @@ return {
 						enable = true,
 						lookahead = true,
 						keymaps = {
-									['ia'] = '@assignment.inner',
-									['aa'] = '@assignment.outer',
-									['iA'] = '@attribute.inner',
-									['aA'] = '@attribute.outer',
-									['ib'] = '@block.inner',
-									['ab'] = '@block.outer',
-									['iC'] = '@call.inner',
-									['aC'] = '@call.outer',
-									['ic'] = '@class.inner',
-									['ac'] = '@class.outer',
-									['i3'] = '@comment.inner',
-									['a3'] = '@comment.outer',
-									['ii'] = '@conditional.linner',
-									['ai'] = '@conditional.outer',
-									['iF'] = '@frame.inner',
-									['aF'] = '@frame.outer',
-									['if'] = '@function.inner',
-									['af'] = '@function.outer',
-									['il'] = '@loop.inner',
-									['al'] = '@loop.outer',
-									['in'] = '@number.inner',
-									['iP'] = '@parameter.inner',
-									['aP'] = '@parameter.outer',
-									['ir'] = '@regex.inner',
-									['ar'] = '@regex.outer',
-									['is'] = '@scopename.inner',
-									['as'] = '@statement.outer',
+							['ia'] = '@assignment.inner',
+							['aa'] = '@assignment.outer',
+							['iA'] = '@attribute.inner',
+							['aA'] = '@attribute.outer',
+							['ib'] = '@block.inner',
+							['ab'] = '@block.outer',
+							['iC'] = '@call.inner',
+							['aC'] = '@call.outer',
+							['ic'] = '@class.inner',
+							['ac'] = '@class.outer',
+							['i3'] = '@comment.inner',
+							['a3'] = '@comment.outer',
+							['ii'] = '@conditional.linner',
+							['ai'] = '@conditional.outer',
+							['iF'] = '@frame.inner',
+							['aF'] = '@frame.outer',
+							['if'] = '@function.inner',
+							['af'] = '@function.outer',
+							['il'] = '@loop.inner',
+							['al'] = '@loop.outer',
+							['in'] = '@number.inner',
+							['iP'] = '@parameter.inner',
+							['aP'] = '@parameter.outer',
+							['ir'] = '@regex.inner',
+							['ar'] = '@regex.outer',
+							['is'] = '@scopename.inner',
+							['as'] = '@statement.outer',
 						}
 					}
 				},
@@ -75,33 +87,44 @@ return {
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter',
 		},
-		config = function()
-			local treeclimber = require('tree-climber')
-			local setkey = vim.keymap.set
-
-			local keyopts = { silent = true }
-
-			local conf_goto = function(fun)
-				return function()
-					fun({
-						skip_comments = true,
-						highlight = true,
-						timeout = 300,
-						higroup = 'Search'
-					})
-				end
-			end
-
-			setkey({ 'n', 'v', 'o' }, '<C-h>', conf_goto(treeclimber.goto_parent), keyopts)
-			setkey({ 'n', 'v', 'o' }, '<C-l>', conf_goto(treeclimber.goto_child), keyopts)
-			setkey({ 'n', 'v', 'o' }, '<C-j>', conf_goto(treeclimber.goto_next), keyopts)
-			setkey({ 'n', 'v', 'o' }, '<C-k>', conf_goto(treeclimber.goto_prev), keyopts)
-			setkey({ 'n', 'o' }, '<C-b>', treeclimber.select_node, keyopts)
-			setkey({ 'n' }, '<C-n>', treeclimber.highlight_node, keyopts)
-		end,
 		lazy = true,
 		keys = {
-			'<C-h>', '<C-l>', '<C-j>', '<C-k>', '<C-b>', '<C-n>'
+			{
+				'<C-h>',
+				treeclimber_movement('goto_parent'),
+				mode = { 'n', 'v', 'o' },
+				desc = "Goto Parent"
+			},
+			{
+				'<C-l>',
+				treeclimber_movement('goto_child'),
+				mode = { 'n', 'v', 'o' },
+				desc = "Goto Child"
+			},
+			{
+				'<C-j>',
+				treeclimber_movement('goto_next'),
+				mode = { 'n', 'v', 'o' },
+				desc = "Goto next"
+			},
+			{
+				'<C-k>',
+				treeclimber_movement('goto_prev'),
+				mode = { 'n', 'v', 'o' },
+				desc = "Goto Previous"
+			},
+			{
+				'<C-b>',
+				function() require('tree-climber').select_node() end,
+				mode = { 'n', 'o' },
+				desc = "Select Node"
+			},
+			{
+				'<C-n>',
+				function() require('tree-climber').highlight_node() end,
+				mode = { 'n' },
+				desc = "Highlight Node"
+			}
 		}
 	}
 }

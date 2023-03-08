@@ -1,9 +1,8 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-  lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
-  config = function()
+  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  init = function()
     -- load the colorscheme here
     vim.cmd([[colorscheme catppuccin]])
   end,
@@ -39,10 +38,16 @@ return {
     },
     dim_inactive = {
       enabled = false,
-      percentage = 0.70
     },
     styles = {
 
-    }
-  }
+    },
+    custom_highlights = function(colors)
+      return {
+        tabline_a_normal = { fg = colors.blue, bg = '' },
+        tabline_b_normal = {fg = colors.text, bg = ''},
+				TelescopeBorder = {fg = colors.surface1, bg = ''}
+      }
+    end
+  },
 }

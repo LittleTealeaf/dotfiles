@@ -7,21 +7,21 @@ return {
         highlight = "Comment"
       }
     },
-    config = function()
-      vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = "LspAttach_inlayhints",
-        callback = function(args)
-          if not (args.data and args.data.client_id) then
-            return
-          end
+    -- config = function()
+    --   vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+    --   vim.api.nvim_create_autocmd("LspAttach", {
+    --     group = "LspAttach_inlayhints",
+    --     callback = function(args)
+    --       if not (args.data and args.data.client_id) then
+    --         return
+    --       end
 
-          local bufnr = args.buf
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          require("lsp-inlayhints").on_attach(client, bufnr)
-        end,
-      })
-    end
+    --       local bufnr = args.buf
+    --       local client = vim.lsp.get_client_by_id(args.data.client_id)
+    --       require("lsp-inlayhints").on_attach(client, bufnr)
+    --     end,
+    --   })
+    -- end
   },
 
   {
@@ -32,34 +32,39 @@ return {
   },
   { 'williamboman/mason.nvim', config = true },
   {
+    'simrat39/rust-tools.nvim',
+    ft = 'rust',
+    config = true
+  },
+  {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
       {
         'hrsh7th/cmp-nvim-lsp',
         name = 'cmp_nvim_lsp'
       },
-      { 'simrat39/rust-tools.nvim' },
       { 'williamboman/mason.nvim', },
+      { 'neovim/nvim-lspconfig', },
+      { 'lvimuser/lsp-inlayhints.nvim' },
     },
     config = function()
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+      local attach_inlay_hints = function(client, bufnr)
+        require('lsp-inlayhints').on_attach(client, bufnr)
+      end
 
       require('mason-lspconfig').setup_handlers({
         function(server_name)
           lspconfig[server_name].setup {
-            capabilities = capabilities
+            capabilities = capabilities,
+            on_attach = attach_inlay_hints
           }
-        end,
-        rust_analyzer = function()
-          require('rust-tools').setup({
-            server = {
-            }
-          })
         end,
         lua_ls = function()
           lspconfig['lua_ls'].setup({
+            on_attach = attach_inlay_hints,
             capabilities = capabilities,
             settings = {
               Lua = {
@@ -73,6 +78,7 @@ return {
         tsserver = function()
           lspconfig.tsserver.setup({
             capabilities = capabilities,
+            on_attach = attach_inlay_hints,
             settings = {
               typescript = {
                 inlayHints = {
