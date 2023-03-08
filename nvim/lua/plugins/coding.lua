@@ -7,7 +7,6 @@ return {
 				name = 'cmp',
 			}
 		},
-		event = 'VeryLazy',
 		config = function()
 			require('nvim-autopairs').setup()
 
@@ -20,7 +19,6 @@ return {
 	{
 		'windwp/nvim-ts-autotag',
 		dependencies = { 'nvim-treesitter/nvim-treesitter' },
-		event = 'VeryLazy',
 		config = true,
 	},
 	{
