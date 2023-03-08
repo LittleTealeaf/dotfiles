@@ -103,12 +103,4 @@ return {
 			{ '<leader>gp', use_extension('gh', 'pull_request '), desc = 'GitHub Pull Requests' }
 		}
 	},
-	-- {
-	-- 	'folke/trouble.nvim',
-	-- 	dependencies = {
-	-- 		telescope_dependency,
-	-- 		{ 'kyazdani42/nvim-web-devicons' }
-	-- 	},
-	-- 	config = load_extension('gh')
-	-- }
 }
