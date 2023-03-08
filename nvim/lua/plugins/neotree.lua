@@ -21,6 +21,9 @@ return {
 				hide_gitignored = false
 			}
 		},
+		window = {
+			position = 'float'
+		},
 		mappings = {
 					["t"] = ""
 		},
