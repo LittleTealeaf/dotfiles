@@ -75,7 +75,7 @@ return {
 			{ '<leader>ff', use_dropdown(use_action('find_files')),            desc = 'Find files' },
 			{ '<leader>fg', use_action('live_grep'),                           desc = 'Live grep' },
 			-- { '<leader>fw', use_action('grep_string'), desc = 'Grep String' },
-			{ '<leader>fb', use_action('buffers'),                             desc = 'List Buffers' },
+			{ '<leader>fb', use_dropdown(use_action('buffers')),                             desc = 'List Buffers' },
 			{ '<leader>fo', use_action('oldfiles'),                            desc = 'List Old Files' },
 			{ '<leader>sf', use_dropdown(use_action('lsp_document_symbols')),  desc = 'List Document Symbols' },
 			{ '<leader>sw', use_dropdown(use_action('lsp_workspace_symbols')), desc = 'List Workspace Symbols' },

@@ -73,6 +73,7 @@ return {
 					'vim',
 					'help',
 					"markdown_inline",
+					"regex"
 				}
 			})
 
