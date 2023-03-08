@@ -124,9 +124,9 @@ return {
 			}
 		end,
 		keys = {
-			{ '<leader>cp', '<cmd>Lspsaga peek_definition<CR>' },
-			{ '<leader>cd', '<cmd>Lspsaga lsp_finder<CR>' },
-			{ '<leader>cr', '<cmd>Lspsaga rename<CR>' },
+			{ '<leader>cp', '<cmd>Lspsaga peek_definition<CR>', desc = 'Peek Definition'},
+			{ '<leader>cd', '<cmd>Lspsaga lsp_finder<CR>', desc = 'LSP Finder' },
+			{ '<leader>cr', '<cmd>Lspsaga rename<CR>', desc = 'Lsp Rename' },
 		}
 	}
 }

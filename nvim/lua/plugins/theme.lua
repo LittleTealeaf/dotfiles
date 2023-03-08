@@ -43,10 +43,18 @@ return {
 
     },
     custom_highlights = function(colors)
+			local border = {fg = colors.surface1, bg = ''}
       return {
-				TelescopeBorder = {fg = colors.surface1, bg = ''},
-				CatBorder = {fg = colors.surface1, bg = ''},
-				FloatBorder = {fg = colors.surface1, bg = ''},
+				TelescopeBorder = border,
+				CatBorder = border,
+				FloatBorder = border,
+				HoverBorder = border,
+				RenameBorder = border,
+				SagaBorder = border,
+				LspInfoBorder = border,
+				NeoTreeFloatBorder = border,
+				NoiceConfirmBorder = border,
+
 
 				-- Tabline
 				tabline_a_normal_bold_italic = {fg = colors.blue, bg = '', style = {'bold', 'italic'}},
