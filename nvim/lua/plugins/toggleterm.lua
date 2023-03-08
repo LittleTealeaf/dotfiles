@@ -5,6 +5,11 @@ return {
 		direction = 'float',
 		float_opts = {
 			border = 'curved',
+		},
+		highlights = {
+			FloatBorder = {
+				link = 'CatBorder'
+			}
 		}
 	},
 	keys = {[[<c-\>]]}

@@ -47,6 +47,7 @@ return {
         tabline_a_normal = { fg = colors.blue, bg = '' },
         tabline_b_normal = {fg = colors.text, bg = ''},
 				TelescopeBorder = {fg = colors.surface1, bg = ''},
+				CatBorder = {fg = colors.surface1, bg = ''}
       }
     end
   },
