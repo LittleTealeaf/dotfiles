@@ -44,10 +44,10 @@ return {
     },
     custom_highlights = function(colors)
       return {
-        -- tabline_a_normal = { fg = colors.blue, bg = 'NONE'},
-        -- tabline_b_normal = {fg = colors.text, bg = ''},
 				TelescopeBorder = {fg = colors.surface1, bg = ''},
 				CatBorder = {fg = colors.surface1, bg = ''},
+
+				-- Tabline
 				tabline_a_normal_bold_italic = {fg = colors.blue, bg = '', style = {'bold', 'italic'}},
 				tabline_b_normal_bold_italic = {fg = colors.text, bg = '', style = {'bold', 'italic'}},
 				tabline_a_normal_italic = {fg = colors.blue, bg = '', style = {'italic'}},
