@@ -58,7 +58,8 @@ return {
 					lualine_b = {},
 					lualine_c = {
 						{ 'filename' },
-						{ 'diff' }
+						{ 'filetype' },
+						{ 'diff' },
 					},
 					lualine_x = {
 						{
@@ -70,7 +71,6 @@ return {
 							cond = noice.api.status.command.has
 						},
 						{ 'diagnostics' },
-						{ 'filetype' },
 					},
 					lualine_y = {
 					},
