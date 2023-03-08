@@ -72,7 +72,7 @@ return {
       telescope.load_extension('ui-select')
     end,
     keys = {
-      { '<leader>ff', use_action('find_files'), desc = 'Find files' },
+      { '<leader>ff', use_dropdown(use_action('find_files')), desc = 'Find files' },
       { '<leader>fg', use_action('live_grep'), desc = 'Live grep' },
       -- { '<leader>fw', use_action('grep_string'), desc = 'Grep String' },
       { '<leader>fb', use_action('buffers'), desc = 'List Buffers' },
