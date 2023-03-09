@@ -134,6 +134,7 @@ return {
 			{ '<leader>cp', '<cmd>Lspsaga peek_definition<CR>', desc = 'Peek Definition' },
 			{ '<leader>cq', '<cmd>Lspsaga lsp_finder<CR>',      desc = 'LSP Finder' },
 			{ '<leader>cr', '<cmd>Lspsaga rename<CR>',          desc = 'Lsp Rename' },
+			{ '<leader>ca', '<cmd>Lspsaga code_action<CR>',     desc = 'Code Action' },
 		}
 	},
 	{
