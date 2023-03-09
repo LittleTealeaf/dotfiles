@@ -14,7 +14,14 @@ return {
 			{ 'K', vim.lsp.buf.hover, }
 		}
 	},
-	{ 'williamboman/mason.nvim', config = true },
+	{
+		'williamboman/mason.nvim',
+		opts = {
+			ui = {
+				border = 'rounded',
+			}
+		}
+	},
 	{
 		'simrat39/rust-tools.nvim',
 		ft = 'rust',
@@ -138,8 +145,8 @@ return {
 			auto_open = false,
 			auto_close = true,
 			action_keys = {
-				jump = {'<tab>'},
-				jump_close = {'<cr>', 'o'}
+				jump = { '<tab>' },
+				jump_close = { '<cr>', 'o' }
 			},
 		},
 		keys = {
