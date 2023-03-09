@@ -143,7 +143,7 @@ return {
 			},
 		},
 		keys = {
-			{ '<leader>ct', ':TroubleToggle document_diagnostics<CR>', desc = "Toggle Trouble" }
+			{ '<leader>ct', ':TroubleToggle workspace_diagnostics<CR>', desc = "Toggle Trouble" }
 		}
 	}
 }
