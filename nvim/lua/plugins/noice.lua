@@ -7,9 +7,9 @@ return {
 		opts = {
 			timeout = 500,
 			background_colour = '#000000',
-			stages = 'fade',
+			stages = 'slide',
 			fps = 60,
-			render = 'minimal'
+			render = 'compact'
 		},
 	},
 	{
