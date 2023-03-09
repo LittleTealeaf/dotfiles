@@ -10,6 +10,12 @@ local in_ivy = function(action)
 	end
 end
 
+local in_cursor = function(action)
+	return function(args)
+		action(require('telescope.themes').get_cursor(args))
+	end
+end
+
 local use_builtin = function(name)
 	return function(args)
 		require('telescope.builtin')[name](args)
@@ -73,9 +79,9 @@ return {
 		end,
 		keys = {
 			{ '<leader>ff', in_dropdown(use_builtin('find_files')),                desc = 'Find files' },
-			{ '<leader>fg', use_builtin('live_grep'),                              desc = 'Live grep' },
+			{ '<leader>fg', in_dropdown(use_builtin('live_grep')),                 desc = 'Live grep' },
 			{ '<leader>fb', in_dropdown(use_builtin('buffers')),                   desc = 'List Buffers' },
-			{ '<leader>fo', use_builtin('oldfiles'),                               desc = 'List Old Files' },
+			{ '<leader>fo', in_dropdown(use_builtin('oldfiles')),                  desc = 'List Old Files' },
 			{ '<leader>sf', in_dropdown(use_builtin('lsp_document_symbols')),      desc = 'List Document Symbols' },
 			{ '<leader>sw', in_dropdown(use_builtin('lsp_workspace_symbols')),     desc = 'List Workspace Symbols' },
 			{ '<leader>ca', vim.lsp.buf.code_action,                               desc = 'List Code Actions' },
