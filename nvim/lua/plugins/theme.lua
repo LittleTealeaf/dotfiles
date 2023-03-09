@@ -56,6 +56,8 @@ return {
 				LspInfoBorder = border,
 				NeoTreeFloatBorder = border,
 				NoiceConfirmBorder = border,
+				-- Noice
+				NoiceMini = {fg='',bg=''},
 				-- Neotree
 				NeoTreeCursorLine = selection,
 				-- Tabline
