@@ -30,5 +30,22 @@ return {
 				extra = true
 			}
 		}
+	},
+	{
+		'pappasam/nvim-repl',
+		init = function()
+			vim.g.repl_split = 'bottom'
+			vim.g.repl_height = 20
+			vim.g.repl_filetype_commands = {
+				python = 'ipython --no-autoindent'
+			}
+		end,
+		keys = {
+			{ '<leader>ro', ':ReplOpen<CR>',    desc = "Open REPL" },
+			{ '<leader>rs', ':ReplRunCell<CR>', desc = "REPL Run Cell" },
+			{ '<leader>rs', ':ReplSend<CR>',    mode = { 'v' },        desc = 'REPL Run Selected' },
+			{ '<leader>rh', ':ReplClose<CR>',   desc = 'Close REPL' },
+			{ '<leader>rc', ':ReplClear<CR>',   desc = 'Clear REPp' }
+		}
 	}
 }

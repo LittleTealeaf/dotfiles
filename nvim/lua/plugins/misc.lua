@@ -13,8 +13,7 @@ return {
 	},
 	{
 		'lewis6991/gitsigns.nvim',
-		lazy = true,
-		event = 'BufEnter',
+		event = 'VeryLazy',
 		config = true
 	}
 }
