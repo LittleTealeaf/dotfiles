@@ -59,7 +59,8 @@ return {
 				build =
 				'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 			},
-			'folke/noice.nvim'
+			'folke/noice.nvim',
+			'nvim-treesitter/nvim-treesitter'
 		},
 		config = function()
 			local telescope = require('telescope')
@@ -106,7 +107,7 @@ return {
 				desc = 'List Document Symbols'
 			},
 			{
-				'<leader>sw',
+				'<leader>sa',
 				in_dropdown(use_builtin('lsp_workspace_symbols')),
 				desc = 'List Workspace Symbols'
 			},
@@ -134,6 +135,11 @@ return {
 				'<leader>ci',
 				in_cursor(use_builtin('lsp_implementations')),
 				desc = "List LSP Implementations"
+			},
+			{
+				'<leader>st',
+				in_dropdown(use_builtin('treesitter')),
+				desc = 'List Treesitter Elements'
 			}
 		}
 	},
