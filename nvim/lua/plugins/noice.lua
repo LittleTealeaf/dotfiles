@@ -20,6 +20,9 @@ return {
 		},
 		lazy = false,
 		opts = {
+			presets = {
+				lsp_doc_border = true,
+			},
 			messages = {
 				view_search = false,
 			},
@@ -59,13 +62,25 @@ return {
 				}
 			},
 			routes = {
-				filter = {
-					event = "msg_show",
-					kind = "search_count",
+				-- Hide all searches
+				{
+					filter = {
+						event = "msg_show",
+						kind = "search_count",
+					},
+					opts = {
+						skip = true
+					}
 				},
-				opts = {
-					skip = true
-				}
+				-- Redirect written messages to mini
+				{
+					filter = {
+						event = 'msg_show',
+						kind = '',
+						find = 'written'
+					},
+					view = 'mini'
+				},
 			},
 			notify = {
 				enabled = true,
