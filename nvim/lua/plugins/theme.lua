@@ -9,17 +9,16 @@ return {
 	opts = {
 		flavor = "macchiato",
 		transparent_background = true,
+		term_colors = true,
 		integrations = {
-			neotree = true,
-			telescope = true,
-			treesitter = true,
-			treesitter_context = true,
-			noice = true,
-			notify = true,
+			gitsigns = true,
+			lsp_saga = true,
 			markdown = true,
 			mason = true,
+			neotree = true,
+			noice = true,
 			cmp = true,
-			lsp_saga = true,
+			notify = true,
 			native_lsp = {
 				enabled = true,
 				virutal_text = {
@@ -34,7 +33,10 @@ return {
 					warnings = { 'underline' },
 					information = { 'underline' }
 				}
-			}
+			},
+			treesitter_context = true,
+			treesitter = true,
+			telescope = true,
 		},
 		dim_inactive = {
 			enabled = false,
