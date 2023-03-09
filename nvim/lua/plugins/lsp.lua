@@ -136,7 +136,14 @@ return {
 		dependencies = {
 			'kyazdani42/nvim-web-devicons',
 		},
-		opts = {},
+		opts = {
+			auto_open = false,
+			auto_close = true,
+			action_keys = {
+				jump = {'<tab>'},
+				jump_close = {'<cr>', 'o'}
+			},
+		},
 		keys = {
 			{ '<leader>ct', ':TroubleToggle document_diagnostics<CR>', desc = "Toggle Trouble" }
 		}

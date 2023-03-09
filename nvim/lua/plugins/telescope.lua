@@ -10,11 +10,11 @@ local in_ivy = function(action)
 	end
 end
 
-local in_cursor = function(action)
-	return function(args)
-		action(require('telescope.themes').get_cursor(args))
-	end
-end
+-- local in_cursor = function(action)
+-- 	return function(args)
+-- 		action(require('telescope.themes').get_cursor(args))
+-- 	end
+-- end
 
 local use_builtin = function(name)
 	return function(args)
@@ -84,7 +84,7 @@ return {
 			{ '<leader>fo', in_dropdown(use_builtin('oldfiles')),                  desc = 'List Old Files' },
 			{ '<leader>sf', in_dropdown(use_builtin('lsp_document_symbols')),      desc = 'List Document Symbols' },
 			{ '<leader>sw', in_dropdown(use_builtin('lsp_workspace_symbols')),     desc = 'List Workspace Symbols' },
-			{ '<leader>ca', vim.lsp.buf.code_action,                               desc = 'List Code Actions' },
+			{ '<leader>ca', vim.lsp.buf.code_action,                    desc = 'List Code Actions' },
 			{ '<leader>nn', in_dropdown(use_extension('notify', 'notify')),        desc = 'Show Notifications' },
 			{ '<leader>fl', in_dropdown(use_builtin('current_buffer_fuzzy_find')), desc = 'Fuzzy Find in Current Buffer' }
 		}
