@@ -44,6 +44,7 @@ return {
 		},
 		custom_highlights = function(colors)
 			local border = { fg = colors.surface1, bg = '' }
+			local selection = { bg = colors.surface1, style = { 'bold' } }
 			return {
 				-- Border
 				TelescopeBorder = border,
@@ -56,7 +57,7 @@ return {
 				NeoTreeFloatBorder = border,
 				NoiceConfirmBorder = border,
 				-- Neotree
-				NeoTreeCursorLine = { bg = colors.surface1, style = { 'bold' } },
+				NeoTreeCursorLine = selection,
 				-- Tabline
 				tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
 				tabline_b_normal_bold_italic = { fg = colors.text, bg = '', style = { 'bold', 'italic' } },
