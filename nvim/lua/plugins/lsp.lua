@@ -10,7 +10,6 @@ return {
 	},
 	{
 		'neovim/nvim-lspconfig',
-		event = 'VeryLazy',
 		keys = {
 			{ 'K', vim.lsp.buf.hover, }
 		}
@@ -23,7 +22,6 @@ return {
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
-		event = 'VeryLazy',
 		dependencies = {
 			{
 				'hrsh7th/cmp-nvim-lsp',
