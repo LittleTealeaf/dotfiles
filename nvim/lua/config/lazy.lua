@@ -21,7 +21,7 @@ local config = {
 
 local options = {
 	ui = {
-		border = "single"
+		border = "rounded"
 	},
 	change_detection = {
 		enabled = true,
