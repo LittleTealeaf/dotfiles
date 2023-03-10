@@ -81,6 +81,25 @@ return {
 					},
 					view = 'mini'
 				},
+				-- Skip search hit BOTTOM messages
+				{
+					filter = {
+						event = 'msg_show',
+						kind = 'wmsg',
+						find = 'search hit BOTTOM'
+					},
+					opts = {
+						skip = true
+					}
+				},
+				-- Send errors to mini
+				{
+					filter = {
+						event = 'msg_show',
+						kind = 'emsg',
+					},
+					view = 'mini'
+				}
 			},
 			notify = {
 				enabled = true,
