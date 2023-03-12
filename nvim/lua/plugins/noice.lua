@@ -99,6 +99,15 @@ return {
 						kind = 'emsg',
 					},
 					view = 'mini'
+				},
+				-- Filter out "No Information Available"
+				{
+					filter = {
+						find = 'No information available'
+					},
+					opts = {
+						skip = true,
+					}
 				}
 			},
 			notify = {
