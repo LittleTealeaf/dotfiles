@@ -131,9 +131,10 @@ return {
 			}
 		end,
 		keys = {
-			{ '<leader>cp', '<cmd>Lspsaga peek_definition<CR>', desc = 'Peek Definition' },
-			{ '<leader>cq', '<cmd>Lspsaga lsp_finder<CR>',      desc = 'LSP Finder' },
-			{ '<leader>cr', '<cmd>Lspsaga rename<CR>',          desc = 'Lsp Rename' },
+			{ '<leader>cp', '<cmd>Lspsaga peek_definition<CR>',   desc = 'Peek Definition' },
+			{ '<leader>cq', '<cmd>Lspsaga lsp_finder<CR>',        desc = 'LSP Finder' },
+			{ '<leader>cr', '<cmd>Lspsaga rename<CR>',            desc = 'Lsp Rename' },
+			{ '<leader>ce', '<cmd>Lspsaga show_line_diagnostics<CR>', desc = "Show line diagnostics" }
 		}
 	},
 	{
