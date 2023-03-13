@@ -1,4 +1,4 @@
-local treeclimber_movement = function(fun)
+local treeclimber_action = function(fun)
 	return function()
 		require('tree-climber')[fun]({
 			skip_comments = true,
@@ -92,37 +92,37 @@ return {
 		keys = {
 			{
 				'<C-h>',
-				treeclimber_movement('goto_parent'),
+				treeclimber_action('goto_parent'),
 				mode = { 'n', 'v', 'o' },
 				desc = "Goto Parent"
 			},
 			{
 				'<C-l>',
-				treeclimber_movement('goto_child'),
+				treeclimber_action('goto_child'),
 				mode = { 'n', 'v', 'o' },
 				desc = "Goto Child"
 			},
 			{
 				'<C-j>',
-				treeclimber_movement('goto_next'),
+				treeclimber_action('goto_next'),
 				mode = { 'n', 'v', 'o' },
 				desc = "Goto next"
 			},
 			{
 				'<C-k>',
-				treeclimber_movement('goto_prev'),
+				treeclimber_action('goto_prev'),
 				mode = { 'n', 'v', 'o' },
 				desc = "Goto Previous"
 			},
 			{
 				'<C-b>',
-				treeclimber_movement('select_node'),
+				treeclimber_action('select_node'),
 				mode = { 'n', 'o' },
 				desc = "Select Node"
 			},
 			{
 				'<C-n>',
-				treeclimber_movement('highlight_node'),
+				treeclimber_action('highlight_node'),
 				mode = { 'n' },
 				desc = "Highlight Node"
 			}
