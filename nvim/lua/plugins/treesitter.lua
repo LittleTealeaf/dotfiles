@@ -125,6 +125,18 @@ return {
 				treeclimber_action('highlight_node'),
 				mode = { 'n' },
 				desc = "Highlight Node"
+			},
+			{
+				'<C-M-k>',
+				treeclimber_action('swap_prev'),
+				mode = {'n'},
+				desc = "Swap Node with Previous"
+			},
+			{
+				'<C-M-j>',
+				treeclimber_action('swap_next'),
+				mode = {'n'},
+				desc = "Swap Node with Next"
 			}
 		}
 	}
