@@ -29,7 +29,7 @@ return {
 		},
 	},
 	keys = {
-		{'<leader>et', ':NeoTreeShowToggle<CR>'},
+		--{'<leader>et', ':NeoTreeShowToggle<CR>'},
 		{'<leader>ef', ':Neotree filesystem<CR>'},
 		{'<leader>eh', ':NeoTreeClose<CR>'},
 		{'<leader>eg', ':Neotree git_status<CR>'},
