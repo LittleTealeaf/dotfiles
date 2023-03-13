@@ -13,12 +13,22 @@ return {
   },
   {
     'hrsh7th/nvim-cmp',
+		dependencies = {
+			{'onsails/lspkind.nvim'}
+		},
     name = 'cmp',
     opts = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
+			local lspkind = require('lspkind')
 
       return {
+				formatting = {
+					fields = {"kind","abbr"},
+					format = lspkind.cmp_format({
+						mode = 'symbol',
+					})
+				},
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
