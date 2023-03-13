@@ -116,13 +116,13 @@ return {
 			},
 			{
 				'<C-b>',
-				function() require('tree-climber').select_node() end,
+				treeclimber_movement('select_node'),
 				mode = { 'n', 'o' },
 				desc = "Select Node"
 			},
 			{
 				'<C-n>',
-				function() require('tree-climber').highlight_node() end,
+				treeclimber_movement('highlight_node'),
 				mode = { 'n' },
 				desc = "Highlight Node"
 			}
