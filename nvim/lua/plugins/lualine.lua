@@ -80,7 +80,7 @@ return {
 					lualine_a = { '' },
 					lualine_b = {},
 					lualine_c = { tabline.tabline_buffers },
-					lualine_x = { '' },
+					lualine_x = { 'branch' },
 					lualine_y = { '' },
 					lualine_z = { '' },
 				}
