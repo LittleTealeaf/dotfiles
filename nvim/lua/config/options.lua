@@ -25,4 +25,13 @@ cmd([[
   set relativenumber number
   command! Q :q
   command! W :w
+
+	augroup RestoreCursorShapeOnExit
+		autocmd!
+		autocmd VimLeave * set guicursor=a:ver10
+	augroup END
 ]])
+
+vim.api.nvim_create_user_command('Format', function()
+	vim.lsp.buf.format()
+end, {})
