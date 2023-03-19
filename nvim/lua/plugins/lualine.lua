@@ -64,13 +64,12 @@ return {
 						},
 						{ 'diagnostics' },
 					},
-					lualine_y = {
-					},
+					lualine_y = {},
 					lualine_z = { 'location' },
 				},
 				tabline = {
 					lualine_a = { '' },
-					lualine_b = {},
+					lualine_b = { '' },
 					lualine_c = { tabline.tabline_buffers },
 					lualine_x = { 'branch' },
 					lualine_y = { '' },
