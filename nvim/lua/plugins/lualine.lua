@@ -13,18 +13,10 @@ return {
 			}
 		},
 		keys = {
-			{
-				'<A-[>',
-				function()
-					require('tabline').buffer_previous()
-				end
-			},
-			{
-				'<A-]>',
-				function()
-					require('tabline').buffer_next()
-				end
-			}
+			{ '<A-[>',      ':TablineBufferPrevious<CR>', desc = "Goto Prev Buffer" },
+			{ '<A-]>',      ':TablineBufferNext<CR>',     desc = 'Goto Next Buffer' },
+			{ '<leader>bd', ':bd<CR>',                    desc = "Delete Buffer" },
+			{ '<leader>bc', ':%bd<CR>',                   desc = "Delete All Buffers" }
 		}
 	},
 	{
