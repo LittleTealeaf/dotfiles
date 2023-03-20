@@ -32,7 +32,7 @@ return {
 		dependencies = {
 			{
 				'hrsh7th/cmp-nvim-lsp',
-				name = 'cmp_nvim_lsp'
+				name = 'cmp_nvim_lsp',
 			},
 			{ 'williamboman/mason.nvim', },
 			{ 'neovim/nvim-lspconfig', },
@@ -131,10 +131,12 @@ return {
 			}
 		end,
 		keys = {
-			{ '<leader>cp', '<cmd>Lspsaga peek_definition<CR>',       desc = 'Peek Definition' },
-			{ '<leader>cq', '<cmd>Lspsaga lsp_finder<CR>',            desc = 'LSP Finder' },
-			{ '<leader>cr', '<cmd>Lspsaga rename<CR>',                desc = 'Lsp Rename' },
-			{ '<leader>ce', '<cmd>Lspsaga show_line_diagnostics<CR>', desc = "Show line diagnostics" }
+			{ '<leader>cp',  '<cmd>Lspsaga peek_definition<CR>',       desc = 'Peek Definition' },
+			{ '<leader>cq',  '<cmd>Lspsaga lsp_finder<CR>',            desc = 'LSP Finder' },
+			{ '<leader>cr',  '<cmd>Lspsaga rename<CR>',                desc = 'Lsp Rename' },
+			{ '<leader>cR',  '<cmd>LSpsaga rename ++project<CR>',      desc = "LSP Rename Project" },
+			{ '<leader>cdl', '<cmd>Lspsaga show_line_diagnostics<CR>', desc = "Show line diagnostics" },
+			{ '<leader>cdb', '<cmd>Lspsaga show_buf_diagnostics<CR>',  desc = "Show Buffer Diagnostics" },
 		}
 	},
 	{

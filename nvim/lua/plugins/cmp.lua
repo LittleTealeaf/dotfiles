@@ -6,15 +6,17 @@ end
 
 return {
 	{
-		'L3MON4D3/LuaSnip',
-		name = 'luasnip',
-		dependencies = { 'saadparwaiz1/cmp_luasnip' },
-		build = "make install_jsregexp",
-	},
-	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
-			{ 'onsails/lspkind.nvim' }
+			{ 'onsails/lspkind.nvim' },
+			{
+				'hrsh7th/cmp-nvim-lsp',
+				name = 'cmp_nvim_lsp',
+			},
+			{
+				'L3MON4D3/LuaSnip',
+				name = 'luasnip',
+			}
 		},
 		name = 'cmp',
 		opts = function()

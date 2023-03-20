@@ -140,6 +140,11 @@ return {
 				'<leader>st',
 				in_dropdown(use_builtin('treesitter')),
 				desc = 'List Treesitter Elements'
+			},
+			{
+				'<leader>cdd',
+				in_dropdown(use_builtin('diagnostics')),
+				desc = "Show LSP Diagnostics"
 			}
 		}
 	},
