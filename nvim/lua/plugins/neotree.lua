@@ -19,20 +19,22 @@ return {
 				visible = true,
 				hide_dotfiles = false,
 				hide_gitignored = false
-			}
+			},
+			window = {
+				position = 'float'
+			},
 		},
 		window = {
 			position = 'float'
 		},
 		mappings = {
-					["t"] = ""
+			["t"] = ""
 		},
 	},
 	keys = {
-		--{'<leader>et', ':NeoTreeShowToggle<CR>'},
-		{'<leader>ef', ':Neotree filesystem<CR>'},
-		{'<leader>eh', ':NeoTreeClose<CR>'},
-		{'<leader>eg', ':Neotree git_status<CR>'},
-		{'<leader>eb', ':Neotree buffers<CR>'},
+		{ '<leader>ef', ':Neotree filesystem<CR>' },
+		{ '<leader>eh', ':NeoTreeClose<CR>' },
+		{ '<leader>eg', ':Neotree git_status<CR>' },
+		{ '<leader>eb', ':Neotree buffers<CR>' },
 	}
 }
