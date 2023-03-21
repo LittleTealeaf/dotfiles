@@ -1,3 +1,6 @@
+-- TODO: Change "TAB" and "S-TAB" to select next and prev nodes
+
+
 local in_dropdown = function(action)
 	return function(args)
 		action(require('telescope.themes').get_dropdown(args))
