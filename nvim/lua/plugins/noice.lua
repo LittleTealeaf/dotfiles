@@ -92,6 +92,16 @@ return {
 						skip = true
 					}
 				},
+				{
+					filter = {
+						event = 'msg_show',
+						kind = 'wmsg',
+						find = 'search hit TOP'
+					},
+					opts = {
+						skip = true
+					}
+				},
 				-- Send errors to mini
 				{
 					filter = {
