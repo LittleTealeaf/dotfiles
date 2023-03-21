@@ -16,10 +16,14 @@ return {
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
 			'nvim-treesitter/nvim-treesitter-context',
+			'windwp/nvim-ts-autotag',
 		},
 		build = ":TSUpdate",
 		config = function()
 			require('nvim-treesitter.configs').setup({
+				autotag = {
+					enabled = true
+				},
 				textobjects = {
 					select = {
 						enable = true,
@@ -129,13 +133,13 @@ return {
 			{
 				'<C-M-k>',
 				treeclimber_action('swap_prev'),
-				mode = {'n'},
+				mode = { 'n' },
 				desc = "Swap Node with Previous"
 			},
 			{
 				'<C-M-j>',
 				treeclimber_action('swap_next'),
-				mode = {'n'},
+				mode = { 'n' },
 				desc = "Swap Node with Next"
 			}
 		}

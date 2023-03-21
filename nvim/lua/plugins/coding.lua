@@ -17,12 +17,6 @@ return {
 		end
 	},
 	{
-		'windwp/nvim-ts-autotag',
-		dependencies = { 'nvim-treesitter/nvim-treesitter' },
-		config = true,
-		ft = {'jsx','tsx','html','xml'}
-	},
-	{
 		'numToStr/Comment.nvim',
 		event = 'VeryLazy',
 		opts = {
