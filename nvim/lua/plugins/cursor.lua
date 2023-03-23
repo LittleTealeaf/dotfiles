@@ -25,6 +25,9 @@ return {
 
 			return {
 				highlights = {
+					defaults = {
+						bold = true
+					},
 					modes = {
 						['n'] = get_fg("lualine_b_normal"),
 						['i'] = get_fg("lualine_b_insert"),
