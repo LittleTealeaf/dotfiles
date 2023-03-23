@@ -1,4 +1,4 @@
-local function tabline_command (command)
+local function tabline_command(command)
 	return function()
 		require('tabline')[command]()
 	end
@@ -21,8 +21,8 @@ return {
 			}
 		},
 		keys = {
-			{ '<A-[>',      tabline_command('buffer_previous'),     desc = "Goto Prev Buffer" },
-			{ '<A-]>',      tabline_command('buffer_next'), desc = 'Goto Next Buffer' },
+			{ '<A-[>',      tabline_command('buffer_previous'), desc = "Goto Prev Buffer" },
+			{ '<A-]>',      tabline_command('buffer_next'),     desc = 'Goto Next Buffer' },
 			{ '<leader>bd', ':bd<CR>',                          desc = "Delete Buffer" },
 			{ '<leader>bc', ':%bd<CR>',                         desc = "Delete All Buffers" }
 		}
