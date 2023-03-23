@@ -36,5 +36,6 @@ return {
 		{ '<leader>eh', ':NeoTreeClose<CR>' },
 		{ '<leader>eg', ':Neotree git_status<CR>' },
 		{ '<leader>eb', ':Neotree buffers<CR>' },
-	}
+	},
+	lazy = false,
 }
