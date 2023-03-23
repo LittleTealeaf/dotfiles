@@ -1,6 +1,6 @@
 return {
 	"folke/todo-comments.nvim",
-	dependnecies = {
+	dependencies = {
 		'nvim-lua/plenary.nvim',
 	},
 	opts = {
