@@ -59,7 +59,7 @@ return {
 				NeoTreeFloatBorder = border,
 				NoiceConfirmBorder = border,
 				-- Noice
-				NoiceMini = {fg='',bg=''},
+				NoiceMini = { fg = '', bg = '' },
 				-- Neotree
 				NeoTreeCursorLine = selection,
 				-- Tabline

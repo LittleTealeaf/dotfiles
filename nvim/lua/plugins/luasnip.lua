@@ -4,6 +4,6 @@ return {
 	dependencies = { 'saadparwaiz1/cmp_luasnip' },
 	build = "make install_jsregexp",
 	config = function()
-		require('luasnip.loaders.from_lua').load({ paths = os.getenv('DOT_FILES').."/nvim/snippets" })
+		require('luasnip.loaders.from_lua').load({ paths = os.getenv('DOT_FILES') .. "/nvim/snippets" })
 	end
 }

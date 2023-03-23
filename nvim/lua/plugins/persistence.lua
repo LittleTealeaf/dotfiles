@@ -13,8 +13,8 @@ return {
 		},
 		{
 			'<leader>qs',
-			function ()
-				require('persistence').load({last = true})
+			function()
+				require('persistence').load({ last = true })
 			end,
 			desc = 'Load Last Session'
 		}
