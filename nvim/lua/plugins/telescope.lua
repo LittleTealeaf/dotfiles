@@ -67,15 +67,26 @@ return {
 		},
 		config = function()
 			local telescope = require('telescope')
+			local actions = require('telescope.actions')
 
 			telescope.setup({
 				extensions = {
-							['ui-select'] = {
+					['ui-select'] = {
 						require('telescope.themes').get_dropdown({}),
 					},
 				},
 				file_browser = {
 					theme = 'dropdown'
+				},
+				defaults = {
+					mappings = {
+						i = {
+							["<Tab>"] = actions.move_selection_next,
+							["<S-Tab>"] = actions.move_selection_previous,
+							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
+							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
+						},
+					}
 				}
 			})
 
