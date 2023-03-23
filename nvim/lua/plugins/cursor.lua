@@ -15,10 +15,9 @@ return {
 			name = "catppuccin",
 		},
 		opts = function()
-			local modicator = require('modicator')
-			local function get_fg(hl)
+			local function get_fg(highlight)
 				return {
-					foreground = modicator.get_highlight_fg(hl)
+					foreground = require('modicator').get_highlight_fg(highlight)
 				}
 			end
 
