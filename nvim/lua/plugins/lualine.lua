@@ -29,7 +29,6 @@ return {
 					lualine_a = { 'mode' },
 					lualine_b = {},
 					lualine_c = {
-						{ 'filetype', icon_only = true },
 						{ 'filename', path = 1 },
 						{ 'diff' },
 					},
