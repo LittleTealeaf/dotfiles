@@ -85,6 +85,7 @@ return {
 							["<S-Tab>"] = actions.move_selection_previous,
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
 							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
+							["<C-q>"] = actions.close,
 						},
 					}
 				}
