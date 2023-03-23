@@ -30,6 +30,7 @@ return {
 						['i'] = get_fg("lualine_b_insert"),
 						['v'] = get_fg("lualine_b_visual"),
 						['V'] = get_fg("lualine_b_visual"),
+						['�'] = get_fg("lualine_b_visual"),
 						['R'] = get_fg("lualine_b_replace"),
 						["c"] = get_fg("lualine_b_command"),
 					}
