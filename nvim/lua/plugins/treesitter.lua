@@ -1,4 +1,4 @@
-local treeclimber_action = function(fun)
+local function treeclimber_action(fun)
 	return function()
 		require('tree-climber')[fun]({
 			skip_comments = true,

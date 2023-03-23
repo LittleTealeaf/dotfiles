@@ -1,39 +1,45 @@
 -- TODO: Change "TAB" and "S-TAB" to select next and prev nodes
 
 
-local in_dropdown = function(action)
+local function in_dropdown(action)
 	return function(args)
 		action(require('telescope.themes').get_dropdown(args))
 	end
 end
 
-local in_ivy = function(action)
+local function in_ivy(action)
 	return function(args)
 		action(require('telescope.themes').get_ivy(args))
 	end
 end
 
-local in_cursor = function(action)
+local function in_cursor(action)
 	return function(args)
 		action(require('telescope.themes').get_cursor(args))
 	end
 end
 
-local use_builtin = function(name)
+local function use_builtin(name)
 	return function(args)
 		require('telescope.builtin')[name](args)
 	end
 end
 
-local use_extension = function(extension, action)
+local function use_extension(extension, action)
 	return function(args)
 		require('telescope').extensions[extension][action](args)
 	end
 end
 
-local with_args = function(fun, args)
+local function with_args(fun, args)
 	return function()
 		fun(args)
+	end
+end
+
+local function load_extension_config(extension)
+	return function()
+		require('telescope').load_extension(extension)
 	end
 end
 
@@ -41,12 +47,6 @@ local telescope_dependency = {
 	'nvim-telescope/telescope.nvim',
 	name = 'telescope'
 }
-
-local load_extension_config = function(extension)
-	return function()
-		require('telescope').load_extension(extension)
-	end
-end
 
 
 return {

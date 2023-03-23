@@ -1,4 +1,4 @@
-local tabline_command = function(command)
+local function tabline_command (command)
 	return function()
 		require('tabline')[command]()
 	end
