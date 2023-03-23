@@ -17,7 +17,6 @@ return {
 		opts = function()
 			local modicator = require('modicator')
 			local function get_fg(hl)
-				print(modicator.get_highlight_fg(hl))
 				return {
 					foreground = modicator.get_highlight_fg(hl)
 				}
@@ -42,6 +41,6 @@ return {
 			vim.o.number = true
 			vim.o.termguicolors = true
 		end,
-		event = "BufEnter"
+		event = "VeryLazy"
 	}
 }
