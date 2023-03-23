@@ -115,6 +115,7 @@ return {
 			local catppuccin_theme = require('catppuccin.groups.integrations.lsp_saga')
 			return {
 				symbol_in_winbar = {
+					enable = false,
 					color_mode = false,
 					separator = ' '
 				},
