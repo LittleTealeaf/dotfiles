@@ -37,10 +37,9 @@ return {
 			treesitter_context = true,
 			treesitter = true,
 			telescope = true,
-			-- navic = {
-			-- 	enabled = true,
-			-- 	custom_bg = "",
-			-- },
+			navic = {
+				enabled = true,
+			},
 		},
 		dim_inactive = {
 			enabled = false,
@@ -63,6 +62,10 @@ return {
 				NeoTreeFloatBorder = border,
 				NoiceConfirmBorder = border,
 				NavbuddyFloatBorder = border,
+				-- Shadow
+				FloatShadow = { bg = '' },
+				FloatShadowThrough = { bg = '' },
+				SagaShadow = {bg = ''},
 				-- Noice
 				NoiceMini = { fg = '', bg = '' },
 				-- Neotree
@@ -76,7 +79,7 @@ return {
 				tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
 				tabline_a_normal = { fg = colors.blue, bg = '' },
 				tabline_b_normal = { fg = colors.text, bg = '' },
-				-- Navbuddy
+				-- 
 			}
 		end
 	},
