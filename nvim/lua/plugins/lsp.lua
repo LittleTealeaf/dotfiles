@@ -9,6 +9,25 @@ return {
 		},
 	},
 	{
+		'SmiteshP/nvim-navbuddy',
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"SmiteshP/nvim-navic",
+			"MunifTanjim/nui.nvim"
+		},
+		opts = {
+			window = {
+				border = "rounded"
+			},
+			lsp = {
+				auto_attach = true
+			}
+		},
+		keys = {
+			{ '<leader>cn', function() require('nvim-navbuddy').open() end, desc = "Open Navbuddy" }
+		}
+	},
+	{
 		'neovim/nvim-lspconfig',
 		keys = {
 			{ 'K', vim.lsp.buf.hover, }
@@ -37,6 +56,7 @@ return {
 			{ 'williamboman/mason.nvim', },
 			{ 'neovim/nvim-lspconfig', },
 			{ 'lvimuser/lsp-inlayhints.nvim' },
+			{ 'SmiteshP/nvim-navbuddy' }
 		},
 		config = function()
 			local lspconfig = require('lspconfig')
@@ -156,5 +176,5 @@ return {
 		keys = {
 			{ '<leader>ct', ':TroubleToggle workspace_diagnostics<CR>', desc = "Toggle Trouble" }
 		}
-	}
+	},
 }
