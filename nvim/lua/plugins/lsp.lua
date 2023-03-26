@@ -11,13 +11,13 @@ return {
 	{
 		'SmiteshP/nvim-navbuddy',
 		dependencies = {
-			"neovim/nvim-lspconfig",
-			"SmiteshP/nvim-navic",
+			{ "SmiteshP/nvim-navic", opts = { highlight = true } },
 			"MunifTanjim/nui.nvim"
 		},
 		opts = {
 			window = {
-				border = "rounded"
+				border = "rounded",
+				size = "70%",
 			},
 			lsp = {
 				auto_attach = true

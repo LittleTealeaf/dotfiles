@@ -37,6 +37,10 @@ return {
 			treesitter_context = true,
 			treesitter = true,
 			telescope = true,
+			-- navic = {
+			-- 	enabled = true,
+			-- 	custom_bg = "",
+			-- },
 		},
 		dim_inactive = {
 			enabled = false,
@@ -58,6 +62,7 @@ return {
 				LspInfoBorder = border,
 				NeoTreeFloatBorder = border,
 				NoiceConfirmBorder = border,
+				NavbuddyFloatBorder = border,
 				-- Noice
 				NoiceMini = { fg = '', bg = '' },
 				-- Neotree
@@ -71,6 +76,7 @@ return {
 				tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
 				tabline_a_normal = { fg = colors.blue, bg = '' },
 				tabline_b_normal = { fg = colors.text, bg = '' },
+				-- Navbuddy
 			}
 		end
 	},
