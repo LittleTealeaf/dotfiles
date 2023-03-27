@@ -1,6 +1,7 @@
 return {
 	{
 		'haya14busa/is.vim',
+		event = "BufEnter"
 	},
 	{
 		'wakatime/vim-wakatime',

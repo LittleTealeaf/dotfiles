@@ -138,10 +138,15 @@ return {
 			{ 'catppuccin/nvim',      name = 'catppuccin' },
 			{ 'neovim/nvim-lspconfig' },
 		},
-		event = 'VeryLazy',
+		event = 'LspAttach',
 		opts = function()
 			local catppuccin_theme = require('catppuccin.groups.integrations.lsp_saga')
 			return {
+				finder = {
+					keys = {
+						expand_or_jump = '<cr>'
+					}
+				},
 				symbol_in_winbar = {
 					enable = false,
 					color_mode = false,
@@ -150,13 +155,14 @@ return {
 				lightbulb = {
 					enable = false
 				},
-				ui = {
-					border = 'rounded',
-					kind = catppuccin_theme.custom_kind()
-				},
 				outline = {
 					enable = false
-				}
+				},
+				ui = {
+					border = 'rounded',
+					title = false,
+					kind = catppuccin_theme.custom_kind()
+				},
 			}
 		end,
 		keys = {
