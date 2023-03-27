@@ -17,7 +17,15 @@ return {
 		opts = {
 			window = {
 				border = "rounded",
-				size = "70%",
+				size = "75%",
+				sections = {
+					left = {
+						size = "25%"
+					},
+					mid = {
+						size = "50%"
+					}
+				}
 			},
 			lsp = {
 				auto_attach = true
