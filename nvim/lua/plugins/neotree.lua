@@ -32,10 +32,10 @@ return {
 		},
 	},
 	keys = {
-		{ '<leader>ef', ':Neotree filesystem<CR>' },
-		{ '<leader>eh', ':NeoTreeClose<CR>' },
-		{ '<leader>eg', ':Neotree git_status<CR>' },
-		{ '<leader>eb', ':Neotree buffers<CR>' },
+		{ '<leader>ef', '<cmd>Neotree filesystem<CR>' },
+		{ '<leader>eh', '<cmd>NeoTreeClose<CR>' },
+		{ '<leader>eg', '<cmd>Neotree git_status<CR>' },
+		{ '<leader>eb', '<cmd>Neotree buffers<CR>' },
 	},
 	lazy = false,
 }

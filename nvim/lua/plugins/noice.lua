@@ -126,7 +126,7 @@ return {
 			}
 		},
 		keys = {
-			{ '<leader>nl', ':Noice last<CR>', desc = "Open Last Notification" }
+			{ '<leader>nl', '<cmd>Noice last<CR>', desc = "Open Last Notification" }
 		}
 	},
 }

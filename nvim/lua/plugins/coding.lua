@@ -36,11 +36,11 @@ return {
 			}
 		end,
 		keys = {
-			{ '<leader>ro', ':ReplOpen<CR>',    desc = "Open REPL" },
-			{ '<leader>rs', ':ReplRunCell<CR>', desc = "REPL Run Cell" },
-			{ '<leader>rs', ':ReplSend<CR>',    desc = 'REPL Run Selected', mode = { 'v' } },
-			{ '<leader>rh', ':ReplClose<CR>',   desc = 'Close REPL' },
-			{ '<leader>rc', ':ReplClear<CR>',   desc = 'Clear REPp' }
+			{ '<leader>ro', '<cmd>ReplOpen<CR>',    desc = "Open REPL" },
+			{ '<leader>rs', '<cmd>ReplRunCell<CR>', desc = "REPL Run Cell" },
+			{ '<leader>rs', '<cmd>ReplSend<CR>',    desc = 'REPL Run Selected', mode = { 'v' } },
+			{ '<leader>rh', '<cmd>ReplClose<CR>',   desc = 'Close REPL' },
+			{ '<leader>rc', '<cmd>ReplClear<CR>',   desc = 'Clear REPp' }
 		}
 	}
 }
