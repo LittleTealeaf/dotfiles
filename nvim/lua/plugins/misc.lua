@@ -7,4 +7,8 @@ return {
 		name = 'wakatime',
 		event = 'VeryLazy'
 	},
+	{
+		'jghauser/mkdir.nvim',
+		event = 'BufEnter'
+	}
 }

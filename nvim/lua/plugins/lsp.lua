@@ -155,7 +155,7 @@ return {
 					kind = catppuccin_theme.custom_kind()
 				},
 				outline = {
-					auto_close = false
+					enable = false
 				}
 			}
 		end,
@@ -184,5 +184,20 @@ return {
 		keys = {
 			{ '<leader>ct', ':TroubleToggle workspace_diagnostics<CR>', desc = "Toggle Trouble" }
 		}
+	},
+	{
+		'jose-elias-alvarez/null-ls.nvim',
+		dependencies = {
+			{ 'nvim-lua/plenary.nvim' }
+		},
+		opts = function()
+			local null_ls = require('null-ls')
+			return {
+				sources = {
+					null_ls.builtins.diagnostics.flake8,
+				}
+			}
+		end,
+		event = 'VeryLazy'
 	},
 }
