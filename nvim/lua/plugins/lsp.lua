@@ -29,7 +29,10 @@ return {
 			},
 			lsp = {
 				auto_attach = true
-			}
+			},
+			icons = {
+				Boolean = "󰔡 "
+			},
 		},
 		keys = {
 			{ '<leader>cn', function() require('nvim-navbuddy').open() end, desc = "Open Navbuddy" }
