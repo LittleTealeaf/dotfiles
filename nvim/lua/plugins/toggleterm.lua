@@ -7,8 +7,11 @@ return {
 			border = 'curved',
 		},
 		highlights = {
+			Normal = {
+				link = "Normal"
+			},
 			FloatBorder = {
-				link = 'CatBorder'
+				link = 'FloatBorder'
 			}
 		}
 	},

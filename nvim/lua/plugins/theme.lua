@@ -50,26 +50,8 @@ return {
 		custom_highlights = function(colors)
 			local border = { fg = colors.surface1, bg = '' }
 			local selection = { bg = colors.surface1, style = { 'bold' } }
+
 			return {
-				-- Border
-				TelescopeBorder = border,
-				CatBorder = border,
-				FloatBorder = border,
-				HoverBorder = border,
-				RenameBorder = border,
-				SagaBorder = border,
-				LspInfoBorder = border,
-				NeoTreeFloatBorder = border,
-				NoiceConfirmBorder = border,
-				NavbuddyFloatBorder = border,
-				-- Shadow
-				FloatShadow = { bg = '' },
-				FloatShadowThrough = { bg = '' },
-				SagaShadow = { bg = '' },
-				-- Noice
-				NoiceMini = { fg = '', bg = '' },
-				-- NeoTree
-				NeoTreeCursorLine = selection,
 				-- Tabline
 				tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
 				tabline_b_normal_bold_italic = { fg = colors.text, bg = '', style = { 'bold', 'italic' } },
@@ -79,6 +61,25 @@ return {
 				tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
 				tabline_a_normal = { fg = colors.blue, bg = '' },
 				tabline_b_normal = { fg = colors.text, bg = '' },
+				-- NeoTree
+				NeoTreeFloatBorder = border,
+				NeoTreeCursorLine = selection,
+				-- Telescope
+				TelescopeBorder = border,
+				-- Borders
+				FloatBorder = border,
+				HoverBorder = border,
+				RenameBorder = border,
+				-- LspSaga
+				SagaShadow = { bg = '' },
+				SagaBorder = border,
+				-- Navbuddy
+				NavbuddyFloatBorder = border,
+				-- Noice
+				NoiceMini = { fg = '', bg = '' },
+				NoiceConfirmBorder = border,
+				-- Lsp
+				LspInfoBorder = border,
 			}
 		end
 	},
