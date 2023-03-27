@@ -65,10 +65,10 @@ return {
 				-- Shadow
 				FloatShadow = { bg = '' },
 				FloatShadowThrough = { bg = '' },
-				SagaShadow = {bg = ''},
+				SagaShadow = { bg = '' },
 				-- Noice
 				NoiceMini = { fg = '', bg = '' },
-				-- Neotree
+				-- NeoTree
 				NeoTreeCursorLine = selection,
 				-- Tabline
 				tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
@@ -79,7 +79,6 @@ return {
 				tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
 				tabline_a_normal = { fg = colors.blue, bg = '' },
 				tabline_b_normal = { fg = colors.text, bg = '' },
-				-- 
 			}
 		end
 	},
