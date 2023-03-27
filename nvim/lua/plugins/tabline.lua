@@ -9,7 +9,7 @@ return {
 	{
 		'kdheepak/tabline.nvim',
 		dependencies = {
-			'kyazdani42/nvim-web-devicons'
+			'nvim-tree/nvim-web-devicons'
 		},
 		name = 'tabline',
 		opts = {

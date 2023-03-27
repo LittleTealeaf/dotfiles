@@ -4,7 +4,9 @@ return {
 		name = 'lualine',
 		dependencies = {
 			{ 'folke/noice.nvim', },
-			{ 'kyazdani42/nvim-web-devicons' },
+			{
+				'nvim-tree/nvim-web-devicons',
+			},
 			{
 				'kdheepak/tabline.nvim',
 				name = 'tabline'
