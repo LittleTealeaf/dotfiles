@@ -188,7 +188,7 @@ return {
 			},
 		},
 		keys = {
-			{ '<leader>ct', ':TroubleToggle workspace_diagnostics<CR>', desc = "Toggle Trouble" }
+			{ '<leader>ct', '<cmd>TroubleToggle workspace_diagnostics<CR>', desc = "Toggle Trouble" }
 		}
 	},
 	{
