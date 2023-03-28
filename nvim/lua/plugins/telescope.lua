@@ -179,7 +179,7 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('gh'),
 		keys = {
-			{ '<leader>gi', use_extension('gh', 'issues'),        desc = 'GitHub Issues' },
+			{ '<leader>gi', use_extension('gh', 'issues'),       desc = 'GitHub Issues' },
 			{ '<leader>gp', use_extension('gh', 'pull_request'), desc = 'GitHub Pull Requests' }
 		}
 	},
