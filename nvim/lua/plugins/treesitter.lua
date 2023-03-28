@@ -14,8 +14,7 @@ return {
 	{
 		'nvim-treesitter/nvim-treesitter',
 		dependencies = {
-			'nvim-treesitter/nvim-treesitter-textobjects',
-			'nvim-treesitter/nvim-treesitter-context',
+			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 			{
 				'windwp/nvim-ts-autotag',
 				config = true,
@@ -83,12 +82,14 @@ return {
 					"regex"
 				}
 			})
-
-			require('treesitter-context').setup({
-				mode = 'topline',
-				--separator = '-'
-			})
 		end,
+	},
+	{
+		'nvim-treesitter/nvim-treesitter-context',
+		name = 'treesitter-context',
+		opts = {
+			mode = 'topline'
+		}
 	},
 	{
 		'drybalka/tree-climber.nvim',
