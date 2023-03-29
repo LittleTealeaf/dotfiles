@@ -1,3 +1,4 @@
+
 return {
 	{
 		'lvimuser/lsp-inlayhints.nvim',
@@ -33,6 +34,23 @@ return {
 			icons = {
 				Boolean = "󰔡 "
 			},
+			mappings = {
+				["l"] = function(display)
+					if display.focus_node.children == nil then
+						return
+					end
+
+					local child_node
+					if display.focus_node.memory then
+						child_node = display.focus_node.children[display.focus_node.memory]
+					else
+						child_node = display.focus_node.children[1]
+					end
+					display.focus_node = child_node
+
+					display:redraw()
+				end
+			}
 		},
 		keys = {
 			{ '<leader>cn', function() require('nvim-navbuddy').open() end, desc = "Open Navbuddy" }
