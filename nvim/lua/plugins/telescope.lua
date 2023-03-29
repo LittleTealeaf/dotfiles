@@ -145,7 +145,7 @@ return {
 			},
 			{
 				'<leader>ci',
-				in_cursor(use_builtin('lsp_implementations')),
+				in_ivy(use_builtin('lsp_implementations')),
 				desc = "List LSP Implementations"
 			},
 			{
