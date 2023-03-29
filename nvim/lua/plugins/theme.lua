@@ -73,6 +73,8 @@ return {
 				-- LspSaga
 				SagaShadow = { bg = '' },
 				SagaBorder = border,
+				DiagnosticBorder = border,
+				DiagnosticShowBorder = border,
 				-- Navbuddy
 				NavbuddyFloatBorder = border,
 				-- Noice
