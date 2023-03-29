@@ -146,7 +146,7 @@ return {
 			{
 				'<leader>cr',
 				in_ivy(use_builtin('lsp_references')),
-				desc = "List LSP Implementations"
+				desc = "List LSP References"
 			},
 			{
 				'<leader>st',
@@ -157,6 +157,11 @@ return {
 				'<leader>cee',
 				with_args(in_ivy(use_builtin('diagnostics')), { bufnr = 0 }),
 				desc = "Show LSP Diagnostics"
+			},
+			{
+				'<leader>ci',
+				in_ivy(use_builtin('lsp_implementations')),
+				desc = "Show LSP Implementations"
 			}
 		}
 	},
