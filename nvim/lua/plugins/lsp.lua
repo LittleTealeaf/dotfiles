@@ -53,7 +53,7 @@ return {
 			}
 		},
 		keys = {
-			{ '<leader>cn', function() require('nvim-navbuddy').open() end, desc = "Open Navbuddy" }
+			{ '<leader>cm', function() require('nvim-navbuddy').open() end, desc = "Open Navbuddy" }
 		}
 	},
 	{
@@ -189,8 +189,8 @@ return {
 		keys = {
 			{ '<leader>cp',  '<cmd>Lspsaga peek_definition<CR>',       desc = 'Peek Definition' },
 			{ '<leader>cq',  '<cmd>Lspsaga lsp_finder<CR>',            desc = 'LSP Finder' },
-			{ '<leader>cr',  '<cmd>Lspsaga rename<CR>',                desc = 'Lsp Rename' },
-			{ '<leader>cR',  '<cmd>LSpsaga rename ++project<CR>',      desc = "LSP Rename Project" },
+			{ '<leader>cn',  '<cmd>Lspsaga rename<CR>',                desc = 'Lsp Rename' },
+			{ '<leader>cN',  '<cmd>LSpsaga rename ++project<CR>',      desc = "LSP Rename Project" },
 			{ '<leader>cel', '<cmd>Lspsaga show_line_diagnostics<CR>', desc = "Show line diagnostics" },
 			{ '<leader>ceb', '<cmd>Lspsaga show_buf_diagnostics<CR>',  desc = "Show Buffer Diagnostics" },
 		}

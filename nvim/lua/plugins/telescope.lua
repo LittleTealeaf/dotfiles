@@ -144,8 +144,8 @@ return {
 				desc = 'List LSP Definitions'
 			},
 			{
-				'<leader>ci',
-				in_ivy(use_builtin('lsp_implementations')),
+				'<leader>cr',
+				in_ivy(use_builtin('lsp_references')),
 				desc = "List LSP Implementations"
 			},
 			{
