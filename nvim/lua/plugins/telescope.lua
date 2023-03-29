@@ -154,7 +154,7 @@ return {
 				desc = 'List Treesitter Elements'
 			},
 			{
-				'<leader>cdd',
+				'<leader>cee',
 				with_args(in_ivy(use_builtin('diagnostics')), { bufnr = 0 }),
 				desc = "Show LSP Diagnostics"
 			}

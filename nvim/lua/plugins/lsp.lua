@@ -173,8 +173,8 @@ return {
 			{ '<leader>cq',  '<cmd>Lspsaga lsp_finder<CR>',            desc = 'LSP Finder' },
 			{ '<leader>cr',  '<cmd>Lspsaga rename<CR>',                desc = 'Lsp Rename' },
 			{ '<leader>cR',  '<cmd>LSpsaga rename ++project<CR>',      desc = "LSP Rename Project" },
-			{ '<leader>cdl', '<cmd>Lspsaga show_line_diagnostics<CR>', desc = "Show line diagnostics" },
-			{ '<leader>cdb', '<cmd>Lspsaga show_buf_diagnostics<CR>',  desc = "Show Buffer Diagnostics" },
+			{ '<leader>cel', '<cmd>Lspsaga show_line_diagnostics<CR>', desc = "Show line diagnostics" },
+			{ '<leader>ceb', '<cmd>Lspsaga show_buf_diagnostics<CR>',  desc = "Show Buffer Diagnostics" },
 		}
 	},
 	{
