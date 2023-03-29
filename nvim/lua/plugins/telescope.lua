@@ -95,12 +95,12 @@ return {
 		keys = {
 			{
 				'<leader>ff',
-				in_dropdown(use_builtin('find_files')),
+				in_ivy(use_builtin('find_files')),
 				desc = 'Find files'
 			},
 			{
 				'<leader>fg',
-				in_dropdown(use_builtin('live_grep')),
+				in_ivy(use_builtin('live_grep')),
 				desc = 'Live grep'
 			},
 			{
@@ -155,7 +155,7 @@ return {
 			},
 			{
 				'<leader>cdd',
-				in_dropdown(use_builtin('diagnostics')),
+				with_args(in_ivy(use_builtin('diagnostics')), { bufnr = 0 }),
 				desc = "Show LSP Diagnostics"
 			}
 		}
