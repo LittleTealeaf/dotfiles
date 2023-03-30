@@ -16,7 +16,7 @@ return {
 			local tabline = require('tabline')
 			local noice = require('noice')
 			return {
-				extensions = { 'nvim-dap-ui', 'neo-tree', 'toggleterm', 'fzf', 'fugitive', 'aerial' },
+				extensions = { 'nvim-dap-ui', 'neo-tree', 'toggleterm', 'fzf', 'fugitive', 'aerial', 'trouble' },
 				options = {
 					theme = 'catppuccin',
 					section_separators = {
