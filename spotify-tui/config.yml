@@ -1,3 +1,5 @@
+behavior:
+  tick_rate_milliseconds: 25
 theme:
   active: "198, 160, 246" # current playing song in list Mauve
   banner: "139, 213, 202" # the "spotify-tui" banner on launch Teal
