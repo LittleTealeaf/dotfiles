@@ -4,7 +4,6 @@ local function use_api(action)
 	end
 end
 
-
 return {
 	"jinzhongjia/LspUI.nvim",
 	event = "VeryLazy",
