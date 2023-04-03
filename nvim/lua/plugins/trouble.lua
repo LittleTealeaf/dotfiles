@@ -16,6 +16,6 @@ return {
 	},
 	keys = {
 		{ '<leader>ce', '<cmd>Trouble workspace_diagnostics<CR>', desc = "Toggle Trouble" },
-		-- { '<leader>cr', '<cmd>Trouble lsp_references<CR>',        desc = "LSP references" }
+		{ '<leader>cr', '<cmd>Trouble lsp_references<CR>',        desc = "LSP references" }
 	}
 }
