@@ -228,11 +228,14 @@ return {
 			auto_close = true,
 			action_keys = {
 				jump = { '<tab>' },
-				jump_close = { '<cr>', 'o' }
+				jump_close = { '<cr>' },
+				toggle_fold = {'h'},
+				close_folds = {'H'},
+				open_folds = {'L'},
 			},
 		},
 		keys = {
-			{ '<leader>ct', '<cmd>TroubleToggle workspace_diagnostics<CR>', desc = "Toggle Trouble" }
+			{ '<leader>ct', '<cmd>Trouble workspace_diagnostics<CR>', desc = "Toggle Trouble" }
 		}
 	},
 	{
