@@ -143,11 +143,11 @@ return {
 				with_args(in_cursor(use_builtin('lsp_definitions')), { layout_config = { width = 0.5 } }),
 				desc = 'List LSP Definitions'
 			},
-			{
-				'<leader>cr',
-				in_ivy(use_builtin('lsp_references')),
-				desc = "List LSP References"
-			},
+			-- {
+			-- 	'<leader>cr',
+			-- 	in_ivy(use_builtin('lsp_references')),
+			-- 	desc = "List LSP References"
+			-- },
 			{
 				'<leader>st',
 				in_dropdown(use_builtin('treesitter')),

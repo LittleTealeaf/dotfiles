@@ -82,6 +82,8 @@ return {
 				NoiceConfirmBorder = border,
 				-- Lsp
 				LspInfoBorder = border,
+				-- Glance
+				GlanceListCursorLine = selection,
 			}
 		end
 	},
