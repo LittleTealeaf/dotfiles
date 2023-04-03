@@ -138,11 +138,11 @@ return {
 				in_dropdown(use_builtin('current_buffer_fuzzy_find')),
 				desc = 'Fuzzy Find in Current Buffer'
 			},
-			{
-				'<leader>cd',
-				with_args(in_cursor(use_builtin('lsp_definitions')), { layout_config = { width = 0.5 } }),
-				desc = 'List LSP Definitions'
-			},
+			-- {
+			-- 	'<leader>cd',
+			-- 	with_args(in_cursor(use_builtin('lsp_definitions')), { layout_config = { width = 0.5 } }),
+			-- 	desc = 'List LSP Definitions'
+			-- },
 			-- {
 			-- 	'<leader>cr',
 			-- 	in_ivy(use_builtin('lsp_references')),
@@ -158,11 +158,11 @@ return {
 			-- 	with_args(in_ivy(use_builtin('diagnostics')), { bufnr = 0 }),
 			-- 	desc = "Show LSP Diagnostics"
 			-- },
-			{
-				'<leader>ci',
-				in_ivy(use_builtin('lsp_implementations')),
-				desc = "Show LSP Implementations"
-			}
+			-- {
+			-- 	'<leader>ci',
+			-- 	in_ivy(use_builtin('lsp_implementations')),
+			-- 	desc = "Show LSP Implementations"
+			-- }
 		}
 	},
 	{
