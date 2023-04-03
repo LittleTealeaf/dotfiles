@@ -105,46 +105,6 @@ return {
 			})
 		end
 	},
-	-- {
-	-- 	'glepnir/lspsaga.nvim',
-	-- 	dependencies = {
-	-- 		{ 'catppuccin/nvim',      name = 'catppuccin' },
-	-- 		{ 'neovim/nvim-lspconfig' },
-	-- 	},
-	-- 	event = 'LspAttach',
-	-- 	opts = function()
-	-- 		local catppuccin_theme = require('catppuccin.groups.integrations.lsp_saga')
-	-- 		return {
-	-- 			finder = {
-	-- 				keys = {
-	-- 					expand_or_jump = '<cr>'
-	-- 				}
-	-- 			},
-	-- 			symbol_in_winbar = {
-	-- 				enable = false,
-	-- 				color_mode = false,
-	-- 				separator = ' '
-	-- 			},
-	-- 			lightbulb = {
-	-- 				enable = false
-	-- 			},
-	-- 			outline = {
-	-- 				enable = false
-	-- 			},
-	-- 			ui = {
-	-- 				border = 'rounded',
-	-- 				title = false,
-	-- 				kind = catppuccin_theme.custom_kind()
-	-- 			},
-	-- 		}
-	-- 	end,
-	-- 	keys = {
-	-- 		{ '<leader>cp',  '<cmd>Lspsaga peek_definition<CR>',       desc = 'Peek Definition' },
-	-- 		{ '<leader>cq',  '<cmd>Lspsaga lsp_finder<CR>',            desc = 'LSP Finder' },
-	-- 		{ '<leader>cn',  '<cmd>Lspsaga rename<CR>',                desc = 'Lsp Rename' },
-	-- 		{ '<leader>cN',  '<cmd>LSpsaga rename ++project<CR>',      desc = "LSP Rename Project" },
-	-- 	}
-	-- },
 	{
 		'jose-elias-alvarez/null-ls.nvim',
 		dependencies = {
