@@ -1,3 +1,4 @@
 # TODO
 
-- [ ] Separate unique plugins (such as trouble.nvim and nvim-navbuddy) to separate files
+- [ ] Update fzf color scheme to match modified border themes
+
