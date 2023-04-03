@@ -38,5 +38,6 @@ end, {})
 
 local map = vim.api.nvim_set_keymap
 
-map("n","<leader>w",":w<CR>", {silent=true})
+map("n","<leader>ww","<cmd>w<CR>", {silent=true})
+map("n","<leader>wa","<cmd>wa<CR>", {silent=true})
 

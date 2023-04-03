@@ -153,11 +153,11 @@ return {
 				in_dropdown(use_builtin('treesitter')),
 				desc = 'List Treesitter Elements'
 			},
-			{
-				'<leader>cee',
-				with_args(in_ivy(use_builtin('diagnostics')), { bufnr = 0 }),
-				desc = "Show LSP Diagnostics"
-			},
+			-- {
+			-- 	'<leader>cee',
+			-- 	with_args(in_ivy(use_builtin('diagnostics')), { bufnr = 0 }),
+			-- 	desc = "Show LSP Diagnostics"
+			-- },
 			{
 				'<leader>ci',
 				in_ivy(use_builtin('lsp_implementations')),
