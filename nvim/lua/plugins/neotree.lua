@@ -25,10 +25,12 @@ return {
 			},
 		},
 		window = {
-			position = 'float'
-		},
-		mappings = {
-			["t"] = ""
+			position = 'float',
+			mappings = {
+				["t"] = "",
+				["h"] = "close_node",
+				["l"] = "open"
+			},
 		},
 	},
 	keys = {
