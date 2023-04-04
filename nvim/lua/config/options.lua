@@ -25,6 +25,8 @@ cmd([[
   command! Q :q
   command! W :w
 	inoremap <C-;> <Esc>
+	inoremap <A-i> <Esc>
+	inoremap <A-a> <Esc>
 
 	augroup RestoreCursorShapeOnExit
 		autocmd!
