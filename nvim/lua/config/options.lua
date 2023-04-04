@@ -21,10 +21,10 @@ opt.clipboard = 'unnamedplus'
 cmd([[
   nnoremap . ;
   nnoremap \ .
-  inoremap A+; <C-Bslash>
   set relativenumber number
   command! Q :q
   command! W :w
+	inoremap <C-;> <Esc>
 
 	augroup RestoreCursorShapeOnExit
 		autocmd!
