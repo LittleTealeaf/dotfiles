@@ -4,7 +4,7 @@
 	email = thomaskwashnak@gmail.com
 	name = Thomas Kwashnak
 [core]
-	editor = nvim
+	editor = vim
 [push]
 	autoSetupRemote = true
 	default = current
