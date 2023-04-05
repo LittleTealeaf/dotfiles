@@ -75,3 +75,13 @@ ln -sf "$DOT_FILES/vim/vimrc" ~/.vimrc
 echo "Setting up lazygit"
 mkdir -p ~/.config/lazygit
 ln -sf "$DOT_FILES/lazygit/config.yml" ~/.config/lazygit/
+
+# Bottom
+echo "Setting up bottom"
+mkdir -p ~/.config/bottom
+ln -sf "$DOT_FILES/bottom/bottom.toml" ~/.config/bottom/
+
+# spotify-tui
+echo "Setting up Spotify-tui configuration"
+mkdir -p ~/.config/spotify-tui
+ln -sf "$DOT_FILES/spotify-ui/config.yml" ~/.config/spotify-tui
