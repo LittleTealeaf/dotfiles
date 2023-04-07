@@ -3,5 +3,9 @@ return {
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 	},
-	opts = {}
+	lazy = false,
+	opts = {},
+	keys = {
+		{'<leader>ct', '<cmd>TodoTrouble<CR>', desc = "Open TODOs"}
+	}
 }

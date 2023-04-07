@@ -19,6 +19,6 @@ return {
 		{ '<leader>cr', '<cmd>Trouble lsp_references<CR>',        desc = "LSP references" },
 		{ '<leader>cd', '<cmd>Trouble lsp_definitions<CR>',       desc = 'LSP Definitions' },
 		{ '<leader>ci', '<cmd>Trouble lsp_implementations<CR>',   desc = "LSP Implementations" },
-		{ '<leader>ct', '<cmd>Trouble lsp_type_definitions<CR>',  desc = "LSP Type Definitions" },
+		-- { '<leader>ct', '<cmd>Trouble lsp_type_definitions<CR>',  desc = "LSP Type Definitions" },
 	}
 }
