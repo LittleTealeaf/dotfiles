@@ -50,6 +50,7 @@ return {
 		custom_highlights = function(colors)
 			local border = { fg = colors.surface1, bg = '' }
 			local selection = { bg = colors.surface1, style = { 'bold' } }
+			local title = { fg = colors.blue, style = { 'bold' } }
 
 			return {
 				-- Tabline
@@ -66,6 +67,8 @@ return {
 				NeoTreeCursorLine = selection,
 				-- Telescope
 				TelescopeBorder = border,
+				TelescopeTitle = title,
+				TelescopeSelection = { fg = colors.text, bg = colors.surface1, style = { 'bold' } },
 				-- Borders
 				FloatBorder = border,
 				HoverBorder = border,

@@ -76,6 +76,11 @@ return {
 					theme = 'dropdown'
 				},
 				defaults = {
+					prompt_prefix = '  ',
+					selection_caret = '  ',
+					path_display = {'smart'},
+					dynamic_preview_title = true,
+					results_title = "",
 					mappings = {
 						i = {
 							["<Tab>"] = actions.move_selection_next,
