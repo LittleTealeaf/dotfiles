@@ -8,7 +8,8 @@ return {
 		height = 15,
 		auto_close = true,
 		action_keys = {
-			jump_close = { '<CR>' },
+			jump_close = '<CR>',
+			jump = nil,
 			open_folds = 'H',
 			close_folds = 'h',
 			toggle_fold = 'l',
