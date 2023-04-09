@@ -60,11 +60,13 @@ return {
 				'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 			},
 			'folke/noice.nvim',
-			'nvim-treesitter/nvim-treesitter'
+			'nvim-treesitter/nvim-treesitter',
+			'folke/trouble.nvim',
 		},
 		config = function()
 			local telescope = require('telescope')
 			local actions = require('telescope.actions')
+			local trouble = require('trouble.providers.telescope')
 
 			telescope.setup({
 				extensions = {
@@ -78,7 +80,7 @@ return {
 				defaults = {
 					prompt_prefix = '  ',
 					selection_caret = '  ',
-					path_display = {'smart'},
+					path_display = { 'smart' },
 					dynamic_preview_title = true,
 					results_title = "",
 					mappings = {
@@ -88,7 +90,9 @@ return {
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
 							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
 							["<C-q>"] = actions.close,
-							['<C-CR>'] = actions.toggle_selection
+							['<C-CR>'] = actions.toggle_selection,
+							['<C-t>'] = trouble.smart_open_with_trouble,
+							['<C-a>'] = actions.toggle_all
 						},
 					}
 				}
