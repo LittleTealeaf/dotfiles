@@ -7,13 +7,13 @@ return {
 			{
 				'nvim-tree/nvim-web-devicons',
 			},
-			{
-				'kdheepak/tabline.nvim',
-				name = 'tabline'
-			}
+			-- {
+			-- 	'kdheepak/tabline.nvim',
+			-- 	name = 'tabline'
+			-- }
 		},
 		opts = function()
-			local tabline = require('tabline')
+			-- local tabline = require('tabline')
 			local noice = require('noice')
 			return {
 				extensions = { 'nvim-dap-ui', 'neo-tree', 'toggleterm', 'fzf', 'fugitive', 'aerial', 'trouble' },
@@ -48,14 +48,14 @@ return {
 					lualine_y = {},
 					lualine_z = { 'location' },
 				},
-				tabline = {
-					lualine_a = { '' },
-					lualine_b = { '' },
-					lualine_c = { tabline.tabline_buffers },
-					lualine_x = { 'branch' },
-					lualine_y = { '' },
-					lualine_z = { '' },
-				}
+				-- tabline = {
+				-- 	lualine_a = { '' },
+				-- 	lualine_b = { '' },
+				-- 	lualine_c = { tabline.tabline_buffers },
+				-- 	lualine_x = { 'branch' },
+				-- 	lualine_y = { '' },
+				-- 	lualine_z = { '' },
+				-- }
 			}
 		end
 	}

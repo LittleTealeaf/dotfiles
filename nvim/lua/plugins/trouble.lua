@@ -1,7 +1,7 @@
 return {
 	'folke/trouble.nvim',
 	dependencies = {
-		'nvim-tree/nvim-web-devicons',
+		'nvim-tree/nvim-web-devicons'
 	},
 	opts = {
 		auto_open = false,
@@ -17,10 +17,12 @@ return {
 		use_diagnostic_signs = true,
 	},
 	keys = {
-		{ '<leader>ce', '<cmd>Trouble workspace_diagnostics<CR>', desc = "Toggle Trouble" },
-		{ '<leader>cr', '<cmd>Trouble lsp_references<CR>',        desc = "LSP references" },
-		{ '<leader>cd', '<cmd>Trouble lsp_definitions<CR>',       desc = 'LSP Definitions' },
-		{ '<leader>ci', '<cmd>Trouble lsp_implementations<CR>',   desc = "LSP Implementations" },
-		{ '<leader>cy', '<cmd>Trouble lsp_type_definitions<CR>',  desc = "LSP Type Definitions" },
+		{ '<leader>te', '<cmd>Trouble workspace_diagnostics<CR>', desc = "Toggle Trouble" },
+		{ '<leader>tr', '<cmd>Trouble lsp_references<CR>',        desc = "LSP references" },
+		{ '<leader>td', '<cmd>Trouble lsp_definitions<CR>',       desc = 'LSP Definitions' },
+		{ '<leader>ti', '<cmd>Trouble lsp_implementations<CR>',   desc = "LSP Implementations" },
+		{ '<leader>ty', '<cmd>Trouble lsp_type_definitions<CR>',  desc = "LSP Type Definitions" },
+		{ '<leader>tt', '<cmd>Trouble<CR>',                       desc = "Toggle Trouble" },
+		{ '<leader>th', '<cmd>TroubleClose<CR>',                  desc = "Close Trouble Window" }
 	}
 }
