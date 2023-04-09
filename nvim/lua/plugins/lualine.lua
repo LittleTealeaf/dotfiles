@@ -46,7 +46,7 @@ return {
 						{ 'diagnostics' },
 					},
 					lualine_y = {},
-					lualine_z = { 'location' },
+					lualine_z = { 'branch' },
 				},
 				-- tabline = {
 				-- 	lualine_a = { '' },
