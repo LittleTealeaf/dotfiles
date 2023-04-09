@@ -53,15 +53,17 @@ return {
 			local title = { fg = colors.blue, style = { 'bold' } }
 
 			return {
-				-- Tabline
-				tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
-				tabline_b_normal_bold_italic = { fg = colors.text, bg = '', style = { 'bold', 'italic' } },
-				tabline_a_normal_italic = { fg = colors.blue, bg = '', style = { 'italic' } },
-				tabline_b_normal_italic = { fg = colors.text, bg = '', style = { 'italic' } },
-				tabline_a_normal_bold = { fg = colors.blue, bg = '', style = { 'bold' } },
-				tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
-				tabline_a_normal = { fg = colors.blue, bg = '' },
-				tabline_b_normal = { fg = colors.text, bg = '' },
+				-- -- Tabline
+				-- tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
+				-- tabline_b_normal_bold_italic = { fg = colors.text, bg = '', style = { 'bold', 'italic' } },
+				-- tabline_a_normal_italic = { fg = colors.blue, bg = '', style = { 'italic' } },
+				-- tabline_b_normal_italic = { fg = colors.text, bg = '', style = { 'italic' } },
+				-- tabline_a_normal_bold = { fg = colors.blue, bg = '', style = { 'bold' } },
+				-- tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
+				-- tabline_a_normal = { fg = colors.blue, bg = '' },
+				-- tabline_b_normal = { fg = colors.text, bg = '' },
+				TabLineSel = {fg = colors.blue, bg = ''},
+				TabLine = {fg = colors.text, bg = ''},
 				-- NeoTree
 				NeoTreeFloatBorder = border,
 				NeoTreeCursorLine = selection,

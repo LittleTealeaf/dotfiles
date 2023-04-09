@@ -18,7 +18,12 @@ opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.clipboard = 'unnamedplus'
 
- cmd([[
+vim.api.nvim_create_user_command('Format', function()
+	vim.lsp.buf.format()
+end, {})
+
+
+cmd([[
   nnoremap . ;
   nnoremap \ .
   set relativenumber number
@@ -30,18 +35,20 @@ opt.clipboard = 'unnamedplus'
 
  	augroup RestoreCursorShapeOnExit
  		autocmd!
- 		autocmd VimLeave * set guicursor=a:ver10
- 	augroup END
- ]])
+		autocmd VimLeave * set guicursor=a:ver10
+	augroup END
+]])
 
 local map = vim.api.nvim_set_keymap
 
-map("n","<leader>ww","<cmd>w<CR>", {silent=true})
-map("n","<leader>wa","<cmd>wa<CR>", {silent=true})
+map("n", "<leader>ww", "<cmd>w<CR>", { silent = true })
+map("n", "<leader>wa", "<cmd>wa<CR>", { silent = true })
 
 
-map('n','<A-[>', '<cmd>bprevious<CR>', {silent=true})
-map('n','<A-]>', '<cmd>bnext<CR>', {silent=true})
-map('n','<leader>bd', '<cmd>bd<CR>', {silent=true})
-map('n','<leader>bc','<cmd>%bd<CR>', {silent=true})
-map('n','<leader>bf','<cmd>%bd|e#<CR>', {silent=true})
+map('n', '<A-[>', '<cmd>bprevious<CR>', { silent = true })
+map('n', '<A-]>', '<cmd>bnext<CR>', { silent = true })
+map('n', '<leader>bd', '<cmd>bd<CR>', { silent = true })
+map('n', '<leader>bc', '<cmd>%bd<CR>', { silent = true })
+map('n', '<leader>bf', '<cmd>%bd|e#<CR>', { silent = true })
+map('n', '<A-S-[>', '<cmd>tabprevious<CR>', { silent = true })
+map('n', '<A-S-]>', '<cmd>tabnext<CR>', { silent = true })

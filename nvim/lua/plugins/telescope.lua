@@ -88,6 +88,7 @@ return {
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
 							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
 							["<C-q>"] = actions.close,
+							['<C-CR>'] = actions.toggle_selection
 						},
 					}
 				}
