@@ -1,3 +1,4 @@
+-- TODO: Consider putting all notifications to the 'mini' display
 return {
 	{
 		'rcarriga/nvim-notify',
