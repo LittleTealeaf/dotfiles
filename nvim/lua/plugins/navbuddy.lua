@@ -9,7 +9,11 @@ return {
 		'SmiteshP/nvim-navbuddy',
 		dependencies = {
 			"SmiteshP/nvim-navic",
-			"MunifTanjim/nui.nvim"
+			"MunifTanjim/nui.nvim",
+			{
+				'nvim-telescope/telescope.nvim',
+				name = 'telescope'
+			}
 		},
 		opts = {
 			window = {
