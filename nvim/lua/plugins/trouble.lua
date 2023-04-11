@@ -7,7 +7,6 @@ return {
 		auto_open = false,
 		height = 15,
 		auto_close = true,
-		auto_fold = true,
 		action_keys = {
 			jump_close = '<CR>',
 			jump = nil,
