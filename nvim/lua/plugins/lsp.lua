@@ -39,6 +39,11 @@ local LSP_SETTINGS = {
 				indentInnerHtml = true
 			}
 		}
+	},
+	['yaml-ls'] = {
+		yaml = {
+			keyOrdering = false
+		}
 	}
 }
 
