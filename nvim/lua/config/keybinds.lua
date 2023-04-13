@@ -21,5 +21,5 @@ end, { silent = true })
 map('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
 
 map('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })
-map('n', '[d', vim.diagnostic.goto_next, { silent = true })
-map('n', ']d', vim.diagnostic.goto_prev, { silent = true })
+map('n', '[d', vim.diagnostic.goto_prev, { silent = true })
+map('n', ']d', vim.diagnostic.goto_next, { silent = true })
