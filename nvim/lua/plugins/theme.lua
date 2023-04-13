@@ -89,6 +89,8 @@ return {
 				LspInfoBorder = border,
 				-- Glance
 				GlanceListCursorLine = selection,
+				-- Treesitter
+				TreeSitterContext = {bg = '', fg = ''},
 			}
 		end
 	},
