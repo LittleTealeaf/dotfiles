@@ -14,7 +14,11 @@ map('n', '<A-S-]>', '<cmd>tabnext<CR>', { silent = true })
 map('n', '<leader>bd', '<cmd>bd<CR>', { silent = true })
 map('n', '<leader>bc', '<cmd>%bd<CR>', { silent = true })
 map('n', '<leader>bf', '<cmd>%bd|e#<CR>', { silent = true })
-map('n', '<leader>cf', vim.lsp.buf.format, { silent = true })
 
+map('n', '<leader>cf', function()
+	vim.lsp.buf.format({ async = true })
+end, { silent = true })
 map('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
+
 map('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })
+map('n', '[d', vim.diagnostic.goto_next, { silent = true })

@@ -1,3 +1,41 @@
+local LSP_SETTINGS = {
+	['lua_ls'] = {
+		Lua = {
+			hint = {
+				enable = true
+			}
+		}
+	},
+	['tsserver'] = {
+		typescript = {
+			inlayHints = {
+				includeInlayParameterNameHints = 'all',
+				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
+			}
+		},
+		javascript = {
+			inlayHints = {
+				includeInlayParameterNameHints = 'all',
+				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
+			}
+		}
+	}
+}
+
+local attach_inlay_hints = function(client, bufnr)
+	require('lsp-inlayhints').on_attach(client, bufnr)
+end
+
 return {
 	{
 		'lvimuser/lsp-inlayhints.nvim',
@@ -43,59 +81,13 @@ return {
 			local lspconfig = require('lspconfig')
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-			local attach_inlay_hints = function(client, bufnr)
-				require('lsp-inlayhints').on_attach(client, bufnr)
-			end
-
 			require('mason-lspconfig').setup_handlers({
 				function(server_name)
 					lspconfig[server_name].setup {
 						capabilities = capabilities,
-						on_attach = attach_inlay_hints
+						on_attach = attach_inlay_hints,
+						settings = LSP_SETTINGS[server_name]
 					}
-				end,
-				lua_ls = function()
-					lspconfig['lua_ls'].setup({
-						on_attach = attach_inlay_hints,
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								hint = {
-									enable = true
-								}
-							}
-						}
-					})
-				end,
-				tsserver = function()
-					lspconfig.tsserver.setup({
-						capabilities = capabilities,
-						on_attach = attach_inlay_hints,
-						settings = {
-							typescript = {
-								inlayHints = {
-									includeInlayParameterNameHints = 'all',
-									includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-									includeInlayFunctionParameterTypeHints = true,
-									includeInlayVariableTypeHints = true,
-									includeInlayPropertyDeclarationTypeHints = true,
-									includeInlayFunctionLikeReturnTypeHints = true,
-									includeInlayEnumMemberValueHints = true,
-								}
-							},
-							javascript = {
-								inlayHints = {
-									includeInlayParameterNameHints = 'all',
-									includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-									includeInlayFunctionParameterTypeHints = true,
-									includeInlayVariableTypeHints = true,
-									includeInlayPropertyDeclarationTypeHints = true,
-									includeInlayFunctionLikeReturnTypeHints = true,
-									includeInlayEnumMemberValueHints = true,
-								}
-							}
-						}
-					})
 				end,
 				jdtls = function()
 					lspconfig.jdtls.setup({

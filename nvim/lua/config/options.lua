@@ -34,3 +34,6 @@ cmd([[
 	augroup END
 ]])
 
+vim.diagnostic.config({
+	virtual_text = false,
+})
