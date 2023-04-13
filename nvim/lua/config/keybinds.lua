@@ -17,3 +17,4 @@ map('n', '<leader>bf', '<cmd>%bd|e#<CR>', { silent = true })
 map('n', '<leader>cf', vim.lsp.buf.format, { silent = true })
 
 map('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
+map('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })

@@ -60,3 +60,7 @@ fzf_file() {
 cdgr() {
 	cd $(git rev-parse --show-toplevel)
 }
+
+cdt() {
+	cd ~/tmp
+}

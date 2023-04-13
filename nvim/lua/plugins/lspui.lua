@@ -13,7 +13,7 @@ return {
 		}
 	},
 	keys = {
-		{ '<leader>cn', '<cmd>LspUI rename<CR>',    desc = "Lsp Rename" },
-		{ '<leader>cp', use_api('peek_definition'), desc = "Peek Definition" }
+		{ '<leader>cn', '<CMD>LspUI rename<CR>',    desc = "Lsp Rename" },
+		{ '<leader>cp', use_api('peek_definition'), desc = "Peek Definition" },
 	}
 }
