@@ -43,10 +43,10 @@ return {
 		dim_inactive = {
 			enabled = false,
 		},
-		custom_highlights = function(colors)
-			local border = { fg = colors.surface1, bg = '' }
-			local selection = { bg = colors.surface1, style = { 'bold' } }
-			local title = { fg = colors.blue, style = { 'bold' } }
+		custom_highlights = function(c)
+			local border = { fg = c.surface1, bg = '' }
+			local selection = { bg = c.surface1, style = { 'bold' } }
+			local title = { fg = c.blue, style = { 'bold' } }
 
 			return {
 				-- -- Tabline
@@ -58,15 +58,15 @@ return {
 				-- tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
 				-- tabline_a_normal = { fg = colors.blue, bg = '' },
 				-- tabline_b_normal = { fg = colors.text, bg = '' },
-				TabLineSel = { fg = colors.blue, bg = '' },
-				TabLine = { fg = colors.text, bg = '' },
+				TabLineSel = { fg = c.blue, bg = '' },
+				TabLine = { fg = c.text, bg = '' },
 				-- NeoTree
 				NeoTreeFloatBorder = border,
 				NeoTreeCursorLine = selection,
 				-- Telescope
 				TelescopeBorder = border,
 				TelescopeTitle = title,
-				TelescopeSelection = { fg = colors.text, bg = colors.surface1, style = { 'bold' } },
+				TelescopeSelection = { fg = c.text, bg = c.surface1, style = { 'bold' } },
 				-- Borders
 				FloatBorder = border,
 				HoverBorder = border,
