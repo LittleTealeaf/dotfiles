@@ -40,7 +40,7 @@ local LSP_SETTINGS = {
 			}
 		}
 	},
-	['yaml-ls'] = {
+	['yamlls'] = {
 		yaml = {
 			keyOrdering = false
 		}
