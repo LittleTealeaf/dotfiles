@@ -12,7 +12,6 @@ return {
 		term_colors = true,
 		integrations = {
 			gitsigns = true,
-			lsp_saga = true,
 			markdown = true,
 			mason = true,
 			neotree = true,
