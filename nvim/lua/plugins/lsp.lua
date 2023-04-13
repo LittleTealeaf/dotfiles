@@ -1,6 +1,9 @@
 local LSP_SETTINGS = {
 	['lua_ls'] = {
 		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			},
 			hint = {
 				enable = true
 			}
@@ -27,6 +30,13 @@ local LSP_SETTINGS = {
 				includeInlayPropertyDeclarationTypeHints = true,
 				includeInlayFunctionLikeReturnTypeHints = true,
 				includeInlayEnumMemberValueHints = true,
+			}
+		}
+	},
+	['html'] = {
+		html = {
+			format = {
+				indentInnerHtml = true
 			}
 		}
 	}
@@ -80,6 +90,7 @@ return {
 		config = function()
 			local lspconfig = require('lspconfig')
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 			require('mason-lspconfig').setup_handlers({
 				function(server_name)
@@ -106,7 +117,7 @@ return {
 			local null_ls = require('null-ls')
 			return {
 				sources = {
-					null_ls.builtins.diagnostics.flake8,
+					null_ls.builtins.formatting.prettier
 				}
 			}
 		end,
