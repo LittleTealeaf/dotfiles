@@ -10,7 +10,7 @@ return {
 	opts = {
 		peek_definition = {
 			enable = true
-		}
+		},
 	},
 	keys = {
 		{ '<leader>cn', '<CMD>LspUI rename<CR>',    desc = "Lsp Rename" },
