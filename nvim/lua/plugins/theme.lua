@@ -34,7 +34,7 @@ return {
 					information = { 'underline' }
 				}
 			},
-			treesitter_context = true,
+			-- treesitter_context = true,
 			treesitter = true,
 			telescope = true,
 			navic = {
@@ -89,8 +89,6 @@ return {
 				LspInfoBorder = border,
 				-- Glance
 				GlanceListCursorLine = selection,
-				-- Treesitter
-				TreeSitterContext = {bg = '', fg = ''},
 			}
 		end
 	},
