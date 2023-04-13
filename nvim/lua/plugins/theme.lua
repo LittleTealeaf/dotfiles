@@ -43,9 +43,6 @@ return {
 		dim_inactive = {
 			enabled = false,
 		},
-		styles = {
-
-		},
 		custom_highlights = function(colors)
 			local border = { fg = colors.surface1, bg = '' }
 			local selection = { bg = colors.surface1, style = { 'bold' } }
@@ -61,8 +58,8 @@ return {
 				-- tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
 				-- tabline_a_normal = { fg = colors.blue, bg = '' },
 				-- tabline_b_normal = { fg = colors.text, bg = '' },
-				TabLineSel = {fg = colors.blue, bg = ''},
-				TabLine = {fg = colors.text, bg = ''},
+				TabLineSel = { fg = colors.blue, bg = '' },
+				TabLine = { fg = colors.text, bg = '' },
 				-- NeoTree
 				NeoTreeFloatBorder = border,
 				NeoTreeCursorLine = selection,
