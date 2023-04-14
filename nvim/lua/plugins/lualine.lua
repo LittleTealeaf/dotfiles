@@ -9,7 +9,7 @@ return {
 		opts = function()
 			local noice = require('noice')
 			return {
-				extensions = { 'nvim-dap-ui', 'neo-tree', 'toggleterm', 'fzf', 'fugitive', 'aerial', 'trouble' },
+				extensions = {'lazy', 'neo-tree', 'toggleterm', 'trouble'},
 				options = {
 					theme = 'catppuccin',
 					section_separators = {
