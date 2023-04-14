@@ -3,7 +3,8 @@
 	"palette": {
 		"pink": "#F5BDE6",
 		"lavender": "#B7BDF8",
-		"text": "#cad3f5"
+		"text": "#cad3f5",
+		"blue": "#8AADF4"
 	},
 	"blocks": [
 		{
@@ -13,13 +14,8 @@
 				{
 					"type": "session",
 					"style": "plain",
-					"template": "{{ .HostName }}",
-					"foreground": "p:lavender"
-				},
-				{
-					"type": "text",
-					"style": "plain",
-					"template": "  "
+					"template": "{{ .HostName }} ",
+					"foreground": "p:blue"
 				},
 				{
 					"foreground": "p:pink",
