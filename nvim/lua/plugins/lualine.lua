@@ -4,9 +4,7 @@ return {
 		name = 'lualine',
 		dependencies = {
 			{ 'folke/noice.nvim', },
-			{
-				'nvim-tree/nvim-web-devicons',
-			},
+			{ 'nvim-tree/nvim-web-devicons', },
 		},
 		opts = function()
 			local noice = require('noice')
