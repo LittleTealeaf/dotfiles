@@ -24,9 +24,10 @@ return {
 					lualine_a = {
 						{ 'mode', separator = { left = '', right = '' } }
 					},
-					lualine_b = {},
+					lualine_b = {
+						{ 'filename', show_filename_only=true },
+					},
 					lualine_c = {
-						{ 'filename', path = 1 },
 						{ 'diff' },
 					},
 					lualine_x = {
@@ -40,7 +41,12 @@ return {
 						},
 						{ 'diagnostics' },
 					},
-					lualine_y = {},
+					lualine_y = {
+
+						function()
+							return vim.fn.getcwd()
+						end
+					},
 					lualine_z = {
 						{ 'branch', separator = { left = '', right = '' } }
 					},
