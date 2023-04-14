@@ -25,7 +25,17 @@ return {
 						{ 'mode', separator = { left = '', right = '' } }
 					},
 					lualine_b = {
-						{ 'filename', show_filename_only=true },
+						{
+							'filename',
+							newfile_status = true,
+							path = 1,
+							symbols = {
+								unnamed = '',
+								modified = '+',
+								readonly = '-',
+								newfile = '[New]'
+							}
+						},
 					},
 					lualine_c = {
 						{ 'diff' },
@@ -42,13 +52,15 @@ return {
 						{ 'diagnostics' },
 					},
 					lualine_y = {
-
-						function()
-							return vim.fn.getcwd()
-						end
+						{ 'branch' }
 					},
 					lualine_z = {
-						{ 'branch', separator = { left = '', right = '' } }
+						{
+							function()
+								return string.gsub(vim.fn.getcwd(), tostring(os.getenv('HOME')), '~')
+							end,
+							separator = { left = '', right = '' }
+						}
 					},
 				},
 			}
