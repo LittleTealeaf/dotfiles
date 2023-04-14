@@ -31,13 +31,20 @@ return {
 							path = 1,
 							symbols = {
 								unnamed = '',
-								modified = '+',
-								readonly = '-',
-								newfile = '[New]'
+								modified = '󰳼',
+								readonly = '',
+								newfile = ''
 							}
 						},
 					},
 					lualine_c = {
+						{
+							'filetype',
+							icon_only = true,
+							icon = {
+								align = 'left'
+							}
+						},
 						{ 'diff' },
 					},
 					lualine_x = {
