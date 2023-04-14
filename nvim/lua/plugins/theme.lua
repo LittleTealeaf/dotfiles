@@ -81,7 +81,7 @@ return {
 				-- Glance
 				GlanceListCursorLine = selection,
 				-- End of Buffer Lines
-				EndOfBuffer = {fg = c.surface1},
+				EndOfBuffer = { fg = c.surface1 },
 			}
 		end
 	},
