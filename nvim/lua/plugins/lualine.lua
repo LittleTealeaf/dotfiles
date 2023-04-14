@@ -7,13 +7,8 @@ return {
 			{
 				'nvim-tree/nvim-web-devicons',
 			},
-			-- {
-			-- 	'kdheepak/tabline.nvim',
-			-- 	name = 'tabline'
-			-- }
 		},
 		opts = function()
-			-- local tabline = require('tabline')
 			local noice = require('noice')
 			return {
 				extensions = { 'nvim-dap-ui', 'neo-tree', 'toggleterm', 'fzf', 'fugitive', 'aerial', 'trouble' },
