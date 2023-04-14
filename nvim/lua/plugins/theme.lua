@@ -80,6 +80,8 @@ return {
 				LspInfoBorder = border,
 				-- Glance
 				GlanceListCursorLine = selection,
+				-- End of Buffer Lines
+				EndOfBuffer = {fg = c.surface1},
 			}
 		end
 	},
