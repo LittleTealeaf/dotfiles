@@ -9,6 +9,7 @@ opt.scrolloff = 15
 opt.smartcase = true
 opt.ignorecase = true
 opt.wrap = true
+opt.breakindent = true
 opt.mouse = 'a'
 opt.number = true
 opt.tabstop = 2
