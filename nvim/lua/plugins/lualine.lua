@@ -52,14 +52,6 @@ return {
 						{ 'branch', separator = { left = '', right = '' } }
 					},
 				},
-				-- tabline = {
-				-- 	lualine_a = { '' },
-				-- 	lualine_b = { '' },
-				-- 	lualine_c = { tabline.tabline_buffers },
-				-- 	lualine_x = { 'branch' },
-				-- 	lualine_y = { '' },
-				-- 	lualine_z = { '' },
-				-- }
 			}
 		end
 	}
