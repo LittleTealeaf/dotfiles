@@ -52,7 +52,7 @@ return {
 						{ 'diagnostics' },
 					},
 					lualine_y = {
-						{ 'branch' }
+						{ 'branch' },
 					},
 					lualine_z = {
 						{
