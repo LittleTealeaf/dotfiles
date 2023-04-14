@@ -11,6 +11,17 @@
 			"alignment": "left",
 			"segments": [
 				{
+					"type": "session",
+					"style": "plain",
+					"template": "{{ .HostName }}",
+					"foreground": "p:lavender"
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"template": "  "
+				},
+				{
 					"foreground": "p:pink",
 					"properties": {
 						"home_icon": "~",
