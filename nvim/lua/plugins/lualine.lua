@@ -1,3 +1,8 @@
+local function get_current_path()
+	return string.gsub(vim.fn.getcwd(), tostring(os.getenv('HOME')), '~')
+end
+
+
 return {
 	{
 		'nvim-lualine/lualine.nvim',
@@ -9,7 +14,7 @@ return {
 		opts = function()
 			local noice = require('noice')
 			return {
-				extensions = {'lazy', 'neo-tree', 'toggleterm', 'trouble'},
+				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble' },
 				options = {
 					theme = 'catppuccin',
 					section_separators = {
@@ -63,9 +68,7 @@ return {
 					},
 					lualine_z = {
 						{
-							function()
-								return string.gsub(vim.fn.getcwd(), tostring(os.getenv('HOME')), '~')
-							end,
+							get_current_path,
 							separator = { left = '', right = '' }
 						}
 					},
