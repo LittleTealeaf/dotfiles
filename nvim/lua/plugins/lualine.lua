@@ -31,9 +31,9 @@ return {
 							path = 1,
 							symbols = {
 								unnamed = '',
-								modified = '󰳼',
-								readonly = '',
-								newfile = ''
+								modified = '󰳼 ',
+								readonly = ' ',
+								newfile = ' '
 							}
 						},
 					},
