@@ -1,3 +1,63 @@
+local routes = {
+	-- Hide all searches
+	{
+		filter = {
+			event = "msg_show",
+			kind = "search_count",
+		},
+		opts = {
+			skip = true
+		}
+	},
+	-- Redirect written messages to mini
+	{
+		filter = {
+			event = 'msg_show',
+			kind = '',
+			find = 'written'
+		},
+		view = 'mini'
+	},
+	-- Skip search hit BOTTOM messages
+	{
+		filter = {
+			event = 'msg_show',
+			kind = 'wmsg',
+			find = 'search hit BOTTOM'
+		},
+		opts = {
+			skip = true
+		}
+	},
+	{
+		filter = {
+			event = 'msg_show',
+			kind = 'wmsg',
+			find = 'search hit TOP'
+		},
+		opts = {
+			skip = true
+		}
+	},
+	-- Send errors to mini
+	{
+		filter = {
+			event = 'msg_show',
+			kind = 'emsg',
+		},
+		view = 'mini'
+	},
+	-- Filter out "No Information Available"
+	{
+		filter = {
+			find = 'No information available'
+		},
+		opts = {
+			skip = true,
+		}
+	}
+}
+
 return {
 	{
 		'rcarriga/nvim-notify',
@@ -61,72 +121,15 @@ return {
 					}
 				}
 			},
-			routes = {
-				-- Hide all searches
-				{
-					filter = {
-						event = "msg_show",
-						kind = "search_count",
-					},
-					opts = {
-						skip = true
-					}
-				},
-				-- Redirect written messages to mini
-				{
-					filter = {
-						event = 'msg_show',
-						kind = '',
-						find = 'written'
-					},
-					view = 'mini'
-				},
-				-- Skip search hit BOTTOM messages
-				{
-					filter = {
-						event = 'msg_show',
-						kind = 'wmsg',
-						find = 'search hit BOTTOM'
-					},
-					opts = {
-						skip = true
-					}
-				},
-				{
-					filter = {
-						event = 'msg_show',
-						kind = 'wmsg',
-						find = 'search hit TOP'
-					},
-					opts = {
-						skip = true
-					}
-				},
-				-- Send errors to mini
-				{
-					filter = {
-						event = 'msg_show',
-						kind = 'emsg',
-					},
-					view = 'mini'
-				},
-				-- Filter out "No Information Available"
-				{
-					filter = {
-						find = 'No information available'
-					},
-					opts = {
-						skip = true,
-					}
-				}
-			},
+			routes = routes,
 			notify = {
 				enabled = true,
 				view = "notify"
 			}
 		},
 		keys = {
-			{ '<leader>nl', '<cmd>Noice last<CR>', desc = "Open Last Notification" }
+			{ '<leader>nl', '<cmd>Noice last<CR>', desc = "Open Last Notification" },
+			{ '<leader>nm', '<cmd>messages<CR>',   desc = "Open Messages" }
 		}
 	},
 }
