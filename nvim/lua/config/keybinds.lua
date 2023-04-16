@@ -15,9 +15,12 @@ map('n', '<leader>bd', '<cmd>bd<CR>', { silent = true })
 map('n', '<leader>bc', '<cmd>%bd<CR>', { silent = true })
 map('n', '<leader>bf', '<cmd>%bd|e#<CR>', { silent = true })
 
-map('n', '<leader>cf', function()
+
+local function format()
 	vim.lsp.buf.format({ async = true })
-end, { silent = true })
+end
+
+map('n', '<leader>cf', format, { silent = true })
 map('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
 
 map('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })
