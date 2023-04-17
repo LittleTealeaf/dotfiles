@@ -15,5 +15,7 @@ return {
 			}
 		}
 	},
-	keys = { [[<c-\>]] }
+	keys = {
+		{ [[<c-\>]], desc = "Toggle Toggleterm" },
+	}
 }
