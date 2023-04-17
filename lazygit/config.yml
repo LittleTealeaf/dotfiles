@@ -10,7 +10,8 @@ gui:
     cherryPickedCommitFgColor:
       - "#8aadf4" # Blue
     inactiveBorderColor:
-      - "#cad3f5" # Text
+      # - "#cad3f5" # Text
+      - "#494d64" # Suface1
     lightTheme: false
     optionsTextColor:
       - "#8aadf4" # Blue
