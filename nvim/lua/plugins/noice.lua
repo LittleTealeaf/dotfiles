@@ -128,8 +128,9 @@ return {
 			}
 		},
 		keys = {
-			{ '<leader>nl', '<cmd>Noice last<CR>', desc = "Open Last Notification" },
-			{ '<leader>nm', '<cmd>messages<CR>',   desc = "Open Messages" }
+			{ '<leader>nl', '<cmd>Noice last<CR>',    desc = "Open Last Notification" },
+			{ '<leader>nm', '<cmd>messages<CR>',      desc = "Open Messages" },
+			{ '<leader>nc', '<cmd>Noice dismiss<CR>', desc = "Clear Messages" },
 		}
 	},
 }
