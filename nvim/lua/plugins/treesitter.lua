@@ -71,7 +71,9 @@ return {
 		'nvim-treesitter/nvim-treesitter-context',
 		name = 'treesitter-context',
 		opts = {
-			mode = 'topline'
+			mode = 'topline',
+			trim_scope = 'inner',
+			max_lines = 5,
 		}
 	},
 	{
