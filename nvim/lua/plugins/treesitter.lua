@@ -20,7 +20,9 @@ return {
 				config = true,
 			},
 		},
-		build = ":TSUpdate",
+		build = function()
+			require('nvim-treesitter.install').update({ with_sync = true })
+		end,
 		config = function()
 			require('nvim-treesitter.configs').setup({
 				autotag = {
@@ -61,26 +63,7 @@ return {
 						}
 					}
 				},
-				ensure_installed = {
-					'lua',
-					'javascript',
-					'java',
-					'html',
-					'css',
-					'scss',
-					'python',
-					'markdown',
-					'gitignore',
-					'gitcommit',
-					'bash',
-					'c',
-					'json',
-					'rust',
-					'vim',
-					'help',
-					"markdown_inline",
-					"regex"
-				}
+				ensure_installed = "all"
 			})
 		end,
 	},
