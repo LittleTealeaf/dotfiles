@@ -82,6 +82,8 @@ return {
 				GlanceListCursorLine = selection,
 				-- End of Buffer Lines
 				EndOfBuffer = { fg = c.surface1 },
+				-- LazyGit
+				LazyGitBorder = border,
 			}
 		end
 	},
