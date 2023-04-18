@@ -64,3 +64,7 @@ cdgr() {
 cdt() {
 	cd ~/tmp
 }
+
+cdgit() {
+	cd ~/git
+}
