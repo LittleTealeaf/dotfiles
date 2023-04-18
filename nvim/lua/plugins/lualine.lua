@@ -2,6 +2,17 @@ local function get_current_path()
 	return string.gsub(vim.fn.getcwd(), tostring(os.getenv('HOME')), '~')
 end
 
+local function get_number_of_buffers()
+	local count = 0
+	for _,_ in pairs(vim.fn.getbufinfo({ buflisted = 1})) do
+		count = count + 1
+	end
+	if count > 1 then
+		return tostring(count)
+	end
+	return ""
+end
+
 
 return {
 	{
@@ -44,15 +55,12 @@ return {
 					},
 					lualine_c = {
 						{
-							'filetype',
-							icon_only = true,
-							icon = {
-								align = 'left'
-							}
+							get_number_of_buffers
 						},
 						{ 'diff' },
 					},
 					lualine_x = {
+						{ 'diagnostics' },
 						{
 							noice.api.status.search.get_hl,
 							cond = noice.api.status.search.has
@@ -61,7 +69,6 @@ return {
 							noice.api.status.command.get_hl,
 							cond = noice.api.status.command.has
 						},
-						{ 'diagnostics' },
 					},
 					lualine_y = {
 						{ 'branch' },
