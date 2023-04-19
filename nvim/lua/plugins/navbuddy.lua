@@ -22,13 +22,13 @@ return {
 			return {
 				window = {
 					border = "rounded",
-					size = "75%",
+					size = "85%",
 					sections = {
 						left = {
-							size = "20%"
+							size = "17%"
 						},
 						mid = {
-							size = "30%"
+							size = "35%"
 						}
 					}
 				},
