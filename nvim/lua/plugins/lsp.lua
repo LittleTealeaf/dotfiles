@@ -54,7 +54,6 @@ end
 return {
 	{
 		'lvimuser/lsp-inlayhints.nvim',
-		commit = "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c",
 		event = 'VeryLazy',
 		opts = {
 			inlay_hints = {
