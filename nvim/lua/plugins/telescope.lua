@@ -105,8 +105,13 @@ return {
 		keys = {
 			{
 				'<leader>ff',
-				in_ivy(use_builtin('find_files')),
-				desc = 'Find files'
+				in_ivy(use_builtin('git_files')),
+				desc = 'Find Git Files'
+			},
+			{
+				'<leader>fa',
+				in_ivy(use_builtin("find_files")),
+				desc = "Find Files"
 			},
 			{
 				'<leader>fg',
