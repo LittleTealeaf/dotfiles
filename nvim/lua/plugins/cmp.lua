@@ -16,15 +16,18 @@ return {
 			{
 				'L3MON4D3/LuaSnip',
 				name = 'luasnip',
-			}
+			},
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-cmdline' }
 		},
 		name = 'cmp',
-		opts = function()
+		config = function()
 			local cmp = require('cmp')
 			local luasnip = require('luasnip')
 			local lspkind = require('lspkind')
 
-			return {
+			cmp.setup({
 				formatting = {
 					fields = { "kind", "abbr" },
 					format = lspkind.cmp_format({
@@ -79,7 +82,22 @@ return {
 				}, {
 					{ name = 'buffer' },
 				})
-			}
+			})
+			cmp.setup.cmdline({ '/', '?' }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{name = "buffer"}
+				}
+			})
+
+			cmp.setup.cmdline(':', {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = 'path' }
+				}, {
+					{ name = 'cmdline' }
+				})
+			})
 		end
 	},
 }
