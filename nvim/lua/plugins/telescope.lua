@@ -104,12 +104,12 @@ return {
 		end,
 		keys = {
 			{
-				'<leader>ff',
+				'<leader>fr',
 				in_ivy(use_builtin('git_files')),
 				desc = 'Find Git Files'
 			},
 			{
-				'<leader>fa',
+				'<leader>ff',
 				in_ivy(use_builtin("find_files")),
 				desc = "Find Files"
 			},
