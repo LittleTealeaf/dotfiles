@@ -7,8 +7,8 @@ map("n", "<leader>wa", "<cmd>wa<CR>", { silent = true })
 
 map('n', '<A-[>', '<cmd>bprevious<CR>', { silent = true })
 map('n', '<A-]>', '<cmd>bnext<CR>', { silent = true })
-map('n', '<A-S-[>', '<cmd>tabprevious<CR>', { silent = true })
-map('n', '<A-S-]>', '<cmd>tabnext<CR>', { silent = true })
+-- map('n', '<A-S-[>', '<cmd>tabprevious<CR>', { silent = true })
+-- map('n', '<A-S-]>', '<cmd>tabnext<CR>', { silent = true })
 
 
 map('n', '<leader>bd', '<cmd>bd<CR>', { silent = true })

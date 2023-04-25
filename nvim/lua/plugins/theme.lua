@@ -84,6 +84,8 @@ return {
 				EndOfBuffer = { fg = c.surface1 },
 				-- LazyGit
 				LazyGitBorder = border,
+				-- Harpoon
+				HarpoonBorder = border,
 			}
 		end
 	},
