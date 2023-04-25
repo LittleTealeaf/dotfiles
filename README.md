@@ -8,7 +8,7 @@ The following sections of this document highlight installation steps in order to
 
 If you would like, you can use the install script to automatically install all of these options. I will try to make this script as robust as possible in order to avoid any overwriting.
 
-This setup script is targetted towards bash.
+This setup script is targetted towards bash, and on ubuntu-based systems. 
 
 
 ## Initial Shell Setup
