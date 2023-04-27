@@ -9,7 +9,6 @@ local function treeclimber_action(fun)
 	end
 end
 
-
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',
