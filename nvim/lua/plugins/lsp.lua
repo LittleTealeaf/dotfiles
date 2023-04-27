@@ -61,12 +61,7 @@ return {
 			}
 		},
 	},
-	{
-		'neovim/nvim-lspconfig',
-		keys = {
-			{ 'K', vim.lsp.buf.hover, }
-		}
-	},
+	{ 'neovim/nvim-lspconfig', },
 	{
 		'williamboman/mason.nvim',
 		opts = {

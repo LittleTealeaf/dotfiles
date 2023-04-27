@@ -19,7 +19,8 @@ return {
 			},
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-path' },
-			{ 'hrsh7th/cmp-cmdline' }
+			{ 'hrsh7th/cmp-cmdline' },
+			{ 'hrsh7th/cmp-nvim-lua' }
 		},
 		name = 'cmp',
 		config = function()
@@ -77,6 +78,7 @@ return {
 					['<CR>'] = cmp.mapping.confirm({ select = true })
 				},
 				sources = cmp.config.sources({
+					{ name = 'nvim_lua' },
 					{ name = 'nvim_lsp' },
 					{ name = 'luasnip' },
 				}, {
