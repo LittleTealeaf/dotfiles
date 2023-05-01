@@ -81,6 +81,19 @@ return {
 		config = true
 	},
 	{
+		"saecki/crates.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "jose-elias-alvarez/null-ls.nvim" }
+		},
+		opts = {
+			null_ls = {
+				enabled = true,
+				name = "crates.nvim"
+			}
+		}
+	},
+	{
 		'jose-elias-alvarez/null-ls.nvim',
 		dependencies = {
 			{ 'nvim-lua/plenary.nvim' }
