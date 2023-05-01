@@ -19,7 +19,7 @@ return {
 	keys = {
 		{ '<leader>te', '<cmd>Trouble workspace_diagnostics<CR>', desc = "Open Trouble Diagnostics" },
 		{ '<leader>tr', '<cmd>Trouble lsp_references<CR>',        desc = "Open Trouble Lsp References" },
-		{ '<leader>td', '<cmd>Trouble lsp_definitions<CR>',       desc = "Open Trouble Lsp Definitions"},
+		{ '<leader>td', '<cmd>Trouble lsp_definitions<CR>',       desc = "Open Trouble Lsp Definitions" },
 		{ '<leader>ti', '<cmd>Trouble lsp_implementations<CR>',   desc = "Open Trouble Lsp Implementations" },
 		{ '<leader>ty', '<cmd>Trouble lsp_type_definitions<CR>',  desc = "Open Trouble Lsp Type Definitions" },
 		{ '<leader>tf', '<cmd>Trouble telescope<CR>',             desc = "Open Trouble Telescope" },

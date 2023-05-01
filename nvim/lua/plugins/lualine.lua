@@ -1,5 +1,7 @@
+local ENV_HOME = tostring(os.getenv("HOME"))
+
 local function get_current_path()
-	return string.gsub(vim.fn.getcwd(), tostring(os.getenv('HOME')), '~')
+	return string.gsub(vim.fn.getcwd(), ENV_HOME, '~')
 end
 
 local function get_number_of_buffers()
