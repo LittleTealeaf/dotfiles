@@ -79,12 +79,13 @@ return {
 					['<CR>'] = cmp.mapping.confirm({ select = true })
 				},
 				sources = cmp.config.sources({
-					{ name = 'nvim_lua' },
 					{ name = 'nvim_lsp' },
+					{ name = 'nvim_lua' },
 					{ name = 'luasnip' },
 					{ name = "crates" },
 				}, {
 					{ name = 'buffer' },
+					{ name = "path" },
 				})
 			})
 			cmp.setup.cmdline({ '/', '?' }, {
