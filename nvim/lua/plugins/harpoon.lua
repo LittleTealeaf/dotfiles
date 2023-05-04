@@ -9,7 +9,7 @@ return {
 		}
 	},
 	keys = {
-		{ '<leader>bh', function() require("harpoon.mark").add_file() end,        desc = "Mark File in Harpoon" },
-		{ '<leader>bt', function() require("harpoon.ui").toggle_quick_menu() end, desc = "Toggle Harpoon Quick Menu" },
+		{ '<leader>bt', function() require("harpoon.mark").add_file() end,        desc = "Mark File in Harpoon" },
+		{ '<leader>bg', function() require("harpoon.ui").toggle_quick_menu() end, desc = "Toggle Harpoon Quick Menu" },
 	}
 }
