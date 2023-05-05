@@ -40,6 +40,28 @@ local function load_extension_config(extension)
 	end
 end
 
+local function open_with_harpoon()
+	local action_state = require('telescope.actions.state')
+	local mark = require('harpoon.mark')
+
+	return function(prompt_bufnr)
+		local picker = action_state.get_current_picker(prompt_bufnr)
+		local multi_selection = picker:get_multi_selection()
+
+		if #multi_selection > 1 then
+			require("telescope.pickers").on_close_prompt(prompt_bufnr)
+			pcall(vim.api.nvim_win_set_cursor, 0, picker.original_win_id)
+			for i, entry in ipairs(multi_selection) do
+				local filename
+				if entry.path or entry.filename then
+					filename = entry.path or entry.filename
+					mark.add_file(filename)
+				end
+			end
+		end
+	end
+end
+
 local telescope_dependency = {
 	'nvim-telescope/telescope.nvim',
 	name = 'telescope'
@@ -62,6 +84,7 @@ return {
 			'folke/noice.nvim',
 			'nvim-treesitter/nvim-treesitter',
 			'folke/trouble.nvim',
+			'ThePrimeagen/harpoon',
 		},
 		config = function()
 			local telescope = require('telescope')
@@ -92,7 +115,8 @@ return {
 							["<C-q>"] = actions.close,
 							['<C-CR>'] = actions.toggle_selection,
 							['<C-t>'] = trouble.smart_open_with_trouble,
-							['<C-a>'] = actions.toggle_all
+							['<C-a>'] = actions.toggle_all,
+							['<C-h>'] = open_with_harpoon()
 						},
 					}
 				}
