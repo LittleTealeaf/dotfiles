@@ -48,8 +48,8 @@ local function open_with_harpoon()
 		local picker = action_state.get_current_picker(prompt_bufnr)
 		local multi_selection = picker:get_multi_selection()
 
+		require("telescope.pickers").on_close_prompt(prompt_bufnr)
 		if #multi_selection > 0 then
-			require("telescope.pickers").on_close_prompt(prompt_bufnr)
 			pcall(vim.api.nvim_win_set_cursor, 0, picker.original_win_id)
 			for i, entry in ipairs(multi_selection) do
 				local filename
@@ -59,17 +59,8 @@ local function open_with_harpoon()
 				end
 			end
 		else
-			require("telescope.pickers").on_close_prompt(prompt_bufnr)
-			local manager = picker.manager
-			for item in manager:iter() do
-				for k, v in ipairs(item) do
-					print(k, v)
-				end
-				local filename
-				if item.path or item.filename then
-					filename = item.path or item.filename
-					-- mark.add_file(filename)
-				end
+			for _, entry in pairs(picker._selection_entry) do
+				mark.add_file(entry)
 			end
 		end
 	end
