@@ -60,6 +60,8 @@ return {
 				-- tabline_b_normal = { fg = colors.text, bg = '' },
 				TabLineSel = { fg = c.blue, bg = '' },
 				TabLine = { fg = c.text, bg = '' },
+				-- Float
+				FloatTitle = title,
 				-- NeoTree
 				NeoTreeFloatBorder = border,
 				NeoTreeCursorLine = selection,
