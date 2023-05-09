@@ -51,7 +51,7 @@ local function open_with_harpoon()
 		require("telescope.pickers").on_close_prompt(prompt_bufnr)
 		if #multi_selection > 0 then
 			pcall(vim.api.nvim_win_set_cursor, 0, picker.original_win_id)
-			for i, entry in ipairs(multi_selection) do
+			for _, entry in ipairs(multi_selection) do
 				local filename
 				if entry.path or entry.filename then
 					filename = entry.path or entry.filename
