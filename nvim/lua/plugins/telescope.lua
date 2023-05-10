@@ -110,9 +110,14 @@ return {
 					['ui-select'] = {
 						require('telescope.themes').get_dropdown({}),
 					},
-				},
-				file_browser = {
-					theme = 'dropdown'
+					file_browser = {
+						theme = 'ivy',
+						mappings = {
+							["i"] = {
+								['<C-w>'] = false,
+							}
+						}
+					},
 				},
 				defaults = {
 					prompt_prefix = '  ',
