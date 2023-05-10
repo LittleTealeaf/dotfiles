@@ -89,7 +89,7 @@ return {
 				-- Harpoon
 				HarpoonBorder = border,
 				-- Cursor Line
-				CursorLine = { bg = '', style = { 'bold' }},
+				CursorLine = { bg = '', style = { 'bold' } },
 			}
 		end
 	},
