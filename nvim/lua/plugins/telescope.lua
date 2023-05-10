@@ -66,6 +66,16 @@ local function open_with_harpoon()
 	end
 end
 
+
+local function file_browser()
+	require('telescope').extensions.file_browser.file_browser(
+		require('telescope.themes').get_ivy({
+			hidden = true,
+			path = vim.fn.expand("%:p:h")
+		})
+	)
+end
+
 local telescope_dependency = {
 	'nvim-telescope/telescope.nvim',
 	name = 'telescope'
@@ -196,10 +206,12 @@ return {
 		keys = {
 			{
 				'<leader>fe',
-				with_args(in_ivy(use_extension('file_browser', 'file_browser')), { hidden = true }),
+				file_browser,
 				desc = 'File Browser'
 			}
 		}
+
+		-- Path
 	},
 	{
 		'nvim-telescope/telescope-github.nvim',
