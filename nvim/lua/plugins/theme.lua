@@ -88,6 +88,8 @@ return {
 				LazyGitBorder = border,
 				-- Harpoon
 				HarpoonBorder = border,
+				-- Cursor Line
+				CursorLine = { bg = '', style = { 'bold' }},
 			}
 		end
 	},
