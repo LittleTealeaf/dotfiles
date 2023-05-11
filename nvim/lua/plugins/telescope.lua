@@ -113,9 +113,8 @@ return {
 					file_browser = {
 						theme = 'ivy',
 						mappings = {
-							["i"] = {
-								['<C-w>'] = false,
-							}
+							i = {
+								['<C-w>'] = false }
 						}
 					},
 				},
@@ -135,7 +134,7 @@ return {
 							['<C-CR>'] = actions.toggle_selection,
 							['<C-t>'] = trouble.smart_open_with_trouble,
 							['<C-a>'] = actions.toggle_all,
-							['<C-h>'] = open_with_harpoon()
+							['<C-h>'] = open_with_harpoon(),
 						},
 					}
 				}
