@@ -1,9 +1,9 @@
 return {
-	{
-		"chrisgrieser/nvim-early-retirement",
-		config = {
-			retirementAgeMins = 1
-		},
-		event = "VeryLazy",
-	}
+	-- {
+	-- 	"chrisgrieser/nvim-early-retirement",
+	-- 	config = {
+	-- 		retirementAgeMins = 1
+	-- 	},
+	-- 	event = "VeryLazy",
+	-- }
 }
