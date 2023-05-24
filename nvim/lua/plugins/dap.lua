@@ -1,12 +1,36 @@
 return {
 	{
 		'mfussenegger/nvim-dap',
+		dependencies = { 'williamboman/mason.nvim' },
 		config = function()
 			local dap = require('dap')
+			local mason_registry = require('mason-registry')
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapBreakpointCondition",
 				{ text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
+
+			dap.adapters['pwa-node'] = {
+				type = 'server',
+				host = 'localhost',
+				port = '${port}',
+				executable = {
+					command = 'node',
+					args = {
+						mason_registry.get_package('js-debug-adapter'):get_install_path() .. "/js-debug/src/dapDebugServer.js",
+						"${port}"
+					}
+				}
+			}
+			dap.configurations.javascript = {
+				{
+					type = 'pwa-node',
+					request = 'launch',
+					name = 'Launch file',
+					program = '${file}',
+					cwd = "${workspaceFolder}"
+				}
+			}
 		end,
 		keys = {
 			{ '<leader>db', function() require('dap').toggle_breakpoint() end, "Toggle Breakpoint" },
