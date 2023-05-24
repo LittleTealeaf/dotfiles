@@ -95,7 +95,8 @@ return {
 				-- Cursor Line
 				CursorLine = { bg = '', style = { 'bold' } },
 				-- Dap UI
-				DapUIFloatBorder = border
+				DapUIFloatBorder = border,
+				DapStoppedLine = selection,
 			}
 		end
 	},

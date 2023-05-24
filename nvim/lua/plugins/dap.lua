@@ -9,6 +9,7 @@ return {
 			vim.fn.sign_define("DapBreakpointCondition",
 				{ text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
+			vim.fn.sign_define("DapStopped", { text = "", linehl = "DapStoppedLine" })
 
 			dap.defaults.fallback.exception_breakpoints = { 'raised', 'uncaught', 'panic' }
 
@@ -35,15 +36,18 @@ return {
 			}
 		end,
 		keys = {
-			{ '<leader>db', function() require('dap').toggle_breakpoint() end, "Toggle Breakpoint" },
-			{ '<leader>dc', function() require('dap').continue() end,          "Dap Continue" },
-			{ '<leader>do', function() require('dap').step_out() end,          "Dap Step Out" },
-			{ '<leader>dn', function() require('dap').step_over() end,         "Dap Step Over" },
-			{ '<leader>di', function() require('dap').step_into() end,         "Dap Step Into", },
-			{ '<leader>dl', function() require('dap').run_last() end,          "Dap Run Last" },
-			{ '<leader>dr', function() require('dap').run() end,               "Dap Run" },
-			{ '<leader>dk', function() require('dapui').eval() end,            "Dap Eval" },
-			{ '<leader>dd', function() require('dapui').toggle() end,          "Toggle Dap UI" },
+			{ '<leader>db', function() require('dap').toggle_breakpoint() end,                                           "Toggle Breakpoint" },
+			{ '<leader>dc', function() require('dap').continue() end,                                                    "Dap Continue" },
+			{ '<leader>do', function() require('dap').step_out() end,                                                    "Dap Step Out" },
+			{ '<leader>dn', function() require('dap').step_over() end,                                                   "Dap Step Over" },
+			{ '<leader>di', function() require('dap').step_into() end,                                                   "Dap Step Into", },
+			{ '<leader>du', function() require('dap').run_last() end,                                                    "Dap Run Last" },
+			{ '<leader>dl', function() require('dap').set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
+				                                                                                                             "Dap Log Point" },
+			{ '<leader>dr', function() require('dap').run() end,                                                         "Dap Run" },
+			{ '<leader>dt', function() require('dap').terminate() end,                                                   "Dap Terminate" },
+			{ '<leader>dk', function() require('dapui').eval() end,                                                      "Dap Eval" },
+			{ '<leader>dd', function() require('dapui').toggle() end,                                                    "Toggle Dap UI" },
 		}
 	},
 	{
@@ -62,20 +66,20 @@ return {
 					{
 						elements = {
 							{
-								id = 'scopes',
+								id = 'repl',
 								size = 0.25
-							},
-							{
-								id = 'breakpoints',
-								size = 0.25,
 							},
 							{
 								id = 'stacks',
 								size = 0.25
 							},
 							{
+								id = 'scopes',
+								size = 0.4
+							},
+							{
 								id = 'watches',
-								size = 0.25,
+								size = 0.1,
 							}
 						},
 						position = 'right',
@@ -84,8 +88,8 @@ return {
 					{
 						elements = {
 							{
-								id = 'repl',
-								size = 0.5
+								id = 'breakpoints',
+								size = 0.5,
 							},
 							{
 								id = 'console',
