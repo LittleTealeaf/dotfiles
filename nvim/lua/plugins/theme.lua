@@ -97,6 +97,8 @@ return {
 				-- Dap UI
 				DapUIFloatBorder = border,
 				DapStoppedLine = selection,
+				-- Treesitter Context
+				TreesitterContext = { style = { 'bold' } },
 			}
 		end
 	},
