@@ -75,6 +75,7 @@ return {
 		dependencies = {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
+			'akinsho/toggleterm.nvim',
 		},
 		ft = 'rust',
 		config = function()
