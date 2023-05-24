@@ -5,7 +5,6 @@ local function runIfLoaded(libname, fun)
 	end
 end
 
-
 return {
 	'folke/persistence.nvim',
 	event = 'BufReadPre',

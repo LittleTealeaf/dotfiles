@@ -6,7 +6,7 @@ end
 
 local function get_number_of_buffers()
 	local count = 0
-	for _,_ in pairs(vim.fn.getbufinfo({ buflisted = 1})) do
+	for _, _ in pairs(vim.fn.getbufinfo({ buflisted = 1 })) do
 		count = count + 1
 	end
 	if count > 1 then
@@ -27,7 +27,7 @@ return {
 		opts = function()
 			local noice = require('noice')
 			return {
-				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble' },
+				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble', 'nvim-dap-ui' },
 				options = {
 					theme = 'catppuccin',
 					section_separators = {

@@ -227,4 +227,14 @@ return {
 			{ '<leader>gp', use_extension('gh', 'pull_request'), desc = 'GitHub Pull Requests' }
 		}
 	},
+	-- DAP
+	{
+		'nvim-telescope/telescope-dap.nvim',
+		event = 'VeryLazy',
+		dependencies = {telescope_dependency},
+		config = load_extension_config('dap'),
+		keys = {
+			{'<leader>dv', use_extension('dap', 'variables'), desc = "Dap Variables"}
+		}
+	}
 }

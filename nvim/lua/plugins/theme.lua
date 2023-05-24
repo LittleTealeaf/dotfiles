@@ -18,6 +18,10 @@ return {
 			noice = true,
 			cmp = true,
 			notify = true,
+			dap = {
+				enabled = true,
+				enable_ui = true,
+			},
 			native_lsp = {
 				enabled = true,
 				virutal_text = {
@@ -90,6 +94,8 @@ return {
 				HarpoonBorder = border,
 				-- Cursor Line
 				CursorLine = { bg = '', style = { 'bold' } },
+				-- Dap UI
+				DapUIFloatBorder = border
 			}
 		end
 	},
