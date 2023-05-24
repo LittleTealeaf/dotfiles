@@ -131,6 +131,7 @@ return {
 			{ '<leader>nl', '<cmd>Noice last<CR>',    desc = "Open Last Notification" },
 			{ '<leader>nm', '<cmd>messages<CR>',      desc = "Open Messages" },
 			{ '<leader>nc', '<cmd>Noice dismiss<CR>', desc = "Clear Messages" },
+			{ '<leader>nn', '<cmd>Noice trouble<CR>', desc = "Open Noice in Trouble" }
 		}
 	},
 }

@@ -43,7 +43,7 @@ return {
 			{ '<leader>dl', function() require('dap').run_last() end,          "Dap Run Last" },
 			{ '<leader>dr', function() require('dap').run() end,               "Dap Run" },
 			{ '<leader>dk', function() require('dapui').eval() end,            "Dap Eval" },
-			{ '<leader>dx', function() require('dapui').toggle() end,          "Toggle Dap UI" },
+			{ '<leader>dd', function() require('dapui').toggle() end,          "Toggle Dap UI" },
 		}
 	},
 	{

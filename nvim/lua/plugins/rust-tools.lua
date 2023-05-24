@@ -1,14 +1,14 @@
 local function execute_from_toggleterm(command, args, cwd)
-	local toggleterm = require('toggleterm.terminal')
+	local Terminal = require('toggleterm.terminal').Terminal
 	local utils = require('rust-tools.utils.utils')
 
-	toggleterm.Terminal:new({
-		dir = cwd,
+	Terminal:new({
 		cmd = utils.make_command_from_args(command, args),
-		direction = 'horizontal',
+		dir = cwd,
 		close_on_exit = false,
+		auto_scroll = true,
 		on_open = function(t)
-			-- vim.api.nvim_buf_set_keymap(t.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+			vim.api.nvim_buf_set_keymap(t.bufnr, 'n','q','<cmd>close<CR>', {noremap = true, silent = true})
 		end
 	}):toggle()
 end
@@ -47,6 +47,7 @@ return {
 						local rt = require('rust-tools')
 						vim.keymap.set('n', '<leader>crr', rt.hover_actions.hover_actions, { buffer = bufnr })
 						vim.keymap.set('n', '<leader>cra', rt.code_action_group.code_action_group, { buffer = bufnr })
+						vim.keymap.set('n', '<leader>cre', rt.runnables.runnables)
 						vim.keymap.set('n', '<leader>crd', require('rust-tools.debuggables').debuggables)
 					end,
 				},

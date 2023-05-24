@@ -186,11 +186,6 @@ return {
 				desc = 'List Code Actions'
 			},
 			{
-				'<leader>nn',
-				in_dropdown(use_extension('notify', 'notify')),
-				desc = 'Show Notifications'
-			},
-			{
 				'<leader>fl',
 				in_dropdown(use_builtin('current_buffer_fuzzy_find')),
 				desc = 'Fuzzy Find in Current Buffer'
