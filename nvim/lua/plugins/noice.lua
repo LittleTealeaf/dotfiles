@@ -39,6 +39,26 @@ local routes = {
 			skip = true
 		}
 	},
+	{
+		filter = {
+			event = 'msg_show',
+			kind = 'wmsg',
+			find = 'continuing at TOP'
+		},
+		opts = {
+			skip = true
+		}
+	},
+	{
+		filter = {
+			event = 'msg_show',
+			kind = 'wmsg',
+			find = 'continuing at BOTTOM'
+		},
+		opts = {
+			skip = true
+		}
+	},
 	-- Send errors to mini
 	{
 		filter = {
@@ -47,15 +67,6 @@ local routes = {
 		},
 		view = 'mini'
 	},
-	-- Filter out "No Information Available"
-	{
-		filter = {
-			find = 'No information available'
-		},
-		opts = {
-			skip = true,
-		}
-	}
 }
 
 return {
@@ -80,6 +91,14 @@ return {
 		},
 		lazy = false,
 		opts = {
+			commands = {
+				history = {
+					view = "popup"
+				},
+				errors = {
+					view = "popup"
+				}
+			},
 			presets = {
 				lsp_doc_border = true,
 			},
@@ -93,11 +112,14 @@ return {
 				override = {
 					['vim.lsp.util.convert_input_to_markdown_lines'] = true,
 					['vim.lsp.util.stylize_markdown'] = true,
-					['cmp.entry.get_documentation'] = false,
+					['cmp.entry.get_documentation'] = true,
 				},
 				messages = {
 					enabled = true,
 					view = 'mini'
+				},
+				hover = {
+					silent = true,
 				}
 			},
 			cmdline = {
@@ -131,7 +153,8 @@ return {
 			{ '<leader>nl', '<cmd>Noice last<CR>',    desc = "Open Last Notification" },
 			{ '<leader>nm', '<cmd>messages<CR>',      desc = "Open Messages" },
 			{ '<leader>nc', '<cmd>Noice dismiss<CR>', desc = "Clear Messages" },
-			{ '<leader>nn', '<cmd>Noice<CR>',         desc = "Noice History" }
+			{ '<leader>nn', '<cmd>Noice<CR>',         desc = "Noice History" },
+			{ '<leader>ne', '<cmd>Noice errors<CR>',  desc = "Noice Errors" },
 		}
 	},
 }
