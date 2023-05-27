@@ -226,10 +226,19 @@ return {
 	{
 		'nvim-telescope/telescope-dap.nvim',
 		event = 'VeryLazy',
-		dependencies = {telescope_dependency},
+		dependencies = { telescope_dependency },
 		config = load_extension_config('dap'),
 		keys = {
-			{'<leader>dv', use_extension('dap', 'variables'), desc = "Dap Variables"}
+			{ '<leader>dv', use_extension('dap', 'variables'), desc = "Dap Variables" }
+		}
+	},
+	-- Conventional Commits
+	{
+		'olacin/telescope-cc.nvim',
+		dependencies = { telescope_dependency },
+		config = load_extension_config('conventional_commits'),
+		keys = {
+			{'<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits'))}
 		}
 	}
 }
