@@ -4,7 +4,6 @@ return {
 		dependencies = { 'williamboman/mason.nvim' },
 		config = function()
 			local dap = require('dap')
-			local mason_registry = require('mason-registry')
 
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapBreakpointCondition",
