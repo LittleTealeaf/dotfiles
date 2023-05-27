@@ -22,6 +22,7 @@ return {
 		{ '<leader>td', '<cmd>Trouble lsp_definitions<CR>',       desc = "Open Trouble Lsp Definitions" },
 		{ '<leader>ti', '<cmd>Trouble lsp_implementations<CR>',   desc = "Open Trouble Lsp Implementations" },
 		{ '<leader>ty', '<cmd>Trouble lsp_type_definitions<CR>',  desc = "Open Trouble Lsp Type Definitions" },
+		{ '<leader>tq', '<cmd>Trouble quickfix<CR>',              desc = "Open Quickfix in Trouble" },
 		{ '<leader>tf', '<cmd>Trouble telescope<CR>',             desc = "Open Trouble Telescope" },
 		{ '<leader>tt', '<cmd>Trouble<CR>',                       desc = "Toggle Trouble" },
 		{ '<leader>th', '<cmd>TroubleClose<CR>',                  desc = "Close Trouble Window" },
