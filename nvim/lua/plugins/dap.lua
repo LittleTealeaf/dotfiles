@@ -36,18 +36,18 @@ return {
 			}
 		end,
 		keys = {
-			{ '<leader>db', function() require('dap').toggle_breakpoint() end,                                           "Toggle Breakpoint" },
-			{ '<leader>dc', function() require('dap').continue() end,                                                    "Dap Continue" },
-			{ '<leader>do', function() require('dap').step_out() end,                                                    "Dap Step Out" },
-			{ '<leader>dn', function() require('dap').step_over() end,                                                   "Dap Step Over" },
-			{ '<leader>di', function() require('dap').step_into() end,                                                   "Dap Step Into", },
-			{ '<leader>du', function() require('dap').run_last() end,                                                    "Dap Run Last" },
+			{ '<leader>db', function() require('dap').toggle_breakpoint() end, "Toggle Breakpoint" },
+			{ '<leader>dc', function() require('dap').continue() end,          "Dap Continue" },
+			{ '<leader>do', function() require('dap').step_out() end,          "Dap Step Out" },
+			{ '<leader>dn', function() require('dap').step_over() end,         "Dap Step Over" },
+			{ '<leader>di', function() require('dap').step_into() end,         "Dap Step Into", },
+			{ '<leader>du', function() require('dap').run_last() end,          "Dap Run Last" },
 			{ '<leader>dl', function() require('dap').set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
-				                                                                                                             "Dap Log Point" },
-			{ '<leader>dr', function() require('dap').run() end,                                                         "Dap Run" },
-			{ '<leader>dt', function() require('dap').terminate() end,                                                   "Dap Terminate" },
-			{ '<leader>dk', function() require('dapui').eval() end,                                                      "Dap Eval" },
-			{ '<leader>dd', function() require('dapui').toggle() end,                                                    "Toggle Dap UI" },
+				"Dap Log Point" },
+			{ '<leader>dr', function() require('dap').run() end,       "Dap Run" },
+			{ '<leader>dt', function() require('dap').terminate() end, "Dap Terminate" },
+			{ '<leader>dk', function() require('dapui').eval() end,    "Dap Eval" },
+			{ '<leader>dd', function() require('dapui').toggle() end,  "Toggle Dap UI" },
 		}
 	},
 	{
@@ -106,5 +106,13 @@ return {
 			dap.listeners.before.event_terminated['dapui_config'] = function() dapui.close() end
 			dap.listeners.before.event_exited['dapui_config'] = function() dapui.close() end
 		end,
+	},
+	{
+		'theHamsta/nvim-dap-virtual-text',
+		dependencies = {
+			'mfussenegger/nvim-dap',
+			'nvim-treesitter/nvim-treesitter',
+		},
+		config = true,
 	}
 }
