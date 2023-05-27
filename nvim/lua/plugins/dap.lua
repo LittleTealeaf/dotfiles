@@ -14,27 +14,6 @@ return {
 
 			dap.defaults.fallback.exception_breakpoints = { 'raised', 'uncaught', 'rust_panic' }
 
-			dap.adapters['pwa-node'] = {
-				type = 'server',
-				host = 'localhost',
-				port = '${port}',
-				executable = {
-					command = 'node',
-					args = {
-						mason_registry.get_package('js-debug-adapter'):get_install_path() .. "/js-debug/src/dapDebugServer.js",
-						"${port}"
-					}
-				}
-			}
-			dap.configurations.javascript = {
-				{
-					type = 'pwa-node',
-					request = 'launch',
-					name = 'Launch file',
-					program = '${file}',
-					cwd = "${workspaceFolder}"
-				}
-			}
 		end,
 		keys = {
 			{ '<leader>db', function() require('dap').toggle_breakpoint() end, "Toggle Breakpoint" },
