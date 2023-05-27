@@ -8,9 +8,9 @@ map("n", "<leader>wa", "<cmd>wa<CR>", { silent = true })
 map('n', '<A-[>', '<cmd>bprevious<CR>', { silent = true })
 map('n', '<A-]>', '<cmd>bnext<CR>', { silent = true })
 
-map('n', '<leader>bd', '<cmd>bd<CR>', { silent = true })
-map('n', '<leader>bc', '<cmd>%bd<CR>', { silent = true })
-map('n', '<leader>bf', '<cmd>%bd|e#<CR>', { silent = true })
+-- map('n', '<leader>bd', '<cmd>bd<CR>', { silent = true })
+-- map('n', '<leader>bc', '<cmd>%bd<CR>', { silent = true })
+-- map('n', '<leader>bf', '<cmd>%bd|e#<CR>', { silent = true })
 
 
 local function format()

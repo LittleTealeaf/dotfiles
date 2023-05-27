@@ -11,5 +11,11 @@ return {
 	{
 		'jghauser/mkdir.nvim',
 		event = 'BufEnter'
+	},
+	{
+		'famiu/bufdelete.nvim',
+		keys = {
+			{'<leader>bd', '<cmd>Bdelete<CR>', desc = "Delete Buffer"}
+		}
 	}
 }
