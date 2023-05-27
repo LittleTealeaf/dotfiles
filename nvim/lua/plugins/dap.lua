@@ -11,7 +11,7 @@ return {
 			vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapStopped", { text = "", linehl = "DapStoppedLine" })
 
-			dap.defaults.fallback.exception_breakpoints = { 'raised', 'uncaught', 'panic' }
+			dap.defaults.fallback.exception_breakpoints = { 'raised', 'uncaught', 'rust_panic' }
 
 			dap.adapters['pwa-node'] = {
 				type = 'server',
