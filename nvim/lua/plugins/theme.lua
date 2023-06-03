@@ -37,7 +37,6 @@ return {
 					information = { 'underline' }
 				}
 			},
-			-- treesitter_context = true,
 			treesitter = true,
 			telescope = true,
 			navic = {
@@ -97,8 +96,8 @@ return {
 				-- Dap UI
 				DapUIFloatBorder = border,
 				DapStoppedLine = selection,
-				-- Treesitter Context
-				TreesitterContext = { style = { 'bold' } },
+				-- -- Treesitter Context
+				-- TreesitterContext = { style = { 'bold' } },
 				-- Registers
 				RegistersYank = { fg = c.pink},
 				RegistersDelete = {fg = c.red},
