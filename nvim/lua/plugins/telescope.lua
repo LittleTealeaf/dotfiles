@@ -114,7 +114,8 @@ return {
 						theme = 'ivy',
 						mappings = {
 							i = {
-								['<C-w>'] = false }
+								['<C-w>'] = false
+							}
 						}
 					},
 				},
@@ -238,7 +239,7 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('conventional_commits'),
 		keys = {
-			{'<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits'))}
+			{ '<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits')) }
 		}
 	}
 }
