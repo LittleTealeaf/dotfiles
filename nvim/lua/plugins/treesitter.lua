@@ -66,15 +66,15 @@ return {
 			})
 		end,
 	},
-	{
-		'nvim-treesitter/nvim-treesitter-context',
-		name = 'treesitter-context',
-		opts = {
-			mode = 'topline',
-			trim_scope = 'inner',
-			max_lines = 5,
-		}
-	},
+	-- {
+	-- 	'nvim-treesitter/nvim-treesitter-context',
+	-- 	name = 'treesitter-context',
+	-- 	opts = {
+	-- 		mode = 'topline',
+	-- 		trim_scope = 'inner',
+	-- 		max_lines = 5,
+	-- 	}
+	-- },
 	{
 		'drybalka/tree-climber.nvim',
 		dependencies = {

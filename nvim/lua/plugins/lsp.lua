@@ -47,7 +47,7 @@ local LSP_SETTINGS = {
 	}
 }
 
-local attach_inlay_hints = function(client, bufnr)
+local function on_lsp_attach(client, bufnr)
 	require('lsp-inlayhints').on_attach(client, bufnr)
 end
 
@@ -108,7 +108,8 @@ return {
 			{ 'williamboman/mason.nvim', },
 			{ 'neovim/nvim-lspconfig', },
 			{ 'lvimuser/lsp-inlayhints.nvim' },
-			{ 'SmiteshP/nvim-navbuddy' }
+			{ 'SmiteshP/nvim-navbuddy' },
+			{ 'SmiteshP/nvim-navic' }
 		},
 		config = function()
 			local lspconfig = require('lspconfig')
@@ -119,7 +120,7 @@ return {
 				function(server_name)
 					lspconfig[server_name].setup {
 						capabilities = capabilities,
-						on_attach = attach_inlay_hints,
+						on_attach = on_lsp_attach,
 						settings = LSP_SETTINGS[server_name]
 					}
 				end,

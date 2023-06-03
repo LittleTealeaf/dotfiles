@@ -99,6 +99,12 @@ return {
 				DapStoppedLine = selection,
 				-- Treesitter Context
 				TreesitterContext = { style = { 'bold' } },
+				-- Registers
+				RegistersYank = { fg = c.pink},
+				RegistersDelete = {fg = c.red},
+				RegistersHistory = {fg = c.sapphire},
+				RegistersAlternateBuffer = {fg = c.peach},
+				RegistersSearch = {fg = c.yellow},
 			}
 		end
 	},
