@@ -162,6 +162,11 @@ return {
 				desc = 'Live grep'
 			},
 			{
+				'<leader>fh',
+				in_ivy(use_builtin('help_tags')),
+				desc = "Help Tags"
+			},
+			{
 				'<leader>fb',
 				in_dropdown(use_builtin('buffers')),
 				desc = 'List Buffers'

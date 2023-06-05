@@ -16,6 +16,15 @@ end
 
 return {
 	{
+		"saecki/crates.nvim",
+		opts = {
+			null_ls = {
+				enabled = true,
+				name = "crates.nvim"
+			}
+		}
+	},
+	{
 		'simrat39/rust-tools.nvim',
 		dependencies = {
 			'williamboman/mason.nvim',

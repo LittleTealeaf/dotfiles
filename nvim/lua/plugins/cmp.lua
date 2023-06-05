@@ -37,19 +37,19 @@ return {
 						mode = 'symbol',
 					})
 				},
-				view = {
-					entries = {
-						name = 'custom',
-						selection_order = 'near_cursor'
-					}
-				},
+				-- view = {
+				-- 	entries = {
+				-- 		name = 'custom',
+				-- 		selection_order = 'near_cursor'
+				-- 	}
+				-- },
 				window = {
 					completion = cmp.config.window.bordered({
 						winhighlight = 'CursorLine:Visual,Search:None'
 					}),
 					documentation = cmp.config.window.bordered({
 						winhighlight = 'CursorLine:Visual,Search:None'
-					})
+					}),
 				},
 				snippet = {
 					expand = function(args)
@@ -77,20 +77,29 @@ return {
 							fallback()
 						end
 					end, { 'i', 's' }),
-					['<CR>'] = cmp.mapping.confirm({ select = true })
+					['<C-CR>'] = function(fallback)
+						fallback()
+					end,
+					['<CR>'] = cmp.mapping.confirm({ select = true }),
+					['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+					['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+
 				},
 				sources = cmp.config.sources({
 					{ name = 'nvim_lsp' },
-					{ name = 'nvim_lua' },
 					{ name = 'luasnip' },
+				}, {
 					{ name = 'nvim_lsp_signature_help' },
 					{ name = "crates" },
 				}, {
+					{ name = 'nvim_lua' },
 					{ name = 'buffer' },
 					{ name = "path" },
 				})
 			})
+
 			cmp.setup.cmdline({ '/', '?' }, {
+				completion = { autocomplete = false },
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = {
 					{ name = "buffer" }
@@ -98,6 +107,7 @@ return {
 			})
 
 			cmp.setup.cmdline(':', {
+				completion = { autocomplete = false },
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = 'path' }
