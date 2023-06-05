@@ -18,6 +18,7 @@ return {
 			noice = true,
 			cmp = true,
 			notify = true,
+			harpoon = true,
 			dap = {
 				enabled = true,
 				enable_ui = true,
