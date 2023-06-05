@@ -23,6 +23,7 @@ return {
 		dependencies = {
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
+			{ 'SmiteshP/nvim-navic'}
 		},
 		opts = function()
 			local noice = require('noice')
@@ -90,6 +91,13 @@ return {
 					lualine_y = {},
 					lualine_z = {},
 				},
+				winbar = {
+					lualine_c = {
+						"navic",
+						color_correction = nil,
+						navic_opts = nil,
+					}
+				}
 			}
 		end
 	}

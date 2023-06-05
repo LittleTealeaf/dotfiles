@@ -76,6 +76,8 @@ return {
 				FloatBorder = border,
 				HoverBorder = border,
 				RenameBorder = border,
+				-- Navic
+				NavicText = {fg = c.text},
 				-- Navbuddy
 				NavbuddyFloatBorder = border,
 				-- Noice
