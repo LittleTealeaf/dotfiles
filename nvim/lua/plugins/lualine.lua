@@ -25,11 +25,15 @@ return {
 			{ 'nvim-tree/nvim-web-devicons', },
 			{ 'SmiteshP/nvim-navic'}
 		},
+		init = function ()
+			vim.cmd("set laststatus=3")
+		end,
 		opts = function()
 			local noice = require('noice')
 			return {
 				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble', 'nvim-dap-ui' },
 				options = {
+					global_status = true,
 					theme = 'catppuccin',
 					section_separators = {
 						left = '',

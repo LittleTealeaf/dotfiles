@@ -53,6 +53,14 @@ return {
 			local title = { fg = c.blue, style = { 'bold' } }
 
 			return {
+				-- Modicator
+				NormalMode = { fg = c.blue },
+				InsertMode = { fg = c.green },
+				VisualMode = { fg = c.mauve },
+				ReplaceMode = { fg = c.red },
+				CommandMode = { fg = c.teal },
+				SelectMode = { fg = c.red },
+
 				-- -- Tabline
 				-- tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
 				-- tabline_b_normal_bold_italic = { fg = colors.text, bg = '', style = { 'bold', 'italic' } },
@@ -78,7 +86,7 @@ return {
 				HoverBorder = border,
 				RenameBorder = border,
 				-- Navic
-				NavicText = {fg = c.text},
+				NavicText = { fg = c.text },
 				-- Navbuddy
 				NavbuddyFloatBorder = border,
 				-- Noice
@@ -102,11 +110,11 @@ return {
 				-- -- Treesitter Context
 				-- TreesitterContext = { style = { 'bold' } },
 				-- Registers
-				RegistersYank = { fg = c.pink},
-				RegistersDelete = {fg = c.red},
-				RegistersHistory = {fg = c.sapphire},
-				RegistersAlternateBuffer = {fg = c.peach},
-				RegistersSearch = {fg = c.yellow},
+				RegistersYank = { fg = c.pink },
+				RegistersDelete = { fg = c.red },
+				RegistersHistory = { fg = c.sapphire },
+				RegistersAlternateBuffer = { fg = c.peach },
+				RegistersSearch = { fg = c.yellow },
 			}
 		end
 	},

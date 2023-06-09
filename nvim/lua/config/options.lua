@@ -18,6 +18,7 @@ opt.expandtab = false
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.clipboard = 'unnamedplus'
+opt.fillchars = { eob = " " }
 
 cmd([[
   nnoremap . ;
