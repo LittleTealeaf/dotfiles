@@ -34,6 +34,13 @@ local routes = {
 		},
 		view = 'mini'
 	},
+	-- Errors in mini
+	{
+		filter = {
+			kind = 'emsg'
+		},
+		view = 'mini'
+	}
 }
 
 return {
