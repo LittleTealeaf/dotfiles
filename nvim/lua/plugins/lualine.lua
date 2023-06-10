@@ -36,7 +36,8 @@ return {
 						statusline = {
 							'TelescopePrompt',
 							'neo-tree',
-							'toggleterm'
+							'toggleterm',
+							'lazygit',
 						}
 					},
 					section_separators = {
