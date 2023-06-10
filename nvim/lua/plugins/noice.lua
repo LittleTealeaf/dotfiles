@@ -1,69 +1,36 @@
 local routes = {
-	-- Hide all searches
+	-- Hide all search related messages
 	{
 		filter = {
-			event = "msg_show",
-			kind = "search_count",
+			['any'] = {
+				{
+					event = "msg_show",
+					kind = "search_count"
+				},
+				{
+					kind = "wmsg",
+					event = "msg_show",
+					['any'] = {
+						{
+							find = 'search hit '
+						},
+						{
+							find = "continuing at "
+						}
+					}
+				}
+			}
 		},
 		opts = {
-			skip = true
+			skip = true,
 		}
 	},
-	-- Redirect written messages to mini
+	-- Written Messages
 	{
 		filter = {
 			event = 'msg_show',
 			kind = '',
 			find = 'written'
-		},
-		view = 'mini'
-	},
-	-- Skip search hit BOTTOM messages
-	{
-		filter = {
-			event = 'msg_show',
-			kind = 'wmsg',
-			find = 'search hit BOTTOM'
-		},
-		opts = {
-			skip = true
-		}
-	},
-	{
-		filter = {
-			event = 'msg_show',
-			kind = 'wmsg',
-			find = 'search hit TOP'
-		},
-		opts = {
-			skip = true
-		}
-	},
-	{
-		filter = {
-			event = 'msg_show',
-			kind = 'wmsg',
-			find = 'continuing at TOP'
-		},
-		opts = {
-			skip = true
-		}
-	},
-	{
-		filter = {
-			event = 'msg_show',
-			kind = 'wmsg',
-			find = 'continuing at BOTTOM'
-		},
-		opts = {
-			skip = true
-		}
-	},
-	-- Send errors to mini
-	{
-		filter = {
-			event = 'msg_show',
-			kind = 'emsg',
 		},
 		view = 'mini'
 	},
@@ -155,6 +122,13 @@ return {
 			{ '<leader>nc', '<cmd>Noice dismiss<CR>', desc = "Clear Messages" },
 			{ '<leader>nn', '<cmd>Noice<CR>',         desc = "Noice History" },
 			{ '<leader>ne', '<cmd>Noice errors<CR>',  desc = "Noice Errors" },
+			{
+				'<S-Enter>',
+				function() require('noice').redirect(vim.fn.getcmdline()) end,
+				desc = "Redirect Cmdline",
+				mode =
+				'c'
+			}
 		}
 	},
 }

@@ -187,11 +187,6 @@ return {
 				desc = 'List Workspace Symbols'
 			},
 			{
-				'<leader>ca',
-				vim.lsp.buf.code_action,
-				desc = 'List Code Actions'
-			},
-			{
 				'<leader>fl',
 				in_dropdown(use_builtin('current_buffer_fuzzy_find')),
 				desc = 'Fuzzy Find in Current Buffer'

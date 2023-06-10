@@ -115,6 +115,8 @@ return {
 				RegistersHistory = { fg = c.sapphire },
 				RegistersAlternateBuffer = { fg = c.peach },
 				RegistersSearch = { fg = c.yellow },
+				-- Recording
+				LualineRecording = { fg = c.mauve, style = { 'bold' } },
 			}
 		end
 	},

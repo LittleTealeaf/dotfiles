@@ -49,6 +49,18 @@ local LSP_SETTINGS = {
 
 local function on_lsp_attach(client, bufnr)
 	require('lsp-inlayhints').on_attach(client, bufnr)
+
+	vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
+
+	vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end, { silent = true })
+
+	vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
+	vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })
+	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { silent = true })
+
+
+	vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { silent = true })
+	vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { silent = true })
 end
 
 return {
