@@ -42,10 +42,10 @@ return {
 		{ '<leader>tq', '<cmd>Trouble quickfix<cr>',              desc = "Open Quickfix in Trouble" },
 		{ '<leader>tf', '<cmd>Trouble telescope<cr>',             desc = "Open Trouble Telescope" },
 		{ '<leader>tt', '<cmd>Trouble<cr>',                       desc = "Toggle Trouble" },
-		{ '<leader>tn', '<cmd>TroubleClose<cr>',                  desc = "Close Trouble Window" },
+		{ '<leader>th', '<cmd>TroubleClose<cr>',                  desc = "Close Trouble Window" },
 		{ '<leader>tj', trouble_navigate('next'),                 desc = "Next Trouble Item" },
 		{ '<leader>tk', trouble_navigate('previous'),             desc = "Previous Trouble Item" },
-		{ '<leader>th', trouble_navigate('first'),                desc = 'First Trouble Item' },
-		{ '<leader>tl', trouble_navigate('last'),                 desc = 'Last Trouble Item' },
+		{ '<leader>tn', trouble_navigate('first'),                desc = 'First Trouble Item' },
+		{ '<leader>tm', trouble_navigate('last'),                 desc = 'Last Trouble Item' },
 	}
 }
