@@ -17,7 +17,7 @@ opt.shiftwidth = 2
 opt.expandtab = false
 opt.termguicolors = true
 opt.signcolumn = "yes"
-opt.clipboard = 'unnamedplus'
+-- opt.clipboard = 'unnamedplus'
 opt.fillchars = { eob = " " }
 
 cmd([[
