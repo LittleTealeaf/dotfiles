@@ -4,13 +4,16 @@ return {
 		event = 'VeryLazy',
 		init = function()
 			vim.o.timeout = true
-			vim.o.timeoutlen = 500
+			vim.o.timeoutlen = 0
 		end,
 		opts = {
 			plugins = {
 				spelling = {
 					enabled = true
 				}
+			},
+			window = {
+				border = 'rounded'
 			}
 		},
 		config = function(_, opts)
