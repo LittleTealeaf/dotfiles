@@ -19,6 +19,7 @@ return {
 			cmp = true,
 			notify = true,
 			harpoon = true,
+			which_key = true,
 			dap = {
 				enabled = true,
 				enable_ui = true,
