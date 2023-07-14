@@ -66,6 +66,25 @@ local function open_with_harpoon()
 	end
 end
 
+local function flash(prompt_bufnr)
+	require('flash').jump({
+		pattern = '^',
+		label = { after = { 0, 0 } },
+		search = {
+			mode = 'search',
+			exclude = {
+				function(win)
+					return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'TelescopeResults'
+				end
+			}
+		},
+		action = function(match)
+			local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+			picker:set_selection(match.pos[1] - 1)
+		end
+	})
+end
+
 
 local function file_browser()
 	require('telescope').extensions.file_browser.file_browser(
@@ -100,7 +119,7 @@ return {
 			'folke/trouble.nvim',
 			'ThePrimeagen/harpoon',
 		},
-		config = function()
+		config = function(_, opts)
 			local telescope = require('telescope')
 			local actions = require('telescope.actions')
 			local trouble = require('trouble.providers.telescope')
@@ -136,6 +155,7 @@ return {
 							['<C-t>'] = trouble.smart_open_with_trouble,
 							['<C-a>'] = actions.toggle_all,
 							['<C-h>'] = open_with_harpoon(),
+							['<C-s>'] = flash
 						},
 					}
 				}
@@ -196,6 +216,11 @@ return {
 				in_dropdown(use_builtin('treesitter')),
 				desc = 'List Treesitter Elements'
 			},
+			{
+				'<leader>fw',
+				in_ivy(use_builtin('grep_string')),
+				desc = 'Grep String'
+			}
 		}
 	},
 	{
