@@ -14,25 +14,26 @@ return {
 	dependencies = {
 		'nvim-tree/nvim-web-devicons'
 	},
-	config = function()
-		require('trouble').setup(
-			{
-				auto_open = false,
-				height = 15,
-				action_keys = {
-					-- jump_close = { '<cr>' },
-					jump = { '<cr>' },
-					-- jump = nil,
-				},
-				use_diagnostic_signs = true,
-			}
-		)
-
+	opts = {
+		auto_open = false,
+		height = 15,
+		action_keys = {
+			jump = { '<cr>' },
+		},
+		use_diagnostic_signs = true,
+	},
+	config = function(_, opts)
+		require('trouble').setup(opts)
+	end,
+	init = function()
 		vim.api.nvim_create_autocmd('FileType', {
 			pattern = 'qf',
 			callback = function() vim.schedule(quickfix_to_trouble) end
 		})
 	end,
+	event = {
+		'BufEnter *qf*'
+	},
 	keys = {
 		{ '<leader>te', '<cmd>Trouble workspace_diagnostics<cr>', desc = "Open Trouble Diagnostics" },
 		{ '<leader>tr', '<cmd>Trouble lsp_references<cr>',        desc = "Open Trouble Lsp References" },

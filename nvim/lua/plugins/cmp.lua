@@ -37,12 +37,6 @@ return {
 						mode = 'symbol',
 					})
 				},
-				-- view = {
-				-- 	entries = {
-				-- 		name = 'custom',
-				-- 		selection_order = 'near_cursor'
-				-- 	}
-				-- },
 				window = {
 					completion = cmp.config.window.bordered({
 						winhighlight = 'CursorLine:Visual,Search:None'
