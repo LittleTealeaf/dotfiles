@@ -13,7 +13,6 @@ return {
 	end,
 	opts = {
 		enable_diagnostics = true,
-		follow_current_file = true,
 		filesystem = {
 			filtered_items = {
 				visible = true,
