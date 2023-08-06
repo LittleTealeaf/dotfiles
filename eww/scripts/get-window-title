@@ -1,0 +1,3 @@
+#!/bin/sh
+hyprctl activewindow -j | jq --raw-output .title
+socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket21.sock - | stdbuf -o0 awk -F '>>|,' '/^activewindo>>/{print $3}'

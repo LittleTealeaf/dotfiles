@@ -1,0 +1,18 @@
+(defwindow powermenu
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore true
+  (bat))
+
+(defwidget bat []
+  (box
+    :orientation "v"
+    :space-evently "false")
+  (label
+    :class "bat"
+    :halign "end"
+    :text battery
+    :tooltip "Battery ${battery-capacity}%")))
+(defpoll battery
+  :interval "1s"
+  "scripts/battery icon")
