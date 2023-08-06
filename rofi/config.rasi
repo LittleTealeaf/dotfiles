@@ -1,0 +1,31 @@
+configuration {
+	modes: [ combi, filebrowser ];
+	font: "FiraCode Nerd Font 10";
+	combi-modes: [ window, drun, run ];
+	show-icons: true;
+	terminal: "kitty";
+
+	drun {
+		display-name: "";
+	}
+
+	run {
+		display-name: "";
+	}
+
+	window {
+		display-name: "";
+	}
+}
+
+
+element {
+	orientation: horizontal;
+	children: [ element-text, element-icon ];
+	spacing: 5px;
+}
+
+@import "catppuccin-macchiato"
+@import "catppuccin"
+
+/* vim:ft=css */

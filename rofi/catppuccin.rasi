@@ -1,0 +1,88 @@
+window {
+	background-color: @Base;
+	padding: 20;
+	border-radius: 30;
+}
+
+mainbox {
+	background-color: transparent;
+}
+
+inputbar {
+	background-color: transparent;
+}
+
+prompt {
+	enabled: false;
+}
+
+message {
+	text-color: @Text;
+}
+
+entry {
+	text-color: @Text;
+}
+
+num-rows, num-filtered-rows {
+	text-color: @Text;
+}
+
+scrollbar {
+	background-color: transparent;
+	handle-color: @Surface0;
+}
+
+listview {
+	background-color: transparent;
+	dynamic: true;
+	cycle: true;
+}
+
+element-text {
+	highlight: bold #b7bdf8;
+}
+
+element normal.normal {
+	background-color: transparent;
+	text-color: @Text;
+}
+
+element normal.urgent {
+}
+
+element alternate.active,
+element normal.active {
+	background-color: @Surface1;
+	text-color: @Text;
+}
+
+element selected.active,
+element selected.normal {
+	background-color: @Overlay0;
+	text-color: bold #cad3f5;
+}
+
+element selected.urgent {}
+
+
+element alternate.normal {
+	background-color: transparent;
+	text-color: @Text;
+}
+element alternate.urgent {}
+
+/**/
+/* element alternate.normal { */
+/* 	background-color: @Surface0; */
+/* 	text-color: @Text; */
+/* } */
+/**/
+/* element normal.normal { */
+/* 	background-color: @Surface1; */
+/* 	text-color: @Text; */
+/* } */
+/**/
+
+
+/* vim:ft=css
