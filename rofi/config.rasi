@@ -4,6 +4,7 @@ configuration {
 	combi-modes: [ window, drun, run ];
 	show-icons: true;
 	terminal: "kitty";
+	run-shell-command: "kitty --hold {cmd}";
 
 	drun {
 		display-name: "";
