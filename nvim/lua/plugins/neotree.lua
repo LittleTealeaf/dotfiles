@@ -37,7 +37,7 @@ return {
 	},
 	keys = {
 		{ '<leader>ef', '<cmd>Neotree filesystem<CR>' },
-		{ '<leader>eh', '<cmd>NeoTreeClose<CR>' },
+		{ '<leader>eh', '<cmd>Neotree close<CR>' },
 		{ '<leader>eg', '<cmd>Neotree git_status<CR>' },
 		{ '<leader>eb', '<cmd>Neotree buffers<CR>' },
 	},
