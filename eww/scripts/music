@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+get_info() {
+	status=$(playerctl status) && 
+		playerctl metadata --format '{"playing": true, "title": "{{ title }}", "art": "{{ mpris:artUrl }}", "artist": "{{ artist }}", "album": "{{ album }}", "position": "{{ position }}", "length": "{{ mpris:length }}"}' ||
+		echo '{"playing": false}'
+}
+
+
+if [[ "$1" == "poll" ]]; then 
+	get_info
+elif [[ "$1" == "prev" ]]; then
+	playerctl previous
+elif [[ "$1" == "next" ]]; then
+	playerctl next
+fi
+
+
+# get_attribute() {
+# 	playerctl metadata --format "{{ $1 }}"
+# }
+#
+#
+#
+# if [[ "$1" == "title" ]]; then
+# 	get_attribute title
+# elif [[ "$1" == "art" ]]; then
+# 	get_attribute mpris:artUrl
+# elif [[ "$1" == "album" ]]; then
+# 	get_attribute album
+# elif [[ "$1" == "artist" ]]; then
+# 	get_attribute artist
+# elif [[ "$1" == "status" ]]; then
+# 	playerctl status || echo "None"
+# elif [[ "$1" == "prev" ]]; then
+# 	playerctl previous
+# elif [[ "$1" == "next" ]]; then
+# 	playerctl next
+# fi

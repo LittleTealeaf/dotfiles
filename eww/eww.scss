@@ -1,7 +1,32 @@
-@import "./node_modules/@catppuccin/palette/scss/_macchiato.scss"
+@import "./node_modules/@catppuccin/palette/scss/_macchiato.scss";
 
-*{
-	all: unset;
-	font-family: feather;
-	font-family: DaddyTimeMono NF;
+* {
+  all: unset;
+}
+
+.music {
+  background-color: $mantle;
+  padding: 12.5px;
+  border-radius: 20px;
+  font-size: 17px;
+
+  &_image {
+    &_title {
+      background-size: cover;
+      background-position: center;
+      min-height: 24px;
+      min-width: 24px;
+      margin: 10px;
+      border-radius: 100px;
+    }
+  }
+
+  &_progress {
+    &_title {
+			> trough {
+				min-width: 200px;
+				min-height: 10px;
+			}
+    }
+  }
 }
