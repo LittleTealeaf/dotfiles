@@ -1,1 +1,7 @@
-@import "./node_modules/@catppuccin/palette/scss/_catppuccin.scss"
+@import "./node_modules/@catppuccin/palette/scss/_macchiato.scss"
+
+*{
+	all: unset;
+	font-family: feather;
+	font-family: DaddyTimeMono NF;
+}
