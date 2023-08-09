@@ -6,8 +6,12 @@
 }
 
 .music {
-  background-color: $mantle;
+  background-color: $base;
   padding: 12.5px;
   border-radius: 20px;
   font-size: 15px;
+
+	.song-title {
+		margin-right: 10px;
+	}
 }
