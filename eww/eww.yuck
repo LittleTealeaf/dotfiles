@@ -1,13 +1,5 @@
-;; NOTES:
-;; Perhaps I create 3 different windows:
-;; - Workspace bar (top left)
-;; - Music (top center)
-;;   - Expands into full widget
-;; - Power Menu (top right)
-;;   - Has bluetooth lists, items, etc.
-
-;; This can get complex real quick
-
+;; Actually, for a first version, I make it into a single bar
+;; And then have separate windows pop up for sub menus
 
 
 ;; Music Controls
@@ -17,65 +9,54 @@
   "scripts/music poll")
 (defvar v_music_hover false)
 
-
 (defwidget music []
   (eventbox
     :onhover "eww update v_music_hover=true"
     :onhoverlost "eww update v_music_hover=false"
 
     (box
-      :orientation "vertical"
       :space-evenly "false"
       :vexpand "false"
       :hexpand "false"
+      :orientation "vertical"
       :visible {p_music.playing}
       :class "music"
       (box
-        :space-evenly "false"
-        :halign "center"
-        :orientation "vertical"
+        (box
+          :class "song-title"
+          {p_music.title})
         (progress
-          :class "music_progress_title"
-          :orientation "h"
+          :class "song-progress"
+          :valign "center"
           :value {p_music.position / p_music.length * 100})
         )
-        {p_music.title}
       (revealer
-        :transition "slidedown"
         :reveal {v_music_hover}
-        (box 
-          {p_music.artist}
-          )
+        :transition "slidedown"
+        (box
+          :class "revealed"
+          "hi world")
         )
       )
     )
   )
 
-;;
-;; (defwidget music []
-;;   (eventbox
-;;
-;;     (box
-;;       :orientation "vertical"
-;;
-;;       ()
-;;       )
-;;     ))
-
 
 ;; Layout Widgets
 (defwidget bar_content []
   (centerbox
+    :class "content"
     :orientation "h"
-    (left)
+    (left
+      :halign "start")
     (center)
     (right)))
 
 (defwidget left []
-  (label :text "LEFT"))
+  (label :text "LEFT" :halign "start" :valign "start"))
 
 (defwidget right []
-  (label :text "RIGHT"))
+  (label :text "RIGHT" :halign "end" :valign "start"))
 
 (defwidget center []
   (music))
