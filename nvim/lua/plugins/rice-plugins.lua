@@ -5,5 +5,8 @@ return {
 			vim.g.yuck_align_multiline_strings = 1
 		end,
 		ft = "yuck"
+	},
+	{
+		'theRealCarneiro/hyprland-vim-syntax',
 	}
 }
