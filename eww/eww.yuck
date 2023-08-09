@@ -30,13 +30,6 @@
           :valign "center"
           :value {p_music.position / p_music.length * 100})
         )
-      (revealer
-        :reveal {v_music_hover}
-        :transition "slidedown"
-        (box
-          :class "revealed"
-          "hi world")
-        )
       )
     )
   )
@@ -53,10 +46,10 @@
     (right)))
 
 (defwidget left []
-  (label :text "LEFT" :halign "start" :valign "start"))
+  (label :text "LEFT" :halign "start"))
 
 (defwidget right []
-  (label :text "RIGHT" :halign "end" :valign "start"))
+  (label :text "RIGHT" :halign "end"))
 
 (defwidget center []
   (music))
@@ -64,10 +57,9 @@
 ;; Window
 (defwindow bar
   :monitor 0
+  :exclusive {true}
   :geometry (geometry
-              :x "0"
-              :y "0"
-              :width "100%"
-              :height "40px")
+              :anchor "top center"
+              :width "98%")
   (bar_content)
   )
