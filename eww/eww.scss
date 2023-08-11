@@ -6,7 +6,7 @@
 }
 
 .music {
-  background-color: $base;
+  background-color: transparentize($color: $base, $amount: 0.01);
   padding: 12.5px;
   border-radius: 20px;
   font-size: 15px;
