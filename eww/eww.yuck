@@ -21,6 +21,7 @@
       :orientation "vertical"
       :visible {p_music.playing}
       :class "music"
+      :style "background-image: url('${p_music.art}');"
       (box
         :space-evenly false
         (box
