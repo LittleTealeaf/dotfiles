@@ -6,7 +6,7 @@
 
 (defpoll p_music
   :interval "1s"
-  "scripts/music poll")
+  "src/scripts/music poll")
 (defvar v_music_hover false)
 
 (defwidget music []
