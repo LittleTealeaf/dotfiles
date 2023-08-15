@@ -1,18 +1,114 @@
+@import "node_modules/@catppuccin/palette/scss/macchiato";
+
+$radius: 10px;
 
 * {
   font-size: 13px;
 }
 
-window#waybar {
+#waybar {
   background-color: transparent;
 }
 
 #workspaces {
-	background-color: rgb(36,39,58);
-	border-radius: 8px;
+  background-color: $base;
+  border-radius: $radius;
+
+  button {
+    border-radius: $radius;
+
+    &.active {
+      background-color: $surface0;
+    }
+
+    &:hover {
+      background-color: $overlay0;
+    }
+  }
 }
 
-#workspaces button:hover {
-	background-color: rgb(73,77,100);
-	border-radius: 100%;
+#taskbar {
+  background-color: $base;
+  border-radius: $radius;
+  margin-left: 10px;
+
+  button {
+		margin-left: 2px;
+		margin-right: 2px;
+    border-radius: $radius;
+
+    &.active {
+      background-color: $surface0;
+    }
+
+    &:hover {
+      background-color: $overlay0;
+    }
+  }
+}
+
+#clock {
+  background-color: $base;
+  border-radius: $radius;
+  padding: 10px;
+}
+
+#custom-media {
+  background-color: $base;
+  border-radius: $radius;
+  padding: 10px;
+  margin-left: $radius;
+}
+
+#submap {
+  background-color: $base;
+  border-radius: $radius;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+#tray {
+  background-color: $base;
+  border-radius: $radius;
+  margin-right: 10px;
+	padding: 10px;
+}
+
+#pulseaudio {
+  background-color: $base;
+  border-radius: $radius;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#connections {
+  background-color: $base;
+  border-radius: $radius;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#bluetooth {
+  margin-right: 10px;
+}
+
+#backlight {
+  background-color: $base;
+  border-radius: $radius;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#battery {
+  background-color: $base;
+  border-radius: $radius;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#window {
+  background-color: $base;
+  border-radius: $radius;
+  margin-right: 10px;
+  padding: 10px;
 }

@@ -8,6 +8,7 @@ import logging
 import sys
 import signal
 import json
+import urllib.request
 import os
 from typing import List
 
@@ -76,10 +77,12 @@ class PlayerManager:
         sys.stdout.flush()
 
     def clear_output(self):
+        os.remove('/tmp/playerctl-art')
         sys.stdout.write("\n")
         sys.stdout.flush()
 
     def on_playback_status_changed(self, player, status, _=None):
+        os.remove('/tmp/playerctl-art')
         logger.debug(
             f'Playback status changed for player \
                     {player.props.player_name}: {status}')
@@ -114,6 +117,9 @@ class PlayerManager:
         player_name = player.props.player_name
         artist = player.get_artist()
         title = player.get_title()
+        art_url = metadata['mpris:artUrl']
+
+        urllib.request.urlretrieve(art_url, "/tmp/playerctl-art")
 
         track_info = ""
         if (player_name == 'spotify'

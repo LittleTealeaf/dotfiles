@@ -4,23 +4,118 @@
 	"height": 40,
 	"margin-left": 20,
 	"margin-right": 20,
-	"modules-left": ["hyprland/workspaces", "hyprland/submap"],
-	"modules-center": ["custom/media"],
-	"modules-right": ["pulseaudio", "upower"],
+	"modules-left": [
+		"hyprland/workspaces",
+		"wlr/taskbar",
+		"custom/media",
+		"hyprland/submap"
+	],
+	"modules-right": [
+		"tray",
+		"backlight",
+		"pulseaudio",
+		"group/connections",
+		"battery",
+		"clock"
+	],
+	"hyprland/workspaces": {
+		"persistent_workspaces": {
+			"*": 4
+		}
+	},
+	"hyprland/submap": {
+		"format": "    {}"
+	},
+	"clock": {
+		"format": "{:%a, %b %d  %I:%M %p}"
+	},
 	"custom/media": {
-		 "format": "{icon} {}",
-		 "escape": true,
-		 "return-type": "json",
-		 "max-length": 40,
-		 "on-click": "playerctl play-pause",
-		 "on-click-right": "playerctl stop",
-		 "smooth-scrolling-threshold": 10,
-		 "on-scroll-up": "playerctl next",
-		 "on-scroll-down": "playerctl previous",
-		 "exec": "$DOT_FILES/waybar/scripts/media.py 2> /dev/null",
-		 "formt-icons": {
-			 "spotify": " ",
-			 "default": ""
-		 }
+		"format": "{icon} {}",
+		"escape": true,
+		"return-type": "json",
+		"max-length": 40,
+		"on-click": "playerctl play-pause",
+		"on-click-right": "playerctl stop",
+		"smooth-scrolling-threshold": 10,
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous",
+		"exec": "$DOT_FILES/waybar/scripts/media.py 2> /dev/null",
+		"formt-icons": {
+			"spotify": " ",
+			"default": ""
+		}
+	},
+	"tray": {
+		"icon-size": 17,
+		"spacing": 10
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon} ",
+		"format-muted": "󰝟 {icon}",
+		"format-icons": {
+			"speaker": "󰓃",
+			"headphone": "󰋋",
+			"hdmi": "󰡁",
+			"headset": "󰋎",
+			"hands-free": "󰗋 ",
+			"phone": " ",
+			"car": "󰄋 ",
+			"default": ""
+		},
+		"on-click": "pavucontrol",
+		"tooltip-format": "{desc}"
+	},
+	"group/connections": {
+		"orientation": "horizontal",
+		"modules": [
+			"bluetooth",
+			"network"
+		]
+	},
+	"bluetooth": {
+		"format": " {num_connections}",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connections",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected-battery": "{controller_alias}\t{controller_address}\t{device_battery_percentage}%\n\n{num_connections} connected",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	},
+	"network": {
+		"interface": "wlp0s20f3",
+		"format": "{ifname}",
+		"format-wifi": "{icon} {essid}",
+		"format-ethernet": "󰈀 {essid}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		"format-icons": [
+			"󰤯 ",
+			"󰤟 ",
+			"󰤥 ",
+			"󰤨 "
+		]
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}% {icon}",
+		"format-icons": ["󰃜", "󰃛", "󰃚 "]
+	},
+	"battery": {
+		"interval": 10,
+		"format": "{icon}  {time}",
+		"format-charging": "󰂄  {time}",
+		"tooltip-format": "{capacity}% \n{timeTo}",
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format-icons": {
+			"warning": "󱊡",
+			"critical": "󰂃",
+			"default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+		}
+	},
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"on-click": "activate"
 	}
 }
