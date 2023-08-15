@@ -39,11 +39,7 @@
 		"smooth-scrolling-threshold": 10,
 		"on-scroll-up": "playerctl next",
 		"on-scroll-down": "playerctl previous",
-		"exec": "$DOT_FILES/waybar/scripts/media.py 2> /dev/null",
-		"formt-icons": {
-			"spotify": " ",
-			"default": ""
-		}
+		"exec": "~/.config/waybar/scripts/media.py 2> /dev/null",
 	},
 	"tray": {
 		"icon-size": 17,
