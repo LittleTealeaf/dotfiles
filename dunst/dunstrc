@@ -321,14 +321,14 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#1e2030"
+    foreground = "#888888"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
+    background = "#285577"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0
