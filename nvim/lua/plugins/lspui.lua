@@ -11,6 +11,7 @@ return {
 		peek_definition = {
 			enable = true
 		},
+		prompt = false
 	},
 	keys = {
 		{ '<leader>cn', '<CMD>LspUI rename<CR>',    desc = "Lsp Rename" },
