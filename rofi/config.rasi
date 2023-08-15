@@ -7,22 +7,22 @@ configuration {
 	run-shell-command: "kitty --hold {cmd}";
 
 	drun {
-		display-name: "";
+		display-name: "";
 	}
 
 	run {
-		display-name: "";
+		display-name: "";
 	}
 
 	window {
-		display-name: "";
+		display-name: "";
 	}
 }
 
 
 element {
 	orientation: horizontal;
-	children: [ element-text, element-icon ];
+	children: [ element-icon, element-text ];
 	spacing: 5px;
 }
 

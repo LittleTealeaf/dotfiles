@@ -1,5 +1,5 @@
 window {
-	background-color: @Base;
+	background-color: @Mantle;
 	padding: 20;
 	border-radius: 30;
 }
