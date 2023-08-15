@@ -50,13 +50,15 @@ $radius: 10px;
 #clock {
   background-color: $base;
   border-radius: $radius;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #custom-media {
   background-color: $base;
   border-radius: $radius;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-left: $radius;
 }
 
@@ -64,28 +66,32 @@ $radius: 10px;
   background-color: $base;
   border-radius: $radius;
   margin-left: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #tray {
   background-color: $base;
   border-radius: $radius;
   margin-right: 10px;
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #pulseaudio {
   background-color: $base;
   border-radius: $radius;
   margin-right: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #connections {
   background-color: $base;
   border-radius: $radius;
   margin-right: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #bluetooth {
@@ -96,19 +102,22 @@ $radius: 10px;
   background-color: $base;
   border-radius: $radius;
   margin-right: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #battery {
   background-color: $base;
   border-radius: $radius;
   margin-right: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #window {
   background-color: $base;
   border-radius: $radius;
   margin-right: 10px;
-  padding: 10px;
+  padding-left: 10px;
+	padding-right: 10px;
 }
