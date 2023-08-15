@@ -10,18 +10,31 @@ cdd() {
 	cd ..
 }
 
+cddev() {
+	cd ~/dev
+}
 
 # Opens a fzf instance to select projects within the ~/git directory, and then return the full path
 # The title can be specified in the first parameter
 fzf_git_project() {
 	local selection
-	selection=$(ls ~/git | fzf --preview='ls -l ~/git/{}' --header-first --header="$1") &&
+	selection=$(ls ~/git | fzf  --preview='ls -l ~/git/{}' --header-first --header="$1") &&
 		echo ~/git/$selection
+}
+
+fzf_dev() {
+	local selection
+	selection=$(ls ~/dev | fzf --preview='ls -l ~/dev/{}' --header-first --header="$1") && echo ~/dev/$selection
 }
 
 cdg() {
 	local dir
 	dir=$(fzf_git_project "cd to git project") && cd "$dir"
+}
+
+cdv() {
+	local dir
+	dir=$(fzf_dev "Open Development Project") && cd "$dir"
 }
 
 nvimg() {
