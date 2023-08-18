@@ -11,6 +11,8 @@ format = "$all$directory$character"
 [character]
 success_symbol = "[](bold green)"
 
+[cmd_duration]
+disabled = true
 
 [git_branch]
 symbol = ' '
