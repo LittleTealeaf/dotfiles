@@ -1,0 +1,33 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+[character]
+success_symbol = "[](bold green)"
+
+
+[git_branch]
+symbol = ' '
+
+[git_commit]
+tag_symbol = " "
+
+[git_status]
+ahead = '↑'
+behind = '↓'
+untracked = '?'
+modified = '!'
+staged = '+'
+style = 'bold yellow'
+
+[package]
+disabled = true
+
+[python]
+symbol = '󰌠 '
+
+[rust]
+symbol = "󱘗 "
+
+[lua]
+symbol = '󰢱 '

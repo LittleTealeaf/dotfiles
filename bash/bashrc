@@ -11,11 +11,14 @@ if command -v lazygit > /dev/null; then
 	alias lg=lazygit
 fi
 
-if command -v oh-my-posh > /dev/null; then
-	eval "$(oh-my-posh init bash --config $DOT_FILES/omp/theme.omp.json)"
+export STARSHIP_CONFIG="$DOT_FILES/starship/starship.toml"
+
+if command -v starship > /dev/null; then
+	eval "$(starship init bash)"
 else
-	echo "Please install oh-my-posh to properly set up configurations"
+	echo "Please install starship to properly set up configurations"
 fi
+
 
 
 # Kitty Alias
