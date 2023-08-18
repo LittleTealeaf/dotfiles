@@ -20,7 +20,7 @@
 	],
 	"hyprland/workspaces": {
 		"persistent_workspaces": {
-			"*": 4
+			"*": 1
 		}
 	},
 	"hyprland/submap": {
