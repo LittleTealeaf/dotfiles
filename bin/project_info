@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd $1
+echo $(basename $(pwd))
+
+git_branch=$(git branch --show-current 2> /dev/null) && echo " $git_branch" 
+git status --short 2> /dev/null
+echo ""
+ls
+echo ""
+
+readme=$(cat README.md 2> /dev/null) && echo "README" && echo "$readme"
+
