@@ -46,6 +46,12 @@ style = 'bold peach'
 [lua]
 symbol = '󰢱 '
 
+[java]
+symbol = "󰬷 "
+
+[gradle]
+symbol = " "
+
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
