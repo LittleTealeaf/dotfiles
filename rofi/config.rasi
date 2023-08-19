@@ -1,5 +1,5 @@
 configuration {
-	modes: [ combi, filebrowser ];
+	modes: [ combi, filebrowser, run];
 	font: "FiraCode Nerd Font 10";
 	combi-modes: [ window, drun, run ];
 	show-icons: true;
