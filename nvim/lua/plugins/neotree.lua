@@ -13,6 +13,20 @@ return {
 	end,
 	opts = {
 		enable_diagnostics = true,
+		default_component_configs = {
+			last_modified = {
+				enabled = false
+			},
+			type = {
+				enabled = false
+			},
+			file_size = {
+				enabled = false
+			},
+			created = {
+				enabled = false
+			}
+		},
 		filesystem = {
 			filtered_items = {
 				visible = true,
