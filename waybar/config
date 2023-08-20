@@ -81,6 +81,7 @@
 		"interface": "wlp0s20f3",
 		"format": "{ifname}",
 		"format-wifi": "{icon} {essid}",
+		"on-click": "nm-connection-editor",
 		"format-ethernet": "󰈀 {essid}",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"format-icons": [
