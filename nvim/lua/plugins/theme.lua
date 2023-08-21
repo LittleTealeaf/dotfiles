@@ -17,6 +17,7 @@ return {
 			neotree = true,
 			noice = true,
 			cmp = true,
+			flash = true,
 			notify = true,
 			harpoon = true,
 			which_key = true,
