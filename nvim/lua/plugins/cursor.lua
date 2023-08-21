@@ -15,6 +15,7 @@ return {
 			name = "catppuccin",
 		},
 		opts = {
+			show_warnings = false,
 			highlights = {
 				defaults = {
 					bold = true,

@@ -7,7 +7,7 @@ return {
 	},
 	init = function()
 		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-		vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+		vim.fn.sign_define("DiagnosticcignWar", { text = " ", texthl = "DiagnosticSignWarn" })
 		vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
 		vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 	end,
@@ -28,6 +28,7 @@ return {
 			}
 		},
 		filesystem = {
+			hijack_netrw_behavior = "open_current",
 			filtered_items = {
 				visible = true,
 				hide_dotfiles = false,
