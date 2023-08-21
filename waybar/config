@@ -71,6 +71,7 @@
 	},
 	"bluetooth": {
 		"format": " {num_connections}",
+		"on-click": "blueman-manager",
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connections",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 		"tooltip-format-connected-battery": "{controller_alias}\t{controller_address}\t{device_battery_percentage}%\n\n{num_connections} connected",
