@@ -18,6 +18,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end, { silent = true })
 
 		vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
+		vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { silent = true })
+		vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, { silent = true })
 		vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })
 		vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { silent = true })
 
