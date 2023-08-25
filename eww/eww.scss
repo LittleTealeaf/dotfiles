@@ -1,19 +1,1 @@
 @import "./node_modules/@catppuccin/palette/scss/_macchiato.scss";
-
-.bar {
-	background-color: transparent;
-	border-radius: 10px;
-}
-
-.music {
-  background-color: transparentize($color: $base, $amount: 0.01);
-	background-size: cover;
-	background-position: center;
-  padding: 12.5px;
-  border-radius: 20px;
-  font-size: 15px;
-
-	.song-title {
-		margin-right: 10px;
-	}
-}
