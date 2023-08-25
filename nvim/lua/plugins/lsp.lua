@@ -44,7 +44,8 @@ local LSP_SETTINGS = {
 		yaml = {
 			keyOrdering = false
 		}
-	}
+	},
+	['jdtls'] = {}
 }
 
 local function on_lsp_attach(client, bufnr)
