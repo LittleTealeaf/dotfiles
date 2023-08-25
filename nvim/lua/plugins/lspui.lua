@@ -7,6 +7,7 @@ end
 return {
 	"jinzhongjia/LspUI.nvim",
 	event = "VeryLazy",
+	branch = "legacy",
 	opts = {
 		peek_definition = {
 			enable = true
