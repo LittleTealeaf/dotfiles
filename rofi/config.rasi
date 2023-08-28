@@ -15,7 +15,7 @@ configuration {
 	}
 
 	window {
-		display-name: "";
+		display-name: " ";
 	}
 }
 
