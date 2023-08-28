@@ -1,32 +1,33 @@
 #!/usr/bin/env bash
 
-notify-send "Getting list of available Wi-Fi networks..."
-# Get a list of available wifi connections and morph it into a nice-looking list
-wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d")
-
-connected=$(nmcli -fields WIFI g)
+connected=$(nmcli radio wifi)
 if [[ "$connected" =~ "enabled" ]]; then
-	toggle="󰖪  Disable Wi-Fi"
+	network_name=$(nmcli -t -f NAME c show --active | head -n 1)
+	option_toggle="󰖪 Disable WiFi"
+	option_select="󱘖 Connected To $network_name"
 elif [[ "$connected" =~ "disabled" ]]; then
-	toggle="󰖩  Enable Wi-Fi"
+	option_toggle=" Enable Wifi"
+	option_select=" Wifi is Off"
 fi
 
-configure=" Configure Wifi Connections"
+option_configure=" Configure Connections"
 
-# Use rofi to select wifi network
-chosen_network=$(echo -e "$toggle\n$configure\n$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " )
-# Get name of connection
-chosen_id=$(echo "${chosen_network:3}" | xargs)
+option=$(echo -e "$option_select\n$option_toggle\n$option_configure" | rofi -dmenu -i -selected-row 0 -p "WiFi Control")
 
-if [ "$chosen_network" = "" ]; then
-	exit
-elif [ "$chosen_network" = "󰖩  Enable Wi-Fi" ]; then
-	nmcli radio wifi on
-elif [ "$chosen_network" = "󰖪  Disable Wi-Fi" ]; then
-	nmcli radio wifi off
-elif [ "$chosen_network" = "$configure" ]; then
+if [ "$option" = "$option_configure" ]; then
 	nm-connection-editor
-else
+elif [ "$option" = "$option_toggle" ]; then
+	if [ "$connected" = "enabled" ]; then
+		nmcli radio wifi off
+	else
+		nmcli radio wifi on
+	fi
+elif [ "$option" = "$option_select" ]; then
+	notify-send "Getting list of available Wi-Fi networks..."
+	wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d")
+
+	chosen_network=$(echo -e "$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " )
+
 	# Message to show when connection is activated successfully
 	success_message="You are now connected to the Wi-Fi network \"$chosen_id\"."
 	# Get saved connections
