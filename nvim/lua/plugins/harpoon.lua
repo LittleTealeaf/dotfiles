@@ -1,4 +1,4 @@
-function nav_file(index)
+local function nav_file(index)
 	return function ()
 		require('harpoon.ui').nav_file(index)
 	end
