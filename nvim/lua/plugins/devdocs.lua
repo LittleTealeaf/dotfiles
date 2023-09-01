@@ -8,8 +8,14 @@ return {
 		},
 		'nvim-treesitter/nvim-treesitter'
 	},
-	opts = {},
+	opts = {
+		previewer_cmd = "glow",
+		after_open = function(bufnr)
+			vim.api.nvim_buf_set_keymap(bufnr, 'n', 'q', ':close<CR>', {})
+		end
+	},
 	keys = {
-		{ '<leader>cl', ':DevdocsOpenCurrent<CR>', desc = "Open Current Dev-Docs" }
-	}
+		{ '<leader>cl', ':DevdocsOpenCurrentFloat<CR>', desc = "Open Current Dev-Docs" }
+	},
+	event = "VeryLazy"
 }
