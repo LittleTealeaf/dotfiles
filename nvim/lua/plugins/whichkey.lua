@@ -31,7 +31,9 @@ return {
 					f = { 'Format' },
 					a = { 'Code Actions' },
 					d = { 'Definition' },
-					e = { 'Diagnostics' }
+					e = { 'Diagnostics' },
+					D = { 'Declaration' },
+					i = { 'Implementation' }
 				},
 				t = {
 					name = 'Trouble'
