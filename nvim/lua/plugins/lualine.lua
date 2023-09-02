@@ -23,7 +23,7 @@ local function is_recording()
 end
 
 local function get_recording_name()
-	return "Recording @"..vim.api.nvim_call_function('reg_recording', {})
+	return "Recording @" .. vim.api.nvim_call_function('reg_recording', {})
 end
 
 

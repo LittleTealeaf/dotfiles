@@ -1,6 +1,3 @@
--- local map = vim.api.nvim_set_keymap
-local map = vim.keymap.set
-
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>", { silent = true })
 vim.keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { silent = true })
 
@@ -12,7 +9,7 @@ vim.keymap.set('n', '<A-]>', '<cmd>bnext<CR>', { silent = true })
 
 
 vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(args)
+	callback = function(_)
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
 
 		vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end, { silent = true })
