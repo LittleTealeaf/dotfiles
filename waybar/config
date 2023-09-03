@@ -12,6 +12,7 @@
 	],
 	"modules-right": [
 		"tray",
+		"temperature",
 		"pulseaudio",
 		"group/connections",
 		"battery",
@@ -115,4 +116,7 @@
 		"format": "{icon}",
 		"on-click": "activate"
 	},
+	"temperature": {
+		"format": "{temperatureC}℃"
+	}
 }
