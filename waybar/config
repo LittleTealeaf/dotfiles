@@ -12,7 +12,6 @@
 	],
 	"modules-right": [
 		"tray",
-		"backlight",
 		"pulseaudio",
 		"group/connections",
 		"battery",
@@ -115,5 +114,5 @@
 	"wlr/taskbar": {
 		"format": "{icon}",
 		"on-click": "activate"
-	}
+	},
 }
