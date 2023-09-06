@@ -18,6 +18,7 @@ opt.expandtab = false
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.fillchars = { eob = " " }
+opt.smartindent = true
 
 cmd([[
   nnoremap . ;
