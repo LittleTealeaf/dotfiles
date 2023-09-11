@@ -115,6 +115,9 @@ format = "[$symbol($version )(󰓾 tfm )](style)"
 symbol = " "
 format = "[$symbol($version )]($style)"
 
+[bun]
+symbol = "󱨎 "
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
