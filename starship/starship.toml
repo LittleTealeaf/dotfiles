@@ -119,6 +119,9 @@ format = "[$symbol($version )]($style)"
 format = "[$symbol($version )]($style)"
 symbol = "󱨎 "
 
+[zig]
+format = "[$symbol($version )]($style)"
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "

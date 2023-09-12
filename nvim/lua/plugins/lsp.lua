@@ -125,11 +125,7 @@ return {
 						settings = LSP_SETTINGS[server_name]
 					}
 				end,
-				jdtls = function()
-					lspconfig.jdtls.setup({
-						capabilities = capabilities,
-					})
-				end
+				jdtls = function() end
 			})
 		end
 	},
