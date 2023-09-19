@@ -120,6 +120,7 @@
 		"format": "{temperatureC}℃"
 	},
 	"cpu": {
-		"format": "   {usage}%"
+		"format": "   {usage}%",
+		"interval": 2
 	}
 }
