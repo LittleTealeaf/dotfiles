@@ -12,10 +12,10 @@
 	],
 	"modules-right": [
 		"tray",
-		"temperature",
 		"pulseaudio",
-		"group/connections",
+		"cpu",
 		"battery",
+		"group/connections",
 		"clock"
 	],
 	"hyprland/workspaces": {
@@ -118,5 +118,8 @@
 	},
 	"temperature": {
 		"format": "{temperatureC}℃"
+	},
+	"cpu": {
+		"format": "   {usage}%"
 	}
 }
