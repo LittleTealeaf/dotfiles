@@ -119,6 +119,10 @@ format = "[$symbol($version )]($style)"
 format = "[$symbol($version )]($style)"
 symbol = "󱨎 "
 
+[cmake]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
 [zig]
 format = "[$symbol($version )]($style)"
 
