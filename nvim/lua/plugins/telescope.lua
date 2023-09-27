@@ -179,7 +179,7 @@ return {
 			{
 				'<leader>fg',
 				in_ivy(use_builtin('live_grep')),
-				desc = 'Live grep'
+				desc = 'Live grep',
 			},
 			{
 				'<leader>fh',
