@@ -167,11 +167,6 @@ return {
 		end,
 		keys = {
 			{
-				'<leader>fr',
-				in_ivy(use_builtin('git_files')),
-				desc = 'Find Git Files'
-			},
-			{
 				'<leader>ff',
 				in_ivy(use_builtin("find_files")),
 				desc = "Find Files"
@@ -182,18 +177,13 @@ return {
 				desc = 'Live grep',
 			},
 			{
-				'<leader>fh',
-				in_ivy(use_builtin('help_tags')),
-				desc = "Help Tags"
-			},
-			{
 				'<leader>fb',
-				in_dropdown(use_builtin('buffers')),
+				in_ivy(use_builtin('buffers')),
 				desc = 'List Buffers'
 			},
 			{
 				'<leader>fo',
-				in_dropdown(use_builtin('oldfiles')),
+				in_ivy(use_builtin('oldfiles')),
 				desc = 'List Old Files'
 			},
 			{
@@ -218,7 +208,7 @@ return {
 			},
 			{
 				'<leader>fw',
-				in_ivy(use_builtin('grep_string')),
+				in_cursor(use_builtin('grep_string')),
 				desc = 'Grep String'
 			}
 		}
