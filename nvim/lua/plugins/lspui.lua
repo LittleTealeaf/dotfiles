@@ -4,6 +4,12 @@ local function use_api(action)
 	end
 end
 
+-- peek_definition
+-- hover
+-- rename
+-- code_action
+-- diagnostic
+
 return {
 	"jinzhongjia/LspUI.nvim",
 	event = "VeryLazy",
@@ -15,7 +21,7 @@ return {
 		prompt = false
 	},
 	keys = {
-		{ '<leader>cn', '<CMD>LspUI rename<CR>',    desc = "Lsp Rename" },
+		{ '<leader>cn', use_api('rename'),          desc = "LSP Rename" },
 		{ '<leader>cp', use_api('peek_definition'), desc = "Peek Definition" },
 	}
 }
