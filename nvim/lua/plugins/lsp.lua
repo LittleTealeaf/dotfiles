@@ -126,16 +126,20 @@ return {
 
 			require('mason-lspconfig').setup_handlers({
 				function(server_name)
-					local config = LSP_CONFIG[server_name]
+					local lsp_config = LSP_CONFIG[server_name]
+					local settings = nil
+					if lsp_config ~= nil then
+						settings = lsp_config.settings
+					end
 					lspconfig[server_name].setup {
 						capabilities = capabilities,
 						on_attach = function(client, bufnr)
 							on_lsp_attach(client, bufnr)
-							if config.on_attach ~= nil then
-								config.on_attach(client, bufnr)
+							if lsp_config ~= nil and lsp_config.on_attach ~= nil then
+								lsp_config.on_attach(client, bufnr)
 							end
 						end,
-						settings = config.settings
+						settings = settings
 					}
 				end,
 				jdtls = function() end
