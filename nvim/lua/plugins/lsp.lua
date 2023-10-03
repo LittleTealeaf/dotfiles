@@ -1,51 +1,58 @@
-local LSP_SETTINGS = {
+local LSP_CONFIG = {
 	['lua_ls'] = {
-		Lua = {
-			diagnostics = {
-				globals = { 'vim' }
-			},
-			hint = {
-				enable = true
+		settigns = {
+			Lua = {
+				diagnostics = {
+					globals = { 'vim' }
+				},
+				hint = {
+					enable = true
+				}
 			}
 		}
 	},
 	['tsserver'] = {
-		typescript = {
-			inlayHints = {
-				includeInlayParameterNameHints = 'all',
-				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
-			}
-		},
-		javascript = {
-			inlayHints = {
-				includeInlayParameterNameHints = 'all',
-				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
+		settings = {
+			typescript = {
+				inlayHints = {
+					includeInlayParameterNameHints = 'all',
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayVariableTypeHints = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+				}
+			},
+			javascript = {
+				inlayHints = {
+					includeInlayParameterNameHints = 'all',
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayVariableTypeHints = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+				}
 			}
 		}
 	},
 	['html'] = {
-		html = {
-			format = {
-				indentInnerHtml = true
+		settings = {
+			html = {
+				format = {
+					indentInnerHtml = true
+				}
 			}
 		}
 	},
 	['yamlls'] = {
-		yaml = {
-			keyOrdering = false
+		settings = {
+			yaml = {
+				keyOrdering = false
+			}
 		}
 	},
-	['jdtls'] = {}
 }
 
 local function on_lsp_attach(client, bufnr)
@@ -119,10 +126,16 @@ return {
 
 			require('mason-lspconfig').setup_handlers({
 				function(server_name)
+					local config = LSP_CONFIG[server_name]
 					lspconfig[server_name].setup {
 						capabilities = capabilities,
-						on_attach = on_lsp_attach,
-						settings = LSP_SETTINGS[server_name]
+						on_attach = function(client, bufnr)
+							on_lsp_attach(client, bufnr)
+							if config.on_attach ~= nil then
+								config.on_attach(client, bufnr)
+							end
+						end,
+						settings = config.settings
 					}
 				end,
 				jdtls = function() end
