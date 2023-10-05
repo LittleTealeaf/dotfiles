@@ -87,7 +87,7 @@ return {
 					{ name = "crates" },
 				}, {
 					{ name = 'nvim_lua' },
-					{ name = 'buffer' },
+					-- { name = 'buffer' },
 					{ name = "path" },
 				})
 			})

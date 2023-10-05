@@ -4,7 +4,6 @@ export PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf
 source $DOT_FILES/bash/fzf.sh
 source $DOT_FILES/bash/functions.sh
 
-alias :Git=git
 alias :q=exit
 
 # Lazygit
@@ -12,17 +11,15 @@ if command -v lazygit > /dev/null; then
 	alias lg=lazygit
 fi
 
-export STARSHIP_CONFIG="$DOT_FILES/starship/starship.toml"
-
-if command -v starship > /dev/null; then
-	eval "$(starship init bash)"
-else
-	echo "Please install starship to properly set up configurations"
-fi
-
-
 
 # Kitty Alias
 if command -v kitty > /dev/null; then
 	alias icat="kitty +kitten icat"
+fi
+
+if command -v starship > /dev/null; then
+	export STARSHIP_CONFIG="$DOT_FILES/starship/starship.toml"
+	eval "$(starship init bash)"
+else
+	echo "Please install starship to properly set up configurations"
 fi
