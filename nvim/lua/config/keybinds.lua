@@ -5,6 +5,10 @@ vim.keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { silent = true })
 vim.keymap.set('n', '<A-[>', '<cmd>bprevious<CR>', { silent = true })
 vim.keymap.set('n', '<A-]>', '<cmd>bnext<CR>', { silent = true })
 
+vim.keymap.set('n','<leader>bw', '<cmd>q<CR>', {silent = true})
+vim.keymap.set('n','<leader>bs', '<cmd>split<CR>', {silent = true})
+vim.keymap.set('n','<leader>bv', '<cmd>vsplit<CR>', {silent = true})
+
 
 
 

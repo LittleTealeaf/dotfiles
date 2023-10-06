@@ -24,7 +24,10 @@ return {
 					name = 'Files'
 				},
 				b = {
-					name = 'Buffers'
+					name = 'Buffers',
+					w = "Quit",
+					s = "Split",
+					v = "Vertical Split"
 				},
 				c = {
 					name = 'Code',
