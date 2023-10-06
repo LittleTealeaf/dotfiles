@@ -2,7 +2,21 @@ return {
 	{
 		'folke/flash.nvim',
 		event = 'VeryLazy',
-		opts = {},
+		opts = {
+			modes = {
+				char = {
+					jump_labels = true,
+					char_actions = function(motion)
+						return {
+							['.'] = "next",
+							[','] = "prev",
+							[motion:lower()] = "next",
+							[motion:upper()] = "prev",
+						}
+					end
+				}
+			}
+		},
 		keys = {
 			-- { 's',     mode = { 'n', 'x', 'o' }, function() require('flash').jump() end,          desc = "Flash" },
 			-- { "S",     mode = { 'n', 'o', 'x' }, function() require('flash').treesitter() end,    desc = 'Flash Treesitter' },
@@ -29,7 +43,7 @@ return {
 				mode = { 'n', 'x', 'o' },
 				function() require('flash').jump() end,
 				desc = 'Flash'
-			}
+			},
 		}
 	},
 }
