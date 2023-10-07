@@ -119,7 +119,7 @@ return {
 					lualine_y = {},
 					lualine_z = {},
 				},
-				winbar = {
+				tabline = {
 					lualine_c = {
 						function() return " " end,
 						{
@@ -127,7 +127,7 @@ return {
 							color_correction = nil,
 							navic_opts = nil,
 						}
-					}
+					},
 				}
 			}
 		end

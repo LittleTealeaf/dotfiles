@@ -1,15 +1,15 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
-	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	lazy = false, -- make sure we load this during startup if it is your main ccheme
 	init = function()
-		-- load the colorscheme here
+		-- load the ccheme here
 		vim.cmd([[colorscheme catppuccin]])
 	end,
 	opts = {
 		flavor = "macchiato",
 		transparent_background = Transparent,
-		term_colors = true,
+		term_c = true,
 		integrations = {
 			gitsigns = true,
 			markdown = true,
@@ -64,14 +64,15 @@ return {
 				SelectMode = { fg = c.red },
 
 				-- -- Tabline
-				-- tabline_a_normal_bold_italic = { fg = colors.blue, bg = '', style = { 'bold', 'italic' } },
-				-- tabline_b_normal_bold_italic = { fg = colors.text, bg = '', style = { 'bold', 'italic' } },
-				-- tabline_a_normal_italic = { fg = colors.blue, bg = '', style = { 'italic' } },
-				-- tabline_b_normal_italic = { fg = colors.text, bg = '', style = { 'italic' } },
-				-- tabline_a_normal_bold = { fg = colors.blue, bg = '', style = { 'bold' } },
-				-- tabline_b_normal_bold = { fg = colors.text, bg = '', style = { 'bold' } },
-				-- tabline_a_normal = { fg = colors.blue, bg = '' },
-				-- tabline_b_normal = { fg = colors.text, bg = '' },
+				tabline_a_normal_bold_italic = { fg = c.blue, bg = '', style = { 'bold', 'italic' } },
+				tabline_b_normal_bold_italic = { fg = c.text, bg = '', style = { 'bold', 'italic' } },
+				tabline_a_normal_italic = { fg = c.blue, bg = '', style = { 'italic' } },
+				tabline_b_normal_italic = { fg = c.text, bg = '', style = { 'italic' } },
+				tabline_a_normal_bold = { fg = c.blue, bg = '', style = { 'bold' } },
+				tabline_b_normal_bold = { fg = c.text, bg = '', style = { 'bold' } },
+				tabline_a_normal = { fg = c.blue, bg = '' },
+				tabline_b_normal = { fg = c.text, bg = '' },
+
 				TabLineSel = { fg = c.blue, bg = '' },
 				TabLine = { fg = c.text, bg = '' },
 				-- Float

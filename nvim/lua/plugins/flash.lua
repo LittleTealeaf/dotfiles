@@ -5,7 +5,7 @@ return {
 		opts = {
 			modes = {
 				char = {
-					jump_labels = true,
+					jump_labels = false,
 					char_actions = function(motion)
 						return {
 							['.'] = "next",
