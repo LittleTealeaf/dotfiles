@@ -1,4 +1,5 @@
 local function in_dropdown(action)
+
 	return function(args)
 		action(require('telescope.themes').get_dropdown(args))
 	end

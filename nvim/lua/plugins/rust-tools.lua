@@ -56,8 +56,9 @@ return {
 					on_attach = function(_, bufnr)
 						vim.keymap.set('n', '<leader>clr', rt.hover_actions.hover_actions, { buffer = bufnr })
 						vim.keymap.set('n', '<leader>cla', rt.code_action_group.code_action_group, { buffer = bufnr })
-						vim.keymap.set('n', '<leader>cle', rt.runnables.runnables)
-						vim.keymap.set('n', '<leader>cld', require('rust-tools.debuggables').debuggables)
+						vim.keymap.set('n', '<leader>cle', rt.runnables.runnables, { buffer = bufnr })
+						vim.keymap.set('n', '<leader>clp', rt.parent_module.parent_module, { buffer = bufnr })
+						vim.keymap.set('n', '<leader>cld', require('rust-tools.debuggables').debuggables, { buffer = bufnr })
 						vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
 					end,
 					standalone = true,
