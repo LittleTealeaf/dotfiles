@@ -8,7 +8,7 @@ return {
 	end,
 	opts = {
 		flavor = "macchiato",
-		transparent_background = true,
+		transparent_background = Transparent,
 		term_colors = true,
 		integrations = {
 			gitsigns = true,

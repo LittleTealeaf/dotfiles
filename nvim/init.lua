@@ -1,3 +1,7 @@
+Transparent = true
+
+
+
 if vim.g.vscode then
 
 else

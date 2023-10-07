@@ -74,7 +74,7 @@ return {
 				}
 			},
 			presets = {
-				lsp_doc_border = true,
+				lsp_doc_border = Transparent,
 			},
 			messages = {
 				view_search = false,

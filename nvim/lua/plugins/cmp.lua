@@ -37,14 +37,14 @@ return {
 						mode = 'symbol',
 					})
 				},
-				window = {
+				window = false and {
 					completion = cmp.config.window.bordered({
 						winhighlight = 'CursorLine:Visual,Search:None'
 					}),
 					documentation = cmp.config.window.bordered({
 						winhighlight = 'CursorLine:Visual,Search:None'
 					}),
-				},
+				} or {},
 				snippet = {
 					expand = function(args)
 						require('luasnip').lsp_expand(args.body)

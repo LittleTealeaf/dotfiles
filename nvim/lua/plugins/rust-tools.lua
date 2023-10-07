@@ -66,6 +66,18 @@ return {
 					executor = { execute_command = execute_from_toggleterm },
 					hover_actions = {
 						auto_focus = false,
+						border = Transparent and {
+							{ "╭", "FloatBorder" },
+							{ "─", "FloatBorder" },
+							{ "╮", "FloatBorder" },
+							{ "│", "FloatBorder" },
+							{ "╯", "FloatBorder" },
+							{ "─", "FloatBorder" },
+							{ "╰", "FloatBorder" },
+							{ "│", "FloatBorder" },
+						} or {
+							{ "" }, { "" }, { "" }, { "" }, { "" }, { "" }, { "" }, { "" }
+						}
 					}
 				}
 			})
