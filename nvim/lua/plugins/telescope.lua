@@ -137,6 +137,11 @@ return {
 							}
 						}
 					},
+					project = {
+						base_dirs = {
+							{ '~/dev/', max_depth = 2 }
+						},
+					}
 				},
 				defaults = {
 					prompt_prefix = '  ',
@@ -255,6 +260,15 @@ return {
 		config = load_extension_config('conventional_commits'),
 		keys = {
 			{ '<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits')) }
+		}
+	},
+	--Projects
+	{
+		'nvim-telescope/telescope-project.nvim',
+		dependenies = { telescope_dependency },
+		config = load_extension_config('project'),
+		keys = {
+			{ '<leader>fp', in_dropdown(use_extension('project', 'project')), desc = "Load Project" }
 		}
 	}
 }
