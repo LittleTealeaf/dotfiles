@@ -1,5 +1,4 @@
 local function in_dropdown(action)
-
 	return function(args)
 		action(require('telescope.themes').get_dropdown(args))
 	end
@@ -260,7 +259,8 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('conventional_commits'),
 		keys = {
-			{ '<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits')) }
+			{ '<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits')),
+				desc = "Conventional Commits" }
 		}
 	},
 	--Projects
