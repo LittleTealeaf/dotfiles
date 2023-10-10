@@ -74,7 +74,7 @@ return {
 		'williamboman/mason.nvim',
 		opts = {
 			ui = {
-				border = 'Rounded',
+				border = 'rounded',
 			}
 		}
 	},

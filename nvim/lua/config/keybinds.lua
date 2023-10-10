@@ -9,8 +9,8 @@ vim.keymap.set('n', '<leader>bw', '<cmd>q<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bs', '<cmd>split<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bv', '<cmd>vsplit<CR>', { silent = true })
 
-vim.keymap.set('n', '+', '<C-a>', { silent = true })
-vim.keymap.set('n', '-', '<C-s>', { silent = true })
+-- vim.keymap.set('n', '+', '<C-a>', { silent = true })
+-- vim.keymap.set('n', '-', '<C-x>', { silent = true })
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(_)
