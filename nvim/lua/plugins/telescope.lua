@@ -130,6 +130,7 @@ return {
 						require('telescope.themes').get_dropdown({}),
 					},
 					file_browser = {
+						hijack_netrw = true,
 						theme = 'ivy',
 						mappings = {
 							i = {
