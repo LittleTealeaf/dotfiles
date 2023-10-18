@@ -28,11 +28,6 @@ local function use_extension(extension, action)
 	end
 end
 
-local function with_args(fun, args)
-	return function()
-		fun(args)
-	end
-end
 
 local function load_extension_config(extension)
 	return function()
@@ -119,9 +114,10 @@ return {
 			'folke/trouble.nvim',
 			'ThePrimeagen/harpoon',
 		},
-		config = function(_, opts)
+		config = function(_, _)
 			local telescope = require('telescope')
 			local actions = require('telescope.actions')
+			local fb_actions = require 'telescope'.extensions.file_browser.actions
 			local trouble = require('trouble.providers.telescope')
 
 			telescope.setup({
@@ -135,6 +131,7 @@ return {
 						mappings = {
 							i = {
 								['<C-w>'] = false,
+								['<C-e>'] = fb_actions.goto_cwd
 							}
 						}
 					},
@@ -152,6 +149,7 @@ return {
 					results_title = "",
 					mappings = {
 						i = {
+							['<esc>'] = actions.close,
 							["<Tab>"] = actions.move_selection_next,
 							["<S-Tab>"] = actions.move_selection_previous,
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
@@ -161,7 +159,8 @@ return {
 							['<C-t>'] = trouble.smart_open_with_trouble,
 							['<C-a>'] = actions.toggle_all,
 							['<C-h>'] = open_with_harpoon(),
-							['<C-s>'] = flash
+							['<C-s>'] = flash,
+							['<C-u>'] = false
 						},
 					}
 				}

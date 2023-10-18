@@ -5,6 +5,7 @@ return {
 		'nvim-tree/nvim-web-devicons',
 		'MunifTanjim/nui.nvim',
 	},
+	enabled = false,
 	opts = {
 		enable_diagnostics = true,
 		default_component_configs = {
