@@ -95,6 +95,11 @@ local function file_browser()
 	)
 end
 
+local function on_project_open(prompt_bufnr)
+	local project_actions = require('telescope._extensions.project.actions')
+	project_actions.change_working_directory(prompt_bufnr, false)
+end
+
 local telescope_dependency = {
 	'nvim-telescope/telescope.nvim',
 	name = 'telescope'
