@@ -226,7 +226,7 @@ return {
 	},
 	{
 		'nvim-telescope/telescope-file-browser.nvim',
-		event = 'VeryLazy',
+		lazy = false,
 		dependencies = { telescope_dependency },
 		config = load_extension_config('file_browser'),
 		keys = {
@@ -265,8 +265,11 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('conventional_commits'),
 		keys = {
-			{ '<leader>gc', in_dropdown(use_extension('conventional_commits', 'conventional_commits')),
-				desc = "Conventional Commits" }
+			{
+				'<leader>gc',
+				in_dropdown(use_extension('conventional_commits', 'conventional_commits')),
+				desc = "Conventional Commits"
+			}
 		}
 	},
 	--Projects
