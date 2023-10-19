@@ -4,7 +4,7 @@ add_newline = false
 palette = 'catppuccin_macchiato'
 
 
-format = "$all$directory$character"
+format = "$all$directory$sudo$character"
 
 
 
@@ -125,6 +125,12 @@ symbol = " "
 
 [zig]
 format = "[$symbol($version )]($style)"
+
+[sudo]
+format = "[$symbol]($style)"
+symbol = " "
+disabled = false
+
 
 [os.symbols]
 Alpaquita = " "
