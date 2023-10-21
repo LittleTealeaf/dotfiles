@@ -9,6 +9,7 @@ return {
 	'folke/persistence.nvim',
 	event = 'BufReadPre',
 	name = 'persistence',
+	enabled = false,
 	opts = {
 		pre_save = function()
 			runIfLoaded('neotree', function(neotree)

@@ -124,9 +124,9 @@ return {
 						function() return " " end,
 						{
 							"navic",
-							color_correction = nil,
+							color_correction = 'static',
 							navic_opts = nil,
-						}
+						},
 					},
 				}
 			}
