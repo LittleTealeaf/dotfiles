@@ -77,13 +77,14 @@ return {
 				TabLine = { fg = c.text, bg = '' },
 				-- Float
 				FloatTitle = title,
+				NormalFloat = { fg = c.text, bg = Transparent and '' or c.surface0 },
 				-- NeoTree
 				NeoTreeFloatBorder = border,
 				NeoTreeCursorLine = selection,
 				-- Telescope
 				TelescopeBorder = border,
 				TelescopeTitle = title,
-				TelescopeSelection = { fg = c.text, bg = c.surface1, style = { 'bold' } },
+				TelescopeSelection = { fg = c.text, bg = Transparent and '' or c.surface1, style = { 'bold' } },
 				-- Borders
 				FloatBorder = border,
 				HoverBorder = border,
@@ -95,6 +96,7 @@ return {
 				-- Noice
 				NoiceMini = { fg = '', bg = '' },
 				NoiceConfirmBorder = border,
+				NoicePopup = { fg = c.text, bg = c.surface0 },
 				-- Lsp
 				LspInfoBorder = border,
 				-- Glance
