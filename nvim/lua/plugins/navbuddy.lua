@@ -1,14 +1,5 @@
 return {
 	{
-		"SmiteshP/nvim-navic",
-		opts = {
-			highlight = true,
-			lsp = {
-				auto_attach = true,
-			}
-		}
-	},
-	{
 		'SmiteshP/nvim-navbuddy',
 		dependencies = {
 			"SmiteshP/nvim-navic",
