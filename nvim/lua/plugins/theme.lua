@@ -14,7 +14,7 @@ return {
 			gitsigns = true,
 			markdown = true,
 			mason = true,
-			neotree = true,
+			neotree = false,
 			noice = true,
 			cmp = true,
 			flash = true,
@@ -53,7 +53,6 @@ return {
 			local border = { fg = c.surface1, bg = '' }
 			local selection = { bg = c.surface1, style = { 'bold' } }
 			local title = { fg = c.blue, style = { 'bold' } }
-			local bg_mantle = { bg = Transparent and '' or c.mantle }
 
 			return {
 				-- Modicator
@@ -76,8 +75,9 @@ return {
 				TabLineFill = { bg = Transparent and '' or c.mantle },
 
 				-- Float
-				FloatTitle = title,
-				NormalFloat = { fg = c.text, bg = Transparent and '' or c.base },
+				Float = { bg = Transparent and '' or c.surface0 },
+				NormalFloat = { bg = Transparent and '' or c.surface0 },
+				NvimFloat = { bg = Transparent and '' or c.surface0 },
 
 				-- NeoTree
 				NeoTreeFloatBorder = border,
