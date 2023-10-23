@@ -121,7 +121,6 @@ return {
 				},
 				tabline = {
 					lualine_c = {
-						function() return " " end,
 						{
 							"navic",
 							color_correction = 'static',
