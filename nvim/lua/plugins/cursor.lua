@@ -20,6 +20,11 @@ return {
 				defaults = {
 					bold = true,
 				}
+			},
+			integration = {
+				lualine = {
+					enabled = false
+				}
 			}
 		},
 		init = function()
