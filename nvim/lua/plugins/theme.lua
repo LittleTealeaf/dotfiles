@@ -47,10 +47,13 @@ return {
 			},
 		},
 		dim_inactive = {
-			enabled = false,
+			enabled = true,
+			shade = 'dark',
+			percentage = 0.15
 		},
 		custom_highlights = function(c)
-			local border = { fg = c.surface1, bg = '' }
+			-- local border = { fg = c.surface1, bg = '' }
+			local border = { fg = c.green, bg = '' }
 			local selection = { bg = c.surface1, style = { 'bold' } }
 			local title = { fg = c.blue, style = { 'bold' } }
 

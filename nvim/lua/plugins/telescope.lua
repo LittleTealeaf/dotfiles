@@ -1,17 +1,29 @@
 local function in_dropdown(action)
 	return function(args)
+		if args == nil then
+			args = {}
+		end
+		args['border'] = Transparent
 		action(require('telescope.themes').get_dropdown(args))
 	end
 end
 
 local function in_ivy(action)
 	return function(args)
+		if args == nil then
+			args = {}
+		end
+		args['border'] = Transparent
 		action(require('telescope.themes').get_ivy(args))
 	end
 end
 
 local function in_cursor(action)
 	return function(args)
+		if args == nil then
+			args = {}
+		end
+		args['border'] = Transparent
 		action(require('telescope.themes').get_cursor(args))
 	end
 end
@@ -25,6 +37,18 @@ end
 local function use_extension(extension, action)
 	return function(args)
 		require('telescope').extensions[extension][action](args)
+	end
+end
+
+local function with_args(action, override_args)
+	return function(args)
+		if args == nil then
+			args = {}
+		end
+		for k, v in pairs(override_args) do
+			args[k] = v
+		end
+		action(args)
 	end
 end
 
@@ -80,21 +104,10 @@ local function flash(prompt_bufnr)
 	})
 end
 
-
-local function file_browser()
-	require('telescope').extensions.file_browser.file_browser(
-		require('telescope.themes').get_ivy({
-			hidden = true,
-			path = vim.fn.expand("%:p:h")
-		})
-	)
-end
-
 local telescope_dependency = {
 	'nvim-telescope/telescope.nvim',
 	name = 'telescope'
 }
-
 
 return {
 	{
@@ -148,6 +161,7 @@ return {
 					path_display = { 'full' },
 					dynamic_preview_title = true,
 					results_title = "",
+					border = Transparent,
 					mappings = {
 						i = {
 							['<esc>'] = actions.close,
@@ -227,7 +241,10 @@ return {
 		keys = {
 			{
 				'<leader>fe',
-				file_browser,
+				with_args(in_ivy(use_extension('file_browser', 'file_browser')), {
+					hidden = true,
+					path = vim.fn.expand("%:p:h"),
+				}),
 				desc = 'File Browser'
 			}
 		}
@@ -273,7 +290,11 @@ return {
 		dependenies = { telescope_dependency },
 		config = load_extension_config('project'),
 		keys = {
-			{ '<leader>fp', in_dropdown(use_extension('project', 'project')), desc = "Load Project" }
+			{
+				'<leader>fp',
+				in_dropdown(use_extension('project', 'project')),
+				desc = "Load Project"
+			}
 		}
 	}
 }

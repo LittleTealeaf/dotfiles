@@ -4,7 +4,7 @@ return {
 		open_mapping = [[<c-\>]],
 		direction = 'float',
 		float_opts = {
-			border = 'curved',
+			border = Transparent and 'curved' or 'none',
 		},
 		highlights = {
 			Normal = {

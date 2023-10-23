@@ -37,7 +37,7 @@ return {
 	keys = {
 		{ '<leader>te', '<cmd>Trouble workspace_diagnostics<cr>', desc = "Open Trouble Diagnostics" },
 		{ '<leader>tr', '<cmd>Trouble lsp_references<cr>',        desc = "Open Trouble Lsp References" },
-		{ '<leader>td', '<cmd>Trouble lsp_definitions<cr>',       desc = "Open Trouble Lsp Definitions" },
+		{ '<leader>td', '<cmd>Troudle lsp_definitions<cr>',       desc = "Open Trouble Lsp Definitions" },
 		{ '<leader>ti', '<cmd>Trouble lsp_implementations<cr>',   desc = "Open Trouble Lsp Implementations" },
 		{ '<leader>ty', '<cmd>Trouble lsp_type_definitions<cr>',  desc = "Open Trouble Lsp Type Definitions" },
 		{ '<leader>tq', '<cmd>Trouble quickfix<cr>',              desc = "Open Quickfix in Trouble" },
