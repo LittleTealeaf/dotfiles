@@ -45,6 +45,6 @@ vim.diagnostic.config({
 	-- virtual_text = false,
 	update_in_insert = true,
 	float = {
-		border = Transparent and "rounded" or "None"
+		border = Transparent and "rounded" or "none"
 	}
 })
