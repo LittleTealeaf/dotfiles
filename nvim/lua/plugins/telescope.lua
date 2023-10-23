@@ -3,7 +3,7 @@ local function in_dropdown(action)
 		if args == nil then
 			args = {}
 		end
-		args['border'] = Transparent
+		-- args['border'] = Transparent
 		action(require('telescope.themes').get_dropdown(args))
 	end
 end
@@ -13,7 +13,7 @@ local function in_ivy(action)
 		if args == nil then
 			args = {}
 		end
-		args['border'] = Transparent
+		-- args['border'] = Transparent
 		action(require('telescope.themes').get_ivy(args))
 	end
 end
@@ -23,7 +23,7 @@ local function in_cursor(action)
 		if args == nil then
 			args = {}
 		end
-		args['border'] = Transparent
+		-- args['border'] = Transparent
 		action(require('telescope.themes').get_cursor(args))
 	end
 end
@@ -161,7 +161,7 @@ return {
 					path_display = { 'full' },
 					dynamic_preview_title = true,
 					results_title = "",
-					border = Transparent,
+					-- border = Transparent,
 					mappings = {
 						i = {
 							['<esc>'] = actions.close,

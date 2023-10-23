@@ -85,8 +85,8 @@ return {
 				NeoTreeCursorLine = selection,
 
 				-- Telescope
-				TelescopeBorder = border,
-				TelescopeTitle = title,
+				TelescopeBorder = Transparent and border or { bg = c.mantle, fg = c.mantle },
+				TelescopeTitle = Transparent and title or { fg = c.text, style = { 'bold' } },
 				TelescopeNormal = { bg = Transparent and c.base or c.mantle },
 				TelescopeSelection = { fg = c.text, bg = Transparent and '' or c.surface1, style = { 'bold' } },
 
