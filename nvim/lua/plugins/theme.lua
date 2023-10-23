@@ -47,13 +47,11 @@ return {
 			},
 		},
 		dim_inactive = {
-			enabled = true,
-			shade = 'dark',
-			percentage = 0.15
+			enabled = false,
 		},
 		custom_highlights = function(c)
 			-- local border = { fg = c.surface1, bg = '' }
-			local border = { fg = c.green, bg = '' }
+			local border = Transparent and { fg = c.surface1, bg = '' } or { fg = c.mantle, bg = '' }
 			local selection = { bg = c.surface1, style = { 'bold' } }
 			local title = { fg = c.blue, style = { 'bold' } }
 
@@ -89,6 +87,7 @@ return {
 				-- Telescope
 				TelescopeBorder = border,
 				TelescopeTitle = title,
+				TelescopeNormal = { bg = Transparent and c.base or c.mantle },
 				TelescopeSelection = { fg = c.text, bg = Transparent and '' or c.surface1, style = { 'bold' } },
 
 				-- Borders
@@ -98,6 +97,7 @@ return {
 
 				-- Navbuddy
 				NavbuddyFloatBorder = border,
+				NavbuddyNormalFloat = { bg = Transparent and '' or c.mantle },
 
 				-- Noice
 				NoiceMini = { fg = '', bg = '' },

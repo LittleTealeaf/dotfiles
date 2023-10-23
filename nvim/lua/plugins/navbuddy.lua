@@ -15,11 +15,11 @@ return {
 			local ivy = require("telescope.themes").get_ivy({})
 			return {
 				window = {
-					border = "rounded",
+					border = Transparent and "rounded" or 'none',
 					size = "85%",
 					sections = {
 						left = {
-							size = "17%"
+							size = "17%",
 						},
 						mid = {
 							size = "35%"

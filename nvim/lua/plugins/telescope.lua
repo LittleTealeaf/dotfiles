@@ -241,10 +241,12 @@ return {
 		keys = {
 			{
 				'<leader>fe',
-				with_args(in_ivy(use_extension('file_browser', 'file_browser')), {
-					hidden = true,
-					path = vim.fn.expand("%:p:h"),
-				}),
+				function()
+					with_args(in_ivy(use_extension('file_browser', 'file_browser')), {
+						hidden = true,
+						path = vim.fn.expand("%:p:h"),
+					})()
+				end,
 				desc = 'File Browser'
 			}
 		}
