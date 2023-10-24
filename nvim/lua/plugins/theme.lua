@@ -1,16 +1,17 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
-	lazy = false, -- make sure we load this during startup if it is your main ccheme
+	lazy = false, -- make sure we load this during startup if it is your main scheme
 
 	init = function()
-		-- load the ccheme here
+		-- load the scheme here
 		vim.cmd([[colorscheme catppuccin]])
 	end,
 	opts = {
-		flavor = "macchiato",
+		flavour = "mocha",
 		transparent_background = false,
-		term_c = true,
+		term_colors = true,
+		show_end_of_buffer = false,
 		integrations = {
 			gitsigns = true,
 			markdown = true,
