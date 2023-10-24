@@ -8,10 +8,13 @@ return {
 		},
 		highlights = {
 			Normal = {
-				link = "Normal"
+				link = "ToggleTermNormal"
+			},
+			NormalFloat = {
+				link = 'ToggleTermNormal'
 			},
 			FloatBorder = {
-				link = 'FloatBorder'
+				link = 'ToggleTermBorder'
 			}
 		}
 	},

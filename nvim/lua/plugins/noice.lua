@@ -1,3 +1,5 @@
+-- TODO: This needs to be revamped with new outlines
+
 local routes = {
 	-- Hide all search related messages
 	{
