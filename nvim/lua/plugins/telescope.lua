@@ -143,6 +143,7 @@ return {
 								['<C-w>'] = false,
 								['<C-e>'] = fb_actions.goto_cwd,
 								['<C-h>'] = open_with_harpoon(),
+								['<C-d>'] = fb_actions.change_cwd
 							}
 						}
 					},
