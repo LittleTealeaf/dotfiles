@@ -77,8 +77,8 @@ return {
 				FloatBorder = { fg = c.surface0, bg = c.surface0 },
 
 				-- Toggle Term
-				ToggleTermNormal = {bg = c.mantle},
-				ToggleTermBorder = {bg = c.mantle, fg = c.mantle},
+				ToggleTermNormal = { bg = c.mantle },
+				ToggleTermBorder = { bg = c.mantle, fg = c.mantle },
 
 				-- Hovers
 				HoverBorder = { fg = c.base, bg = c.base },
