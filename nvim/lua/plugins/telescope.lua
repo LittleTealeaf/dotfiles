@@ -158,7 +158,6 @@ return {
 					path_display = { 'full' },
 					dynamic_preview_title = true,
 					results_title = "",
-					-- border = Transparent,
 					mappings = {
 						i = {
 							['<esc>'] = actions.close,
