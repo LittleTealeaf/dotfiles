@@ -9,9 +9,6 @@ vim.keymap.set('n', '<leader>bw', '<cmd>q<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bs', '<cmd>split<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bv', '<cmd>vsplit<CR>', { silent = true })
 
--- vim.keymap.set('n', '+', '<C-a>', { silent = true })
--- vim.keymap.set('n', '-', '<C-x>', { silent = true })
-
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(_)
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
@@ -21,6 +18,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { silent = true })
 		vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { silent = true })
 		vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, { silent = true })
+		vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, { silent = true })
 		vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { silent = true })
 		vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, { silent = true })
 

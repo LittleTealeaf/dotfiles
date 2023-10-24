@@ -290,7 +290,7 @@ return {
 				in_dropdown(use_extension('conventional_commits', 'conventional_commits')),
 				desc = "Conventional Commits"
 			}
-		}
+		},
 	},
 	--Projects
 	{

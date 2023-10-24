@@ -23,5 +23,6 @@ return {
 	keys = {
 		{ '<leader>cn', use_api('rename'),          desc = "LSP Rename" },
 		{ '<leader>cp', use_api('peek_definition'), desc = "Peek Definition" },
-	}
+	},
+	enabled = false,
 }

@@ -77,6 +77,7 @@ return {
 			},
 			presets = {
 				lsp_doc_border = Transparent,
+				inc_rename = true,
 			},
 			messages = {
 				view_search = false,
@@ -123,7 +124,7 @@ return {
 			notify = {
 				enabled = true,
 				view = "notify"
-			}
+			},
 		},
 		keys = {
 			{ '<leader>nl', '<cmd>Noice last<CR>',    desc = "Open Last Notification" },
@@ -135,8 +136,7 @@ return {
 				'<S-Enter>',
 				function() require('noice').redirect(vim.fn.getcmdline()) end,
 				desc = "Redirect Cmdline",
-				mode =
-				'c'
+				mode = 'c'
 			}
 		}
 	},
