@@ -248,6 +248,15 @@ return {
 					})()
 				end,
 				desc = 'File Browser'
+			},
+			{
+				'<leader>fr',
+				function()
+					with_args(in_ivy(use_extension('file_browser', 'file_browser')), {
+						hidden = true
+					})()
+				end,
+				desc = "File Browser from Root"
 			}
 		}
 

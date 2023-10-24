@@ -51,7 +51,7 @@ return {
 		},
 		custom_highlights = function(c)
 			-- local border = { fg = c.surface1, bg = '' }
-			local border = Transparent and { fg = c.surface1, bg = '' } or { fg = c.mantle, bg = '' }
+			local border = Transparent and { fg = c.surface1, bg = '' } or { fg = c.base, bg = '' }
 			local selection = { bg = c.surface1, style = { 'bold' } }
 			local title = { fg = c.blue, style = { 'bold' } }
 
