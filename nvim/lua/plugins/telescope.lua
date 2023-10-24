@@ -204,12 +204,12 @@ return {
 				desc = 'List Old Files'
 			},
 			{
-				'<leader>sf',
+				'<leader>fs',
 				in_dropdown(use_builtin('lsp_document_symbols')),
 				desc = 'List Document Symbols'
 			},
 			{
-				'<leader>sa',
+				'<leader>fa',
 				in_dropdown(use_builtin('lsp_workspace_symbols')),
 				desc = 'List Workspace Symbols'
 			},
