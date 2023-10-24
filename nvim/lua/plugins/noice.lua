@@ -53,7 +53,7 @@ return {
 		},
 		opts = {
 			timeout = 500,
-			background_colour = '#000000',
+			-- background_colour = '#000000',
 			stages = 'slide',
 			fps = 60,
 			render = 'compact'
