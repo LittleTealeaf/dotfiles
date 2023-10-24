@@ -2,6 +2,7 @@ return {
 	"catppuccin/nvim",
 	name = "catppuccin",
 	lazy = false, -- make sure we load this during startup if it is your main ccheme
+
 	init = function()
 		-- load the ccheme here
 		vim.cmd([[colorscheme catppuccin]])
@@ -89,6 +90,11 @@ return {
 				TelescopeTitle = { fg = c.text, style = { 'bold' } },
 				TelescopeNormal = { bg = c.mantle },
 				TelescopeSelection = { fg = c.text, bg = c.surface1, style = { 'bold' } },
+
+				TelescopeResultsDiffAdd = { fg = c.green, bg = '' },
+				TelescopeResultsDiffDelete = { fg = c.red, bg = '' },
+				TelescopeResultsDiffChange = { fg = c.text, bg = '' },
+				TelescopeResultsDiffUntracked = { fg = c.surface0, bg = '' },
 
 				-- Navbuddy
 				NavbuddyFloatBorder = { fg = c.base, bg = c.base },
