@@ -185,7 +185,7 @@ return {
 		keys = {
 			{
 				'<leader>ff',
-				in_ivy(use_builtin("find_files")),
+				use_builtin("find_files"),
 				desc = "Find Files"
 			},
 			{
