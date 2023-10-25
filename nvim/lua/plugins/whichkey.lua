@@ -36,7 +36,8 @@ return {
 					d = { 'Definition' },
 					e = { 'Diagnostics' },
 					D = { 'Declaration' },
-					i = { 'Implementation' }
+					i = { 'Implementation' },
+					n = { 'Rename' },
 				},
 				t = {
 					name = 'Trouble'
