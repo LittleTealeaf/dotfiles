@@ -13,6 +13,3 @@ else
 	require('config.keybinds')
 	require('config.lazy')
 end
-
-
--- TODO: try out bufferline again?
