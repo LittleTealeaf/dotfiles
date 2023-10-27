@@ -15,9 +15,6 @@ return {
 				}
 			},
 			lsp = {
-				progress = {
-					view = 'mini',
-				},
 				override = {
 					['vim.lsp.util.convert_input_to_markdown_lines'] = true,
 					['vim.lsp.util.stylize_markdown'] = true,
@@ -29,7 +26,7 @@ return {
 				},
 				hover = {
 					silent = true,
-				}
+				},
 			},
 			presets = {
 				lsp_doc_border = Transparent,
