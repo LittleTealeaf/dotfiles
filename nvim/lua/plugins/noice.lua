@@ -44,6 +44,7 @@ return {
 				}
 			},
 			messages = {
+				view_history = 'popup',
 				view_search = false,
 			},
 		},
