@@ -22,7 +22,6 @@ return {
 			{ 'hrsh7th/cmp-cmdline' },
 			{ "saecki/crates.nvim" },
 			{ 'hrsh7th/cmp-nvim-lua' },
-			-- { "hrsh7th/cmp-nvim-lsp-signature-help" }
 		},
 		name = 'cmp',
 		config = function()
@@ -86,7 +85,6 @@ return {
 					{ name = "crates" },
 				}, {
 					{ name = 'nvim_lua' },
-					-- { name = 'buffer' },
 					{ name = "path" },
 				})
 			})
