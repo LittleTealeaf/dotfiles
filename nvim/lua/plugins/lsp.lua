@@ -82,7 +82,7 @@ return {
 		"saecki/crates.nvim",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
-			{ "jose-elias-alvarez/null-ls.nvim" }
+			{ "nvimtools/none-ls.nvim" }
 		},
 		opts = {
 			null_ls = {
@@ -92,7 +92,7 @@ return {
 		}
 	},
 	{
-		'jose-elias-alvarez/null-ls.nvim',
+		'nvimtools/none-ls.nvim',
 		dependencies = {
 			{ 'nvim-lua/plenary.nvim' }
 		},

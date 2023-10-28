@@ -1,4 +1,4 @@
-local function quickfix_to_trouble(data)
+local function quickfix_to_trouble(_)
 	vim.cmd('close')
 	vim.cmd('Trouble quickfix')
 end
