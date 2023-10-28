@@ -4,5 +4,6 @@ return {
 	ft = { 'markdown', 'md' },
 	init = function()
 		vim.g.mkdp_theme = 'dark'
-	end
+	end,
+	enabled = false
 }
