@@ -53,6 +53,16 @@ local LSP_CONFIG = {
 			}
 		}
 	},
+	['zls'] = {
+		settings = {
+			zig = {
+				checkForUpdate = false,
+				zls = {
+					enableAstCheckDiagnostics = false,
+				}
+			}
+		}
+	},
 }
 
 local function on_lsp_attach(client, bufnr)
