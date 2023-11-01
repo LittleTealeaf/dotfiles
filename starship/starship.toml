@@ -125,12 +125,6 @@ symbol = " "
 [zig]
 format = "[$symbol($version )]($style)"
 
-[sudo]
-format = "[$symbol]($style)"
-symbol = " "
-disabled = false
-
-
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
