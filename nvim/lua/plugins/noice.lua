@@ -11,6 +11,22 @@ return {
 				format = {
 					cmdline = {
 						icon = ">"
+					},
+					input = {
+						-- view = "cmdline_popup",
+						-- opts = {
+						-- 	position = {
+						-- 		row = 2,
+						-- 		col = 2
+						-- 	},
+						-- 	relative = 'cursor',
+						-- 	win_options = {
+						-- 		winhighlight = {
+						-- 			Normal = 'NormalFloat',
+						-- 			FloatBorder = 'FloatBorder'
+						-- 		}
+						-- 	}
+						-- }
 					}
 				}
 			},
