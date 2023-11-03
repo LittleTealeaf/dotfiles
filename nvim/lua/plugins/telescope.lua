@@ -219,6 +219,11 @@ return {
 				desc = 'List Workspace Symbols'
 			},
 			{
+				'<leader>fh',
+				in_dropdown(use_builtin('help_tags')),
+				desc = 'Help Tags',
+			},
+			{
 				'<leader>fl',
 				in_dropdown(use_builtin('current_buffer_fuzzy_find')),
 				desc = 'Fuzzy Find in Current Buffer'
