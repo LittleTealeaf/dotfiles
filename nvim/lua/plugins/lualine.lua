@@ -64,8 +64,6 @@ return {
 					section_separators = {
 						left = '',
 						right = ''
-						-- left = '',
-						-- right = ''
 					},
 					component_separators = {
 						left = '',
@@ -76,7 +74,6 @@ return {
 					lualine_a = {
 						{
 							'mode',
-							-- separator = { left = '', right = '' }
 						}
 					},
 					lualine_b = {
@@ -127,7 +124,6 @@ return {
 					lualine_z = {
 						{
 							get_current_path,
-							-- separator = { left = '', right = '' }
 						}
 					},
 				},
