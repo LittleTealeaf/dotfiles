@@ -53,6 +53,10 @@ return {
 		},
 		custom_highlights = function(c)
 			return {
+
+				-- Win Separator
+				WinSeparator = { fg = c.mantle },
+
 				-- Modicator
 				NormalMode = { fg = c.blue },
 				InsertMode = { fg = c.green },
@@ -87,7 +91,7 @@ return {
 				RenameBorder = { fg = c.base, bg = c.base },
 
 				-- Trouble
-				TroubleNormal = {bg = c.mantle},
+				TroubleNormal = { bg = c.base },
 
 				-- Telescope
 				TelescopeBorder = { bg = c.mantle, fg = c.mantle },

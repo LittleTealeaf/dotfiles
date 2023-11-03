@@ -16,6 +16,7 @@ return {
 	},
 	opts = {
 		auto_open = false,
+		-- group = false,
 		height = 15,
 		action_keys = {
 			jump = { '<cr>' },
