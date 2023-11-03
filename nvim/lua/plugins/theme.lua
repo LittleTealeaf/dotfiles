@@ -91,7 +91,7 @@ return {
 				RenameBorder = { fg = c.base, bg = c.base },
 
 				-- Trouble
-				TroubleNormal = { bg = c.base },
+				TroubleNormal = { bg = c.mantle },
 
 				-- Telescope
 				TelescopeBorder = { bg = c.mantle, fg = c.mantle },
