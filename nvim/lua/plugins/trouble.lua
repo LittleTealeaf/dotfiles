@@ -21,6 +21,9 @@ return {
 			jump = { '<cr>' },
 		},
 		use_diagnostic_signs = true,
+		win_config = {
+			border = "none"
+		},
 	},
 	config = function(_, opts)
 		require('trouble').setup(opts)

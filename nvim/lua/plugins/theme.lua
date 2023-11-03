@@ -86,6 +86,9 @@ return {
 				HoverBorder = { fg = c.base, bg = c.base },
 				RenameBorder = { fg = c.base, bg = c.base },
 
+				-- Trouble
+				TroubleNormal = {bg = c.mantle},
+
 				-- Telescope
 				TelescopeBorder = { bg = c.mantle, fg = c.mantle },
 				TelescopeTitle = { fg = c.text, style = { 'bold' } },
