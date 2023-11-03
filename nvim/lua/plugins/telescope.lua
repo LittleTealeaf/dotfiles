@@ -189,6 +189,11 @@ return {
 				desc = "Find Files"
 			},
 			{
+				'<leader>fd',
+				use_builtin("find_files"),
+				desc = "Find Files"
+			},
+			{
 				'<leader>fg',
 				in_ivy(use_builtin('live_grep')),
 				desc = 'Live grep',

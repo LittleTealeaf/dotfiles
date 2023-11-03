@@ -83,9 +83,9 @@ return {
 						},
 					},
 					lualine_c = {
-						{
-							get_number_of_buffers
-						},
+						-- {
+						-- 	get_number_of_buffers
+						-- },
 						{ 'diff' },
 					},
 					lualine_x = {
