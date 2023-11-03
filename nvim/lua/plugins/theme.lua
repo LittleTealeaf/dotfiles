@@ -124,6 +124,7 @@ return {
 
 				-- Lazy Git
 				LazyGitBorder = { bg = c.mantle, fg = c.mantle },
+				LazyGitFloat = { bg = c.mantle },
 
 				-- Harpoon
 				HarpoonBorder = { bg = c.mantle, fg = c.mantle },
