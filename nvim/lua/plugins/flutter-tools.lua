@@ -1,6 +1,6 @@
 return {
 	'akinsho/flutter-tools.nvim',
-	requires = {
+	dependencies = {
 		'nvim-lua/plenary.nvim',
 		{
 			'nvim-telescope/telescope.nvim',

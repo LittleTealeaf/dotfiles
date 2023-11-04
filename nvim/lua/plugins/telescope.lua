@@ -300,7 +300,7 @@ return {
 	--Projects
 	{
 		'nvim-telescope/telescope-project.nvim',
-		dependenies = { telescope_dependency },
+		dependencies = { telescope_dependency },
 		config = load_extension_config('project'),
 		keys = {
 			{
