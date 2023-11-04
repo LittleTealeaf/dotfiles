@@ -1,5 +1,4 @@
 local function in_dropdown(action)
-
 	return function(args)
 		if args == nil then
 			args = {}
@@ -230,7 +229,7 @@ return {
 				desc = 'Fuzzy Find in Current Buffer'
 			},
 			{
-				'<leader>st',
+				'<leader>ft',
 				in_dropdown(use_builtin('treesitter')),
 				desc = 'List Treesitter Elements'
 			},
@@ -238,7 +237,12 @@ return {
 				'<leader>fw',
 				in_cursor(use_builtin('grep_string')),
 				desc = 'Grep String'
-			}
+			},
+			{
+				'<leader>fc',
+				in_ivy(use_builtin('commands')),
+				desc = "Fuzzy Search Command"
+			},
 		}
 	},
 	{
@@ -269,16 +273,6 @@ return {
 		}
 
 		-- Path
-	},
-	{
-		'nvim-telescope/telescope-github.nvim',
-		event = 'VeryLazy',
-		dependencies = { telescope_dependency },
-		config = load_extension_config('gh'),
-		keys = {
-			{ '<leader>gi', use_extension('gh', 'issues'),       desc = 'GitHub Issues' },
-			{ '<leader>gp', use_extension('gh', 'pull_request'), desc = 'GitHub Pull Requests' }
-		}
 	},
 	-- DAP
 	{
@@ -315,5 +309,5 @@ return {
 				desc = "Load Project"
 			}
 		}
-	}
+	},
 }

@@ -8,6 +8,17 @@ vim.keymap.set('n', '<leader>bw', '<cmd>q<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bs', '<cmd>split<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bv', '<cmd>vsplit<CR>', { silent = true })
 
+
+-- Easy buffer switching
+vim.keymap.set('n', '<leader>bf', function()
+	vim.ui.input({
+		prompt = "Buffer: "
+	}, function(input)
+		vim.api.nvim_command(":b " .. input)
+	end)
+end, { silent = true })
+
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(_)
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })

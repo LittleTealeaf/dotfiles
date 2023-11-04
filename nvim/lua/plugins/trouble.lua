@@ -3,11 +3,29 @@ local function quickfix_to_trouble(_)
 	vim.cmd('Trouble quickfix')
 end
 
-local function trouble_navigate(direction)
+local function action_navigate(direction)
 	return function()
 		require('trouble')[direction]({ skip_groups = true, jump = true })
 	end
 end
+
+local function action_open(mode)
+	return function()
+		require('trouble').open(mode)
+	end
+end
+
+local function action_toggle(mode)
+	return function()
+		require('trouble').toggle(mode)
+	end
+end
+
+local function action_close()
+	return function()
+		require('trouble').close()
+	end
+end;
 
 return {
 	'folke/trouble.nvim',
@@ -39,18 +57,18 @@ return {
 		'BufEnter *qf*'
 	},
 	keys = {
-		{ '<leader>te', '<cmd>Trouble workspace_diagnostics<cr>', desc = "Open Trouble Diagnostics" },
-		{ '<leader>tr', '<cmd>Trouble lsp_references<cr>',        desc = "Open Trouble Lsp References" },
-		{ '<leader>td', '<cmd>Troudle lsp_definitions<cr>',       desc = "Open Trouble Lsp Definitions" },
-		{ '<leader>ti', '<cmd>Trouble lsp_implementations<cr>',   desc = "Open Trouble Lsp Implementations" },
-		{ '<leader>ty', '<cmd>Trouble lsp_type_definitions<cr>',  desc = "Open Trouble Lsp Type Definitions" },
-		{ '<leader>tq', '<cmd>Trouble quickfix<cr>',              desc = "Open Quickfix in Trouble" },
-		{ '<leader>tf', '<cmd>Trouble telescope<cr>',             desc = "Open Trouble Telescope" },
-		{ '<leader>tt', '<cmd>Trouble<cr>',                       desc = "Toggle Trouble" },
-		{ '<leader>th', '<cmd>TroubleClose<cr>',                  desc = "Close Trouble Window" },
-		{ '<leader>tj', trouble_navigate('next'),                 desc = "Next Trouble Item" },
-		{ '<leader>tk', trouble_navigate('previous'),             desc = "Previous Trouble Item" },
-		{ '<leader>tn', trouble_navigate('first'),                desc = 'First Trouble Item' },
-		{ '<leader>tm', trouble_navigate('last'),                 desc = 'Last Trouble Item' },
+		{ '<leader>te', action_open('workspace_diagnostics'), desc = "Open Trouble Diagnostics" },
+		{ '<leader>tr', action_open('lsp_references'),        desc = "Open Trouble Lsp References" },
+		{ '<leader>td', action_open('lsp_definitions'),       desc = "Open Trouble Lsp Definitions" },
+		{ '<leader>ti', action_open('lsp_implementations'),   desc = "Open Trouble Lsp Implementations" },
+		{ '<leader>ty', action_open('lsp_type_definitions'),  desc = "Open Trouble Lsp Type Definitions" },
+		{ '<leader>tq', action_open('quickfix'),              desc = "Open Quickfix in Trouble" },
+		{ '<leader>tf', action_open('telescope'),             desc = "Open Trouble Telescope" },
+		{ '<leader>tt', action_toggle(),                      desc = "Toggle Trouble" },
+		{ '<leader>th', action_close(),                       desc = "Close Trouble Window" },
+		{ '<leader>tj', action_navigate('next'),              desc = "Next Trouble Item" },
+		{ '<leader>tk', action_navigate('previous'),          desc = "Previous Trouble Item" },
+		{ '<leader>tn', action_navigate('first'),             desc = 'First Trouble Item' },
+		{ '<leader>tm', action_navigate('last'),              desc = 'Last Trouble Item' },
 	}
 }
