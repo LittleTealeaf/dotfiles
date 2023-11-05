@@ -1,10 +1,10 @@
 configuration {
-	modes: [ combi, filebrowser, run, drun];
-	font: "FiraCode Nerd Font 10";
-	combi-modes: [ window, drun, run ];
+	modes: [combi, filebrowser, run, drun];
+	combi-modes: [window, drun, run];
 	show-icons: true;
 	terminal: "kitty";
 	run-shell-command: "kitty --hold {cmd}";
+
 
 	drun {
 		display-name: "";
@@ -19,14 +19,38 @@ configuration {
 	}
 }
 
-
 element {
 	orientation: horizontal;
 	children: [ element-icon, element-text ];
 	spacing: 5px;
 }
 
+
 @import "catppuccin-mocha"
-@import "catppuccin"
+@import "theme"
+
+
+/* configuration { */
+/* 	modes: [ combi, filebrowser, run, drun]; */
+/* 	font: "FiraCode Nerd Font 10"; */
+/* 	combi-modes: [ window, drun, run ]; */
+/* 	show-icons: true; */
+/* 	terminal: "kitty"; */
+/* 	run-shell-command: "kitty --hold {cmd}"; */
+/**/
+/* 	drun { */
+/* 		display-name: ""; */
+/* 	} */
+/**/
+/* 	run { */
+/* 		display-name: ""; */
+/* 	} */
+/**/
+/* 	window { */
+/* 		display-name: " "; */
+/* 	} */
+/* } */
+/**/
+/**/
 
 /* vim:ft=css */

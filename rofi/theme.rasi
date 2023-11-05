@@ -1,0 +1,76 @@
+* {
+	font: "FiraCode Nerd Font 12";
+	background-color: transparent;
+	text-color: @Text;
+}
+
+window {
+	background-color: @Crust;
+	location: center;
+	width: 800;
+	border-radius: 8;
+}
+
+inputbar {
+	font: "FiraCode Nerd Font 20";
+	padding: 12px;
+	spacing: 12px;
+	children: [icon-search, entry];
+}
+
+icon-search {
+	expand: false;
+	filename: "search";
+	size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+	vertical-align: 0.5;
+}
+
+entry {
+	font: inherit;
+	placeholder: "Search";
+	placeholder-color: @Subtext0;
+	text-color: @Text;
+}
+
+message {
+	border: 2px 0 0;
+	border-colior: @Mantle;
+	background-color: @Mantle;
+}
+
+textbox {
+	padding: 8px 24px;
+}
+
+listview {
+	lines: 15;
+	columns: 1;
+
+	fixed-height: true;
+	border: 1px 0 0;
+	border-color: @Mantle;
+}
+
+element {
+	padding: 8px 16px;
+	spacing: 8px;
+}
+
+element normal.normal, element alternate.normal {
+	background-color: transparent;
+	text-color: @Text;
+}
+
+element selected.normal {
+	background-color: @Surface0;
+	text-color: @Text;
+}
+
+scrollbar {
+	background-color: transparent;
+	handle-color: @Surface1;
+}
+
