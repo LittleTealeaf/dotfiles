@@ -77,17 +77,5 @@ element alternate.normal {
 }
 element alternate.urgent {}
 
-/**/
-/* element alternate.normal { */
-/* 	background-color: @Surface0; */
-/* 	text-color: @Text; */
-/* } */
-/**/
-/* element normal.normal { */
-/* 	background-color: @Surface1; */
-/* 	text-color: @Text; */
-/* } */
-/**/
-
 
 /* vim:ft=css
