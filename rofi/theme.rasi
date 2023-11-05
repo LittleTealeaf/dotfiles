@@ -12,7 +12,7 @@ window {
 }
 
 inputbar {
-	font: "FiraCode Nerd Font 20";
+	font: "FiraCode Nerd Font 12";
 	padding: 12px;
 	spacing: 12px;
 	children: [icon-search, entry];
@@ -21,7 +21,7 @@ inputbar {
 icon-search {
 	expand: false;
 	filename: "search";
-	size: 28px;
+	size: 16px;
 }
 
 icon-search, entry, element-icon, element-text {
