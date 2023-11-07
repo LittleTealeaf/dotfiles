@@ -1,4 +1,5 @@
 Transparent = false
+Nightly = vim.version().api_prerelease
 
 if vim.g.neovide then
 	require("config.neovide")

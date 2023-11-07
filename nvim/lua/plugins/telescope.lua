@@ -113,7 +113,8 @@ return {
 		event = 'VeryLazy',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
-			'nvim-telescope/telescope-ui-select.nvim',
+			{ 'nvim-telescope/telescope-ui-select.nvim', enabled = not Nightly },
+			{ 'spoof/telescope-ui-select.nvim',          branch = 'master',    enabled = Nightly },
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build =
