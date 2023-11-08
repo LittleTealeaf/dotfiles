@@ -32,6 +32,7 @@ return {
 			'akinsho/toggleterm.nvim',
 		},
 		ft = 'rust',
+		enabled = false,
 		config = function()
 			local rt = require('rust-tools')
 			local mason_registry = require('mason-registry')
