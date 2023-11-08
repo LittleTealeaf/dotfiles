@@ -4,6 +4,23 @@ local function lspcmd(params)
 	end
 end
 
+local function execute_from_toggleterm(command, args, cwd)
+	local Terminal = require('toggleterm.terminal').Terminal
+	-- local utils = require('rust-tools.utils.utils')
+	local utils = require('rustaceanvim.shell')
+
+	Terminal:new({
+		cmd = utils.make_command_from_args(command, args),
+		dir = cwd,
+		close_on_exit = false,
+		auto_scroll = true,
+		on_open = function(t)
+			vim.api.nvim_buf_set_keymap(t.bufnr, 'n', 'q', '<cmd>close<CR>', { noremap = true, silent = true })
+		end
+	}):toggle()
+end
+
+
 return {
 	'mrcjkb/rustaceanvim',
 	dependencies = {
@@ -16,6 +33,9 @@ return {
 				function()
 					return {
 						tools = {
+							executor = {
+								execute_command = execute_from_toggleterm
+							},
 							hover_actions = {
 								border = {
 									{ '' },
