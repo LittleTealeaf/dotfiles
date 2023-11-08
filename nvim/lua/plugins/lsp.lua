@@ -81,14 +81,6 @@ return {
 	},
 	{ 'neovim/nvim-lspconfig', },
 	{
-		'williamboman/mason.nvim',
-		opts = {
-			ui = {
-				border = 'rounded',
-			}
-		}
-	},
-	{
 		"saecki/crates.nvim",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
@@ -156,4 +148,5 @@ return {
 			})
 		end
 	},
+
 }
