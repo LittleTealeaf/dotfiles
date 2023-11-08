@@ -10,7 +10,7 @@ return {
 	ft = 'dart',
 	opts = {
 		lsp = {
-			on_attach = function(_, bufnr) end
+			on_attach = function(_, _) end
 		}
 	},
 	config = true
