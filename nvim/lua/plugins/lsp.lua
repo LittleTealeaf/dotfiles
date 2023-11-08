@@ -7,7 +7,7 @@ local LSP_CONFIG = {
 				},
 				hint = {
 					enable = true
-				}
+				},
 			}
 		}
 	},
