@@ -113,7 +113,7 @@ return {
 		event = 'VeryLazy',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
-			{ 'nvim-telescope/telescope-ui-select.nvim'},
+			{ 'nvim-telescope/telescope-ui-select.nvim' },
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build =
@@ -281,7 +281,9 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('dap'),
 		keys = {
-			{ '<leader>dv', use_extension('dap', 'variables'), desc = "Dap Variables" }
+			{ '<leader>dv', use_extension('dap', 'variables'), desc = "Dap Variables" },
+			{ '<leader>df', use_extension('dap', 'frames'),    desc = 'List Frames' },
+			{ '<leader>da', use_extension('dap', 'commands'),  desc = 'Dap Commands' },
 		}
 	},
 	-- Conventional Commits
