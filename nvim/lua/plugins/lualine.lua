@@ -1,21 +1,11 @@
 local ENV_HOME = tostring(os.getenv("HOME"))
 
 local function get_current_path()
-	local path = string.gsub(vim.fn.getcwd(), ENV_HOME, '~')
+	local path = string.gsub(vim.fn.getcwd() or 0, ENV_HOME, '~')
 	path = string.gsub(path, '~/dev/', ' ')
 	return path
 end
 
-local function get_number_of_buffers()
-	local count = 0
-	for _, _ in pairs(vim.fn.getbufinfo({ buflisted = 1 })) do
-		count = count + 1
-	end
-	if count > 1 then
-		return tostring(count)
-	end
-	return ""
-end
 
 local function has_unsaved_buffers()
 	local focused_buf = vim.api.nvim_get_current_buf()
@@ -93,10 +83,10 @@ return {
 						-- {
 						-- 	get_number_of_buffers
 						-- },
-						{
-							function() return ' ' end,
-							cond = has_unsaved_buffers
-						},
+						-- {
+						-- 	function() return ' ' end,
+						-- 	cond = has_unsaved_buffers
+						-- },
 						{ 'diff' },
 					},
 					lualine_x = {
