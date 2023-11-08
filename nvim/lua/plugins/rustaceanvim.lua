@@ -6,11 +6,10 @@ end
 
 local function execute_from_toggleterm(command, args, cwd)
 	local Terminal = require('toggleterm.terminal').Terminal
-	-- local utils = require('rust-tools.utils.utils')
-	local utils = require('rustaceanvim.shell')
+	local shell = require('rustaceanvim.shell')
 
 	Terminal:new({
-		cmd = utils.make_command_from_args(command, args),
+		cmd = shell.make_command_from_args(command, args),
 		dir = cwd,
 		close_on_exit = false,
 		auto_scroll = true,
