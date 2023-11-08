@@ -310,6 +310,7 @@ return {
 				in_dropdown(use_extension('project', 'project')),
 				desc = "Load Project"
 			}
-		}
+		},
+		enabled = false
 	},
 }
