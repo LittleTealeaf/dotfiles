@@ -215,7 +215,7 @@ return {
 			},
 			{
 				'<leader>fa',
-				in_dropdown(use_builtin('lsp_workspace_symbols')),
+				in_ivy(use_builtin('lsp_workspace_symbols')),
 				desc = 'List Workspace Symbols'
 			},
 			{
