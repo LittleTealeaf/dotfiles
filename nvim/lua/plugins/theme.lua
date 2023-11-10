@@ -16,7 +16,6 @@ return {
 			gitsigns = true,
 			markdown = true,
 			mason = true,
-			neotree = false,
 			noice = true,
 			cmp = true,
 			flash = true,
