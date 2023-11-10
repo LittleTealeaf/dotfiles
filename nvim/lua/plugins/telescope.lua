@@ -294,18 +294,4 @@ return {
 			}
 		},
 	},
-	--Projects
-	{
-		'nvim-telescope/telescope-project.nvim',
-		dependencies = { telescope_dependency },
-		config = load_extension_config('project'),
-		keys = {
-			{
-				'<leader>fp',
-				in_dropdown(use_extension('project', 'project')),
-				desc = "Load Project"
-			}
-		},
-		enabled = false
-	},
 }
