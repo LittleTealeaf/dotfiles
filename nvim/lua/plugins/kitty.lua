@@ -6,7 +6,7 @@ return {
 		cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
 		event = { 'User KittyScrollbackLaunch' },
 		config = function()
-			require('kitty-scrollback').setup({})
+			require('kitty-scrollback').setup()
 		end,
 	}
 }
