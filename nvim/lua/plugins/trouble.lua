@@ -38,6 +38,7 @@ return {
 		height = 15,
 		action_keys = {
 			jump = { '<cr>' },
+			jump_close = {'<S-cr>'}
 		},
 		use_diagnostic_signs = true,
 		win_config = {
