@@ -234,11 +234,6 @@ return {
 				desc = 'List Treesitter Elements'
 			},
 			{
-				'<leader>fw',
-				in_cursor(use_builtin('grep_string')),
-				desc = 'Grep String'
-			},
-			{
 				'<leader>fc',
 				in_ivy(use_builtin('commands')),
 				desc = "Fuzzy Search Command"

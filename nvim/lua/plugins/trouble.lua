@@ -36,9 +36,11 @@ return {
 		auto_open = false,
 		-- group = false,
 		height = 15,
+		padding = false,
 		action_keys = {
 			jump = { '<cr>' },
-			jump_close = {'<S-cr>'}
+			jump_close = { '<S-cr>' },
+			open_tab = {}
 		},
 		use_diagnostic_signs = true,
 		win_config = {
@@ -65,6 +67,7 @@ return {
 		{ '<leader>ty', action_open('lsp_type_definitions'),  desc = "Open Trouble Lsp Type Definitions" },
 		{ '<leader>tq', action_open('quickfix'),              desc = "Open Quickfix in Trouble" },
 		{ '<leader>tf', action_open('telescope'),             desc = "Open Trouble Telescope" },
+		{ '<leader>tl', action_open('loclist'),               desc = "Open Trouble Loclist" },
 		{ '<leader>tt', action_toggle(),                      desc = "Toggle Trouble" },
 		{ '<leader>th', action_close(),                       desc = "Close Trouble Window" },
 		{ '<leader>tj', action_navigate('next'),              desc = "Next Trouble Item" },
