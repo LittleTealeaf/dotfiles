@@ -55,7 +55,7 @@ return {
 			return {
 
 				-- Win Separator
-				WinSeparator = { fg = c.mantle },
+				WinSeparator = { fg = c.surface0 },
 
 				-- Modicator
 				NormalMode = { fg = c.blue },
