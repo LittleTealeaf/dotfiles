@@ -59,17 +59,19 @@ return {
 								vim.keymap.set('v', 'K', lspcmd { 'hover', 'range' }, { buffer = bufnr, desc = "Hover Range" })
 								-- vim.keymap.set('n','<leader>cl')
 							end,
-							settings = {
-								['rust-analyzer'] = {
-									workspace = {
-										symbol = {
-											search = {
-												kind = 'all_symbols'
+							settings = function()
+								return {
+									['rust-analyzer'] = {
+										workspace = {
+											symbol = {
+												search = {
+													kind = 'all_symbols'
+												}
 											}
 										}
 									}
 								}
-							}
+							end
 						},
 					}
 				end
