@@ -80,6 +80,7 @@ return {
 				NormalFloat = { bg = c.surface0 },
 				NvimFloat = { bg = c.surface0 },
 				FloatBorder = { fg = c.surface0, bg = c.surface0 },
+				FloatTitle = { bg = c.surface0, fg = c.text, style = { 'bold' } },
 
 				-- Toggle Term
 				ToggleTermNormal = { bg = c.mantle },

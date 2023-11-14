@@ -113,7 +113,7 @@ return {
 		event = 'VeryLazy',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
-			{ 'nvim-telescope/telescope-ui-select.nvim' },
+			-- { 'nvim-telescope/telescope-ui-select.nvim' },
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build =
@@ -180,7 +180,7 @@ return {
 
 			telescope.load_extension('fzf')
 			telescope.load_extension('noice')
-			telescope.load_extension('ui-select')
+			-- telescope.load_extension('ui-select')
 		end,
 		keys = {
 			{
