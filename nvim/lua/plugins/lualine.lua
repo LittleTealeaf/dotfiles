@@ -6,17 +6,6 @@ local function get_current_path()
 	return path
 end
 
-
-local function has_unsaved_buffers()
-	local focused_buf = vim.api.nvim_get_current_buf()
-	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-		if buf ~= focused_buf and vim.api.nvim_buf_get_option(buf, 'modified') then
-			return true
-		end
-	end
-	return false
-end
-
 local function is_recording()
 	local name = vim.api.nvim_call_function('reg_recording', {})
 	return name ~= ''
