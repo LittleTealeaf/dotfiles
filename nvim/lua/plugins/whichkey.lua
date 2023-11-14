@@ -31,13 +31,13 @@ return {
 				},
 				c = {
 					name = 'Code',
-					f = { 'Format' },
-					a = { 'Code Actions' },
-					d = { 'Definition' },
-					e = { 'Diagnostics' },
-					D = { 'Declaration' },
-					i = { 'Implementation' },
-					n = { 'Rename' },
+					-- f = { 'Format' },
+					-- a = { 'Code Actions' },
+					-- d = { 'Definition' },
+					-- e = { 'Diagnostics' },
+					-- D = { 'Declaration' },
+					-- i = { 'Implementation' },
+					-- n = { 'Rename' },
 				},
 				t = {
 					name = 'Trouble'
@@ -53,15 +53,6 @@ return {
 				},
 				e = {
 					name = 'NeoTree'
-				},
-				w = {
-					name = 'Write Files',
-					w = {
-						name = 'Write File'
-					},
-					a = {
-						name = 'Write All Files'
-					}
 				},
 				s = {
 					name = 'Symbols'
