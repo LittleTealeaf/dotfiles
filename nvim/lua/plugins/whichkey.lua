@@ -31,13 +31,6 @@ return {
 				},
 				c = {
 					name = 'Code',
-					-- f = { 'Format' },
-					-- a = { 'Code Actions' },
-					-- d = { 'Definition' },
-					-- e = { 'Diagnostics' },
-					-- D = { 'Declaration' },
-					-- i = { 'Implementation' },
-					-- n = { 'Rename' },
 				},
 				t = {
 					name = 'Trouble'
