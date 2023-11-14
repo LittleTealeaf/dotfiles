@@ -3,9 +3,6 @@ return {
 	opts = {
 		input = {
 			border = "rounded",
-			win_options = {
-				winhighlight = ""
-			}
 		}
 	}
 }
