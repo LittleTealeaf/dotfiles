@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-function
 local function in_dropdown(action)
 	return function(args)
 		if args == nil then
@@ -238,6 +239,11 @@ return {
 				in_ivy(use_builtin('commands')),
 				desc = "Fuzzy Search Command"
 			},
+			{
+				'<leader>fu',
+				use_builtin('resume'),
+				desc = "Resume Last Telescope"
+			}
 		}
 	},
 	{
