@@ -25,7 +25,16 @@ local function action_close()
 	return function()
 		require('trouble').close()
 	end
-end;
+end
+
+
+local function toggle_trouble()
+	if vim.bo.filetype == 'Trouble' then
+		require('trouble').toggle()
+	else
+		require('trouble').open()
+	end
+end
 
 return {
 	'folke/trouble.nvim',
@@ -68,7 +77,7 @@ return {
 		{ '<leader>tq', action_open('quickfix'),              desc = "Trouble Quickfix" },
 		{ '<leader>tf', action_open('telescope'),             desc = "Trouble Telescope" },
 		{ '<leader>tl', action_open('loclist'),               desc = "Trouble Loclist" },
-		{ '<leader>tt', action_toggle(),                      desc = "Toggle Trouble" },
+		{ '<leader>tt', toggle_trouble,                       desc = "Toggle Trouble" },
 		{ '<leader>th', action_close(),                       desc = "Close Trouble Window" },
 		{ '<leader>tj', action_navigate('next'),              desc = "Next Trouble Item" },
 		{ '<leader>tk', action_navigate('previous'),          desc = "Previous Trouble Item" },
