@@ -4,7 +4,7 @@ add_newline = false
 palette = 'catppuccin_mocha'
 
 
-format = "$all$directory$character"
+format = "$all$username$hostname$directory$character"
 
 
 [character]
@@ -36,7 +36,7 @@ symbol = " "
 symbol = " "
 
 [hostname]
-format = "[$ssh_symbol$hostname]($style)  "
+format = "[$ssh_symbol$hostname]($style) "
 ssh_symbol = " "
 
 [git_metrics]
