@@ -1,3 +1,6 @@
+-- Notes:
+-- lua require('dapui').float_element('watches')
+
 return {
 	{
 		'mfussenegger/nvim-dap',
