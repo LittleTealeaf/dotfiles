@@ -15,12 +15,6 @@ local function action_open(mode)
 	end
 end
 
-local function action_toggle(mode)
-	return function()
-		require('trouble').toggle(mode)
-	end
-end
-
 local function action_close()
 	return function()
 		require('trouble').close()
