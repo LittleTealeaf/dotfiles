@@ -36,6 +36,7 @@ symbol = " "
 symbol = " "
 
 [hostname]
+format = "[$ssh_symbol$hostname]($style) "
 ssh_symbol = " "
 
 [git_metrics]
@@ -127,6 +128,10 @@ symbol = " "
 
 [zig]
 format = "[$symbol($version )]($style)"
+
+[username]
+format = "[$user]($style) "
+
 
 [os.symbols]
 Alpaquita = " "
