@@ -36,7 +36,7 @@ symbol = " "
 symbol = " "
 
 [hostname]
-format = "[$ssh_symbol$hostname]($style)  "
+format = "[$ssh_symbol$hostname ]($style) "
 ssh_symbol = " "
 
 [git_metrics]
