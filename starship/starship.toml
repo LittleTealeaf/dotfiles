@@ -4,7 +4,7 @@ add_newline = false
 palette = 'catppuccin_mocha'
 
 
-format = "$hostname$username$all$directory$character"
+format = "$username$all$hostname$directory$character"
 
 
 [character]
