@@ -59,7 +59,7 @@ return {
 							size = 0.4
 						},
 						{
-							id = 'watches',
+							id = 'breakpoints',
 							size = 0.1,
 						}
 					},
@@ -69,12 +69,12 @@ return {
 				{
 					elements = {
 						{
-							id = 'breakpoints',
-							size = 0.5,
+							id = 'console',
+							size = 0.4
 						},
 						{
-							id = 'console',
-							size = 0.5
+							id = 'watches',
+							size = 0.6,
 						},
 					},
 					position = 'bottom',
