@@ -5,6 +5,7 @@ source $DOT_FILES/bash/fzf.sh
 source $DOT_FILES/bash/functions.sh
 
 alias :q=exit
+alias nv=nvim
 
 # Lazygit
 if command -v lazygit > /dev/null; then
