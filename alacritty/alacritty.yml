@@ -3,10 +3,14 @@ cursor:
     shape: Beam
 font:
   normal:
-    family: JetBrainsMono NF
+    family: FiraCode Nerd Font Mono
+    # family: JetBrainsMono NF
 window:
   decorations: none
-  opacity: 0.5
   padding:
-    x: 6
-    y: 6
+    x: 2
+    y: 2
+env:
+  TERM: xterm-256color
+import:
+  - "~/.config/alacritty/catppuccin-mocha.yml"
