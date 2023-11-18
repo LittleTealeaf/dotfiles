@@ -287,17 +287,4 @@ return {
 			{ '<leader>da', use_extension('dap', 'commands'),  desc = 'Dap Commands' },
 		}
 	},
-	-- Conventional Commits
-	{
-		'olacin/telescope-cc.nvim',
-		dependencies = { telescope_dependency },
-		config = load_extension_config('conventional_commits'),
-		keys = {
-			{
-				'<leader>gc',
-				in_dropdown(use_extension('conventional_commits', 'conventional_commits')),
-				desc = "Conventional Commits"
-			}
-		},
-	},
 }
