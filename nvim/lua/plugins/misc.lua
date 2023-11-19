@@ -1,9 +1,9 @@
 return {
-	{
-		'haya14busa/is.vim',
-		event = "BufEnter",
-		enabled = false
-	},
+	-- {
+	-- 	'haya14busa/is.vim',
+	-- 	event = "BufEnter",
+	-- 	enabled = false
+	-- },
 	{
 		'wakatime/vim-wakatime',
 		name = 'wakatime',
