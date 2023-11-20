@@ -25,6 +25,7 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
+		'lvimuser/lsp-inlayhints.nvim'
 	},
 	ft = { 'rust' },
 	init = function()
@@ -49,7 +50,8 @@ return {
 							}
 						},
 						server = {
-							on_attach = function(_, bufnr)
+							on_attach = function(client, bufnr)
+								require('lsp-inlayhints').on_attach(client, bufnr)
 								vim.keymap.set('n', '<leader>clr', lspcmd { 'runnables' }, { buffer = bufnr, desc = "Rust Runnables" })
 								vim.keymap.set('n', '<leader>cld', lspcmd { 'debuggables' }, { buffer = bufnr, desc = "Rust Debuggabes" })
 								vim.keymap.set('n', '<leader>cle', lspcmd { 'explainError' }, { buffer = bufnr, desc = "Explain Error" })
