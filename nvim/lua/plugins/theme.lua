@@ -53,6 +53,9 @@ return {
 		custom_highlights = function(c)
 			return {
 
+				-- flash
+				FlashPrompt = { bg = c.mantle },
+
 				-- Win Separator
 				WinSeparator = { fg = c.surface0 },
 
