@@ -20,23 +20,23 @@ return {
 		keys = {
 			{ '<c-s>', mode = { 'c' }, function() require('flash').toggle() end, desc = 'Toggle Flash Search' },
 			{
-				'<c-/>t',
+				'<c-s-/>',
 				mode = { 'n', 'x', 'o' },
 				function() require('flash').treesitter_search() end,
 				desc = 'Treesitter Search'
 			},
+			-- {
+			-- 	'<c-/>w',
+			-- 	mode = { 'n', 'x', 'o' },
+			-- 	function()
+			-- 		require('flash').jump({
+			-- 			pattern = vim.fn.expand('<cword>')
+			-- 		})
+			-- 	end,
+			-- 	desc = 'Search for Word'
+			-- },
 			{
-				'<c-/>w',
-				mode = { 'n', 'x', 'o' },
-				function()
-					require('flash').jump({
-						pattern = vim.fn.expand('<cword>')
-					})
-				end,
-				desc = 'Search for Word'
-			},
-			{
-				'<c-/><c-/>',
+				'<c-/>',
 				mode = { 'n', 'x', 'o' },
 				function() require('flash').jump() end,
 				desc = 'Flash'
