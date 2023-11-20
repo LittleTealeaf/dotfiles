@@ -49,6 +49,9 @@ return {
 								},
 							}
 						},
+						dap = {
+							auto_generate_source_map = false
+						},
 						server = {
 							on_attach = function(client, bufnr)
 								if client.server_capabilities.inlayHintProvider then
