@@ -66,22 +66,26 @@ local LSP_CONFIG = {
 }
 
 local function on_lsp_attach(client, bufnr)
-	if client.server_capabilities.inlayHintProvider then
-		vim.lsp.inlay_hint(bufnr, true)
+	if Nightly then
+		if client.server_capabilities.inlayHintProvider then
+			vim.lsp.inlay_hint(bufnr, true)
+		end
+	else
+		require('lsp-inlayhints').on_attach(client, bufnr)
 	end
-	-- require('lsp-inlayhints').on_attach(client, bufnr)
 end
 
 return {
-	-- {
-	-- 	'lvimuser/lsp-inlayhints.nvim',
-	-- 	event = 'VeryLazy',
-	-- 	opts = {
-	-- 		inlay_hints = {
-	-- 			highlight = "Comment"
-	-- 		}
-	-- 	},
-	-- },
+	{
+		'lvimuser/lsp-inlayhints.nvim',
+		event = 'VeryLazy',
+		opts = {
+			inlay_hints = {
+				highlight = "Comment"
+			}
+		},
+		enabled = not Nightly
+	},
 	{ 'neovim/nvim-lspconfig', },
 	{
 		"saecki/crates.nvim",
@@ -121,7 +125,7 @@ return {
 			},
 			{ 'williamboman/mason.nvim', },
 			{ 'neovim/nvim-lspconfig', },
-			-- { 'lvimuser/lsp-inlayhints.nvim' },
+			{ 'lvimuser/lsp-inlayhints.nvim', enabled = not Nightly },
 			{ 'SmiteshP/nvim-navbuddy' },
 			{ 'SmiteshP/nvim-navic' }
 		},
