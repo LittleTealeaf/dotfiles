@@ -10,6 +10,9 @@ vim.keymap.set('n', '<leader>wx', '<cmd>split<CR>', { silent = true, desc = "Spl
 vim.keymap.set('n', '<leader>wv', '<cmd>vsplit<CR>', { silent = true, desc = "Vertical Split" })
 vim.keymap.set('n', '<leader>wo', '<C-W>o', { silent = true, desc = "Close Other Windows" })
 
+-- No Highlights
+vim.keymap.set('n', '<leader>nh', '<cmd>noh<CR>', { silent = true, desc = "No Highlights" })
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(_)
