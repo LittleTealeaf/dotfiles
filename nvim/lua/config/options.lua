@@ -1,9 +1,12 @@
 local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
+local o = vim.o
 
+
+o.sidescroll = 1
+o.sidescrolloff = 999
 g.mapleader = ';'
-
 g.do_filetype_lua = 1
 opt.scrolloff = 999
 opt.smartcase = true
