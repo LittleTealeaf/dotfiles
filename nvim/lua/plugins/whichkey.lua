@@ -8,12 +8,14 @@ return {
 		end,
 		opts = {
 			plugins = {
+				marks = false,
 				spelling = {
 					enabled = true
 				}
 			},
 			window = {
-				border = 'rounded'
+				border = 'none',
+				winblend = 10
 			}
 		},
 		config = function(_, opts)
