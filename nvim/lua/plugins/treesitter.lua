@@ -71,6 +71,7 @@ return {
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter',
 		},
+		enabled = false,
 		lazy = true,
 		keys = {
 			{
