@@ -52,7 +52,6 @@ return {
 		},
 		custom_highlights = function(c)
 			return {
-
 				-- flash
 				FlashPrompt = { bg = c.mantle },
 

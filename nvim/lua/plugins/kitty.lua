@@ -20,18 +20,12 @@ return {
 						extent = 'all',
 						ansi = true
 					},
-					paste_window = {
-						winblend = 75
-					}
 				}),
 				['tealeaf_last_cmd'] = config({
 					kitty_get_text = {
 						extent = 'last_cmd_output',
 						ansi = true
 					},
-					paste_window = {
-						winblend = 75
-					}
 				})
 			})
 		end,
