@@ -156,6 +156,11 @@ return {
 					}
 				},
 				defaults = {
+					previewers = {
+						cat = {
+							cmd = 'bat',
+						}
+					},
 					prompt_prefix = '  ',
 					selection_caret = '  ',
 					path_display = { 'full' },
