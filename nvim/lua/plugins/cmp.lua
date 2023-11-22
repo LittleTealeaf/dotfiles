@@ -7,6 +7,7 @@ end
 return {
 	{
 		'hrsh7th/nvim-cmp',
+		cond = vim.g.features.cmp,
 		dependencies = {
 			{ 'onsails/lspkind.nvim' },
 			{

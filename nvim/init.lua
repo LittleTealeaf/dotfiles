@@ -1,6 +1,19 @@
 Transparent = false
 Nightly = vim.version().api_prerelease
 
+vim.g.nightly = vim.version().api_prerelease
+
+local kitty_scrollback = os.getenv('KITTY_SCROLLBACK') == 'TRUE'
+
+vim.g.features = {
+	lsp = not kitty_scrollback,
+	cmp = not kitty_scrollback,
+	dap = not kitty_scrollback,
+	telescope = not kitty_scrollback,
+	treesitter = not kitty_scrollback
+}
+
+
 if vim.g.neovide then
 	require("config.neovide")
 end

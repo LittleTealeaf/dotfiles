@@ -1,3 +1,11 @@
+local function config(opts)
+	return function()
+		vim.keymap.set({ 'n' }, '<esc>', '<Plug>(KsbCloseOrQuitAll)', {})
+		vim.keymap.set({ 'n' }, '<M-q>', '<Plug>(KsbCloseOrQuitAll)', {})
+		return opts
+	end
+end
+
 return {
 	{
 		'mikesmithgh/kitty-scrollback.nvim',
@@ -6,7 +14,26 @@ return {
 		cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
 		event = { 'User KittyScrollbackLaunch' },
 		config = function()
-			require('kitty-scrollback').setup()
+			require('kitty-scrollback').setup({
+				['tealeaf_base'] = config({
+					kitty_get_text = {
+						extent = 'all',
+						ansi = true
+					},
+					paste_window = {
+						winblend = 75
+					}
+				}),
+				['tealeaf_last_cmd'] = config({
+					kitty_get_text = {
+						extent = 'last_cmd_output',
+						ansi = true
+					},
+					paste_window = {
+						winblend = 75
+					}
+				})
+			})
 		end,
 	}
 }

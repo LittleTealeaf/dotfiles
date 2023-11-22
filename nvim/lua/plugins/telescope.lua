@@ -112,6 +112,7 @@ return {
 		'nvim-telescope/telescope.nvim',
 		name = 'telescope',
 		event = 'VeryLazy',
+		cond = vim.g.features.telescope,
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			-- { 'nvim-telescope/telescope-ui-select.nvim' },
@@ -251,6 +252,7 @@ return {
 		lazy = false,
 		dependencies = { telescope_dependency },
 		config = load_extension_config('file_browser'),
+		cond = vim.g.features.telescope,
 		keys = {
 			{
 				'<leader>fe',
@@ -278,6 +280,7 @@ return {
 	-- DAP
 	{
 		'nvim-telescope/telescope-dap.nvim',
+		cond = vim.g.features.dap and vim.g.features.telescope,
 		event = 'VeryLazy',
 		dependencies = { telescope_dependency },
 		config = load_extension_config('dap'),

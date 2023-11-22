@@ -5,6 +5,7 @@ return {
 	{
 		'mfussenegger/nvim-dap',
 		dependencies = { 'williamboman/mason.nvim' },
+		cond = vim.g.features.dap,
 		config = function()
 			local dap = require('dap')
 
@@ -36,6 +37,7 @@ return {
 	},
 	{
 		'rcarriga/nvim-dap-ui',
+		cond = vim.g.features.dap,
 		dependencies = {
 			'mfussenegger/nvim-dap'
 		},
@@ -92,6 +94,7 @@ return {
 	},
 	{
 		'theHamsta/nvim-dap-virtual-text',
+		cond = vim.g.features.dap,
 		dependencies = {
 			'mfussenegger/nvim-dap',
 			'nvim-treesitter/nvim-treesitter',

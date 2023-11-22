@@ -66,7 +66,7 @@ local LSP_CONFIG = {
 }
 
 local function on_lsp_attach(client, bufnr)
-	if Nightly then
+	if vim.g.nightly then
 		if client.server_capabilities.inlayHintProvider then
 			vim.lsp.inlay_hint(bufnr, true)
 		end
@@ -84,7 +84,7 @@ return {
 				highlight = "Comment"
 			}
 		},
-		enabled = not Nightly
+		enabled = not vim.g.nightly
 	},
 	{ 'neovim/nvim-lspconfig', },
 	{
@@ -118,14 +118,16 @@ return {
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
+		cond = vim.g.features.lsp,
 		dependencies = {
 			{
 				'hrsh7th/cmp-nvim-lsp',
 				name = 'cmp_nvim_lsp',
+				cond = vim.g.features.lsp
 			},
 			{ 'williamboman/mason.nvim', },
 			{ 'neovim/nvim-lspconfig', },
-			{ 'lvimuser/lsp-inlayhints.nvim', enabled = not Nightly },
+			{ 'lvimuser/lsp-inlayhints.nvim', enabled = not vim.g.nightly },
 			{ 'SmiteshP/nvim-navbuddy' },
 			{ 'SmiteshP/nvim-navic' }
 		},
