@@ -12,9 +12,9 @@ return {
 		cond = vim.g.features.lsp and vim.g.features.dap,
 		event = 'VeryLazy',
 		dependencies = { 'williamboman/mason.nvim', 'mfussenegger/nvim-dap' },
-		config = function ()
+		config = function()
 			require('mason-nvim-dap').setup({
-				ensure_installed = {'debugpy'},
+				ensure_installed = { 'debugpy', 'java-debug-adapter' },
 				handlers = {},
 			})
 		end

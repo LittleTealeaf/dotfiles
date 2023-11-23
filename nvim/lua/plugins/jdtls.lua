@@ -15,10 +15,11 @@ return {
 
 		vim.api.nvim_create_autocmd('filetype', {
 			pattern = 'java',
-			callback = function()
+			callback = function(buffer)
 				local config = {
 					cmd = { '/usr/bin/jdtls' },
-					root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upwrad = true })[1]),
+					root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw', 'gradlew', 'build.gradle' },
+						{ upwrad = true })[1]),
 					handlers = {
 						['language/status'] = function() end,
 						['$/progress'] = function() end
@@ -27,7 +28,12 @@ return {
 						bundles = {
 							java_debug_path
 						}
-					}
+					},
+					on_attach = function(client, bufnr)
+						require('jdtls').setup_dap({ hotcodereplace = "auto" })
+						require('jdtls.dap').setup_dap_main_class_configs()
+						require('jdtls.setup').add_commands()
+					end
 				}
 				require('jdtls').start_or_attach(config)
 			end
