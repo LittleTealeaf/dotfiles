@@ -1,6 +1,21 @@
 -- Notes:
 -- lua require('dapui').float_element('watches')
 
+
+local function eval_input()
+	local input = vim.fn.input("Evaluate: ")
+	if input ~= nil then
+		require('dapui').eval(input, { enter = true })
+	end
+end
+
+local function create_log_point()
+	local input = vim.fn.input("Log Point: ")
+	if input ~= nil then
+		require('dap').set_breakpoint(nil, nil, input)
+	end
+end
+
 return {
 	{
 		'mfussenegger/nvim-dap',
@@ -24,15 +39,9 @@ return {
 			{ '<leader>dn', function() require('dap').step_over() end,         desc = "Dap Step Over" },
 			{ '<leader>di', function() require('dap').step_into() end,         desc = "Dap Step Into", },
 			{ '<leader>du', function() require('dap').run_last() end,          desc = "Dap Run Last" },
-			{
-				'<leader>dl',
-				function() require('dap').set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
-				desc = "Dap Log Point"
-			},
-			{ '<leader>dr', function() require('dap').run() end,       desc = "Dap Run" },
-			{ '<leader>dt', function() require('dap').terminate() end, desc = "Dap Terminate" },
-			{ '<leader>dk', function() require('dapui').eval() end,    desc = "Dap Eval" },
-			{ '<leader>dd', function() require('dapui').toggle() end,  desc = "Toggle Dap UI" },
+			{ '<leader>dl', create_log_point,                                  desc = "Dap Log Point" },
+			{ '<leader>dt', function() require('dap').terminate() end,         desc = "Dap Terminate" },
+			{ '<leader>dF', function() require('dap').focus_frame() end,       desc = "Focus Frame" },
 		}
 	},
 	{
@@ -41,56 +50,43 @@ return {
 		dependencies = {
 			'mfussenegger/nvim-dap'
 		},
+		lazy = false,
 		opts = {
+			controls = {
+				enabled = true,
+				element = 'console'
+			},
 			floating = {
 				border = 'rounded'
 			},
 			layouts = {
 				{
+					position = "bottom",
+					size = 10,
 					elements = {
-						{
-							id = 'repl',
-							size = 0.25
-						},
-						{
-							id = 'stacks',
-							size = 0.25
-						},
-						{
-							id = 'scopes',
-							size = 0.4
-						},
-						{
-							id = 'breakpoints',
-							size = 0.1,
-						}
-					},
-					position = 'right',
-					size = 50
+						"console",
+					}
 				},
-				{
-					elements = {
-						{
-							id = 'console',
-							size = 0.4
-						},
-						{
-							id = 'watches',
-							size = 0.6,
-						},
-					},
-					position = 'bottom',
-					size = 10
-				}
 			}
 		},
 		config = function(_, opts)
 			local dap, dapui = require('dap'), require('dapui')
 			dapui.setup(opts)
-			dap.listeners.after.event_initialized['dapui_config'] = function() dapui.open() end
+			-- dap.listeners.after.event_initialized['dapui_config'] = function() dapui.open() end
 			dap.listeners.before.event_terminated['dapui_config'] = function() dapui.close() end
 			dap.listeners.before.event_exited['dapui_config'] = function() dapui.close() end
 		end,
+		keys = {
+			{ '<leader>dk', function() require('dapui').eval(nil, { enter = true }) end,                desc = "Evaluate Selected" },
+			{ '<leader>de', eval_input,                                                                 desc = "Evaluate Expression" },
+			{ '<leader>dd', function() require('dapui').toggle() end,                                   desc = "Toggle Dap UI" },
+			{ '<leader>dw', function() require('dapui').float_element('watches', { enter = true }) end, desc = "Watches" },
+			{ '<leader>dv', function() require('dapui').float_element('scopes', { enter = true }) end,  desc = "Scopes" },
+			{ '<leader>df', function() require('dapui').float_element('stacks', { enter = true }) end,  desc = "Stacks" },
+			{ '<leader>dC', function() require('dapui').float_element('console', { enter = true }) end, desc = "Console" },
+			{ '<leader>dr', function() require('dapui').float_element('repl', { enter = true }) end,    desc = "REPL" },
+			{ '<leader>dB', function() require('dapui').float_element('breakpoints', { enter = true }) end,    desc = "Breakpoints" },
+		}
 	},
 	{
 		'theHamsta/nvim-dap-virtual-text',

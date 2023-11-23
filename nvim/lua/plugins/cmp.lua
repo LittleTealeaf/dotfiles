@@ -9,6 +9,7 @@ return {
 		'hrsh7th/nvim-cmp',
 		cond = vim.g.features.cmp,
 		dependencies = {
+			{ 'rcarriga/cmp-dap' },
 			{ 'onsails/lspkind.nvim' },
 			{
 				'hrsh7th/cmp-nvim-lsp',
@@ -106,6 +107,12 @@ return {
 				}, {
 					{ name = 'cmdline' }
 				})
+			})
+
+			cmp.setup.filetype({ 'dap-repl', 'dapui_watches', 'dapui_hover' }, {
+				sources = {
+					{ name = 'dap' }
+				}
 			})
 		end
 	},

@@ -137,6 +137,8 @@ return {
 
 				-- DAP UI
 				DapUIFloatBorder = { bg = c.mantle, fg = c.mantle },
+				DapUINormalFloat = { bg = c.mantle },
+				DapUIFloatNormal = { bg = c.mantle },
 				DapStoppedLine = { bg = c.surface1 },
 
 				-- Registers

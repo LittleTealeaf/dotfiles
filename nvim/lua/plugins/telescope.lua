@@ -291,9 +291,9 @@ return {
 		dependencies = { telescope_dependency },
 		config = load_extension_config('dap'),
 		keys = {
-			{ '<leader>dv', use_extension('dap', 'variables'), desc = "Dap Variables" },
-			{ '<leader>df', use_extension('dap', 'frames'),    desc = 'List Frames' },
-			{ '<leader>da', use_extension('dap', 'commands'),  desc = 'Dap Commands' },
+			-- { '<leader>df', use_extension('dap', 'frames'),           desc = 'List Frames' },
+			{ '<leader>da', use_extension('dap', 'commands'),         desc = 'Dap Commands' },
+			-- { '<leader>dB', use_extension('dap', 'list_breakpoints'), desc = "List Breakpoints" }
 		}
 	},
 }
