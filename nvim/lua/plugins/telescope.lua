@@ -174,7 +174,7 @@ return {
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
 							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
 							["<A-q>"] = actions.close,
-							["<C-q>"] = actions.send_selected_to_qf,
+							["<C-q>"] = actions.smart_send_to_qflist,
 							['<C-CR>'] = actions.toggle_selection,
 							['<C-t>'] = trouble.smart_open_with_trouble,
 							['<C-a>'] = actions.toggle_all,
