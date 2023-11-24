@@ -283,17 +283,17 @@ return {
 
 		-- Path
 	},
-	-- DAP
-	{
-		'nvim-telescope/telescope-dap.nvim',
-		cond = vim.g.features.dap and vim.g.features.telescope,
-		event = 'VeryLazy',
-		dependencies = { telescope_dependency },
-		config = load_extension_config('dap'),
-		keys = {
-			-- { '<leader>df', use_extension('dap', 'frames'),           desc = 'List Frames' },
-			{ '<leader>da', use_extension('dap', 'commands'),         desc = 'Dap Commands' },
-			-- { '<leader>dB', use_extension('dap', 'list_breakpoints'), desc = "List Breakpoints" }
-		}
-	},
+	-- -- DAP
+	-- {
+	-- 	'nvim-telescope/telescope-dap.nvim',
+	-- 	cond = vim.g.features.dap and vim.g.features.telescope,
+	-- 	event = 'VeryLazy',
+	-- 	dependencies = { telescope_dependency },
+	-- 	config = load_extension_config('dap'),
+	-- 	keys = {
+	-- 		-- { '<leader>df', use_extension('dap', 'frames'),           desc = 'List Frames' },
+	-- 		-- { '<leader>da', use_extension('dap', 'commands'),         desc = 'Dap Commands' },
+	-- 		-- { '<leader>dB', use_extension('dap', 'list_breakpoints'), desc = "List Breakpoints" }
+	-- 	}
+	-- },
 }
