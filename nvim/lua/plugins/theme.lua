@@ -133,7 +133,7 @@ return {
 				HarpoonWindow = { bg = c.mantle },
 
 				-- CursorLine
-				CursorLine = { bg = '', style = { 'bold' } },
+				-- CursorLine = {},
 
 				-- DAP UI
 				DapUIFloatBorder = { bg = c.mantle, fg = c.mantle },
