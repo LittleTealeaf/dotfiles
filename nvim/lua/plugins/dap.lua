@@ -21,27 +21,28 @@ return {
 		'mfussenegger/nvim-dap',
 		dependencies = { 'williamboman/mason.nvim' },
 		cond = vim.g.features.dap,
-		config = function()
-			local dap = require('dap')
-
+		init = function()
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapBreakpointCondition",
 				{ text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapStopped", { text = "", linehl = "DapStoppedLine" })
-
+		end,
+		config = function()
+			local dap = require('dap')
 			dap.defaults.fallback.exception_breakpoints = { 'raised', 'uncaught', 'rust_panic' }
 		end,
 		keys = {
-			{ '<leader>db', function() require('dap').toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-			{ '<leader>dc', function() require('dap').continue() end,          desc = "Continue" },
-			{ '<leader>do', function() require('dap').step_out() end,          desc = "Dap Step Out" },
-			{ '<leader>dn', function() require('dap').step_over() end,         desc = "Dap Step Over" },
-			{ '<leader>di', function() require('dap').step_into() end,         desc = "Dap Step Into", },
-			{ '<leader>du', function() require('dap').run_last() end,          desc = "Dap Run Last" },
-			{ '<leader>dl', create_log_point,                                  desc = "Dap Log Point" },
-			{ '<leader>dt', function() require('dap').terminate() end,         desc = "Dap Terminate" },
-			{ '<leader>dx', function() require('dap').focus_frame() end,       desc = "Focus Frame" },
+			{ '<leader>db', function() require('dap').toggle_breakpoint() end,                            desc = "Toggle Breakpoint" },
+			{ '<leader>dm', function() require('dap').toggle_breakpoint(vim.fn.input("Condition: ")) end, desc = "Conditional Breakpoint" },
+			{ '<leader>dc', function() require('dap').continue() end,                                     desc = "Continue" },
+			{ '<leader>do', function() require('dap').step_out() end,                                     desc = "Dap Step Out" },
+			{ '<leader>dn', function() require('dap').step_over() end,                                    desc = "Dap Step Over" },
+			{ '<leader>di', function() require('dap').step_into() end,                                    desc = "Dap Step Into", },
+			{ '<leader>du', function() require('dap').run_last() end,                                     desc = "Dap Run Last" },
+			{ '<leader>dl', create_log_point,                                                             desc = "Dap Log Point" },
+			{ '<leader>dt', function() require('dap').terminate() end,                                    desc = "Dap Terminate" },
+			{ '<leader>dx', function() require('dap').focus_frame() end,                                  desc = "Focus Frame" },
 		}
 	},
 	{
