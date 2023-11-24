@@ -15,11 +15,24 @@ local function get_recording_name()
 	return "Recording @" .. vim.api.nvim_call_function('reg_recording', {})
 end
 
+
+local function empty_if_nil(func)
+	return function()
+		local item = func()
+		if item ~= nil then
+			return item
+		else
+			return ""
+		end
+	end
+end
+
 return {
 	{
 		'nvim-lualine/lualine.nvim',
 		name = 'lualine',
 		dependencies = {
+			{ 'stevearc/oil.nvim' },
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
 			{ 'SmiteshP/nvim-navic' },
@@ -117,6 +130,9 @@ return {
 							color_correction = 'static',
 							navic_opts = nil,
 						},
+						{
+							empty_if_nil(require('oil').get_current_dir),
+						}
 					},
 				}
 			}
