@@ -36,7 +36,7 @@ return {
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
 			{ 'SmiteshP/nvim-navic' },
-			{ 'mfussenegger/nvim-dap' }
+			{ 'mfussenegger/nvim-dap',       cond = vim.g.features.dap }
 		},
 		opts = function()
 			local noice = require('noice')
@@ -84,7 +84,7 @@ return {
 					lualine_c = {
 						{ 'diff' },
 						{
-							require('dap').status,
+							vim.g.features.dap and require('dap').status or "",
 						},
 					},
 					lualine_x = {

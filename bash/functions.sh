@@ -62,3 +62,8 @@ cdt() {
 cdgit() {
 	cd ~/git
 }
+
+nvd() {
+	local selection
+	selection=$(ls ~/dev | fzf --preview='project_info ~/dev/{}' --header-first --header="Open Development Project") && cd ~/dev && cd $selection && nvim .
+}
