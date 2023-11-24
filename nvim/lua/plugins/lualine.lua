@@ -15,7 +15,6 @@ local function get_recording_name()
 	return "Recording @" .. vim.api.nvim_call_function('reg_recording', {})
 end
 
-
 return {
 	{
 		'nvim-lualine/lualine.nvim',
@@ -23,7 +22,8 @@ return {
 		dependencies = {
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
-			{ 'SmiteshP/nvim-navic' }
+			{ 'SmiteshP/nvim-navic' },
+			{ 'mfussenegger/nvim-dap' }
 		},
 		opts = function()
 			local noice = require('noice')
@@ -69,14 +69,10 @@ return {
 						},
 					},
 					lualine_c = {
-						-- {
-						-- 	get_number_of_buffers
-						-- },
-						-- {
-						-- 	function() return ' ' end,
-						-- 	cond = has_unsaved_buffers
-						-- },
 						{ 'diff' },
+						{
+							require('dap').status,
+						},
 					},
 					lualine_x = {
 						{
