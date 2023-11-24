@@ -35,7 +35,7 @@ return {
 		keys = {
 			{ '<leader>db', function() require('dap').toggle_breakpoint() end,                            desc = "Toggle Breakpoint" },
 			{ '<leader>dm', function() require('dap').toggle_breakpoint(vim.fn.input("Condition: ")) end, desc = "Conditional Breakpoint" },
-			{ '<leader>dc', function() require('dap').continue() end,                                     desc = "Continue" },
+			{ '<leader>ds', function() require('dap').continue() end,                                     desc = "Continue" },
 			{ '<leader>do', function() require('dap').step_out() end,                                     desc = "Dap Step Out" },
 			{ '<leader>dn', function() require('dap').step_over() end,                                    desc = "Dap Step Over" },
 			{ '<leader>di', function() require('dap').step_into() end,                                    desc = "Dap Step Into", },
