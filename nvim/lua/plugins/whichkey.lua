@@ -47,7 +47,7 @@ return {
 					name = 'Debugger'
 				},
 				e = {
-					name = 'NeoTree'
+					name = 'Oil'
 				},
 				s = {
 					name = 'Symbols'

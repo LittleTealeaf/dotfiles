@@ -8,6 +8,7 @@ return {
 	},
 	config = true,
 	keys = {
-		{ '<leader>e', function() require('oil').open_float() end, desc = "Open Float" }
+		{ '<leader>ef', function() require('oil').open_float() end, desc = "Open Oil Float" },
+		{ '<leader>eb', function() require('oil').open() end, desc = "Open Oil" }
 	}
 }
