@@ -57,7 +57,10 @@ return {
 								if client.server_capabilities.inlayHintProvider then
 									vim.lsp.inlay_hint(bufnr, true)
 								end
-								-- require('lsp-inlayhints').on_attach(client, bufnr)
+								vim.keymap.set('n', '<leader>clu', lspcmd { 'debuggables', 'last' },
+									{ buffer = bufnr, desc = "Rust Last Debuggable" })
+								vim.keymap.set('n', '<leader>cli', lspcmd { 'runnables', 'last' },
+									{ buffer = bufnr, desc = "Rust Last Runnable" })
 								vim.keymap.set('n', '<leader>clr', lspcmd { 'runnables' }, { buffer = bufnr, desc = "Rust Runnables" })
 								vim.keymap.set('n', '<leader>cld', lspcmd { 'debuggables' }, { buffer = bufnr, desc = "Rust Debuggabes" })
 								vim.keymap.set('n', '<leader>cle', lspcmd { 'explainError' }, { buffer = bufnr, desc = "Explain Error" })
@@ -65,7 +68,6 @@ return {
 								vim.keymap.set('n', '<leader>clc', lspcmd { 'flyCheck' }, { buffer = bufnr, desc = "Clippy Check" })
 								vim.keymap.set('n', '<leader>clt', lspcmd { 'openCargo' }, { buffer = bufnr, desc = "Open Cargo.toml" })
 								vim.keymap.set('v', 'K', lspcmd { 'hover', 'range' }, { buffer = bufnr, desc = "Hover Range" })
-								-- vim.keymap.set('n','<leader>cl')
 							end,
 							settings = function()
 								return {
