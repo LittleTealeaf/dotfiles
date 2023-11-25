@@ -25,16 +25,13 @@ return {
 				function() require('flash').treesitter_search() end,
 				desc = 'Treesitter Search'
 			},
-			-- {
-			-- 	'<c-/>w',
-			-- 	mode = { 'n', 'x', 'o' },
-			-- 	function()
-			-- 		require('flash').jump({
-			-- 			pattern = vim.fn.expand('<cword>')
-			-- 		})
-			-- 	end,
-			-- 	desc = 'Search for Word'
-			-- },
+
+			{
+				's',
+				mode = {'x'},
+				function() require('flash').treesitter() end,
+				desc = "Treesitter"
+			},
 			{
 				'<c-/>',
 				mode = { 'n', 'x', 'o' },
