@@ -1,7 +1,3 @@
--- Notes:
--- lua require('dapui').float_element('watches')
-
-
 local function eval_input()
 	local input = vim.fn.input("Evaluate: ")
 	if input ~= nil then
