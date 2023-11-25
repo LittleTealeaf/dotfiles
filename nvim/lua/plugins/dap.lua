@@ -61,7 +61,14 @@ return {
 					position = "bottom",
 					size = 10,
 					elements = {
-						"console",
+						{
+							id = 'watches',
+							size = 0.4
+						},
+						{
+							id = "console",
+							size = 0.6
+						},
 					}
 				},
 			}
