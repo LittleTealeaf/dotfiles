@@ -25,7 +25,6 @@ return {
 				function() require('flash').treesitter_search() end,
 				desc = 'Treesitter Search'
 			},
-
 			{
 				's',
 				mode = {'x'},
