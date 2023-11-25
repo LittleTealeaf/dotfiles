@@ -45,7 +45,6 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSig
 vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
 vim.diagnostic.config({
-	-- virtual_text = false,
 	update_in_insert = true,
 	float = {
 		border = "none"
