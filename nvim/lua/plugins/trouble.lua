@@ -30,7 +30,7 @@ local function toggle_trouble()
 			local bufnr = vim.api.nvim_win_get_buf(winid)
 			local name = vim.api.nvim_buf_get_name(bufnr)
 
-			if name == vim.fn.getcwd().."/Trouble" then
+			if name == vim.fn.getcwd() .. "/Trouble" then
 				vim.api.nvim_set_current_win(winid)
 				return
 			end
