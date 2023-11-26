@@ -28,8 +28,9 @@ local function toggle_trouble()
 	else
 		for _, winid in ipairs(vim.api.nvim_list_wins()) do
 			local bufnr = vim.api.nvim_win_get_buf(winid)
-			local filetype, _ = vim.filetype.match({ buf = bufnr })
-			if filetype == 'Trouble' then
+			local name = vim.api.nvim_buf_get_name(bufnr)
+
+			if name == vim.fn.getcwd().."/Trouble" then
 				vim.api.nvim_set_current_win(winid)
 				return
 			end
