@@ -37,6 +37,12 @@ cmd([[
  		autocmd!
 		autocmd VimLeave * set guicursor=a:ver10
 	augroup END
+
+	augroup TerminalSettings
+		autocmd!
+		autocmd TermOpen * setlocal nonumber norelativenumber
+		autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
+	augroup END
 ]])
 
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })

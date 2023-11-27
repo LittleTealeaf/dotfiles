@@ -6,7 +6,7 @@ return {
 			['<C-v>'] = 'actions.select_vsplit',
 			['<C-x>'] = 'actions.select_split',
 			['<M-q>'] = 'actions.close',
-			['<C-t>'] = false,
+			['<C-t>'] = 'actions.open_terminal',
 			['<C-y>'] = 'actions.copy_entry_path',
 			['<C-r>'] = function()
 				local Path = require('plenary.path')
