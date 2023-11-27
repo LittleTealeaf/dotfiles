@@ -25,7 +25,8 @@ return {
 		config = function()
 			require('nvim-treesitter.configs').setup({
 				autotag = {
-					enabled = true
+					enabled = true,
+					enable_close_on_slash = false,
 				},
 				textobjects = {
 					select = {
