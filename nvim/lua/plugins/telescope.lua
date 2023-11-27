@@ -183,6 +183,11 @@ return {
 							['<C-u>'] = false
 						},
 					}
+				},
+				pickers = {
+					find_files = {
+						preview = false,
+					}
 				}
 			})
 
@@ -198,7 +203,7 @@ return {
 			},
 			{
 				'<leader>fd',
-				use_builtin("find_files"),
+				with_args(use_builtin('find_files'), { previewer = false }),
 				desc = "Find Files"
 			},
 			{
@@ -266,6 +271,7 @@ return {
 					with_args(in_ivy(use_extension('file_browser', 'file_browser')), {
 						hidden = true,
 						path = vim.fn.expand("%:p:h"),
+						previewer = false,
 					})()
 				end,
 				desc = 'File Browser'
