@@ -27,7 +27,7 @@ return {
 			},
 			{
 				's',
-				mode = {'x'},
+				mode = { 'x' },
 				function() require('flash').treesitter() end,
 				desc = "Treesitter"
 			},
