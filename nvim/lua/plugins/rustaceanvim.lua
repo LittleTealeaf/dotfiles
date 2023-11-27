@@ -25,7 +25,6 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
-		-- 'lvimuser/lsp-inlayhints.nvim'
 	},
 	ft = { 'rust' },
 	init = function()
