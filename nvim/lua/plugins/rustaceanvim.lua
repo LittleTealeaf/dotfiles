@@ -49,7 +49,7 @@ return {
 							}
 						},
 						dap = {
-							auto_generate_source_map = false
+							auto_generate_source_map = true
 						},
 						server = {
 							on_attach = function(client, bufnr)
