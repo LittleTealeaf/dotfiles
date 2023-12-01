@@ -21,6 +21,7 @@ end
 
 
 return {
+	-- dir = '~/dev/rustaceanvim/',
 	'mrcjkb/rustaceanvim',
 	dependencies = {
 		'williamboman/mason.nvim',
