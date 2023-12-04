@@ -72,6 +72,9 @@ return {
 							settings = function()
 								return {
 									['rust-analyzer'] = {
+										check = {
+											command = "clippy"
+										},
 										workspace = {
 											symbol = {
 												search = {
