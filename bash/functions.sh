@@ -25,6 +25,10 @@ cdg() {
 		cd ~/git/$development
 }
 
-gb() {
-	git branch
+gd() {
+	git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
+
+ga() {
+	git forgit add
 }
