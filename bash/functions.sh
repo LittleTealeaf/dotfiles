@@ -28,3 +28,7 @@ cdg() {
 ga() {
 	git forgit add
 }
+
+cdt() {
+	cd ~/tmp
+}
