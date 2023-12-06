@@ -9,25 +9,6 @@ return {
 			['<M-q>'] = 'actions.close',
 			['<C-t>'] = 'actions.open_terminal',
 			['<C-y>'] = 'actions.copy_entry_path',
-			['<C-r>'] = function()
-				local Path = require('plenary.path')
-				local oil = require('oil')
-				local file = oil.get_cursor_entry().name
-				local dir = oil.get_current_dir()
-				local path = Path:new(dir .. file)
-				vim.ui.input(
-					{
-						prompt = "New File Name",
-						default = path:absolute(),
-						completion = 'file'
-					},
-					function(input)
-						if input ~= nil and input ~= "" then
-							path:rename { new_name = Path:new(input).filename }
-							require('oil.actions').refresh.callback()
-						end
-					end)
-			end
 		}
 	},
 	lazy = false,
