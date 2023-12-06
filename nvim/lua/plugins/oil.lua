@@ -3,6 +3,7 @@ return {
 	dependencies = { 'nvimtree/nvim-web-devicons' },
 	opts = {
 		keymaps = {
+			['<esc>'] = 'actions.close',
 			['<C-v>'] = 'actions.select_vsplit',
 			['<C-x>'] = 'actions.select_split',
 			['<M-q>'] = 'actions.close',
