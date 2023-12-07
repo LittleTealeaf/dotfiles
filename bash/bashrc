@@ -5,6 +5,7 @@ export DEV="$HOME/dev"
 source $DOT_FILES/bash/fzf.sh
 source $DOT_FILES/bash/functions.sh
 source $DOT_FILES/bash/alias.sh
+source $DOT_FILES/bash/zoxide.sh
 
 alias :q=exit
 alias nv=nvim
