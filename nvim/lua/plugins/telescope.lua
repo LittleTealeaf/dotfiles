@@ -259,7 +259,6 @@ return {
 	},
 	{
 		'nvim-telescope/telescope-file-browser.nvim',
-		lazy = false,
 		dependencies = { telescope_dependency },
 		config = load_extension_config('file_browser'),
 		cond = vim.g.features.telescope,
@@ -288,17 +287,12 @@ return {
 
 		-- Path
 	},
-	-- -- DAP
-	-- {
-	-- 	'nvim-telescope/telescope-dap.nvim',
-	-- 	cond = vim.g.features.dap and vim.g.features.telescope,
-	-- 	event = 'VeryLazy',
-	-- 	dependencies = { telescope_dependency },
-	-- 	config = load_extension_config('dap'),
-	-- 	keys = {
-	-- 		-- { '<leader>df', use_extension('dap', 'frames'),           desc = 'List Frames' },
-	-- 		-- { '<leader>da', use_extension('dap', 'commands'),         desc = 'Dap Commands' },
-	-- 		-- { '<leader>dB', use_extension('dap', 'list_breakpoints'), desc = "List Breakpoints" }
-	-- 	}
-	-- },
+	{
+		'jvgrootveld/telescope-zoxide',
+		dependencies = telescope_dependency,
+		config = load_extension_config('zoxide'),
+		keys = {
+			{'<leader>fz', in_dropdown(use_extension('zoxide', 'list')), desc = "Zoxide" }
+		}
+	}
 }
