@@ -4,11 +4,13 @@ return {
 	opts = {
 		keymaps = {
 			['<esc>'] = 'actions.close',
+			['<M-q>'] = 'actions.close',
 			['<C-v>'] = 'actions.select_vsplit',
 			['<C-x>'] = 'actions.select_split',
-			['<M-q>'] = 'actions.close',
-			['<C-t>'] = 'actions.open_terminal',
+			['<C-t>'] = 'actions.open_cmdline',
 			['<C-y>'] = 'actions.copy_entry_path',
+			['<C-l>'] = 'actions.send_to_loclist',
+			['<C-r>'] = 'actions.refresh'
 		}
 	},
 	lazy = false,
