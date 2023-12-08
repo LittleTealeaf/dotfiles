@@ -5,6 +5,10 @@ export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix"
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'
 
 if command -v fzf &> /dev/null; then
-	source /usr/share/fzf/completion.bash
-	source /usr/share/fzf/key-bindings.bash
+	if test -f /usr/share/fzf/completion.bash; then
+		source /usr/share/fzf/completion.bash
+	fi
+	if test -f /usr/share/fzf/key-bindings.bash; then
+		source /usr/share/fzf/key-bindings.bash
+	fi
 fi
