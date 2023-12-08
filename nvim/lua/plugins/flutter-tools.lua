@@ -2,10 +2,7 @@ return {
 	'akinsho/flutter-tools.nvim',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
-		{
-			'nvim-telescope/telescope.nvim',
-			name = 'telescope',
-		}
+		'nvim-telescope/telescope.nvim',
 	},
 	ft = 'dart',
 	opts = {

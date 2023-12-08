@@ -4,10 +4,7 @@ return {
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"MunifTanjim/nui.nvim",
-			{
-				'nvim-telescope/telescope.nvim',
-				name = 'telescope'
-			},
+			'nvim-telescope/telescope.nvim',
 			"numToStr/Comment.nvim",
 		},
 		opts = function()

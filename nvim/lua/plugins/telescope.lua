@@ -102,20 +102,13 @@ local function flash(prompt_bufnr)
 	})
 end
 
-local telescope_dependency = {
-	'nvim-telescope/telescope.nvim',
-	name = 'telescope'
-}
-
 return {
 	{
 		'nvim-telescope/telescope.nvim',
-		name = 'telescope',
 		event = 'VeryLazy',
 		cond = vim.g.features.telescope,
 		dependencies = {
 			'nvim-lua/plenary.nvim',
-			-- { 'nvim-telescope/telescope-ui-select.nvim' },
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build =
@@ -260,7 +253,7 @@ return {
 	},
 	{
 		'nvim-telescope/telescope-file-browser.nvim',
-		dependencies = { telescope_dependency },
+		dependencies = { 'nvim-telescope/telescope.nvim' },
 		config = load_extension_config('file_browser'),
 		cond = vim.g.features.telescope,
 		keys = {
@@ -285,15 +278,13 @@ return {
 				desc = "File Browser from Root"
 			}
 		}
-
-		-- Path
 	},
 	{
 		'jvgrootveld/telescope-zoxide',
-		dependencies = telescope_dependency,
+		dependencies = { 'nvim-telescope/telescope.nvim' },
 		config = load_extension_config('zoxide'),
 		keys = {
-			{'<leader>fz', in_dropdown(use_extension('zoxide', 'list')), desc = "Zoxide" }
+			{ '<leader>fz', in_dropdown(use_extension('zoxide', 'list')), desc = "Zoxide" }
 		}
 	}
 }
