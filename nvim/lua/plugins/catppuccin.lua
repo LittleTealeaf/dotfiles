@@ -22,10 +22,9 @@ return {
 			notify = true,
 			harpoon = true,
 			which_key = true,
-			dap = {
-				enabled = true,
-				enable_ui = true,
-			},
+			dap = true,
+			dap_ui = true,
+			lsp_trouble = true,
 			native_lsp = {
 				enabled = true,
 				virutal_text = {
