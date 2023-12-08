@@ -1,5 +1,5 @@
-alias gcc='git forgit checkout_commit'
-alias gcb='git forgit checkout_branch'
+alias gsc='git forgit checkout_commit'
+alias gsb='git forgit checkout_branch'
 alias gl='git forgit log'
 alias gc='git commit'
 alias gp='git push'
