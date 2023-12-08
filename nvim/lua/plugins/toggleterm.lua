@@ -11,9 +11,6 @@ return {
 		})
 	end,
 	opts = {
-		winbar = {
-			enabled = vim.g.nightly,
-		},
 		open_mapping = [[<c-\>]],
 		size = 20,
 		direction = 'horizontal',
