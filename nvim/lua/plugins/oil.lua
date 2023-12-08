@@ -2,6 +2,9 @@ return {
 	'stevearc/oil.nvim',
 	dependencies = { 'nvimtree/nvim-web-devicons' },
 	opts = {
+		view_options = {
+			show_hidden = true
+		},
 		keymaps = {
 			['<esc>'] = 'actions.close',
 			['<M-q>'] = 'actions.close',
