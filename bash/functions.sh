@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 cdv() {
 	local development
 	development=$(ls $DEV | fzf --preview='ls -l $DEV/{}' --header-first --header="cd to dev project") && 
