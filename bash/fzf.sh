@@ -3,3 +3,8 @@ export FZF_DEFAULT_OPTS='--layout=reverse --info=inline --color=fg:#cad3f5,bg:-1
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'tab:down' --bind 'btab:up' --bind 'ctrl-a:toggle-all' --bind 'alt-enter:toggle'"
 export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix"
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'
+
+if command -v fzf &> /dev/null; then
+	source /usr/share/fzf/completion.bash
+	source /usr/share/fzf/key-bindings.bash
+fi

@@ -1,1 +1,1 @@
-source $DOT_FILES/bash/bashrc
+source $DOT_FILES/bash/bashrc.sh
