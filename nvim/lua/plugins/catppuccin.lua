@@ -24,7 +24,6 @@ return {
 			which_key = true,
 			dap = true,
 			dap_ui = true,
-			lsp_trouble = true,
 			native_lsp = {
 				enabled = true,
 				virutal_text = {
