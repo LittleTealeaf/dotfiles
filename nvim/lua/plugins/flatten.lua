@@ -38,11 +38,11 @@ return {
 							-- If it's a normal file, just switch to its window
 							vim.api.nvim_set_current_win(winnr)
 
-							-- If we're in a different wezterm pane/tab, switch to the current one
-							-- Requires willothy/wezterm.nvim
-							require("wezterm").switch_pane.id(
-								tonumber(os.getenv("WEZTERM_PANE"))
-							)
+							-- -- If we're in a different wezterm pane/tab, switch to the current one
+							-- -- Requires willothy/wezterm.nvim
+							-- require("wezterm").switch_pane.id(
+							-- 	tonumber(os.getenv("WEZTERM_PANE"))
+							-- )
 						end
 
 						-- If the file is a git commit, create one-shot autocmd to delete its buffer on write
