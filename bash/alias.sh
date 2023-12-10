@@ -38,3 +38,9 @@ fi
 if command -v nvim &> /dev/null; then
 	alias nv='nvim'
 fi
+
+if command -v eza &> /dev/null; then
+	alias ls="eza"
+	alias ll="eza -l"
+	alias tree="eza --tree"
+fi
