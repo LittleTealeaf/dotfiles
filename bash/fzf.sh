@@ -1,5 +1,13 @@
 #!/bin/bash
-export FZF_DEFAULT_OPTS='--height=20 --border --layout=reverse --info=inline --color=fg:#cad3f5,bg:-1,hl:#ee99a0 --color=fg+:#b7bdf8,bg+:,hl+:#ed8796 --color=info:#b7bdf8,prompt:#b7bdf8,pointer:#b7bdf8 --color=marker:#b7bdf8,spinner:#b7bdf8,header:#b7bdf8,border:#b7bdf8,bg+:#24273a'
+
+# Catppuccin Colors
+export FZF_DEFAULT_OPTS="--color=bg:#1e1e2e,fg:#cdd6f4 \
+	--color=border:#45475a,header:#cba6f7,pointer:#f5e0dc \
+	--color=marker:#f5e0dc,info:#cba6f7,prompt:#cba6f7 \
+	--color=fg+:#cdd6f4,bg+:#313244,hl:#f38ba8,hl+:#f38ba8 \
+	--color=spinner:#cba6f7"
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --height=20 --border --layout=reverse --info=inline"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'tab:down' --bind 'btab:up' --bind 'ctrl-a:toggle-all' --bind 'alt-enter:toggle'"
 export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix"
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'

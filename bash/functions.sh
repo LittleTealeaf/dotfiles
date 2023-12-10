@@ -2,7 +2,7 @@
 
 cdv() {
 	local development
-	development=$(ls $DEV | fzf --preview='ls -l $DEV/{}' --header-first --header="cd to dev project") && 
+	development=$(ls $DEV | fzf --preview='ls -l $DEV/{}' --header-first) && 
 		cd $DEV/$development
 }
 
@@ -20,7 +20,7 @@ cdgit() {
 
 cdg() {
 	local development
-	development=$(ls ~/git | fzf --preview='ls -l ~/git/{}' --header-first --header="cd to git repo") && 
+	development=$(ls ~/git | fzf --preview='ls -l ~/git/{}' --header-first) && 
 		cd ~/git/$development
 }
 
