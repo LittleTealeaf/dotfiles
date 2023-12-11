@@ -1,14 +1,16 @@
 {
 	"layer": "top",
 	"position": "top",
-	"margin-top": 7,
-	"margin-left": 20,
-	"margin-right": 20,
+	"margin-top": 0,
+	"margin-left": 0,
+	"margin-right": 0,
 	"modules-left": [
 		"hyprland/workspaces",
-		"wlr/taskbar",
 		"custom/media",
 		"hyprland/submap"
+	],
+	"modules-center": [
+		"wlr/taskbar"
 	],
 	"modules-right": [
 		"tray",
@@ -30,7 +32,7 @@
 		"format": "{:%a, %b %d  %I:%M %p}"
 	},
 	"custom/media": {
-		"format": "{icon} {}",
+		"format": "󰲸  {}",
 		"escape": true,
 		"return-type": "json",
 		"max-length": 40,
@@ -95,7 +97,11 @@
 	"backlight": {
 		"device": "intel_backlight",
 		"format": "{icon}",
-		"format-icons": ["󰃜", "󰃛", "󰃚"]
+		"format-icons": [
+			"󰃜",
+			"󰃛",
+			"󰃚"
+		]
 	},
 	"battery": {
 		"interval": 10,
@@ -109,7 +115,18 @@
 		"format-icons": {
 			"warning": "󱊡",
 			"critical": "󰂃",
-			"default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+			"default": [
+				"󰁺",
+				"󰁻",
+				"󰁼",
+				"󰁽",
+				"󰁾",
+				"󰁿",
+				"󰂀",
+				"󰂁",
+				"󰂂",
+				"󰁹"
+			]
 		}
 	},
 	"wlr/taskbar": {

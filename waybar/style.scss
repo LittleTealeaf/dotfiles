@@ -1,130 +1,108 @@
 @import "node_modules/@catppuccin/palette/scss/mocha";
 
+$background: $crust;
+
 $radius: 10px;
 
 * {
-  font-size: 13px;
+	font-size: 13px;
 	color: $text;
 }
 
 #waybar {
-  background-color: transparent;
+	background-color: transparentize($color: $background, $amount: 0.1);
 }
 
 #workspaces {
-  background-color: $base;
-  border-radius: $radius;
+	button {
+		&.active {
+			background-color: $surface0;
+		}
 
-  button {
-    border-radius: $radius;
-
-    &.active {
-      background-color: $surface0;
-    }
-
-    &:hover {
-      background-color: $overlay0;
-    }
-  }
+		&:hover {
+			background-color: $surface0;
+		}
+	}
 }
 
 #taskbar {
-  background-color: $base;
-  border-radius: $radius;
-  margin-left: 10px;
+	button {
+		&.active {
+			background-color: $surface0;
+		}
 
-  button {
-    border-radius: $radius;
-
-    &.active {
-      background-color: $surface0;
-    }
-
-    &:hover {
-      background-color: $overlay0;
-    }
-  }
+		&:hover {
+			background-color: $surface0;
+		}
+	}
 }
 
 #clock {
-  background-color: $base;
-  border-radius: $radius;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #custom-media {
-  background-color: $base;
-  border-radius: $radius;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: $radius;
+	border-radius: $radius;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: $radius;
 }
 
 #submap {
-  background-color: $base;
-  border-radius: $radius;
-  margin-left: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #tray {
-  background-color: $base;
-  border-radius: $radius;
-  margin-right: 10px;
+	border-radius: $radius;
+	margin-right: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
 #pulseaudio {
-  background-color: $base;
-  border-radius: $radius;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #connections {
-  background-color: $base;
-  border-radius: $radius;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #bluetooth {
-  margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #backlight {
-  background-color: $base;
-  border-radius: $radius;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #cpu {
-  background-color: $base;
-  border-radius: $radius;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #battery {
-  background-color: $base;
-  border-radius: $radius;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+	border-radius: $radius;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #temperature {
-	background-color: $base;
 	border-radius: $radius;
-	margin-right: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
