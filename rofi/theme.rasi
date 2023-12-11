@@ -9,6 +9,7 @@ window {
 	location: center;
 	width: 800;
 	border-radius: 8;
+	border-color: @Crust;
 }
 
 inputbar {
