@@ -13,6 +13,7 @@ fi
 
 if command -v batdiff &> /dev/null; then
 	alias gd='batdiff'
+	alias gds='batdiff --staged'
 fi
 
 if command -v batman &> /dev/null; then

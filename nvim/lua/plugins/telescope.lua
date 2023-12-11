@@ -162,13 +162,13 @@ return {
 					mappings = {
 						i = {
 							['<esc>'] = actions.close,
+							["<A-q>"] = actions.close,
 							["<Tab>"] = actions.move_selection_next,
 							["<S-Tab>"] = actions.move_selection_previous,
+							['<C-CR>'] = actions.toggle_selection,
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
 							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
-							["<A-q>"] = actions.close,
 							["<C-q>"] = actions.smart_send_to_qflist,
-							['<C-CR>'] = actions.toggle_selection,
 							['<C-t>'] = trouble.smart_open_with_trouble,
 							['<C-a>'] = actions.toggle_all,
 							['<C-h>'] = open_with_harpoon(),
