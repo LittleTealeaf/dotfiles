@@ -61,50 +61,50 @@ symbol = "󰏗 "
 
 [python]
 symbol = '󰌠 '
-format = "[$symbol$pyenv_prefix$version$virtualenv]($style)"
+format = "[$symbol$pyenv_prefix$version$virtualenv]($style) "
 
 [rust]
 symbol = "󱘗 "
 style = 'bold peach'
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [dart]
 symbol = " "
-format = "[$symbol($version) ]($style)"
+format = "[$symbol($version) ]($style) "
 
 [lua]
 symbol = '󰢱 '
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [java]
 symbol = "󰬷 "
 style = "red dimmed bold"
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [gradle]
 symbol = " "
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [nodejs]
 symbol = "󰎙 "
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [rlang]
 symbol = "󰟔 "
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 
 [golang]
 symbol = "󰟓 "
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [kotlin]
 symbol = "󱈙 "
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [c]
 symbol = "󰙱 "
-format = "[$symbol($version(-name) )]($style)"
+format = "[$symbol($version(-name) )]($style) "
 
 [docker_context]
 symbol = " "
@@ -112,22 +112,22 @@ format = "[$symbol$context]($style) "
 
 [dotnet]
 symbol = " "
-format = "[$symbol($version )(󰓾 tfm )](style)"
+format = "[$symbol($version )(󰓾 tfm )](style) "
 
 [scala]
 symbol = " "
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [bun]
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 symbol = "󱨎 "
 
 [cmake]
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 symbol = " "
 
 [zig]
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )]($style) "
 
 [username]
 format = "[$user]($style) "
