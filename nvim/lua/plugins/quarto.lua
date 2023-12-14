@@ -7,11 +7,12 @@ return {
 		'nvim-treesitter/nvim-treesitter'
 	},
 	cond = function()
-		local status, _ = os.execute("which quarto")
+		local status, _ = os.execute("which quarto &> /dev/null")
 		return status == 0
 	end,
 	ft = { "quarto" },
 	opts = {
-
+		codeRunner = {
+		}
 	}
 }
