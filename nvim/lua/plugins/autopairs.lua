@@ -3,10 +3,7 @@ return {
 		'windwp/nvim-autopairs',
 		cond = vim.g.features.cmp,
 		dependencies = {
-			{
-				'hrsh7th/nvim-cmp',
-				name = 'cmp',
-			}
+			{ 'hrsh7th/nvim-cmp', }
 		},
 		config = function()
 			require('nvim-autopairs').setup()

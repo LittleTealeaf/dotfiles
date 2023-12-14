@@ -24,8 +24,8 @@ return {
 			{ 'hrsh7th/cmp-cmdline' },
 			{ "saecki/crates.nvim" },
 			{ 'hrsh7th/cmp-nvim-lua' },
+			{ 'jmbuhr/otter.nvim' },
 		},
-		name = 'cmp',
 		config = function()
 			local cmp = require('cmp')
 			local luasnip = require('luasnip')
@@ -85,6 +85,7 @@ return {
 					{ name = 'luasnip' },
 				}, {
 					{ name = "crates" },
+					{ name = 'otter' },
 				}, {
 					{ name = 'nvim_lua' },
 					{ name = "path" },

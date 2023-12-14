@@ -3,7 +3,7 @@ return {
 		'folke/neodev.nvim',
 		cond = vim.g.features.lsp,
 		dependencies = {
-			{ 'hrsh7th/nvim-cmp', name = 'cmp' },
+			'hrsh7th/nvim-cmp',
 		},
 		opts = {
 			library = {
