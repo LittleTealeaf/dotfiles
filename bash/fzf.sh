@@ -11,7 +11,9 @@
 export FZF_DEFAULT_OPTS="--color=bg:#181826,fg:#cdd6f4,border:#181826 \
 	--color=header:#cdd6f4,pointer:#cdd6f4,info:#89b4fb \
 	--color=fg+:#cdd6f4,bg+:#45475b \
-	--color=hl:#89b4fb,hl+:#89b4fb"
+	--color=hl:#89b4fb,hl+:#89b4fb \
+	--color=gutter:#181826,prompt:#cba6f7 \
+	--color=marker:#f5e0dc,spinner:#cba6f7"
 
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --height=20 --layout=reverse --info=inline"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'tab:down' --bind 'btab:up' --bind 'ctrl-a:toggle-all' --bind 'alt-enter:toggle'"
