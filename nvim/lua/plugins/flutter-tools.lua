@@ -10,5 +10,6 @@ return {
 			on_attach = function(_, _) end
 		}
 	},
-	config = true
+	config = true,
+	enabled = false,
 }

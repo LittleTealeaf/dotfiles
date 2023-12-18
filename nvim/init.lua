@@ -10,7 +10,8 @@ vim.g.features = {
 	cmp = not kitty_scrollback,
 	dap = not kitty_scrollback,
 	telescope = not kitty_scrollback,
-	treesitter = not kitty_scrollback
+	treesitter = not kitty_scrollback,
+	kitty = not kitty_scrollback,
 }
 
 
@@ -21,3 +22,4 @@ require('config.options')
 require('config.commands')
 require('config.keybinds')
 require('config.lazy')
+require('config.kitty')
