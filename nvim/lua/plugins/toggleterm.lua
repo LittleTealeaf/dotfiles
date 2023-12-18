@@ -3,8 +3,8 @@ return {
 	init = function()
 		vim.api.nvim_create_autocmd('TermOpen', {
 			desc = 'Set Terminal Keymaps',
-			callback = function()
-				local opts = { buffer = 0 }
+			callback = function(a)
+				local opts = { buffer = a.buf }
 				vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
 			end,
 			pattern = 'term://*toggleterm#*'
