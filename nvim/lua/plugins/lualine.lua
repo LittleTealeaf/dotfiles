@@ -76,7 +76,7 @@ return {
 							symbols = {
 								unnamed = '',
 								modified = '󰳼 ',
-								readonly = ' ',
+								readonly = ' ',
 								newfile = ' '
 							}
 						},
