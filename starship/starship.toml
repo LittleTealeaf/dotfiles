@@ -76,9 +76,19 @@ format = "[$symbol($version) ]($style) "
 symbol = '󰢱 '
 format = "[$symbol($version )]($style) "
 
+[deno]
+format = "[$symbol($version )]($style) "
+symbol = "󰯶 "
+
+[meson]
+format = "[$symbol$project]($style) "
+
 [java]
 symbol = "󰬷 "
 style = "red dimmed bold"
+format = "[$symbol($version )]($style) "
+
+[julia]
 format = "[$symbol($version )]($style) "
 
 [gradle]
@@ -89,10 +99,22 @@ format = "[$symbol($version )]($style) "
 symbol = "󰎙 "
 format = "[$symbol($version )]($style) "
 
+[ocaml]
+symbol = " "
+format = '[$symbol($version )(\($switch_indicator$switch_name\) )]($style)'
+
 [rlang]
 symbol = "󰟔 "
 format = "[$symbol($version )]($style) "
 
+[haskell]
+format = "[$symbol($version )]($style) "
+
+[haxe]
+format = "[$symbol($version )]($style) "
+
+[helm]
+format = "[$symbol($version )]($style) "
 
 [golang]
 symbol = "󰟓 "
@@ -102,9 +124,17 @@ format = "[$symbol($version )]($style) "
 symbol = "󱈙 "
 format = "[$symbol($version )]($style) "
 
+[nim]
+symbol = " "
+format = "[$symbol($version)]($style) "
+
 [c]
 symbol = "󰙱 "
-format = "[$symbol($version(-name) )]($style) "
+format = "[$symbol($version(-$name) )]($style) "
+
+[nix_shell]
+format = '[$symbol$state( \($name\))]($style) '
+
 
 [docker_context]
 symbol = " "
@@ -114,13 +144,35 @@ format = "[$symbol$context]($style) "
 symbol = " "
 format = "[$symbol($version )(󰓾 tfm )](style) "
 
+[cobol]
+symbol = "⚙️ "
+format = "[$symbol($version )]($style) "
+
+[elixir]
+symbol = " "
+format = '[$symbol($version \(OTP $otp_version\))]($style)'
+
+[daml]
+format = "[$symbol($version )]($style)"
+
+[elm]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[erlang]
+format = "[$symbol($version )]($style)"
+
 [scala]
 symbol = " "
 format = "[$symbol($version )]($style) "
 
 [bun]
-format = "[$symbol($version )]($style) "
+format = "[$symbol$version]($style) "
 symbol = "󱨎 "
+
+[fennel]
+symbol = " "
+format = "[$symbol($version )]($style)"
 
 [cmake]
 format = "[$symbol($version )]($style) "
@@ -128,6 +180,10 @@ symbol = " "
 
 [zig]
 format = "[$symbol($version )]($style) "
+
+[perl]
+format = "[$symbol($version )]($style)"
+symbol = " "
 
 [username]
 format = "[$user]($style) "
