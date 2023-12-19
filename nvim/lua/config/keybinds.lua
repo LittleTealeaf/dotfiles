@@ -26,5 +26,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { silent = true, desc = "Goto Prev Diagnostic" })
 		vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { silent = true, desc = "Goto Next Diagnostic" })
+
+		vim.keymap.set('n', '<leader>cp', '<C-w>}', { desc = "Open Preview" })
 	end
 })
