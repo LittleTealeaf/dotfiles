@@ -86,51 +86,51 @@ format = "[$symbol$project]($style) "
 [java]
 symbol = "󰬷 "
 style = "red dimmed bold"
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version)]($style) "
 
 [julia]
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version)]($style) "
 
 [gradle]
 symbol = " "
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version)]($style) "
 
 [nodejs]
 symbol = "󰎙 "
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version)]($style) "
 
 [ocaml]
 symbol = " "
-format = '[$symbol($version )(\($switch_indicator$switch_name\) )]($style)'
+format = '[$symbol($version )(\($switch_indicator$switch_name\))]($style) '
 
 [rlang]
 symbol = "󰟔 "
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version )]($style)"
 
 [haskell]
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version )]($style)"
 
 [haxe]
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version )]($style)"
 
 [helm]
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version )]($style)"
 
 [golang]
 symbol = "󰟓 "
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version )]($style)"
 
 [kotlin]
 symbol = "󱈙 "
-format = "[$symbol($version )]($style) "
+format = "[$symbol($version )]($style)"
 
 [nim]
 symbol = " "
-format = "[$symbol($version)]($style) "
+format = "[$symbol($version)]($style)"
 
 [c]
 symbol = "󰙱 "
-format = "[$symbol($version(-$name) )]($style) "
+format = "[$symbol($version(-$name) )]($style)"
 
 [nix_shell]
 format = '[$symbol$state( \($name\))]($style) '
