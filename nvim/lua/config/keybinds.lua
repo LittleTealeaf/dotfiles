@@ -11,22 +11,32 @@ vim.keymap.set('n', '<leader>wv', '<cmd>vsplit<CR>', { silent = true, desc = "Ve
 vim.keymap.set('n', '<leader>wo', '<C-W>o', { silent = true, desc = "Close Other Windows" })
 
 vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(_)
-		vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true, desc = "LSP Hover Definition" })
+	callback = function(args)
+		local bufnr = args.buf
+
+		local function with_opts(desc)
+			return {
+				silent = true,
+				buffer = bufnr,
+				desc = desc
+			}
+		end
+
+		vim.keymap.set('n', 'K', vim.lsp.buf.hover, with_opts("Hover Definition"))
 
 		vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end,
-			{ silent = true, desc = "Format Code" })
+			with_opts("Format File"))
 
-		vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { silent = true, desc = "Goto Definition" })
-		vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { silent = true, desc = "Goto Declaration" })
-		vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, { silent = true, desc = "Goto Implementation" })
-		vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, { silent = true, desc = "Rename Symbol" })
-		vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { silent = true, desc = "Open Line Errors" })
-		vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, { silent = true, desc = "Code Actions" })
+		vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, with_opts("Goto Definition"))
+		vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, with_opts("Goto Declaration"))
+		vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, with_opts("Goto Implementation"))
+		vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, with_opts("Rename Symbol"))
+		vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, with_opts("Open Errors"))
+		vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, with_opts("Code Action"))
 
-		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { silent = true, desc = "Goto Prev Diagnostic" })
-		vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { silent = true, desc = "Goto Next Diagnostic" })
+		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, with_opts("Goto Prev Diagnostic"))
+		vim.keymap.set('n', ']d', vim.diagnostic.goto_next, with_opts("Goto Next Diagnostic"))
 
-		vim.keymap.set('n', '<leader>cp', '<C-w>}', { desc = "Open Preview" })
+		vim.keymap.set('n', '<leader>cp', '<C-w>}', with_opts("Open Preview"))
 	end
 })
