@@ -31,3 +31,7 @@ ga() {
 cdt() {
 	cd ~/tmp
 }
+
+fdf() {
+	fd | fzf
+}
