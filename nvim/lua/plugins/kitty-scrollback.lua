@@ -21,6 +21,12 @@ return {
 						ansi = true
 					},
 				}),
+				['tealeaf_screen'] = config({
+					kitty_get_text = {
+						extent = 'screen',
+						ansi = true
+					}
+				}),
 				['tealeaf_last_cmd'] = config({
 					kitty_get_text = {
 						extent = 'last_cmd_output',
