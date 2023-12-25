@@ -81,14 +81,14 @@ return {
 					['<C-e>'] = cmp.mapping(cmp.mapping.close(), { 'i', 'c' }),
 				},
 				sources = cmp.config.sources({
-					{ name = 'nvim_lsp' },
-					{ name = 'luasnip' },
+					{ name = 'nvim_lsp', priority = 4 },
 				}, {
-					{ name = "crates" },
-					{ name = 'otter' },
+					{ name = "crates", priority = 2 },
+					{ name = 'luasnip', priority = 2 },
+					{ name = 'otter' , priority = 2},
 				}, {
-					{ name = 'nvim_lua' },
-					{ name = "path" },
+					{ name = 'nvim_lua', priority = 1 },
+					{ name = "path", priority = 1 },
 				})
 			})
 
