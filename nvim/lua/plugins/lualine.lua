@@ -41,7 +41,7 @@ return {
 		opts = function()
 			local noice = require('noice')
 			return {
-				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
+				extensions = { 'lazy', 'toggleterm', 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
 				options = {
 					globalstatus = true,
 					theme = 'catppuccin',
