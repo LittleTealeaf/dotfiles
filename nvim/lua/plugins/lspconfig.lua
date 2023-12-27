@@ -68,7 +68,7 @@ local LSP_CONFIG = {
 local function on_lsp_attach(client, bufnr)
 	if vim.g.nightly then
 		if client.server_capabilities.inlayHintProvider then
-			vim.lsp.inlay_hint(bufnr, true)
+			vim.lsp.inlay_hint.enable(bufnr, true)
 		end
 	else
 		require('lsp-inlayhints').on_attach(client, bufnr)
