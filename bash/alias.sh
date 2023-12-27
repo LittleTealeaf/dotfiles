@@ -46,3 +46,7 @@ if command -v eza &> /dev/null; then
 	alias la="eza -a"
 	alias tree="eza --tree"
 fi
+
+if command -v vim &> /dev/null; then
+	alias vi="vim"
+fi
