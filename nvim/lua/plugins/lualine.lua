@@ -32,7 +32,6 @@ return {
 		'nvim-lualine/lualine.nvim',
 		name = 'lualine',
 		dependencies = {
-			{ 'stevearc/oil.nvim' },
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
 			{ 'SmiteshP/nvim-navic' },
@@ -41,7 +40,7 @@ return {
 		opts = function()
 			local noice = require('noice')
 			return {
-				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble', 'nvim-dap-ui', 'mason' },
+				extensions = { 'lazy', 'neo-tree', 'toggleterm', 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
 				options = {
 					globalstatus = true,
 					theme = 'catppuccin',
@@ -130,9 +129,6 @@ return {
 							color_correction = 'static',
 							navic_opts = nil,
 						},
-						{
-							empty_if_nil(require('oil').get_current_dir),
-						}
 					},
 				}
 			}
