@@ -32,6 +32,7 @@ return {
 		'nvim-lualine/lualine.nvim',
 		name = 'lualine',
 		dependencies = {
+			{'steveac/oil.nvim'},
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
 			{ 'SmiteshP/nvim-navic' },
