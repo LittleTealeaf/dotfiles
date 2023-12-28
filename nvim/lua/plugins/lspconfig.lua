@@ -88,35 +88,6 @@ return {
 	},
 	{ 'neovim/nvim-lspconfig', },
 	{
-		"saecki/crates.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvimtools/none-ls.nvim" }
-		},
-		opts = {
-			null_ls = {
-				enabled = true,
-				name = "crates.nvim"
-			}
-		}
-	},
-	{
-		'nvimtools/none-ls.nvim',
-		dependencies = {
-			{ 'nvim-lua/plenary.nvim' }
-		},
-		opts = function()
-			local null_ls = require('null-ls')
-			return {
-				sources = {
-					null_ls.builtins.formatting.prettier,
-					null_ls.builtins.formatting.black
-				}
-			}
-		end,
-		event = 'VeryLazy'
-	},
-	{
 		'williamboman/mason-lspconfig.nvim',
 		cond = vim.g.features.lsp,
 		dependencies = {
