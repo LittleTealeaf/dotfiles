@@ -293,7 +293,7 @@ return {
 		config = load_extension_config('frecency'),
 		keys = {
 			{
-				'<leader>fp', in_dropdown(use_extension('frecency', 'frecency')), desc = "Frecency"
+				'<leader>fx', in_dropdown(use_extension('frecency', 'frecency')), desc = "Frecency"
 			}
 		}
 	}
