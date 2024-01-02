@@ -286,5 +286,15 @@ return {
 		keys = {
 			{ '<leader>fz', in_dropdown(use_extension('zoxide', 'list')), desc = "Zoxide" }
 		}
+	},
+	{
+		'nvim-telescope/telescope-frecency.nvim',
+		dependencies = { 'nvim-telescope/telescope.nvim' },
+		config = load_extension_config('frecency'),
+		keys = {
+			{
+				'<leader>fp', in_dropdown(use_extension('frecency', 'frecency')), desc = "Frecency"
+			}
+		}
 	}
 }
