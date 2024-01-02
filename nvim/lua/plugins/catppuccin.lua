@@ -45,9 +45,6 @@ return {
 				enabled = true,
 			},
 		},
-		dim_inactive = {
-			enabled = false,
-		},
 		custom_highlights = function(c)
 			return {
 				-- flash
