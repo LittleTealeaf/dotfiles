@@ -166,8 +166,8 @@ return {
 							["<Tab>"] = actions.move_selection_next,
 							["<S-Tab>"] = actions.move_selection_previous,
 							['<C-CR>'] = actions.toggle_selection,
-							["<C-Down>"] = actions.toggle_selection + actions.move_selection_worse,
-							["<C-Up>"] = actions.toggle_selection + actions.move_selection_better,
+							["<C-Down>"] = actions.toggle_selection + actions.move_selection_next,
+							["<C-Up>"] = actions.toggle_selection + actions.move_selection_previous,
 							["<C-q>"] = actions.smart_send_to_qflist,
 							['<C-t>'] = trouble.smart_open_with_trouble,
 							['<C-a>'] = actions.toggle_all,
@@ -287,14 +287,4 @@ return {
 			{ '<leader>fz', in_dropdown(use_extension('zoxide', 'list')), desc = "Zoxide" }
 		}
 	},
-	-- {
-	-- 	'nvim-telescope/telescope-frecency.nvim',
-	-- 	dependencies = { 'nvim-telescope/telescope.nvim' },
-	-- 	config = load_extension_config('frecency'),
-	-- 	keys = {
-	-- 		{
-	-- 			'<leader>fx', in_dropdown(use_extension('frecency', 'frecency')), desc = "Frecency"
-	-- 		}
-	-- 	}
-	-- }
 }
