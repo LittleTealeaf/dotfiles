@@ -56,7 +56,7 @@ return {
 		},
 		use_diagnostic_signs = true,
 		win_config = {
-			border = "none"
+			border = Transparent and nil or "none"
 		},
 	},
 	config = function(_, opts)

@@ -37,7 +37,7 @@ return {
 								execute_command = execute_from_toggleterm
 							},
 							hover_actions = {
-								border = {
+								border = Transparent and 'rounded' or {
 									{ '' },
 									{ '' },
 									{ '' },

@@ -53,6 +53,6 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSi
 vim.diagnostic.config({
 	update_in_insert = true,
 	float = {
-		border = "none"
+		border = Transparent and "rounded" or "none"
 	}
 })

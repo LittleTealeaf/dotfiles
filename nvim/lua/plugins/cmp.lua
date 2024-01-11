@@ -38,7 +38,7 @@ return {
 						mode = 'symbol',
 					})
 				},
-				window = false and {
+				window = Transparent and {
 					completion = cmp.config.window.bordered({
 						winhighlight = 'CursorLine:Visual,Search:None'
 					}),
