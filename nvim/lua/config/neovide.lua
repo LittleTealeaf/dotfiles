@@ -1,7 +1,7 @@
 vim.g.neovide_refresh_rate = 60
 vim.g.neovide_transparency = 1
 
-vim.o.guifont = "FiraCode NFM:h12"
+vim.o.guifont = "JetBrainsMono NFM:h12"
 
 
 local function change_scale_factor(delta)
