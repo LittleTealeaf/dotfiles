@@ -235,11 +235,6 @@ return {
 				desc = 'Fuzzy Find in Current Buffer'
 			},
 			{
-				'<leader>ft',
-				in_dropdown(use_builtin('treesitter')),
-				desc = 'List Treesitter Elements'
-			},
-			{
 				'<leader>fc',
 				in_ivy(use_builtin('commands')),
 				desc = "Fuzzy Search Command"
