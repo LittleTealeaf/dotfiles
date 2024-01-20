@@ -201,7 +201,7 @@ return {
 			},
 			{
 				'<leader>fg',
-				in_dropdown(use_builtin('live_grep')),
+				in_ivy(use_builtin('live_grep')),
 				desc = 'Live grep',
 			},
 			{

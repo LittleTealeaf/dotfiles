@@ -78,7 +78,8 @@ return {
 										workspace = {
 											symbol = {
 												search = {
-													kind = 'all_symbols'
+													kind = 'only_types',
+													limit = 1024
 												}
 											}
 										}
