@@ -196,17 +196,17 @@ return {
 			},
 			{
 				'<leader>fd',
-				with_args(use_builtin('find_files'), { previewer = false }),
+				with_args(in_dropdown(use_builtin('find_files')), { previewer = false }),
 				desc = "Find Files"
 			},
 			{
 				'<leader>fg',
-				in_ivy(use_builtin('live_grep')),
+				in_dropdown(use_builtin('live_grep')),
 				desc = 'Live grep',
 			},
 			{
 				'<leader>fb',
-				in_ivy(use_builtin('buffers')),
+				in_dropdown(use_builtin('buffers')),
 				desc = 'List Buffers'
 			},
 			{
