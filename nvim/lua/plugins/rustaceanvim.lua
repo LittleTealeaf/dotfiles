@@ -62,12 +62,18 @@ return {
 								vim.keymap.set('n', '<leader>cli', lspcmd { 'runnables', 'last' },
 									{ buffer = bufnr, desc = "Rust Last Runnable" })
 								vim.keymap.set('n', '<leader>clr', lspcmd { 'runnables' }, { buffer = bufnr, desc = "Rust Runnables" })
+								vim.keymap.set('n', '<leader>cla', lspcmd { 'codeAction' }, { buffer = bufnr, desc = "Code Actions" })
 								vim.keymap.set('n', '<leader>cld', lspcmd { 'debuggables' }, { buffer = bufnr, desc = "Rust Debuggabes" })
-								vim.keymap.set('n', '<leader>cle', lspcmd { 'explainError' }, { buffer = bufnr, desc = "Explain Error" })
+								vim.keymap.set('n', '<leader>cle', lspcmd { 'renderDiagnostic' },
+									{ buffer = bufnr, desc = "Render Diagnostic" })
 								vim.keymap.set('n', '<leader>clp', lspcmd { 'parentModule' }, { buffer = bufnr, desc = "Parent Module" })
 								vim.keymap.set('n', '<leader>clc', lspcmd { 'flyCheck' }, { buffer = bufnr, desc = "Clippy Check" })
 								vim.keymap.set('n', '<leader>clt', lspcmd { 'openCargo' }, { buffer = bufnr, desc = "Open Cargo.toml" })
 								vim.keymap.set('v', 'K', lspcmd { 'hover', 'range' }, { buffer = bufnr, desc = "Hover Range" })
+								vim.keymap.set('n', '<leader>clk', lspcmd { 'moveItem', 'up' }, { buffer = bufnr, desc = "Move Item Up" })
+								vim.keymap.set('n', '<leader>clj', lspcmd { 'moveItem', 'down' },
+									{ buffer = bufnr, desc = "Move Item Down" })
+								vim.keymap.set('n', '<leader>clh', lspcmd { 'joinLines' }, { buffer = bufnr, desc = "Join Lines" })
 							end,
 							settings = function()
 								return {
