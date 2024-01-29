@@ -32,6 +32,7 @@ cmd([[
  	inoremap <C-;> <Esc>
  	inoremap <A-i> <Esc>
  	inoremap <A-a> <Esc>
+	set conceallevel=1
 
  	augroup RestoreCursorShapeOnExit
  		autocmd!
