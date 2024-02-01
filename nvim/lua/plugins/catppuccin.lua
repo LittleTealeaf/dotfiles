@@ -26,11 +26,11 @@ local function custom_highlights(c)
 		TabLineFill = { bg = c.mantle },
 
 		-- Float
-		Float = { bg = c.surface0 },
-		NormalFloat = { bg = c.surface0 },
-		NvimFloat = { bg = c.surface0 },
-		FloatBorder = { fg = c.surface0, bg = c.surface0 },
-		FloatTitle = { bg = c.surface0, fg = c.text, style = { 'bold' } },
+		Float = { bg = c.mantle },
+		NormalFloat = { bg = c.mantle },
+		NvimFloat = { bg = c.mantle },
+		FloatBorder = { fg = c.mantle, bg = c.mantle },
+		FloatTitle = { bg = c.mantle, fg = c.text, style = { 'bold' } },
 
 		-- Toggle Term
 		ToggleTermNormal = { bg = c.mantle },
