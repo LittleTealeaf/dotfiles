@@ -195,7 +195,7 @@ return {
 			},
 			{
 				'<leader>fd',
-				with_args(in_dropdown(use_builtin('find_files')), { previewer = false }),
+				with_args(in_dropdown(use_builtin('find_files')), { previewer = false, layout_config = {height = 0.6} }),
 				desc = "Find Files"
 			},
 			{
