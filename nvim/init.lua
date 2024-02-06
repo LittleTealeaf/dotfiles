@@ -12,6 +12,7 @@ vim.g.features = {
 	telescope = not kitty_scrollback,
 	treesitter = not kitty_scrollback,
 	kitty = not kitty_scrollback,
+	obsidian = not kitty_scrollback
 }
 
 

@@ -1,11 +1,12 @@
 return {
 	"epwalsh/obsidian.nvim",
+	cond = false,
+	enabled = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		'hrsh7th/nvim-cmp',
 	},
 	opts = {
-		detect_cwd = true,
 		mappings = {
 			['gf'] = {
 				action = function()
