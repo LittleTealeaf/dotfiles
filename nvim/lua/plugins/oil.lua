@@ -19,7 +19,6 @@ local function using_telescope(on_select)
 				actions.select_default:replace(function()
 					local selection = action_state.get_selected_entry()
 					if selection == nil then
-						vim.print("hoiawejiofajoiwef")
 						return
 					end
 					actions.close(prompt_bufnr)
