@@ -1,5 +1,6 @@
 local function using_telescope(on_select)
 	return function()
+		-- TODO: Use the .open instead of .open_float when already in a float
 		local conf = require('telescope.config').values
 		local actions = require('telescope.actions')
 		local action_state = require('telescope.actions.state')
