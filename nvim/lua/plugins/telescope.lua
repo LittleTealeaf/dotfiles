@@ -1,4 +1,5 @@
 ---@diagnostic disable: unused-function
+---@diagnostic disable: unused-local
 local function in_dropdown(action)
 	return function(args)
 		if args == nil then
