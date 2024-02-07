@@ -1,33 +1,30 @@
-local function using_telescope(on_select)
-	return function()
-		-- TODO: Use the .open instead of .open_float when already in a float
-		local conf = require('telescope.config').values
-		local actions = require('telescope.actions')
-		local action_state = require('telescope.actions.state')
+local function open_telescope(on_select)
+	local conf = require('telescope.config').values
+	local actions = require('telescope.actions')
+	local action_state = require('telescope.actions.state')
 
-		local opts = require('telescope.themes').get_dropdown({
-			path_display = { 'full' },
-		})
+	local opts = require('telescope.themes').get_dropdown({
+		path_display = { 'full' },
+	})
 
-		opts.layout_config.height = 0.6
+	opts.layout_config.height = 0.6
 
-		require('telescope.pickers').new(opts, {
-			prompt_title = "Open Directory",
-			finder = require('telescope.finders').new_oneshot_job({ 'fd', '-td' }),
-			sorter = conf.generic_sorter({}),
-			attach_mappings = function(prompt_bufnr)
-				actions.select_default:replace(function()
-					local selection = action_state.get_selected_entry()
-					if selection == nil then
-						return
-					end
-					actions.close(prompt_bufnr)
-					on_select(selection.value)
-				end)
-				return true
-			end
-		}):find()
-	end
+	require('telescope.pickers').new(opts, {
+		prompt_title = "Open Directory",
+		finder = require('telescope.finders').new_oneshot_job({ 'fd', '-td' }),
+		sorter = conf.generic_sorter({}),
+		attach_mappings = function(prompt_bufnr)
+			actions.select_default:replace(function()
+				local selection = action_state.get_selected_entry()
+				if selection == nil then
+					return
+				end
+				actions.close(prompt_bufnr)
+				on_select(selection.value)
+			end)
+			return true
+		end
+	}):find()
 end
 
 
@@ -61,19 +58,29 @@ return {
 		{ '<leader>er', function() require('oil').open_float(vim.fn.getcwd()) end, desc = "Open Oil Float in cwd" },
 		{
 			'<leader>ew',
-			using_telescope(function(selection)
-				require('oil').open_float(selection)
-			end
-			),
+
+			function()
+				local dir = require('oil').get_current_dir()
+
+				if dir ~= nil then
+					open_telescope(function(selection)
+						require('oil').open(selection)
+					end)
+				else
+					open_telescope(function(selection)
+						require('oil').open_float(selection)
+					end)
+				end
+			end,
 			desc = "Open Oil in Float with Directory"
 		},
-
 		{
 			'<leader>eq',
-			using_telescope(function(selection)
-				require('oil').open(selection)
-			end
-			),
+			function()
+				open_telescope(function(selection)
+					require('oil').open(selection)
+				end)
+			end,
 			desc = "Open Oil in Directory"
 		}
 	}
