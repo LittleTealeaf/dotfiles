@@ -246,6 +246,7 @@ return {
 		}
 	},
 	{
+		-- TODO: Finally disable this one?
 		'nvim-telescope/telescope-file-browser.nvim',
 		dependencies = { 'nvim-telescope/telescope.nvim' },
 		config = load_extension_config('file_browser'),
