@@ -12,7 +12,7 @@ local function open_telescope(on_select)
 	require('telescope.pickers').new(opts, {
 		prompt_title = "Open Directory",
 		finder = require('telescope.finders').new_oneshot_job({ 'fd', '-td' }),
-		sorter = conf.generic_sorter({}),
+		sorter = conf.generic_sorter(),
 		attach_mappings = function(prompt_bufnr)
 			actions.select_default:replace(function()
 				local selection = action_state.get_selected_entry()
