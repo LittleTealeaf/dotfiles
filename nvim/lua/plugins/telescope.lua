@@ -136,7 +136,7 @@ return {
 
 			vim.keymap.set('n', '<leader>fb', function()
 				builtin['buffers'](themes.get_dropdown({ layout_config = { height = 0.5 } }))
-			end)
+			end, { desc = "Buffers" })
 
 			vim.keymap.set('n', '<leader>fs', function()
 				builtin['lsp_document_symbols'](themes.get_dropdown({}))
@@ -169,7 +169,7 @@ return {
 			end, { desc = "Zoxide" })
 		end,
 		keys = {
-			{ '<leader>fz' }
+			{ '<leader>fz', desc = "Zoxide" }
 		}
 	},
 }
