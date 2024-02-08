@@ -49,7 +49,6 @@ return {
 			['<C-r>'] = 'actions.refresh'
 		}
 	},
-
 	lazy = false,
 	keys = {
 		{ '<leader>et', function() require('oil').open() end,                      desc = "Open Oil" },
