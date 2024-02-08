@@ -1,3 +1,5 @@
+-- TODO: Make better
+
 local LSP_CONFIG = require('lsp_config')
 
 local function on_lsp_attach(client, bufnr)
