@@ -75,13 +75,14 @@ return {
 
 		vim.keymap.set('n', '<leader>et', function() oil.open() end, { desc = "Open Parent Directory" })
 
-		vim.keymap.set('n', '<leader>ef', function()
+		vim.keymap.set('n', '<leader>fe', function()
 			if oil.get_current_dir() ~= nil then
 				open_telescope(oil.open)
 			else
 				open_telescope(oil.open_float)
 			end
-		end, { desc = "Find Directory Float" })
+		end, { desc = "Open Directory in Oil" })
+
 		vim.keymap.set('n', '<leader>eg', function()
 			open_telescope(oil.open)
 		end, { desc = "Find Directory" })

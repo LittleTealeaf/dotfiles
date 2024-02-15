@@ -1,3 +1,14 @@
+local function region_to_text(region)
+	local text = ''
+	local maxcol = vim.v.maxcol
+	for line, cols in vim.spairs(region) do
+		local endcol = cols[2] == maxcol and -1 or cols[2]
+		local chunk = vim.api.nvim_buf_get_text(0, line, cols[1], line, endcol, {})[1]
+		text = ('%s%s\n'):format(text, chunk)
+	end
+	return text
+end
+
 return {
 	{
 		'nvim-telescope/telescope.nvim',
@@ -71,11 +82,6 @@ return {
 					['ui-select'] = {
 						require('telescope.themes').get_dropdown({}),
 					},
-					project = {
-						base_dirs = {
-							{ '~/dev/', max_depth = 2 }
-						},
-					}
 				},
 				defaults = {
 					previewers = {
@@ -130,6 +136,10 @@ return {
 				builtin['live_grep'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
 			end, { desc = "Live Grep" })
 
+			vim.keymap.set('v', '<leader>fg', function()
+				builtin['grep_string'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 }}))
+			end, { desc = "Grep String" })
+
 			vim.keymap.set('n', '<leader>fl', function()
 				builtin['current_buffer_fuzzy_find'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
 			end, { desc = "Live Grep File" })
@@ -153,6 +163,10 @@ return {
 			vim.keymap.set('n', '<leader>fc', function()
 				builtin['commands'](themes.get_ivy({}))
 			end, { desc = "Commands" })
+
+			vim.keymap.set('n', '<leader>fr', function()
+				builtin['lsp_references'](themes.get_dropdown({ layout_config = { width = 0.6, height = 0.4 } }))
+			end, { desc = "Lsp References" })
 		end
 	},
 	{
