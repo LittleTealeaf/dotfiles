@@ -5,6 +5,8 @@ vim.g.nightly = vim.version().api_prerelease
 
 local kitty_scrollback = os.getenv('KITTY_SCROLLBACK') == 'TRUE'
 
+-- TODO: re-formalize this and make kitty start up as fast as possible
+
 vim.g.features = {
 	lsp = not kitty_scrollback,
 	cmp = not kitty_scrollback,
