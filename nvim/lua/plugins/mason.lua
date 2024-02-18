@@ -1,10 +1,15 @@
 -- TODO: Go through package list manually and instead create a script to check / use the system installed version
 return {
 	{
+		'williamboman/mason.nvim',
+		opts = {},
+		cond = vim.g.features.lsp,
+	},
+	{
 		'jay-babu/mason-nvim-dap.nvim',
 		event = 'VeryLazy',
 		dependencies = { 'williamboman/mason.nvim', 'mfussenegger/nvim-dap' },
-		cond = vim.g.features.dap,
+		cond = vim.g.features.lsp,
 		config = function()
 			require('mason-nvim-dap').setup({
 				ensure_installed = { 'debugpy', 'java-debug-adapter', 'js-debug-adapter', 'delve' },
