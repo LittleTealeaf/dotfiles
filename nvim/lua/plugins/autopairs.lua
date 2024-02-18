@@ -1,7 +1,6 @@
 return {
 	{
 		'windwp/nvim-autopairs',
-		cond = vim.g.features.cmp,
 		dependencies = {
 			{ 'hrsh7th/nvim-cmp', }
 		},

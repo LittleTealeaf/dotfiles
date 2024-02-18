@@ -7,24 +7,17 @@ end
 return {
 	{
 		'hrsh7th/nvim-cmp',
-		cond = vim.g.features.cmp,
 		dependencies = {
-			{ 'rcarriga/cmp-dap' },
-			{ 'onsails/lspkind.nvim' },
-			{
-				'hrsh7th/cmp-nvim-lsp',
-				name = 'cmp_nvim_lsp',
-			},
-			{
-				'L3MON4D3/LuaSnip',
-				name = 'luasnip',
-			},
+			{ 'rcarriga/cmp-dap',     cond = vim.g.features.dap },
+			{ 'hrsh7th/cmp-nvim-lsp', cond = vim.g.features.lsp },
+			{ 'onsails/lspkind.nvim', },
+			{ 'L3MON4D3/LuaSnip', },
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-path' },
 			{ 'hrsh7th/cmp-cmdline' },
-			{ "saecki/crates.nvim" },
-			{ 'hrsh7th/cmp-nvim-lua' },
-			{ 'jmbuhr/otter.nvim' },
+			{ "saecki/crates.nvim",   cond = vim.g.features.lsp },
+			{ 'hrsh7th/cmp-nvim-lua', cond = vim.g.features.lsp },
+			{ 'jmbuhr/otter.nvim',    cond = vim.g.features.lsp },
 		},
 		config = function()
 			local cmp = require('cmp')
@@ -81,13 +74,13 @@ return {
 					['<C-e>'] = cmp.mapping(cmp.mapping.close(), { 'i', 'c' }),
 				},
 				sources = cmp.config.sources({
-					{ name = 'nvim_lsp', priority = 4 },
+					vim.g.features.lsp and { name = 'nvim_lsp', priority = 4 } or {},
 				}, {
-					{ name = "crates", priority = 2 },
-					{ name = 'luasnip', priority = 2 },
-					{ name = 'otter' , priority = 2},
+					vim.g.features.lsp and { name = "crates", priority = 2 } or {},
+					vim.g.features.lsp and { name = 'luasnip', priority = 2 } or {},
+					vim.g.features.lsp and { name = 'otter', priority = 2 } or {},
 				}, {
-					{ name = 'nvim_lua', priority = 1 },
+					vim.g.features.lsp and { name = 'nvim_lua', priority = 1 } or {},
 					{ name = "path", priority = 1 },
 				})
 			})

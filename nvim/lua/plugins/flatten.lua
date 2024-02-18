@@ -3,6 +3,7 @@ return {
 		"willothy/flatten.nvim",
 		dependencies = { 'akinsho/toggleterm.nvim' },
 		config = true,
+		cond = not vim.g.scrollback,
 		opts = function()
 			local saved_terminal
 

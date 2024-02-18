@@ -84,7 +84,7 @@ return {
 					lualine_c = {
 						{ 'diff' },
 						{
-							vim.g.features.dap and require('dap').status or "",
+							vim.g.features.dap and (require('dap').status or "") or "",
 						},
 					},
 					lualine_x = {

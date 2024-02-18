@@ -13,7 +13,6 @@ return {
 	{
 		'nvim-telescope/telescope.nvim',
 		event = 'VeryLazy',
-		cond = vim.g.features.telescope,
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			{

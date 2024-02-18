@@ -3,20 +3,24 @@ Nightly = vim.version().api_prerelease
 
 vim.g.nightly = vim.version().api_prerelease
 
-local kitty_scrollback = os.getenv('KITTY_SCROLLBACK') == 'TRUE'
 
--- TODO: re-formalize this and make kitty start up as fast as possible
+local scrollback = os.getenv('KITTY_SCROLLBACK') == 'TRUE'
+
+local lsp = not scrollback
+local dap = lsp
+local git = not scrollback
+local treesitter = not scrollback
+local oil = not scrollback
+
+vim.g.scrollback = scrollback
 
 vim.g.features = {
-	lsp = not kitty_scrollback,
-	cmp = not kitty_scrollback,
-	dap = not kitty_scrollback,
-	telescope = not kitty_scrollback,
-	treesitter = not kitty_scrollback,
-	kitty = not kitty_scrollback,
-	obsidian = not kitty_scrollback
+	lsp = lsp,
+	dap = dap,
+	git = git,
+	treesitter = treesitter,
+	oil = oil,
 }
-
 
 if vim.g.neovide then
 	require("config.neovide")

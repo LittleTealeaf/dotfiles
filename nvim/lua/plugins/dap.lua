@@ -56,10 +56,10 @@ return {
 	},
 	{
 		'rcarriga/nvim-dap-ui',
-		cond = vim.g.features.dap,
 		dependencies = {
 			'mfussenegger/nvim-dap'
 		},
+		cond = vim.g.features.dap,
 		lazy = false,
 		opts = {
 			controls = {

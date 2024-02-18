@@ -4,6 +4,7 @@ return {
 		'nvim-lua/plenary.nvim',
 		'folke/trouble.nvim',
 	},
+	cond = not vim.g.scrollback,
 	lazy = false,
 	opts = {},
 	keys = {

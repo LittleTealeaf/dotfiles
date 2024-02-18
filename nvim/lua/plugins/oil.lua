@@ -4,6 +4,7 @@ return {
 		'nvim-tree/nvim-web-devicons',
 		'nvim-telescope/telescope.nvim',
 	},
+	cond = vim.g.features.oil,
 	config = function()
 		local oil = require('oil')
 		local conf = require('telescope.config').values
