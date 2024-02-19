@@ -81,6 +81,10 @@ return {
 					['ui-select'] = {
 						require('telescope.themes').get_dropdown({}),
 					},
+					['undo'] = {
+						use_delta = false,
+						diff_context_lines = 2,
+					}
 				},
 				defaults = {
 					previewers = {
@@ -122,6 +126,7 @@ return {
 			telescope.load_extension('fzf')
 			telescope.load_extension('noice')
 			telescope.load_extension('harpoon')
+			telescope.load_extension('undo')
 
 			vim.keymap.set('n', '<leader>ff', function()
 				builtin['find_files']()
@@ -136,7 +141,7 @@ return {
 			end, { desc = "Live Grep" })
 
 			vim.keymap.set('v', '<leader>fg', function()
-				builtin['grep_string'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 }}))
+				builtin['grep_string'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
 			end, { desc = "Grep String" })
 
 			vim.keymap.set('n', '<leader>fl', function()
@@ -185,4 +190,24 @@ return {
 			{ '<leader>fz', desc = "Zoxide" }
 		}
 	},
+	{
+		'debugloop/telescope-undo.nvim',
+		dependencies = { 'nvim-telescope/telescope.nvim' },
+		config = function()
+			local telescope = require('telescope')
+			local themes = require('telescope.themes')
+
+			telescope.load_extension('undo')
+
+			vim.keymap.set('n', '<leader>fu', function()
+				telescope.extensions['undo']['undo'](themes.get_dropdown({}))
+			end, { desc = "Undo Tree" })
+		end,
+		keys = {
+			{
+				'<leader>fu',
+				desc = "Undo Tree"
+			}
+		}
+	}
 }

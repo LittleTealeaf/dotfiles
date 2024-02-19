@@ -1,17 +1,40 @@
-[credential]
-	helper = store
-[user]
-	email = thomaskwashnak@gmail.com
-	name = Thomas Kwashnak
-[core]
-	editor = nvim
-[push]
-	autoSetupRemote = true
-	default = current
-[init]
-	defaultBranch = main
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+[credential]                         
+    helper = store                   
+[user]                               
+    email = thomaskwashnak@gmail.com 
+    name = Thomas Kwashnak           
+[init]                               
+    defaultBranch = main             
+[safe]                               
+    directory = /opt/flutter         
+[core]                               
+    autocrlf = input                 
+    editor = nvim                    
+[delta]
+	features = catppuccin-mocha
+[delta "catppuccin-mocha"]
+	blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+	commit-decoration-style = "box ul"
+	dark = true
+	file-decoration-style = "#cdd6f4"
+	file-style = "#cdd6f4"
+	hunk-header-decoration-style = "box ul"
+	hunk-header-file-style = "bold"
+	hunk-header-line-number-style = "bold #a6adc8"
+	hunk-header-style = "file line-number syntax"
+	line-numbers = true
+	line-numbers-left-style = "#6c7086"
+	line-numbers-minus-style = "bold #f38ba8"
+	line-numbers-plus-style = "bold #a6e3a1"
+	line-numbers-right-style = "#6c7086"
+	line-numbers-zero-style = "#6c7086"
+	# 25% red 75% base
+	minus-emph-style = "bold syntax #53394c"
+	# 10% red 90% base
+	minus-style = "syntax #35293b"
+	# 25% green 75% base
+	plus-emph-style = "bold syntax #40504b"
+	# 10% green 90% base
+	plus-style = "syntax #2c333a"
+	# Should match the name of the bat theme
+	syntax-theme = "Catppuccin-mocha"
