@@ -1,3 +1,5 @@
+-- TODO: Set this up to not load unless needed, and then once it does it sets up the keybinds?
+
 local function eval_input()
 	local input = vim.fn.input("Evaluate: ")
 	if input ~= nil then
@@ -89,9 +91,9 @@ return {
 		config = function(_, opts)
 			local dap, dapui = require('dap'), require('dapui')
 			dapui.setup(opts)
-			dap.listeners.after.event_initialized['dapui_config'] = function() dapui.open() end
-			dap.listeners.before.event_terminated['dapui_config'] = function() dapui.close() end
-			dap.listeners.before.event_exited['dapui_config'] = function() dapui.close() end
+			dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+			dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+			dap.listeners.before.event_exited['dapui_config'] = dapui.close
 		end,
 		keys = DAPUI_KEYBINDS
 	},
