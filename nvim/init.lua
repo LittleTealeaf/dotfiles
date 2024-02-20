@@ -30,5 +30,3 @@ require('config.commands')
 require('config.keybinds')
 require('config.lazy')
 require('config.kitty')
-
--- TODO: add .gitignore for lazy-lock, and then just link the whole directory

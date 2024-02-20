@@ -8,11 +8,6 @@ local function config(opts)
 	end
 end
 
--- TODO: https://github.com/mikesmithgh/kitty-scrollback.nvim?tab=readme-ov-file#user-configuration
--- (This will get rid of the need to certain flags on launch)
-
--- Idea: Add a new one that just opens up the window
-
 return {
 	{
 		'mikesmithgh/kitty-scrollback.nvim',
@@ -40,6 +35,18 @@ return {
 						ansi = true
 					},
 				}),
+				['tealeaf_cmd'] = config({
+					kitty_get_text = {
+						extent = 'all',
+						ansi = true
+					},
+					callbacks = {
+						after_ready = function()
+							vim.api.nvim_win_set_cursor(0, { vim.fn.line('.'), 0 })
+							require('kitty-scrollback.windows').open_paste_window()
+						end
+					}
+				})
 			})
 		end,
 	}
