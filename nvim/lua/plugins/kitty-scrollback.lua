@@ -1,10 +1,15 @@
 local function config(opts)
 	return function()
+		vim.opt.scrolloff = 1
+		vim.o.sidescrolloff = 1
 		vim.keymap.set({ 'n' }, '<esc>', '<Plug>(KsbCloseOrQuitAll)', {})
 		vim.keymap.set({ 'n' }, '<M-q>', '<Plug>(KsbCloseOrQuitAll)', {})
 		return opts
 	end
 end
+
+-- TODO: https://github.com/mikesmithgh/kitty-scrollback.nvim?tab=readme-ov-file#user-configuration
+-- (This will get rid of the need to certain flags on launch)
 
 return {
 	{

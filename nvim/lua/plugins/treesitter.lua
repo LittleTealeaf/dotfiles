@@ -1,14 +1,3 @@
-local function treeclimber_action(fun)
-	return function()
-		require('tree-climber')[fun]({
-			skip_comments = true,
-			highlight = true,
-			timeout = 300,
-			higroup = 'Search'
-		})
-	end
-end
-
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -68,50 +57,4 @@ return {
 			})
 		end,
 	},
-	{
-		'drybalka/tree-climber.nvim',
-		dependencies = {
-			'nvim-treesitter/nvim-treesitter',
-		},
-		enabled = false,
-		lazy = true,
-		keys = {
-			{
-				'<C-h>',
-				treeclimber_action('goto_parent'),
-				mode = { 'n', 'v', 'o' },
-				desc = "Goto Parent"
-			},
-			{
-				'<C-l>',
-				treeclimber_action('goto_child'),
-				mode = { 'n', 'v', 'o' },
-				desc = "Goto Child"
-			},
-			{
-				'<C-j>',
-				treeclimber_action('goto_next'),
-				mode = { 'n', 'v', 'o' },
-				desc = "Goto next"
-			},
-			{
-				'<C-k>',
-				treeclimber_action('goto_prev'),
-				mode = { 'n', 'v', 'o' },
-				desc = "Goto Previous"
-			},
-			{
-				'<C-b>',
-				treeclimber_action('select_node'),
-				mode = { 'n', 'o' },
-				desc = "Select Node"
-			},
-			{
-				'<C-n>',
-				treeclimber_action('highlight_node'),
-				mode = { 'n' },
-				desc = "Highlight Node"
-			},
-		}
-	}
 }

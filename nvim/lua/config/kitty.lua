@@ -5,7 +5,7 @@ local function update_title()
 	os.execute('kitty @ set-tab-title " ' .. path .. '"')
 end
 
-if vim.g.features.kitty and os.getenv('TERM') == 'xterm-kitty' then
+if os.getenv('TERM') == 'xterm-kitty' then
 	update_title()
 
 	vim.api.nvim_create_autocmd('DirChanged', {
