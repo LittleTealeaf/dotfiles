@@ -4,6 +4,11 @@ local function config(opts)
 		vim.o.sidescrolloff = 1
 		vim.keymap.set({ 'n' }, '<esc>', '<Plug>(KsbCloseOrQuitAll)', {})
 		vim.keymap.set({ 'n' }, '<M-q>', '<Plug>(KsbCloseOrQuitAll)', {})
+		vim.keymap.set({ 'n' }, '<c-y>', function()
+			require('kitty-scrollback.windows').open_paste_window()
+		end, {})
+
+
 		return opts
 	end
 end
