@@ -6,6 +6,7 @@ return {
 		'neovim/nvim-lspconfig',
 		'nvim-treesitter/nvim-treesitter'
 	},
+	lazy = true,
 	cond = function()
 		local status, _ = os.execute("which quarto &> /dev/null")
 		return status == 0 and vim.g.features.lsp

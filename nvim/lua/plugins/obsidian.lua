@@ -6,6 +6,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		'hrsh7th/nvim-cmp',
 	},
+	event = "InsertEnter",
 	opts = {
 		mappings = {
 			['gf'] = {

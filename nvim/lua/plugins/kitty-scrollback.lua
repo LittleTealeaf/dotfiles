@@ -11,6 +11,8 @@ end
 -- TODO: https://github.com/mikesmithgh/kitty-scrollback.nvim?tab=readme-ov-file#user-configuration
 -- (This will get rid of the need to certain flags on launch)
 
+-- Idea: Add a new one that just opens up the window
+
 return {
 	{
 		'mikesmithgh/kitty-scrollback.nvim',
@@ -37,7 +39,7 @@ return {
 						extent = 'last_cmd_output',
 						ansi = true
 					},
-				})
+				}),
 			})
 		end,
 	}
