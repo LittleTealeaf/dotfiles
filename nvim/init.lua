@@ -4,7 +4,7 @@ Nightly = vim.version().api_prerelease
 vim.g.nightly = vim.version().api_prerelease
 
 
-local scrollback = os.getenv('KITTY_SCROLLBACK') == 'TRUE'
+local scrollback = os.getenv('KITTY_SCROLLBACK_NVIM') == 'true'
 
 local lsp = not scrollback
 local dap = lsp

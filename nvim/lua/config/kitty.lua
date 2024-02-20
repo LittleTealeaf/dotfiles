@@ -2,7 +2,8 @@ local ENV_HOME = tostring(os.getenv("HOME"))
 
 local function update_title()
 	local path = string.gsub(vim.fn.getcwd() or 0, ENV_HOME, '~')
-	os.execute('kitty @ set-tab-title " ' .. path .. '"')
+	local icon = os.getenv('KITTY_SCROLLBACK_NVIM') == 'true' and '󰄛' or ''
+	os.execute('kitty @ set-tab-title "' .. icon .. ' ' .. path .. '"')
 end
 
 if os.getenv('TERM') == 'xterm-kitty' then
