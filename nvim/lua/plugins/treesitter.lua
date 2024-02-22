@@ -1,3 +1,4 @@
+-- TODO: Look at updates
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',

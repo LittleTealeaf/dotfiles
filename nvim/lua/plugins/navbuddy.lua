@@ -9,7 +9,7 @@ return {
 		},
 		opts = function()
 			local actions = require('nvim-navbuddy.actions')
-			local ivy = require("telescope.themes").get_ivy({})
+			local telescope_layout = require("telescope.themes").get_dropdown({})
 			return {
 				window = {
 					border = Transparent and "rounded" or 'none',
@@ -47,7 +47,7 @@ return {
 							display:redraw()
 						end
 					},
-					["t"] = actions.telescope(ivy)
+					["t"] = actions.telescope(telescope_layout)
 				},
 			}
 		end,
