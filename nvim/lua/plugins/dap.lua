@@ -54,8 +54,6 @@ return {
 
 			virtual_text.setup({})
 
-			vim.g.functions['dap-status'] = dap.status
-
 			masondap.setup({
 				ensure_installed = { 'debugpy', 'java-debug-adapter', 'js-debug-adapter', 'delve' },
 				handlers = {},

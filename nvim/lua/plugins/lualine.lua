@@ -83,9 +83,6 @@ return {
 					},
 					lualine_c = {
 						{ 'diff' },
-						{
-							vim.g.functions['dap-status']
-						},
 					},
 					lualine_x = {
 						{
