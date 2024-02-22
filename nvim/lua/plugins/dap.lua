@@ -86,6 +86,8 @@ return {
 			dap.listeners.before.event_terminated['dapui_config'] = dapui.close
 			dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
+			-- TODO: https://microsoft.github.io/debug-adapter-protocol/specification#Events
+
 
 			-- Dap
 			vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Breakpoint" })
