@@ -22,6 +22,12 @@ vim.g.features = {
 	oil = oil,
 }
 
+vim.g.functions = {
+	['dap-status'] = function()
+		return ""
+	end
+}
+
 if vim.g.neovide then
 	require("config.neovide")
 end
