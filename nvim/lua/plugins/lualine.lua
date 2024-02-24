@@ -15,28 +15,14 @@ local function get_recording_name()
 	return "Recording @" .. vim.api.nvim_call_function('reg_recording', {})
 end
 
-
-local function empty_if_nil(func)
-	return function()
-		local item = func()
-		if item ~= nil then
-			return item
-		else
-			return ""
-		end
-	end
-end
-
 return {
 	{
 		'nvim-lualine/lualine.nvim',
-		name = 'lualine',
 		dependencies = {
 			{ 'stevearc/oil.nvim' },
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
 			{ 'SmiteshP/nvim-navic' },
-			-- { 'mfussenegger/nvim-dap',       cond = vim.g.features.dap }
 		},
 		opts = function()
 			local noice = require('noice')
