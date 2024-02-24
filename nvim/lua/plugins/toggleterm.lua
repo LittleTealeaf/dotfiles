@@ -10,25 +10,33 @@ return {
 			pattern = 'term://*toggleterm#*'
 		})
 	end,
-	opts = {
-		open_mapping = [[<c-\>]],
-		size = 20,
-		direction = 'horizontal',
-		float_opts = {
-			border = 'curved',
-		},
-		highlights = {
-			Normal = {
-				link = "ToggleTermNormal"
+	config = function(opts)
+		local toggleterm = require('toggleterm')
+		toggleterm.setup({
+			open_mapping = [[<c-\>]],
+			size = 20,
+			direction = 'horizontal',
+			float_opts = {
+				border = 'curved',
 			},
-			NormalFloat = {
-				link = 'ToggleTermNormal'
-			},
-			FloatBorder = {
-				link = 'ToggleTermBorder'
+			highlights = {
+				Normal = {
+					link = "ToggleTermNormal"
+				},
+				NormalFloat = {
+					link = 'ToggleTermNormal'
+				},
+				FloatBorder = {
+					link = 'ToggleTermBorder'
+				}
 			}
-		}
-	},
+		})
+
+
+		vim.keymap.set('v',[[<c-\>]], function()
+			toggleterm.send_lines_to_terminal("visual_lines", false, {args = vim.v.count})
+		end, {desc = "Send Lines to Terminal"})
+	end,
 	keys = {
 		{ [[<c-\>]], desc = "Toggle Toggleterm" },
 	}
