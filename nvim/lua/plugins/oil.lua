@@ -63,7 +63,7 @@ return {
 		end, { desc = "Open Workspace" })
 
 		vim.keymap.set('n', '<leader>eq', function()
-			oil.open(vim.fn.get_cwd())
+			oil.open(vim.fn.getcwd())
 		end, { desc = "Open Workspace" })
 
 		vim.keymap.set('n', '<leader>er', function()
