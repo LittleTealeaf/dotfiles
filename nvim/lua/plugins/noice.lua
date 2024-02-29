@@ -1,3 +1,5 @@
+-- TODO: Convert to everything in config function
+
 return {
 	{
 		'folke/noice.nvim',
