@@ -55,6 +55,7 @@ return {
 			virtual_text.setup({})
 
 			masondap.setup({
+				automatic_installation = true,
 				ensure_installed = { 'debugpy', 'java-debug-adapter', 'js-debug-adapter', 'delve' },
 				handlers = {},
 			})

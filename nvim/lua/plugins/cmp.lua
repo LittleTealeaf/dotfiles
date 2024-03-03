@@ -25,6 +25,7 @@ return {
 
 		cmp.setup({
 			formatting = {
+				expandable_indicator = true,
 				fields = { "kind", "abbr" },
 				format = lspkind.cmp_format({
 					mode = 'symbol',

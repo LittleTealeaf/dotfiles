@@ -32,12 +32,12 @@ return {
 
 		local opts = require('telescope.themes').get_dropdown({
 			path_display = { 'full' },
-		})
+		}) or {}
 
 		local function open_telescope(on_select)
 			pickers.new(opts, {
 				prompt_title = "Open Directory",
-				finder = finders.new_oneshot_job({ 'fd', '-td' }),
+				finder = finders.new_oneshot_job({ 'fd', '-td' }, {}),
 				sorter = conf.generic_sorter(),
 				attach_mappings = function(prompt_bufnr)
 					actions.select_default:replace(function()
