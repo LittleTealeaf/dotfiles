@@ -42,11 +42,16 @@ return {
 			function(server_name)
 				local lsp_config = LSP_CONFIG[server_name]
 				local settings = nil
+				local before_init = nil
 				if lsp_config ~= nil then
 					settings = lsp_config.settings
+					if lsp_config.before_init ~= nil then
+						before_init = lsp_config.before_init()
+					end
 				end
 				lspconfig[server_name].setup {
 					capabilities = capabilities,
+					before_init = before_init,
 					on_attach = function(client, bufnr)
 						on_lsp_attach(client, bufnr)
 						if lsp_config ~= nil and lsp_config.on_attach ~= nil then
