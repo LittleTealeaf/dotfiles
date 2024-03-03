@@ -7,10 +7,10 @@ return {
 		event = "InsertEnter",
 		cond = vim.g.features.lsp,
 		opts = {
-			library = {
-				plugins = { 'nvim-dap-ui' },
-				types = true
-			}
+			override = function(root_dir, _)
+				return root_dir == os.getenv('DOT_FILES') .. '/nvim'
+			end,
+			lspconfig = false
 		}
 	}
 }

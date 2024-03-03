@@ -44,23 +44,21 @@ return {
 	dependencies = {
 		'nvim-tree/nvim-web-devicons'
 	},
-	opts = {
-		auto_open = false,
-		-- group = false,
-		height = 15,
-		padding = false,
-		action_keys = {
-			jump = { '<cr>' },
-			jump_close = { '<S-cr>' },
-			open_tab = {}
-		},
-		use_diagnostic_signs = true,
-		win_config = {
-			border = Transparent and nil or "none"
-		},
-	},
-	config = function(_, opts)
-		require('trouble').setup(opts)
+	config = function()
+		require('trouble').setup({
+			auto_open = false,
+			height = 15,
+			padding = false,
+			action_keys = {
+				jump = { '<cr>' },
+				jump_close = { '<S-cr>' },
+				open_tab = {}
+			},
+			use_diagnostic_signs = true,
+			win_config = {
+				border = Transparent and nil or "none"
+			},
+		})
 	end,
 	init = function()
 		vim.api.nvim_create_autocmd('FileType', {

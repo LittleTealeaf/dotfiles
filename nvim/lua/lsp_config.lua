@@ -1,6 +1,9 @@
 return {
 	['lua_ls'] = {
-		settigns = {
+		before_init = function()
+			return require('neodev.lsp').before_init
+		end,
+		settings = {
 			Lua = {
 				diagnostics = {
 					globals = { 'vim' }
