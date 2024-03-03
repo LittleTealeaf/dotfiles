@@ -1,6 +1,6 @@
 return {
 	['lua_ls'] = {
-		settigns = {
+		settings = {
 			Lua = {
 				diagnostics = {
 					globals = { 'vim' }
