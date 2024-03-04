@@ -112,7 +112,7 @@ local function transparent_override(c, highlights)
 
 		NavicSeparator = { bg = c.pink, fg = c.pink },
 		NoiceMini = { bg = '' },
-		WhichKeyFloat = {bg = ''},
+		WhichKeyFloat = { bg = '' },
 	}
 
 	for k, v in pairs(overrides) do
