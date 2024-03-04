@@ -1,5 +1,3 @@
--- TODO: Make better
-
 local LSP_CONFIG = require('lsp_config')
 
 local function on_lsp_attach(client, bufnr)
@@ -10,6 +8,19 @@ local function on_lsp_attach(client, bufnr)
 	else
 		require('lsp-inlayhints').on_attach(client, bufnr)
 	end
+end
+
+local function check_system(system)
+	if system['bin'] ~= nil then
+		local file = io.open('/usr/bin/' .. system['bin'], 'r')
+		if file then
+			file:close()
+			return '/usr/bin/' .. system['bin']
+		else
+			return nil
+		end
+	end
+	return nil
 end
 
 return {
@@ -63,5 +74,35 @@ return {
 			end,
 			jdtls = function() end
 		})
+
+
+
+		for lsp, config in pairs(LSP_CONFIG) do
+			if config['system'] ~= nil then
+				local path = check_system(config['system'])
+				if path ~= nil then
+					local settings = nil
+					local before_init = nil
+					if config ~= nil then
+						settings = config.settings
+						if config.before_init ~= nil then
+							before_init = config.before_init()
+						end
+					end
+
+					lspconfig[lsp].setup {
+						capabilities = capabilities,
+						before_init = before_init,
+						settings = settings,
+						on_attach = function(client, bufnr)
+							on_lsp_attach(client, bufnr)
+							if config ~= nil and config.on_attach ~= nil then
+								config.on_attach(client, bufnr)
+							end
+						end
+					}
+				end
+			end
+		end
 	end
 }

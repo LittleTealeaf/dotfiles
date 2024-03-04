@@ -1,4 +1,18 @@
+local function folder_exists(path)
+	local file = io.open(path, 'r')
+	if file then
+		file:close()
+		return true
+	else
+		return false
+	end
+end
+
 local function get_java_debug_path()
+	if folder_exists("/usr/share/java-debug/") then
+		return "/usr/share/java-debug/com.microsoft.java.debug.plugin.jar"
+	end
+
 	local mason_registry = require('mason-registry')
 	local java_debug = mason_registry.get_package('java-debug-adapter')
 	local path = java_debug:get_install_path()
