@@ -111,6 +111,8 @@ local function transparent_override(c, highlights)
 		CursorLine = { bg = '' },
 
 		NavicSeparator = { bg = c.pink, fg = c.pink },
+		NoiceMini = { bg = '' },
+		WhichKeyFloat = {bg = ''},
 	}
 
 	for k, v in pairs(overrides) do
@@ -119,7 +121,6 @@ local function transparent_override(c, highlights)
 
 	return highlights
 end
-
 
 
 return {
