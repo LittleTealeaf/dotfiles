@@ -86,6 +86,8 @@ local system_binaries = {
 	cssls = 'vscode-css-language-server',
 	html = 'vscode-html-language-server',
 	jsonls = 'vscode-json-language-server',
+	prismals = 'prisma-language-server',
+	terraformls = 'terraform-ls',
 }
 
 for lsp, bin in pairs(system_binaries) do
