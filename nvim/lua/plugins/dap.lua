@@ -1,3 +1,5 @@
+-- TODO: Add manual DAP adapters if certain plugins are installed for used languages
+
 return {
 	{
 		'theHamsta/nvim-dap-virtual-text',
