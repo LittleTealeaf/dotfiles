@@ -149,6 +149,10 @@ return {
 			vim.keymap.set('n', '<leader>fr', function()
 				builtin['lsp_references'](themes.get_dropdown({ layout_config = { width = 0.6, height = 0.4 } }))
 			end, { desc = "Lsp References" })
+
+			vim.keymap.set('n', '<leader>fh', function()
+				builtin['help_tags']()
+			end, { desc = "Help Tags" })
 		end
 	},
 }
