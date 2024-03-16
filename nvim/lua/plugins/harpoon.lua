@@ -14,8 +14,11 @@ return {
 		})
 
 		vim.keymap.set('n', '<leader>bt', function() harpoon:list():append() end, { desc = "Harpoon File" })
-		vim.keymap.set('n', '<leader>bg', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-			{ desc = "Toggle Harpoon Menu" })
+		vim.keymap.set('n', '<leader>bg', function()
+			harpoon.ui:toggle_quick_menu(harpoon:list(), {
+				ui_width_ratio = 0.5
+			})
+		end, { desc = "Toggle Harpoon Menu" })
 
 		local keys = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }
 
@@ -23,5 +26,14 @@ return {
 			vim.keymap.set('n', '<A-' .. value .. '>', function() harpoon:list():select(index) end,
 				{ desc = "Harpoon File " .. value })
 		end
+
+
+		harpoon:extend({
+			UI_CREATE = function(cx)
+				vim.keymap.set('n', '<C-v>', function() harpoon.ui:select_menu_item({ vsplit = true }) end,
+					{ buffer = cx.buffer })
+				vim.keymap.set('n', '<C-x>', function() harpoon.ui:select_menu_item({ split = true }) end, { buffer = cx.buffer })
+			end
+		})
 	end,
 }
