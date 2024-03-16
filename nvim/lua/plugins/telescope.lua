@@ -35,11 +35,11 @@ return {
 					pcall(vim.api.nvim_win_set_cursor, 0, picker.original_win_id)
 					for _, entry in ipairs(multi_selection) do
 						if entry.filename then
-							list:append({ value = entry.filename })
+							list:append({ value = entry.filename, context = {} })
 						end
 					end
 				else
-					list:append({ value = picker:get_selection().filename })
+					list:append({ value = picker:get_selection().filename, context = {}})
 				end
 			end
 
