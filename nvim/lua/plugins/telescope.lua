@@ -20,7 +20,7 @@ return {
 			local trouble = require('trouble.providers.telescope')
 			local action_state = require('telescope.actions.state')
 			local pickers = require('telescope.pickers')
-			local mark = require('harpoon.mark')
+			local harpoon = require('harpoon')
 			local flash = require('flash')
 			local builtin = require('telescope.builtin')
 			local themes = require('telescope.themes')
@@ -28,21 +28,18 @@ return {
 			local function open_with_harpoon(prompt_bufnr)
 				local picker = action_state.get_current_picker(prompt_bufnr)
 				local multi_selection = picker:get_multi_selection()
+				local list = harpoon:list()
 
 				pickers.on_close_prompt(prompt_bufnr)
 				if #multi_selection > 0 then
 					pcall(vim.api.nvim_win_set_cursor, 0, picker.original_win_id)
 					for _, entry in ipairs(multi_selection) do
-						local filename
-						if entry.path or entry.filename then
-							filename = entry.path or entry.filename
-							mark.add_file(filename)
+						if entry.filename then
+							list:append({ value = entry.filename })
 						end
 					end
 				else
-					for _, entry in pairs(picker._selection_entry) do
-						mark.add_file(entry)
-					end
+					list:append({ value = picker:get_selection().filename })
 				end
 			end
 
