@@ -27,6 +27,9 @@ return {
 				{ desc = "Harpoon File " .. value })
 		end
 
+		vim.keymap.set('n','<M-[>', function() harpoon:list():prev() end, {desc = "Harpoon Previous"})
+		vim.keymap.set('n','<M-]>', function() harpoon:list():next() end, {desc = "Harpoon Next"})
+
 
 		harpoon:extend({
 			UI_CREATE = function(cx)
