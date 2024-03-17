@@ -1,9 +1,6 @@
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>", { silent = true, desc = "Write File" })
 vim.keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { silent = true, desc = "Write All" })
 
-vim.keymap.set('n', '<A-S-[>', '<cmd>bprevious<CR>', { silent = true })
-vim.keymap.set('n', '<A-S-]>', '<cmd>bnext<CR>', { silent = true })
-
 -- Windows
 vim.keymap.set('n', '<leader>wq', '<cmd>q<CR>', { silent = true, desc = "Close Window" })
 vim.keymap.set('n', '<leader>wx', '<cmd>split<CR>', { silent = true, desc = "Split" })
