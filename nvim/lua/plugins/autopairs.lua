@@ -12,5 +12,4 @@ return {
 			require('nvim-autopairs.completion.cmp').on_confirm_done()
 		)
 	end,
-	enabled = false,
 }
