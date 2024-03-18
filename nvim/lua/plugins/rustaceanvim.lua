@@ -57,9 +57,9 @@ return {
 								if client.server_capabilities.inlayHintProvider then
 									vim.lsp.inlay_hint.enable(bufnr, true)
 								end
-								vim.keymap.set('n', '<leader>clu', lspcmd { 'debuggables', 'last' },
+								vim.keymap.set('n', '<leader>clu', lspcmd { 'debuggables', bang = true },
 									{ buffer = bufnr, desc = "Rust Last Debuggable" })
-								vim.keymap.set('n', '<leader>cli', lspcmd { 'runnables', 'last' },
+								vim.keymap.set('n', '<leader>cli', lspcmd { 'runnables', bang = true },
 									{ buffer = bufnr, desc = "Rust Last Runnable" })
 								vim.keymap.set('n', '<leader>clr', lspcmd { 'runnables' }, { buffer = bufnr, desc = "Rust Runnables" })
 								vim.keymap.set('n', '<leader>cla', lspcmd { 'codeAction' }, { buffer = bufnr, desc = "Code Actions" })

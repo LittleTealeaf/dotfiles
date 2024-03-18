@@ -4,13 +4,14 @@ return {
 		dependencies = {
 			{ 'hrsh7th/nvim-cmp' },
 		},
-		event = "InsertEnter",
 		cond = vim.g.features.lsp,
 		opts = {
-			override = function(root_dir, _)
-				return root_dir == os.getenv('DOT_FILES') .. '/nvim'
+			override = function(root_dir, options)
+				if root_dir == os.getenv('DOT_FILES') .. '/nvim' then
+					options.enabled = true
+					options.plugins = true
+				end
 			end,
-			lspconfig = false
 		}
 	}
 }
