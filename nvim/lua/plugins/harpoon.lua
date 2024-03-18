@@ -27,15 +27,15 @@ return {
 				{ desc = "Harpoon File " .. value })
 		end
 
-		vim.keymap.set('n','<M-[>', function() harpoon:list():prev() end, {desc = "Harpoon Previous"})
-		vim.keymap.set('n','<M-]>', function() harpoon:list():next() end, {desc = "Harpoon Next"})
+		vim.keymap.set('n', '<M-[>', function() harpoon:list():prev() end, { desc = "Harpoon Previous" })
+		vim.keymap.set('n', '<M-]>', function() harpoon:list():next() end, { desc = "Harpoon Next" })
 
 
 		harpoon:extend({
 			UI_CREATE = function(cx)
-				vim.keymap.set('n', '<C-v>', function() harpoon.ui:select_menu_item({ vsplit = true }) end,
-					{ buffer = cx.buffer })
-				vim.keymap.set('n', '<C-x>', function() harpoon.ui:select_menu_item({ split = true }) end, { buffer = cx.buffer })
+				local opts = { buffer = cx.buffer }
+				vim.keymap.set('n', '<C-v>', function() harpoon.ui:select_menu_item({ vsplit = true }) end, opts)
+				vim.keymap.set('n', '<C-x>', function() harpoon.ui:select_menu_item({ split = true }) end, opts)
 			end
 		})
 	end,
