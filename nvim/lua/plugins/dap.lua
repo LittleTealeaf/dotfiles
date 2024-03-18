@@ -44,7 +44,7 @@ return {
 	},
 	{
 		'mfussenegger/nvim-dap',
-		dependencies = { 'williamboman/mason.nvim', 'rcarriga/nvim-dap-ui', 'jay-babu/mason-nvim-dap.nvim', 'theHamsta/nvim-dap-virtual-text', 'rcarriga/cmp-dap' },
+		dependencies = { 'williamboman/mason.nvim', 'rcarriga/nvim-dap-ui', 'jay-babu/mason-nvim-dap.nvim', 'theHamsta/nvim-dap-virtual-text', 'rcarriga/cmp-dap', "nvim-neotest/nvim-nio" },
 		cond = vim.g.features.dap,
 		init = function()
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
