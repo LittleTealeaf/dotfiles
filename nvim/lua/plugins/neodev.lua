@@ -12,6 +12,7 @@ return {
 					options.plugins = true
 				end
 			end,
+			path_strict = true,
 		}
 	}
 }
