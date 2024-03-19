@@ -1,7 +1,12 @@
 local config = {
 	['lua_ls'] = {
 		before_init = function()
-			return require('neodev.lsp').before_init
+			local success, neodev = pcall(require, 'neodev.lsp')
+			if success then
+				return neodev
+			else
+				return nil
+			end
 		end,
 		settings = {
 			Lua = {

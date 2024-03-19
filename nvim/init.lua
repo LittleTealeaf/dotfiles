@@ -1,4 +1,4 @@
-Transparent = false
+Transparent = true
 Nightly = vim.version().api_prerelease
 
 vim.g.nightly = vim.version().api_prerelease

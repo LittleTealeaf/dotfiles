@@ -102,9 +102,10 @@ local function transparent_override(c, highlights)
 		LualineNavic = { bg = '', fg = '' },
 
 		NormalFloat = { bg = '' },
+		Float = { bg = '' },
+		NoicePopup = { bg = '' },
 
 		FloatBorder = { fg = c.surface1, bg = '' },
-		HoverBorder = { fg = c.green, bg = '' },
 
 		TroubleNormal = { bg = '' },
 		LspInfoBorder = { fg = c.text, bg = '' },
