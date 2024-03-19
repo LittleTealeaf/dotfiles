@@ -14,5 +14,4 @@ return {
 	keys = {
 		{ '<leader>fz', desc = "Zoxide" }
 	}
-
 }
