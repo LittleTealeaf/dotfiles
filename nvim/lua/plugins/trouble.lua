@@ -1,3 +1,5 @@
+-- TODO: Apply vim.fn treatment and load all the time
+
 local function quickfix_to_trouble(_)
 	vim.cmd('close')
 	vim.cmd('Trouble quickfix')
