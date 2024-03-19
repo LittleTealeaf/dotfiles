@@ -5,23 +5,6 @@ local function quickfix_to_trouble(_)
 	vim.cmd('Trouble quickfix')
 end
 
-local function action_navigate(direction)
-	return function()
-		require('trouble')[direction]({ skip_groups = true, jump = true })
-	end
-end
-
-local function action_open(mode)
-	return function()
-		require('trouble').open(mode)
-	end
-end
-
-local function action_close()
-	return function()
-		require('trouble').close()
-	end
-end
 
 
 local function toggle_trouble()
@@ -47,7 +30,10 @@ return {
 		'nvim-tree/nvim-web-devicons'
 	},
 	config = function()
-		require('trouble').setup({
+		local trouble = require('trouble')
+
+
+		trouble.setup({
 			auto_open = false,
 			height = 15,
 			padding = false,
@@ -61,6 +47,30 @@ return {
 				border = Transparent and nil or "none"
 			},
 		})
+
+
+		vim.keymap.set('n', '<leader>te', function() trouble.open('workspace_diagnostics') end,
+			{ desc = "Workspace Diagnostics" })
+		vim.keymap.set('n', '<leader>tr', function() trouble.open('lsp_references') end, { desc = "LSP References" })
+		vim.keymap.set('n', '<leader>td', function() trouble.open('lsp_definitions') end, { desc = "LSP Definitions" })
+		vim.keymap.set('n', '<leader>ti', function() trouble.open('lsp_implementations') end,
+			{ desc = "LSP Implementations" })
+		vim.keymap.set('n', '<leader>ty', function() trouble.open('lsp_type_definitions') end,
+			{ desc = "LSP Type Definition" })
+		vim.keymap.set('n', '<leader>tq', function() trouble.open('quickfix') end, { desc = "Quickfix" })
+		vim.keymap.set('n', '<leader>tf', function() trouble.open('telescope') end, { desc = "Telescope" })
+		vim.keymap.set('n', '<leader>tl', function() trouble.open('loclist') end, { desc = "Loclist" })
+		vim.keymap.set('n', '<leader>tt', toggle_trouble, { desc = "Toggle Trouble" })
+		vim.keymap.set('n', '<leader>th', function() trouble.close() end, { desc = "Close" })
+
+		vim.keymap.set('n', '<leader>tj', function() trouble['next']({ skip_groups = true, jump = true }) end,
+			{ desc = "Next" })
+		vim.keymap.set('n', '<leader>tk', function() trouble['prev']({ skip_groups = true, jump = true }) end,
+			{ desc = "Prev" })
+		vim.keymap.set('n', '<leader>tn', function() trouble['first']({ skip_groups = true, jump = true }) end,
+			{ desc = "First" })
+		vim.keymap.set('n', '<leader>tm', function() trouble['last']({ skip_groups = true, jump = true }) end,
+			{ desc = "Last" })
 	end,
 	init = function()
 		vim.api.nvim_create_autocmd('FileType', {
@@ -68,23 +78,4 @@ return {
 			callback = function() vim.schedule(quickfix_to_trouble) end
 		})
 	end,
-	event = {
-		'BufEnter *qf*'
-	},
-	keys = {
-		{ '<leader>te', action_open('workspace_diagnostics'), desc = "Trouble Workspace Diagnostics" },
-		{ '<leader>tr', action_open('lsp_references'),        desc = "Trouble LSP References" },
-		{ '<leader>td', action_open('lsp_definitions'),       desc = "Trouble LSP Definitions" },
-		{ '<leader>ti', action_open('lsp_implementations'),   desc = "Trouble LSP Impelmentations" },
-		{ '<leader>ty', action_open('lsp_type_definitions'),  desc = "Trouble LSP Type Definitions" },
-		{ '<leader>tq', action_open('quickfix'),              desc = "Trouble Quickfix" },
-		{ '<leader>tf', action_open('telescope'),             desc = "Trouble Telescope" },
-		{ '<leader>tl', action_open('loclist'),               desc = "Trouble Loclist" },
-		{ '<leader>tt', toggle_trouble,                       desc = "Toggle Trouble" },
-		{ '<leader>th', action_close(),                       desc = "Close Trouble Window" },
-		{ '<leader>tj', action_navigate('next'),              desc = "Next Trouble Item" },
-		{ '<leader>tk', action_navigate('previous'),          desc = "Previous Trouble Item" },
-		{ '<leader>tn', action_navigate('first'),             desc = 'First Trouble Item' },
-		{ '<leader>tm', action_navigate('last'),              desc = 'Last Trouble Item' },
-	}
 }
