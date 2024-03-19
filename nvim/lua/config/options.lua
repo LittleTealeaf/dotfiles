@@ -7,6 +7,7 @@ local o = vim.o
 o.sidescroll = 1
 o.sidescrolloff = 999
 g.mapleader = ';'
+g.maplocalleader = ' '
 g.do_filetype_lua = 1
 opt.scrolloff = 999
 opt.smartcase = true

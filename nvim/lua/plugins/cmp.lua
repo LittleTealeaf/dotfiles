@@ -17,6 +17,7 @@ return {
 		{ "saecki/crates.nvim",   cond = vim.g.features.lsp },
 		{ 'hrsh7th/cmp-nvim-lua', cond = vim.g.features.lsp },
 		{ 'jmbuhr/otter.nvim',    cond = vim.g.features.lsp },
+		{ 'R-nvim/cmp-r' }
 	},
 	config = function()
 		local cmp = require('cmp')
@@ -76,6 +77,7 @@ return {
 			sources = cmp.config.sources({
 				vim.g.features.lsp and { name = 'nvim_lsp', priority = 4 } or {},
 			}, {
+				vim.g.features.lsp and { name = "cmp_r", priority = 2 } or {},
 				vim.g.features.lsp and { name = "crates", priority = 2 } or {},
 				vim.g.features.lsp and { name = 'luasnip', priority = 2 } or {},
 				vim.g.features.lsp and { name = 'otter', priority = 2 } or {},
