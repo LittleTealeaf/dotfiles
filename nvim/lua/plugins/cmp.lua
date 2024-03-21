@@ -7,7 +7,7 @@ end
 return {
 	'hrsh7th/nvim-cmp',
 	dependencies = {
-		-- { 'rcarriga/cmp-dap',     cond = vim.g.features.dap },
+		{ 'rcarriga/cmp-dap',     cond = vim.g.features.dap },
 		{ 'hrsh7th/cmp-nvim-lsp', cond = vim.g.features.lsp },
 		{ 'onsails/lspkind.nvim', },
 		{ 'L3MON4D3/LuaSnip', },

@@ -13,9 +13,11 @@ return {
 			}
 		})
 
-		vim.keymap.set('n', '<leader>bt', function() harpoon:list():append() end, { desc = "Harpoon File" })
+		local list = harpoon:list()
+
+		vim.keymap.set('n', '<leader>bt', function() list:append() end, { desc = "Harpoon File" })
 		vim.keymap.set('n', '<leader>bg', function()
-			harpoon.ui:toggle_quick_menu(harpoon:list(), {
+			harpoon.ui:toggle_quick_menu(list, {
 				ui_width_ratio = 0.5
 			})
 		end, { desc = "Toggle Harpoon Menu" })
@@ -23,12 +25,12 @@ return {
 		local keys = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }
 
 		for index, value in ipairs(keys) do
-			vim.keymap.set('n', '<A-' .. value .. '>', function() harpoon:list():select(index) end,
+			vim.keymap.set('n', '<A-' .. value .. '>', function() list:select(index) end,
 				{ desc = "Harpoon File " .. value })
 		end
 
-		vim.keymap.set('n', '<M-[>', function() harpoon:list():prev() end, { desc = "Harpoon Previous" })
-		vim.keymap.set('n', '<M-]>', function() harpoon:list():next() end, { desc = "Harpoon Next" })
+		vim.keymap.set('n', '<M-[>', function() list:prev() end, { desc = "Harpoon Previous" })
+		vim.keymap.set('n', '<M-]>', function() list:next() end, { desc = "Harpoon Next" })
 
 
 		harpoon:extend({
