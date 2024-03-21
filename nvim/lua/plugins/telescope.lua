@@ -24,7 +24,7 @@ return {
 			local flash = require('flash')
 			local builtin = require('telescope.builtin')
 			local themes = require('telescope.themes')
-				local harpoon_list = harpoon:list()
+			local harpoon_list = harpoon:list()
 
 			local function open_with_harpoon(prompt_bufnr)
 				local picker = action_state.get_current_picker(prompt_bufnr)
