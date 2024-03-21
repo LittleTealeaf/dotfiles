@@ -88,7 +88,6 @@ return {
 							['<C-a>'] = actions.toggle_all,
 							['<C-h>'] = open_with_harpoon,
 							['<C-s>'] = flash_action,
-							['<C-u>'] = false
 						},
 					}
 				},
