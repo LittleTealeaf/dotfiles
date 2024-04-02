@@ -22,10 +22,21 @@ return {
 			{ 'stevearc/oil.nvim' },
 			{ 'folke/noice.nvim', },
 			{ 'nvim-tree/nvim-web-devicons', },
-			{ 'SmiteshP/nvim-navic' },
+			{ 'folke/trouble.nvim' },
 		},
 		opts = function()
 			local noice = require('noice')
+			local trouble = require('trouble')
+
+			local trouble_symbols = trouble.statusline({
+				mode = "lsp_document_symbols",
+				groups = {},
+				title = false,
+				filter = { range = true },
+				format = "{kind_icon}{symbol.name:Normal}"
+			})
+
+
 			return {
 				extensions = { 'lazy', 'toggleterm', 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
 				options = {
@@ -109,11 +120,10 @@ return {
 				tabline = {
 					lualine_c = {
 						{
-							"navic",
-							color_correction = 'static',
-							navic_opts = nil,
-						},
-					},
+							trouble_symbols.get,
+							cond = trouble_symbols.has
+						}
+					}
 				}
 			}
 		end

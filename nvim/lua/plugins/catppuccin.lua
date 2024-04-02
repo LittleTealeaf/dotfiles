@@ -16,10 +16,6 @@ local function custom_highlights(c)
 
 		-- Lualine
 		LualineRecording = { fg = c.mauve, bg = c.mantle, style = { 'bold' } },
-		LualineNavic = { bg = c.mantle },
-
-		-- Navic
-		NavicText = { fg = c.text },
 
 		-- Tabline
 		TabLine = { bg = c.mantle },
@@ -80,6 +76,9 @@ local function custom_highlights(c)
 		HarpoonBorder = { bg = c.mantle, fg = c.mantle },
 		HarpoonWindow = { bg = c.mantle },
 
+		-- Trouble
+		TroubleNormalNC = { bg = c.mantle },
+
 
 		-- DAP UI
 		DapUIFloatBorder = { bg = c.mantle, fg = c.mantle },
@@ -99,7 +98,6 @@ end
 local function transparent_override(c, highlights)
 	local overrides = {
 		LualineRecording = { fg = c.mauve, bg = '', style = { 'bold' } },
-		LualineNavic = { bg = '', fg = '' },
 
 		NormalFloat = { bg = '' },
 		Float = { bg = '' },
@@ -111,7 +109,6 @@ local function transparent_override(c, highlights)
 		LspInfoBorder = { fg = c.text, bg = '' },
 		CursorLine = { bg = '' },
 
-		NavicSeparator = { bg = c.pink, fg = c.pink },
 		NoiceMini = { bg = '' },
 		WhichKeyFloat = { bg = '' },
 	}
@@ -167,10 +164,6 @@ return {
 			},
 			treesitter = true,
 			telescope = true,
-			navic = {
-				enabled = true,
-				custom_bg = '',
-			},
 		},
 		custom_highlights = function(c)
 			if Transparent then

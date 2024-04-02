@@ -17,7 +17,7 @@ return {
 		config = function()
 			local telescope = require('telescope')
 			local actions = require('telescope.actions')
-			local trouble = require('trouble.providers.telescope')
+			local trouble = require('trouble.sources.telescope')
 			local action_state = require('telescope.actions.state')
 			local pickers = require('telescope.pickers')
 			local harpoon = require('harpoon')
@@ -84,7 +84,7 @@ return {
 							["<C-Down>"] = actions.toggle_selection + actions.move_selection_next,
 							["<C-Up>"] = actions.toggle_selection + actions.move_selection_previous,
 							["<C-q>"] = actions.smart_send_to_qflist,
-							['<C-t>'] = trouble.smart_open_with_trouble,
+							['<C-t>'] = trouble.open,
 							['<C-a>'] = actions.toggle_all,
 							['<C-h>'] = open_with_harpoon,
 							['<C-s>'] = flash_action,

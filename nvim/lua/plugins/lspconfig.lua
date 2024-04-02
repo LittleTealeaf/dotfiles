@@ -41,7 +41,6 @@ return {
 		{ 'williamboman/mason.nvim', },
 		{ 'neovim/nvim-lspconfig', },
 		{ 'SmiteshP/nvim-navbuddy' },
-		{ 'SmiteshP/nvim-navic' }
 	},
 	cond = vim.g.features.lsp,
 	config = function()
