@@ -74,7 +74,7 @@ local config = {
 }
 
 local system_binaries = {
-	pyright = 'pyright-langserver',
+	pylsp = 'pylsp',
 	clangd = 'clangd',
 	bashls = 'bash-language-server',
 	tsserver = 'typescript-language-server',
