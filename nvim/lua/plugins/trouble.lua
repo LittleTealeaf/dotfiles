@@ -36,6 +36,7 @@ return {
 		vim.keymap.set('n', '<leader>tf', function() trouble.open('telescope') end, { desc = "Telescope" })
 		vim.keymap.set('n', '<leader>te', function() trouble.open('diagnostics') end, { desc = "Diagnostics" })
 		vim.keymap.set('n', '<leader>ts', function() trouble.open('lsp_document_symbols') end, { desc = "Symbols" })
+		vim.keymap.set('n', '<leader>tq', function() trouble.open('quickfix') end, { desc = "QuickFix" })
 
 		vim.keymap.set('n', '<leader>th', trouble.close, { desc = "Close" })
 	end
