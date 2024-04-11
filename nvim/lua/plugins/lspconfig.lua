@@ -40,7 +40,6 @@ return {
 		{ 'hrsh7th/cmp-nvim-lsp', },
 		{ 'williamboman/mason.nvim', },
 		{ 'neovim/nvim-lspconfig', },
-		{ 'SmiteshP/nvim-navbuddy' },
 	},
 	cond = vim.g.features.lsp,
 	config = function()

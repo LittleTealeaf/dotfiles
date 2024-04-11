@@ -50,10 +50,6 @@ local function custom_highlights(c)
 		TelescopeResultsDiffChange = { fg = c.text, bg = '' },
 		TelescopeResultsDiffUntracked = { fg = c.surface0, bg = '' },
 
-		-- Navbuddy
-		NavbuddyFloatBorder = { fg = c.base, bg = c.base },
-		NavbuddyNormalFloat = { bg = c.mantle },
-
 		-- Noice
 		NoiceMini = { fg = '', bg = '' },
 		NoiceConfirmBorder = { bg = c.mantle, fg = c.mantle },
