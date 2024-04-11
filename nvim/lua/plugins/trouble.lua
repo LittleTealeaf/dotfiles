@@ -23,7 +23,7 @@ return {
 			win = {
 				size = {
 					height = 12,
-					width = 12,
+					width = 50
 				}
 			},
 			keys = {
