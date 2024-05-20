@@ -1,13 +1,9 @@
 local LSP_CONFIG = require('lsp_config')
 
 local function on_lsp_attach(client, bufnr)
-	if vim.g.nightly then
 		if client.server_capabilities.inlayHintProvider then
 			vim.lsp.inlay_hint.enable(bufnr, true)
 		end
-	else
-		require('lsp-inlayhints').on_attach(client, bufnr)
-	end
 end
 
 local function check_system(system)
@@ -26,17 +22,6 @@ end
 return {
 	'williamboman/mason-lspconfig.nvim',
 	dependencies = {
-		{
-			'lvimuser/lsp-inlayhints.nvim',
-			enabled = not vim.g.nightly,
-			event = "VeryLazy",
-
-			opts = {
-				inlay_hints = {
-					highlight = "Comment"
-				}
-			},
-		},
 		{ 'hrsh7th/cmp-nvim-lsp', },
 		{ 'williamboman/mason.nvim', },
 		{ 'neovim/nvim-lspconfig', },
