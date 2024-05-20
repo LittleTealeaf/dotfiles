@@ -53,9 +53,7 @@ return {
 						},
 						server = {
 							on_attach = function(client, bufnr)
-								if client.server_capabilities.inlayHintProvider then
-									vim.lsp.inlay_hint.enable(bufnr, true)
-								end
+								vim.lsp.inlay_hint.enable(true, {bufnr = bufnr})
 								vim.keymap.set('n', '<leader>clu', lspcmd { 'debuggables', bang = true },
 									{ buffer = bufnr, desc = "Rust Last Debuggable" })
 								vim.keymap.set('n', '<leader>cli', lspcmd { 'runnables', bang = true },
