@@ -11,5 +11,5 @@ return {
 		}
 	},
 	config = true,
-	enabled = false,
+	enabled = true,
 }
