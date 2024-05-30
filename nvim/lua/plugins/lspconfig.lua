@@ -1,8 +1,8 @@
 local LSP_CONFIG = require('lsp_config')
 
-local function on_lsp_attach(client, bufnr)
+local function on_lsp_attach(client, _)
 		if client.server_capabilities.inlayHintProvider then
-			vim.lsp.inlay_hint.enable(bufnr, true)
+			vim.lsp.inlay_hint.enable(true)
 		end
 end
 
