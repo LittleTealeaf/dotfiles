@@ -15,7 +15,7 @@ return {
 
 		local list = harpoon:list()
 
-		vim.keymap.set('n', '<leader>bt', function() list:append() end, { desc = "Harpoon File" })
+		vim.keymap.set('n', '<leader>bt', function() list:add() end, { desc = "Harpoon File" })
 		vim.keymap.set('n', '<leader>bg', function()
 			harpoon.ui:toggle_quick_menu(list, {
 				ui_width_ratio = 0.5
