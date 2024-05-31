@@ -109,7 +109,7 @@ return {
 			vim.keymap.set('n', '<leader>dl', function()
 				local input = vim.fn.input("Log Point: ")
 				if input ~= nil then
-					dap.sert_breakpoint(nil, nil, input)
+					dap.set_breakpoint(nil, nil, input)
 				end
 			end, { desc = "Log Point" })
 			vim.keymap.set('n', '<leader>dt', dap.terminate, { desc = "Terminate" })
