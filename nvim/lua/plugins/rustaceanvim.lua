@@ -28,6 +28,7 @@ return {
 	},
 	ft = { 'rust' },
 	init = function()
+		vim.g.rustfmt_autosave = 1
 		vim.g.rustaceanvim =
 				function()
 					return {
@@ -53,7 +54,7 @@ return {
 						},
 						server = {
 							on_attach = function(client, bufnr)
-								vim.lsp.inlay_hint.enable(true, {bufnr = bufnr})
+								vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 								vim.keymap.set('n', '<leader>clu', lspcmd { 'debuggables', bang = true },
 									{ buffer = bufnr, desc = "Rust Last Debuggable" })
 								vim.keymap.set('n', '<leader>cli', lspcmd { 'runnables', bang = true },
