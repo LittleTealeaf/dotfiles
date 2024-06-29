@@ -32,6 +32,7 @@ return {
 				function()
 					return {
 						tools = {
+							test_executor = "background",
 							executor = {
 								execute_command = execute_from_toggleterm
 							},
