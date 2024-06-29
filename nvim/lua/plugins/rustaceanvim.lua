@@ -77,6 +77,11 @@ return {
 							settings = function()
 								return {
 									['rust-analyzer'] = {
+										completion = {
+											postfix = {
+												enable = false
+											}
+										},
 										check = {
 											command = "clippy"
 										},
