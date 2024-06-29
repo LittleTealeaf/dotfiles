@@ -25,6 +25,7 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
+		'hrsh7th/nvim-cmp',
 	},
 	ft = { 'rust' },
 	init = function()

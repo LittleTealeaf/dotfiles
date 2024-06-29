@@ -26,11 +26,15 @@ return {
 
 		cmp.setup({
 			formatting = {
-				expandable_indicator = true,
 				fields = { "kind", "abbr" },
-				format = lspkind.cmp_format({
-					mode = 'symbol',
-				})
+				format = function(entry, vim_item)
+					vim_item.menu = ""
+					return lspkind.cmp_format({
+						mode = 'symbol',
+						maxwidth = 50,
+						ellipsis_char = '...'
+					})(entry, vim_item)
+				end
 			},
 			window = Transparent and {
 				completion = cmp.config.window.bordered({
