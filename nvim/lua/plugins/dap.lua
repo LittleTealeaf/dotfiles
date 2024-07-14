@@ -44,7 +44,7 @@ return {
 	},
 	{
 		'mfussenegger/nvim-dap',
-		dependencies = { 'williamboman/mason.nvim', 'rcarriga/nvim-dap-ui', 'jay-babu/mason-nvim-dap.nvim', 'theHamsta/nvim-dap-virtual-text', 'rcarriga/cmp-dap', "nvim-neotest/nvim-nio" },
+		dependencies = { 'williamboman/mason.nvim', 'rcarriga/nvim-dap-ui', 'jay-babu/mason-nvim-dap.nvim', 'theHamsta/nvim-dap-virtual-text', 'rcarriga/cmp-dap', "nvim-neotest/nvim-nio", "folke/which-key.nvim" },
 		cond = vim.g.features.dap,
 		init = function()
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
@@ -98,41 +98,51 @@ return {
 
 
 			-- Dap
-			vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Breakpoint" })
-			vim.keymap.set('n', '<leader>dm', function() dap.toggle_breakpoint(vim.fn.input("Condition: ")) end,
-				{ desc = "Conditional Breakpoint" })
-			vim.keymap.set('n', '<leader>da', dap.continue, { desc = "Continue" })
-			vim.keymap.set('n', '<leader>do', dap.step_out, { desc = "Step Out" })
-			vim.keymap.set('n', '<leader>ds', dap.step_over, { desc = "Step Over" })
-			vim.keymap.set('n', '<leader>di', dap.step_into, { desc = "Step Into" })
-			vim.keymap.set('n', '<leader>du', dap.run_last, { desc = "Run Last" })
-			vim.keymap.set('n', '<leader>dl', function()
-				local input = vim.fn.input("Log Point: ")
-				if input ~= nil then
-					dap.set_breakpoint(nil, nil, input)
-				end
-			end, { desc = "Log Point" })
-			vim.keymap.set('n', '<leader>dt', dap.terminate, { desc = "Terminate" })
-			vim.keymap.set('n', '<leader>dx', dap.focus_frame, { desc = "Focus Frame" })
 
-			-- Dap UI
-			vim.keymap.set('n', '<leader>dk', function() dapui.eval(nil, { enter = true }) end, { desc = "Evaluate Selected" })
-			vim.keymap.set('n', '<leader>dv', function() dapui.float_element('scopes', { enter = true }) end,
-				{ desc = "Scopes" })
-			vim.keymap.set('n', '<leader>dw', function() dapui.float_element('watches', { enter = true }) end,
-				{ desc = "Watches" })
-			vim.keymap.set('n', '<leader>de', function()
-				local input = vim.fn.input("Evaluate: ")
-				if input ~= nil then
-					dapui.eval(input, { enter = true })
-				end
-			end, { desc = "Evaluate" })
-			vim.keymap.set('n', '<leader>dr', function() dapui.float_element('repl', { enter = true }) end, { desc = "REPL" })
-			vim.keymap.set('n', '<leader>dd', dapui.toggle, { desc = "Toggle UI" })
-			vim.keymap.set('n', '<leader>df', function() dapui.float_element('stacks', { enter = true }) end,
-				{ desc = "Stacks" })
-			vim.keymap.set('n', '<leader>dj', function() dapui.float_element('breakpoints', { enter = true }) end,
-				{ desc = "Breakpoints" })
+
+			require("which-key").add({
+				{ "<leader>db", dap.toggle_breakpoint, desc = "Breapoint", icon = "●" },
+				{ "<leader>dm", function() dap.toggle_breakpoint(vim.fn.input("Condition: ")) end, desc = "Conditional Breakpoint", icon = "" },
+				{ "<leader>da", dap.continue, desc = "Continue", icon = "" },
+				{ "<leader>do", dap.step_out, desc = "Step Out", icon = "" },
+				{ "<leader>ds", dap.step_over, desc = "Step Over", icon = "" },
+				{ "<leader>di", dap.step_into, desc = "Step Into", icon = "" },
+				{ "<leader>du", dap.run_last, desc = "Run Last", icon = "" },
+				{
+					"<leader>dl",
+					function()
+						local input = vim.fn.input("Log Point: ")
+						if input ~= nil then
+							dap.set_breakpoint(nil, nil, input)
+						end
+					end,
+					desc = "Log Point",
+					icon = ""
+				},
+				{ "<leader>dt", dap.terminate, desc = "Terminate", icon = "" },
+				{ "<leader>dx", dap.focus_frame, desc = "Focus Frame", icon = "" },
+				-- Dap UI
+				{ "<leader>dk", function() dapui.eval(nil, { enter = true }) end, desc = "Evaluate Selected", icon = "" },
+				{ "<leader>dv", function() dapui.float_element('scopes', { enter = true }) end, desc = "Scopes", icon = "󰫧" },
+				{ "<leader>dw", function() dapui.float_element('watches', { enter = true }) end, desc = "Watches", icon = "󰂥" },
+				{
+					"<leader>de",
+					function()
+						local input = vim.fn.input("Evaluate: ")
+						if input ~= nil then
+							dapui.eval(input, { enter = true })
+						end
+					end,
+					desc = "Evaluate",
+					icon = "="
+				},
+
+				{ "<leader>dr", function() dapui.flaot_element('repl', { enter = true }) end, desc = "repl", icon = "" },
+				{ "<leader>dd", dapui.toggle, desc = "Toggle UI", icon = "" },
+				{ "<leader>df", function() dapui.float_element('stacks', { enter = true }) end, desc = "Stacks", icon = "" },
+				{ "<leader>dj", function() dapui.float_element('breakpoints', { enter = true }) end, desc = "Breakpoints", icon = "" },
+
+			})
 		end,
 		keys = {
 			{ '<leader>da', desc = "Continue" },

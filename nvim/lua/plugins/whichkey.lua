@@ -11,6 +11,7 @@ return {
 		end,
 		opts = {
 			preset = "helix",
+			delay = 500,
 			plugins = {
 				marks = false,
 				spelling = {
