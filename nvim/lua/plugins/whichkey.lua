@@ -10,7 +10,7 @@ return {
 			vim.o.timeoutlen = 500
 		end,
 		opts = {
-			preset = "modern",
+			preset = "helix",
 			plugins = {
 				marks = false,
 				spelling = {
@@ -30,7 +30,7 @@ return {
 				{ "<leader>b", group = "Buffers", icon = "" },
 				{ "<leader>c", group = "Code" },
 				{ "<leader>d", group = "Debugger" },
-				{ "<leader>e", group = "File Manger", icon = "" },
+				{ "<leader>e", group = "File Manager", icon = "" },
 				{ "<leader>f", group = "Search" },
 				{ "<leader>g", group = "GitHub" },
 				{ "<leader>n", group = "Noice" },
