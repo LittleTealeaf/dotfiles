@@ -16,43 +16,26 @@ return {
 			window = {
 				border = 'none',
 				winblend = 10
-			}
+			},
+			notify = false
 		},
 		config = function(_, opts)
 			local wk = require('which-key')
 			wk.setup(opts)
 			wk.register({
-				f = {
-					name = 'Files'
-				},
-				b = {
-					name = 'Buffers',
-					w = "Quit",
-					s = "Split",
-					v = "Vertical Split"
-				},
-				c = {
-					name = 'Code',
-				},
-				t = {
-					name = 'Trouble'
-				},
-				g = {
-					name = 'GitHub'
-				},
-				n = {
-					name = 'Noice'
-				},
-				d = {
-					name = 'Debugger'
-				},
-				e = {
-					name = 'Oil'
-				},
-				s = {
-					name = 'Symbols'
-				}
-			}, { prefix = '<leader>' })
+				{ "<leader>b", group = "Buffers" },
+				-- { "<leader>bs", desc = "Split" },
+				-- { "<leader>bv", desc = "Vertical Split" },
+				-- { "<leader>bw", desc = "Quit" },
+				{ "<leader>c", group = "Code" },
+				{ "<leader>d", group = "Debugger" },
+				{ "<leader>e", group = "Oil" },
+				{ "<leader>f", group = "Files" },
+				{ "<leader>g", group = "GitHub" },
+				{ "<leader>n", group = "Noice" },
+				{ "<leader>s", group = "Symbols" },
+				{ "<leader>t", group = "Trouble" },
+			})
 		end
 	}
 }
