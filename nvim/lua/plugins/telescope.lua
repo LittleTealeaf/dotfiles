@@ -13,6 +13,7 @@ return {
 			'nvim-treesitter/nvim-treesitter',
 			'folke/trouble.nvim',
 			'ThePrimeagen/harpoon',
+			'folke/which-key.nvim',
 		},
 		config = function()
 			local telescope = require('telescope')
@@ -25,6 +26,7 @@ return {
 			local builtin = require('telescope.builtin')
 			local themes = require('telescope.themes')
 			local harpoon_list = harpoon:list()
+			local wk = require('which-key')
 
 			local function open_with_harpoon(prompt_bufnr)
 				local picker = action_state.get_current_picker(prompt_bufnr)
@@ -102,53 +104,77 @@ return {
 			telescope.load_extension('noice')
 			telescope.load_extension('harpoon')
 
-			vim.keymap.set('n', '<leader>ff', function()
-				builtin['find_files']()
-			end, { desc = "Find Files with Preview" })
+			wk.add({
+				{ "<leader>ff", builtin['find_files'], desc = "Find Files with Preview", icon = "" },
+				{
+					"<leader>fd",
+					function()
+						builtin['find_files'](themes.get_dropdown({ previewer = false, layout_config = { height = 0.6 } }))
+					end,
+					desc = "Find Files",
+					icon = ""
+				},
+				{
+					"<leader>fg",
+					function()
+						builtin['live_grep'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
+					end,
+					desc = "Live Grep",
+					icon = "󰪸"
+				},
+				{
+					"<leader>fl",
+					function()
+						builtin['current_buffer_fuzzy_find'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
+					end,
+					desc = "Search File",
+					icon = "󰱽"
+				},
+				{
 
-			vim.keymap.set('n', '<leader>fd', function()
-				builtin['find_files'](themes.get_dropdown({ previewer = false, layout_config = { height = 0.6 } }))
-			end, { desc = "Find Files" })
+					"<leader>fb",
+					function()
+						builtin['buffers'](themes.get_dropdown({ layout_config = { height = 0.5 } }))
+					end,
+					desc = "Buffers",
+					icon = "󰾵"
+				},
+				{
+					"<leader>fs",
+					function()
+						builtin['lsp_document_symbols'](themes.get_dropdown({}))
+					end,
+					desc = "Buffer Symbols",
+					icon = "",
+				},
+				{
+					"<leader>fa",
+					function()
+						builtin['lsp_workspace_symbols'](themes.get_dropdown({}))
+					end,
+					desc = "Workspace Symbols",
+					icon = ""
+				},
 
-			vim.keymap.set('n', '<leader>fg', function()
-				builtin['live_grep'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
-			end, { desc = "Live Grep" })
-
-			vim.keymap.set('v', '<leader>fg', function()
-				builtin['grep_string'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
-			end, { desc = "Grep String" })
-
-			vim.keymap.set('n', '<leader>fl', function()
-				builtin['current_buffer_fuzzy_find'](themes.get_dropdown({ layout_config = { height = 0.4, width = 0.6 } }))
-			end, { desc = "Live Grep File" })
-
-			vim.keymap.set('n', '<leader>fb', function()
-				builtin['buffers'](themes.get_dropdown({ layout_config = { height = 0.5 } }))
-			end, { desc = "Buffers" })
-
-			vim.keymap.set('n', '<leader>fs', function()
-				builtin['lsp_document_symbols'](themes.get_dropdown({}))
-			end, { desc = "Buffer Symbols" })
-
-			vim.keymap.set('n', '<leader>fa', function()
-				builtin['lsp_workspace_symbols'](themes.get_dropdown({}))
-			end, { desc = "Workpcae Symbols" })
-
-			vim.keymap.set('n', '<leader>fo', function()
-				builtin['oldfiles'](themes.get_dropdown({}))
-			end, { desc = "Old Files" })
-
-			vim.keymap.set('n', '<leader>fc', function()
-				builtin['commands'](themes.get_ivy({}))
-			end, { desc = "Commands" })
-
-			vim.keymap.set('n', '<leader>fr', function()
-				builtin['lsp_references'](themes.get_dropdown({ layout_config = { width = 0.6, height = 0.4 } }))
-			end, { desc = "Lsp References" })
-
-			vim.keymap.set('n', '<leader>fh', function()
-				builtin['help_tags']()
-			end, { desc = "Help Tags" })
+				{
+					"<leader>fo",
+					function()
+						builtin['oldfiles'](themes.get_dropdown({}))
+					end,
+					desc = "Old Files",
+					icon = ""
+				},
+				{ "<leader>fc", function() builtin['commands'](themes.get_ivy({})) end, desc = "Commands", icon = "" },
+				{
+					"<leader>fr",
+					function()
+						builtin['lsp_references'](themes.get_dropdown({ layout_config = { width = 0.6, height = 0.4 } }))
+					end,
+					desc = "Lsp References",
+					icon = ""
+				},
+				{ "<leader>fh", builtin['help_tags'], desc = "Help Tags", icon = "󰋖" }
+			})
 		end
 	},
 }
