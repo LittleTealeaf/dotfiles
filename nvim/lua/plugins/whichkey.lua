@@ -24,9 +24,6 @@ return {
 			wk.setup(opts)
 			wk.register({
 				{ "<leader>b", group = "Buffers" },
-				-- { "<leader>bs", desc = "Split" },
-				-- { "<leader>bv", desc = "Vertical Split" },
-				-- { "<leader>bw", desc = "Quit" },
 				{ "<leader>c", group = "Code" },
 				{ "<leader>d", group = "Debugger" },
 				{ "<leader>e", group = "Oil" },
