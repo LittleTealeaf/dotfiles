@@ -10,6 +10,7 @@ return {
 			vim.o.timeoutlen = 500
 		end,
 		opts = {
+			preset = "modern",
 			plugins = {
 				marks = false,
 				spelling = {
@@ -25,16 +26,17 @@ return {
 		config = function(_, opts)
 			local wk = require('which-key')
 			wk.setup(opts)
-			wk.register({
-				{ "<leader>b", group = "Buffers" },
+			wk.add({
+				{ "<leader>b", group = "Buffers", icon = "" },
 				{ "<leader>c", group = "Code" },
 				{ "<leader>d", group = "Debugger" },
-				{ "<leader>e", group = "Oil" },
-				{ "<leader>f", group = "Files" },
+				{ "<leader>e", group = "File Manger", icon = "" },
+				{ "<leader>f", group = "Search" },
 				{ "<leader>g", group = "GitHub" },
 				{ "<leader>n", group = "Noice" },
 				{ "<leader>s", group = "Symbols" },
-				{ "<leader>t", group = "Trouble" },
+				{ "<leader>t", group = "Trouble", icon = "" },
+				{ "<leader>w", group = "Windows", icon = "" }
 			})
 		end
 	}

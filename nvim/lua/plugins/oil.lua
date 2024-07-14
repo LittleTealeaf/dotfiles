@@ -60,7 +60,7 @@ return {
 			else
 				oil.open_float(cwd)
 			end
-		end, { desc = "Open Workspace" })
+		end, { desc = "Open Workspace In Float" })
 
 		vim.keymap.set('n', '<leader>eq', function()
 			oil.open(vim.fn.getcwd())
