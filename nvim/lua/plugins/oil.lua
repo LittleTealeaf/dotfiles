@@ -15,6 +15,8 @@ return {
 		local finders = require('telescope.finders')
 		local wk = require('which-key')
 
+		local PREFER_FLOAT = false
+
 
 		oil.setup({
 			view_options = {
@@ -57,7 +59,7 @@ return {
 
 		wk.add({
 			{
-				"<leader>ew",
+				PREFER_FLOAT and "<leader>ew" or "<leader>eq",
 				function()
 					local cwd = vim.fn.getcwd()
 					if oil.get_current_dir() ~= nil then
@@ -70,13 +72,13 @@ return {
 				icon = ""
 			},
 			{
-				"<leader>eq",
+				PREFER_FLOAT and "<leader>eq" or "<leader>ew",
 				function() oil.open(vim.fn.getcwd()) end,
 				desc = "Open Workspace",
 				icon = ""
 			},
 			{
-				"<leader>er",
+				PREFER_FLOAT and "<leader>er" or "<leader>et",
 				function()
 					if oil.get_current_dir() ~= nil then
 						oil.open()
@@ -88,7 +90,7 @@ return {
 				icon = ""
 			},
 			{
-				"<leader>et",
+				PREFER_FLOAT and "<leader>et" or "<leader>er",
 				oil.open,
 				desc = "Open Parent Directory",
 				icon = ""
