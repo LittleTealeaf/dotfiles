@@ -29,7 +29,8 @@ return {
 			},
 			keys = {
 				["<M-CR>"] = "jump_close"
-			}
+			},
+			warn_no_results = false,
 		})
 
 
