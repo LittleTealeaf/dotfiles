@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		'nvim-tree/nvim-web-devicons',
 		'nvim-telescope/telescope.nvim',
+		'folke/which-key.nvim',
 	},
 	cond = vim.g.features.oil,
 	config = function()
@@ -12,6 +13,7 @@ return {
 		local action_state = require('telescope.actions.state')
 		local pickers = require('telescope.pickers')
 		local finders = require('telescope.finders')
+		local wk = require('which-key')
 
 
 		oil.setup({
@@ -53,40 +55,64 @@ return {
 			}):find()
 		end
 
-		vim.keymap.set('n', '<leader>ew', function()
-			local cwd = vim.fn.getcwd()
-			if oil.get_current_dir() ~= nil then
-				oil.open(cwd)
-			else
-				oil.open_float(cwd)
-			end
-		end, { desc = "Open Workspace In Float" })
+		wk.add({
+			{
+				"<leader>ew",
+				function()
+					local cwd = vim.fn.getcwd()
+					if oil.get_current_dir() ~= nil then
+						oil.open(cwd)
+					else
+						oil.open_float(cwd)
+					end
+				end,
+				desc = "Open Workspace in Float",
+				icon = ""
+			},
+			{
+				"<leader>eq",
+				function() oil.open(vim.fn.getcwd()) end,
+				desc = "Open Workspace",
+				icon = ""
+			},
+			{
+				"<leader>er",
+				function()
+					if oil.get_current_dir() ~= nil then
+						oil.open()
+					else
+						oil.open_float()
+					end
+				end,
+				desc = "Open Parent Directory in Float",
+				icon = ""
+			},
+			{
+				"<leader>et",
+				oil.open,
+				desc = "Open Parent Directory",
+				icon = ""
+			},
+			{
+				"<leader>fe",
+				function()
+					if oil.get_current_dir() ~= nil then
+						open_telescope(oil.open)
+					else
+						open_telescope(oil.open_float)
+					end
+				end,
+				desc = "Find Directory in Float",
+				icon = ""
+			},
+			{
+				"<leader>eg",
+				function() open_telescope(oil.open) end,
+				desc = "Find Directory",
+				icon = ""
+			}
 
-		vim.keymap.set('n', '<leader>eq', function()
-			oil.open(vim.fn.getcwd())
-		end, { desc = "Open Workspace" })
-
-		vim.keymap.set('n', '<leader>er', function()
-			if oil.get_current_dir() ~= nil then
-				oil.open()
-			else
-				oil.open_float()
-			end
-		end, { desc = "Open Parent Directory in Float" })
-
-		vim.keymap.set('n', '<leader>et', function() oil.open() end, { desc = "Open Parent Directory" })
-
-		vim.keymap.set('n', '<leader>fe', function()
-			if oil.get_current_dir() ~= nil then
-				open_telescope(oil.open)
-			else
-				open_telescope(oil.open_float)
-			end
-		end, { desc = "Open Directory in Oil" })
-
-		vim.keymap.set('n', '<leader>eg', function()
-			open_telescope(oil.open)
-		end, { desc = "Find Directory" })
+		})
 	end,
 	lazy = false,
 }
