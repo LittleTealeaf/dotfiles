@@ -18,9 +18,8 @@ return {
 					enabled = true
 				}
 			},
-			window = {
+			win = {
 				border = 'none',
-				winblend = 10
 			},
 			notify = false
 		},
