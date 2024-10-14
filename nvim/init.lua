@@ -12,7 +12,7 @@ local git = not scrollback
 local treesitter = true
 local oil = not scrollback
 
-vim.g.scrollback = scrollback
+vim.g.kitty_scrollback = scrollback
 
 vim.g.features = {
 	lsp = lsp,

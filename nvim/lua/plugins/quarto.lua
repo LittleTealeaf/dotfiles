@@ -1,5 +1,6 @@
 return {
 	'quarto-dev/quarto-nvim',
+	enable = false,
 	dependencies = {
 		'jmbuhr/otter.nvim',
 		'hrsh7th/nvim-cmp',

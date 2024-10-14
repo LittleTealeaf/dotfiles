@@ -19,7 +19,7 @@ local config = {
 			}
 		}
 	},
-	['tsserver'] = {
+	['ts_ls'] = {
 		settings = {
 			typescript = {
 				inlayHints = {
@@ -77,7 +77,7 @@ local system_binaries = {
 	pylsp = 'pylsp',
 	clangd = 'clangd',
 	bashls = 'bash-language-server',
-	tsserver = 'typescript-language-server',
+	ts_ls = 'typescript-language-server',
 	texlab = 'texlab',
 	['lua_ls'] = 'lua-language-server',
 	gopls = 'gopls',
