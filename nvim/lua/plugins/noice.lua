@@ -54,7 +54,6 @@ return {
 			vim.keymap.set('n', '<leader>nl', '<cmd>Noice last<CR>', { desc = "Open Last Notification" })
 			vim.keymap.set('n', '<leader>nm', '<cmd>messages<CR>', { desc = "Open Messages" })
 			vim.keymap.set('n', '<leader>nc', '<cmd>Noice dismiss<CR>', { desc = "Clear Messages" })
-			vim.keymap.set('n', '<leader>nn', '<cmd>Noice dismiss<CR>', { desc = "Clear Messages" })
 			vim.keymap.set('n', '<leader>ne', '<cmd>Noice errors<CR>', { desc = "Noice Errors" })
 
 			vim.keymap.set('c', '<S-Enter>', function() noice.redirect(vim.fn.getcmdline()) end, { desc = "Redirect Command" })
