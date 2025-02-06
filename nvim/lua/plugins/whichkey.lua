@@ -13,7 +13,7 @@ return {
 			preset = "helix",
 			delay = 500,
 			plugins = {
-				marks = false,
+				marks = true,
 				spelling = {
 					enabled = true
 				}
