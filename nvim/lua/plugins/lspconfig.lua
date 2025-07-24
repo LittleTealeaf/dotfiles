@@ -32,7 +32,7 @@ return {
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-		require('mason-lspconfig').setup_handlers({
+		require('mason-lspconfig').setup({
 			function(server_name)
 				local lsp_config = LSP_CONFIG[server_name]
 				local settings = nil
