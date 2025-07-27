@@ -37,7 +37,7 @@ return {
 					})(entry, vim_item)
 				end
 			},
-			window = Transparent and {
+			window = BorderedWindows and {
 				completion = cmp.config.window.bordered({
 					winhighlight = 'CursorLine:Visual,Search:None'
 				}),

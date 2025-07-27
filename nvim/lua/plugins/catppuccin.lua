@@ -162,7 +162,7 @@ return {
 			telescope = true,
 		},
 		custom_highlights = function(c)
-			if Transparent then
+			if Transparent and BorderedWindows then
 				return transparent_override(c, custom_highlights(c))
 			else
 				return custom_highlights(c)

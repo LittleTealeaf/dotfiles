@@ -1,4 +1,5 @@
-Transparent = false
+Transparent = true
+BorderedWindows = false
 Nightly = vim.version().api_prerelease
 
 vim.g.nightly = vim.version().api_prerelease

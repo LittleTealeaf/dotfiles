@@ -50,7 +50,7 @@ cmd([[
 vim.diagnostic.config({
 	update_in_insert = true,
 	float = {
-		border = Transparent and "rounded" or "none"
+		border = BorderedWindows and "rounded" or "none"
 	},
 	signs = {
 		text = {

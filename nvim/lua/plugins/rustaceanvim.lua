@@ -41,7 +41,7 @@ return {
 					replace_builtin_hover = true
 				},
 				hover_actions = {
-					border = Transparent and 'rounded' or {
+					border = BorderedWindows and 'rounded' or {
 						{ '' },
 						{ '' },
 						{ '' },
