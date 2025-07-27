@@ -1,5 +1,5 @@
-Transparent = true
-BorderedWindows = false
+Transparent = (os.getenv("NVIM_TRANSPARENT") or "1") == "1"
+BorderedWindows = (os.getenv("NVIM_BORDERED_WINDOWS") or "0") == "1"
 Nightly = vim.version().api_prerelease
 
 vim.g.nightly = vim.version().api_prerelease
