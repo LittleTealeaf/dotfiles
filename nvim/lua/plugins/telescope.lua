@@ -14,7 +14,7 @@ return {
 			'folke/trouble.nvim',
 			'ThePrimeagen/harpoon',
 			'folke/which-key.nvim',
-			'stevearc/oil.nvim',
+			vim.g.features.oil and 'stevearc/oil.nvim' or nil,
 		},
 		config = function()
 			local telescope = require('telescope')
@@ -30,7 +30,6 @@ return {
 			local themes = require('telescope.themes')
 			local harpoon_list = harpoon:list()
 			local wk = require('which-key')
-			local oil = require('oil')
 
 			local function open_with_harpoon(prompt_bufnr)
 				local picker = action_state.get_current_picker(prompt_bufnr)
@@ -178,54 +177,60 @@ return {
 					icon = ""
 				},
 				{ "<leader>fh", builtin['help_tags'], desc = "Help Tags", icon = "󰋖" },
-				{
-					'<leader>fe',
-					function()
-						pickers.new(themes.get_dropdown({ path_display = { 'full' } }) or {}, {
-							prompt_title = "Open Directory",
-							finder = finders.new_oneshot_job({ 'fd', '-td' }, {}),
-							sorter = config.generic_sorter(),
-							attach_mappings = function(prompt_bufnr)
-								actions.select_default:replace(function()
-									local selection = action_state.get_selected_entry()
-									if selection == nil then
-										return
-									end
-									actions.close(prompt_bufnr)
-									if oil.get_current_dir() ~= nil then
-										oil.open(selection.value)
-									else
-										oil.open_float(selection.value)
-									end
-								end)
-								return true
-							end
-						}):find()
-					end,
-					desc = "Open Directory"
-				},
-				{
-					'<leader>eg',
-					function()
-						pickers.new(themes.get_dropdown({ path_display = { 'full' } }) or {}, {
-							prompt_title = "Open Directory",
-							finder = finders.new_oneshot_job({ 'fd', '-td' }, {}),
-							sorter = config.generic_sorter(),
-							attach_mappings = function(prompt_bufnr)
-								actions.select_default:replace(function()
-									local selection = action_state.get_selected_entry()
-									if selection == nil then
-										return
-									end
-									actions.close(prompt_bufnr)
-									oil.open(selection.value)
-								end)
-								return true
-							end
-						}):find()
-					end
-				}
 			})
+
+			if vim.g.features.oil then
+				local oil = require('oil')
+				wk.add({
+					{
+						'<leader>fe',
+						function()
+							pickers.new(themes.get_dropdown({ path_display = { 'full' } }) or {}, {
+								prompt_title = "Open Directory",
+								finder = finders.new_oneshot_job({ 'fd', '-td' }, {}),
+								sorter = config.generic_sorter(),
+								attach_mappings = function(prompt_bufnr)
+									actions.select_default:replace(function()
+										local selection = action_state.get_selected_entry()
+										if selection == nil then
+											return
+										end
+										actions.close(prompt_bufnr)
+										if oil.get_current_dir() ~= nil then
+											oil.open(selection.value)
+										else
+											oil.open_float(selection.value)
+										end
+									end)
+									return true
+								end
+							}):find()
+						end,
+						desc = "Open Directory"
+					},
+					{
+						'<leader>eg',
+						function()
+							pickers.new(themes.get_dropdown({ path_display = { 'full' } }) or {}, {
+								prompt_title = "Open Directory",
+								finder = finders.new_oneshot_job({ 'fd', '-td' }, {}),
+								sorter = config.generic_sorter(),
+								attach_mappings = function(prompt_bufnr)
+									actions.select_default:replace(function()
+										local selection = action_state.get_selected_entry()
+										if selection == nil then
+											return
+										end
+										actions.close(prompt_bufnr)
+										oil.open(selection.value)
+									end)
+									return true
+								end
+							}):find()
+						end
+					}
+				})
+			end
 		end
 	},
 }
