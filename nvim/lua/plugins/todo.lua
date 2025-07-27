@@ -6,6 +6,7 @@ return {
 	},
 	cond = not vim.g.kitty_scrollback,
 	lazy = false,
+	event = "VeryLazy",
 	opts = {},
 	keys = {
 		{ '<leader>tw', '<cmd>TodoTrouble<CR>', desc = "Todo" }
