@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		{ 'hrsh7th/nvim-cmp' },
 	},
+	event = "InsertEnter",
 	cond = vim.g.features.lsp,
 	opts = {
 		override = function(root_dir, options)

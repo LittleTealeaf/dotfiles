@@ -26,6 +26,7 @@ return {
 		{ 'williamboman/mason.nvim', },
 		{ 'neovim/nvim-lspconfig', },
 	},
+	event = 'VeryLazy',
 	cond = vim.g.features.lsp,
 	config = function()
 		local lspconfig = require('lspconfig')

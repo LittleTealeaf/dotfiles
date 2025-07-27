@@ -11,6 +11,7 @@ return {
 	build = function()
 		require('nvim-treesitter.install').update({ with_sync = true })
 	end,
+	event = "VeryLazy",
 	config = function()
 		local configs = require('nvim-treesitter.configs')
 

@@ -28,6 +28,7 @@ return {
 		'hrsh7th/nvim-cmp',
 	},
 	ft = { 'rust' },
+	event = 'VeryLazy',
 	init = function()
 		vim.g.rustaceanvim =
 		{

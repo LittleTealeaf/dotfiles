@@ -2,17 +2,12 @@ return {
 	'stevearc/oil.nvim',
 	dependencies = {
 		'nvim-tree/nvim-web-devicons',
-		'nvim-telescope/telescope.nvim',
 		'folke/which-key.nvim',
 	},
 	cond = vim.g.features.oil,
+	event = 'VeryLazy',
 	config = function()
 		local oil = require('oil')
-		local conf = require('telescope.config').values
-		local actions = require('telescope.actions')
-		local action_state = require('telescope.actions.state')
-		local pickers = require('telescope.pickers')
-		local finders = require('telescope.finders')
 		local wk = require('which-key')
 
 		local PREFER_FLOAT = false
@@ -33,29 +28,6 @@ return {
 				['<C-r>'] = 'actions.refresh'
 			}
 		})
-
-		local opts = require('telescope.themes').get_dropdown({
-			path_display = { 'full' },
-		}) or {}
-
-		local function open_telescope(on_select)
-			pickers.new(opts, {
-				prompt_title = "Open Directory",
-				finder = finders.new_oneshot_job({ 'fd', '-td' }, {}),
-				sorter = conf.generic_sorter(),
-				attach_mappings = function(prompt_bufnr)
-					actions.select_default:replace(function()
-						local selection = action_state.get_selected_entry()
-						if selection == nil then
-							return
-						end
-						actions.close(prompt_bufnr)
-						on_select(selection.value)
-					end)
-					return true
-				end
-			}):find()
-		end
 
 		wk.add({
 			{
@@ -95,25 +67,6 @@ return {
 				desc = "Open Parent Directory",
 				icon = ""
 			},
-			{
-				"<leader>fe",
-				function()
-					if oil.get_current_dir() ~= nil then
-						open_telescope(oil.open)
-					else
-						open_telescope(oil.open_float)
-					end
-				end,
-				desc = "Find Directory in Float",
-				icon = ""
-			},
-			{
-				"<leader>eg",
-				function() open_telescope(oil.open) end,
-				desc = "Find Directory",
-				icon = ""
-			}
-
 		})
 	end,
 	lazy = false,

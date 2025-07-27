@@ -7,6 +7,7 @@ return {
 		'neovim/nvim-lspconfig',
 		'nvim-treesitter/nvim-treesitter'
 	},
+	event = "InsertEnter",
 	lazy = true,
 	cond = function()
 		local status, _ = os.execute("which quarto &> /dev/null")
