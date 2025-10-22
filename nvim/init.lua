@@ -5,6 +5,9 @@ Nightly = vim.version().api_prerelease
 vim.g.nightly = vim.version().api_prerelease
 
 
+local obsidian_dir = os.getenv("OBSIDIAN_DIR")
+local obsidian = (obsidian_dir and obsidian_dir ~= "") and true or false
+
 local scrollback = os.getenv('KITTY_SCROLLBACK_NVIM') == 'true'
 
 local lsp = not scrollback
@@ -21,6 +24,7 @@ vim.g.features = {
 	git = git,
 	treesitter = treesitter,
 	oil = oil,
+	obsidian = obsidian,
 }
 
 if vim.g.neovide then
