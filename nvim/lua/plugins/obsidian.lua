@@ -1,3 +1,5 @@
+OBSIDIAN_ENV = os.getenv("OBSIDIAN_DIR")
+
 local function get_workspaces(base_path)
 	if not base_path or base_path == "" then
 		return {}
