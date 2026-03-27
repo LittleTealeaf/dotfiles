@@ -42,7 +42,6 @@ return {
 				extensions = { 'lazy', 'toggleterm', 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
 				options = {
 					globalstatus = true,
-					theme = 'catppuccin',
 					disabled_filetypes = {
 						statusline = {
 							'TelescopePrompt',

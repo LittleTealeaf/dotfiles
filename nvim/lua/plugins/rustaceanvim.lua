@@ -78,6 +78,9 @@ return {
 				settings = function()
 					return {
 						['rust-analyzer'] = {
+							diagnostics = {
+								disabled = {"inactive-code"}
+							},
 							completion = {
 								postfix = {
 									enable = false
