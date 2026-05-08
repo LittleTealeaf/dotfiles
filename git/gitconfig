@@ -38,3 +38,9 @@
 	plus-style = "syntax #2c333a"
 	# Should match the name of the bat theme
 	syntax-theme = "Catppuccin-mocha"
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
