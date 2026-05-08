@@ -25,6 +25,10 @@ return {
 		local lspkind = require('lspkind')
 
 		cmp.setup({
+			preselect = cmp.PreselectMode.None,
+			completion = {
+				completeopt = 'menu,menuone,noinsert,noselect'
+			},
 			formatting = {
 				fields = { "kind", "abbr" },
 				format = function(entry, vim_item)
