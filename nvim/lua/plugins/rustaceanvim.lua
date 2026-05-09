@@ -4,7 +4,25 @@ local function lspcmd(params)
 	end
 end
 
-local function execute_from_toggleterm(command, args, cwd)
+local function execute_command(command, args, cwd)
+	local snacks = require('snacks')
+	local shell = require('rustaceanvim.shell')
+	local cmd = shell.make_command_from_args(command, args)
+	snacks.terminal.open(cmd, {
+		cwd = cwd,
+		auto_close=false,
+		win = {
+			style = "minimal",
+			border = "none",
+			position = "top",
+			keys = {
+				["q"] = { "close", mode = "n", desc = "Close Terminal" }
+			}
+		},
+	})
+
+
+
 	-- TODO
 	-- local Terminal = require('toggleterm.terminal').Terminal
 	-- local shell = require('rustaceanvim.shell')
@@ -25,7 +43,7 @@ vim.g.rustaceanvim = {
 	tools = {
 		test_executor_alias = "background",
 		executor = {
-			execute_command = execute_from_toggleterm
+			execute_command = execute_command
 		},
 		['hover-actions'] = {
 			replace_builtin_hover = true

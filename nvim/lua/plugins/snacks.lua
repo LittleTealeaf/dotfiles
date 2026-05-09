@@ -72,29 +72,26 @@ snacks.setup({
 })
 
 
--- Files & Search
-vim.keymap.set("n", "<leader>ff", function() snacks.picker.smart() end, { desc = "Smart" })
-vim.keymap.set("n", "<leader>fd", function() snacks.picker.files() end,
-	{ desc = "Find Files (No Preview)" })
-vim.keymap.set("n", "<leader>fg", function() snacks.picker.grep() end, { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>fl", function() snacks.picker.lines() end, { desc = "Search Buffer" })
 
--- Buffers & History
-vim.keymap.set("n", "<leader>fb", function() snacks.picker.buffers() end, { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fo", function() snacks.picker.recent() end, { desc = "Old Files" })
+-- Pickers
+vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smart" })
 
--- LSP & Commands
-vim.keymap.set("n", "<leader>fs", function() snacks.picker.lsp_symbols() end,
-	{ desc = "Buffer Symbols" })
-vim.keymap.set("n", "<leader>fa", function() snacks.picker.lsp_workspace_symbols() end,
-	{ desc = "Workspace Symbols" })
-vim.keymap.set("n", "<leader>fr", function() snacks.picker.lsp_references() end,
-	{ desc = "LSP References" })
-vim.keymap.set("n", "<leader>fc", function() snacks.picker.commands() end, { desc = "Commands" })
-vim.keymap.set("n", "<leader>fh", function() snacks.picker.help() end, { desc = "Help Tags" })
+vim.keymap.set('n', '<leader>fs', snacks.picker.smart, { desc = "Smart" })
+vim.keymap.set('n', '<leader>fd', snacks.picker.files, { desc = "Files" })
+vim.keymap.set('n', '<leader>fg', snacks.picker.grep, { desc = "Grep" })
+vim.keymap.set('n', '<leader>fl', snacks.picker.lines, { desc = "Lines" })
 
--- Lazy git
+vim.keymap.set('n', '<leader>fz', snacks.picker.lsp_symbols, { desc = "Lsp Symbols" })
+vim.keymap.set('n', '<leader>fa', snacks.picker.lsp_workspace_symbols, { desc = "Workspace Symbols" })
+
+vim.keymap.set('n', '<leader>fc', snacks.picker.commands, { desc = "Commands" })
+vim.keymap.set('n', '<leader>fh', snacks.picker.help, { desc = "Help" })
+
+vim.keymap.set('n', '<leader>fm', snacks.picker.marks, { desc = "Marks" })
+
+-- Git
 vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
+vim.keymap.set("n", "<leader>gs", function() snacks.picker.git_status() end, { desc = "Git Status" })
 
 -- Terminal
 vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
@@ -104,20 +101,27 @@ vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, 
 -- Oil.nvim integration using Snacks.picker
 
 local function oil_prompt(callback)
-	snacks.picker.files({
-		title = "Open Directory",
-		cmd = "fd",
-		args = { "-td" }, -- Only show directories
-		layout = "select",
-		actions = {
-			confirm = function(picker, item)
-				picker:close()
-				if item and item.file then
-					callback(item.file)
-				end
-			end,
-		},
-	})
+  -- Use Snacks.picker.pick to define a custom process source
+  Snacks.picker.pick({
+    title = "Open Directory",
+		finder = "proc",
+    cmd = "fd",
+    args = { "--type", "d", "--hidden", "--exclude", ".git" },
+    layout = "select",
+    -- Important: transform ensures the picker UI handles the items as directories
+    transform = function(item)
+      item.file = item.text
+      item.dir = true
+    end,
+    actions = {
+      confirm = function(picker, item)
+        picker:close()
+        if item and item.file then
+          callback(item.file)
+        end
+      end,
+    },
+  })
 end
 
 vim.keymap.set(

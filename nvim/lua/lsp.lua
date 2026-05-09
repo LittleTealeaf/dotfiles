@@ -1,12 +1,40 @@
-vim.o.complete = "o^3"
-vim.o.completeopt = "fuzzy,menuone,noselect,popup"
-vim.o.autocomplete = true
+-- AUTOCOMPLETION
+
+vim.o.complete = "o"
+vim.o.completeopt = "menu,menuone,noselect,popup"
+vim.o.autocomplete = false
 vim.o.pumheight = 15
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+	callback = function()
+		-- Create a one-shot listener that turns autocomplete back on
+		-- only AFTER you've pressed a key in Insert mode
+		vim.api.nvim_create_autocmd("InsertCharPre", {
+			once = true,
+			callback = function()
+				vim.o.autocomplete = true
+			end,
+		})
+	end,
+})
+
+-- Turn it back off when leaving Insert mode so it's ready for the next entry
+vim.api.nvim_create_autocmd("InsertLeave", {
+	callback = function()
+		vim.o.autocomplete = false
+	end,
+})
+
+
+
+-- Formatting
 
 vim.api.nvim_create_user_command('Format', function()
 	vim.lsp.buf.format()
 end, {})
 
+
+-- Diagnostics
 
 vim.diagnostic.config({
 	update_in_insert = true,
@@ -23,6 +51,9 @@ vim.diagnostic.config({
 	}
 })
 
+
+
+-- On Attach
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
@@ -51,10 +82,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts("Goto Prev Diagnostic"))
 		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts("Goto Next Diagnostic"))
 		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
-
-
-
-
 	end
 })
 
