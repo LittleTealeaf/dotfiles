@@ -66,7 +66,7 @@ lualine.setup({
 		lualine_x = {
 			{
 				'lsp_status',
-				icon = '', -- f013
+				icon = '',
 				symbols = {
 					spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
 					done = '✓',
