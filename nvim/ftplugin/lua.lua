@@ -14,3 +14,6 @@ if cwd == dot_files then
 	})
 	require('lazydev').setup({})
 end
+
+
+vim.keymap.set('n', '<leader>clr', '<cmd>luafile %<CR>')

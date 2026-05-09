@@ -77,8 +77,8 @@ Snacks.setup({
 
 
 -- Files & Search
-vim.keymap.set("n", "<leader>ff", function() Snacks.picker.smart() end, { desc = "Smart" })
-vim.keymap.set("n", "<leader>fd", function() Snacks.picker.files() end,
+vim.keymap.set("n", "<leader>fd", function() Snacks.picker.smart() end, { desc = "Smart" })
+vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end,
 	{ desc = "Find Files (No Preview)" })
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fl", function() Snacks.picker.lines() end, { desc = "Search Buffer" })
@@ -150,3 +150,7 @@ vim.api.nvim_create_autocmd("User", {
 		end
 	end,
 })
+
+vim.api.nvim_create_user_command('Highlights', function()
+	Snacks.picker.highlights({ preview = true })
+end, { desc = 'Open Snacks highlights picker' })
