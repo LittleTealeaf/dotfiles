@@ -7,11 +7,6 @@ require('config.commands')
 require('config.keybinds')
 
 
-vim.pack.add({
-	'https://github.com/nvim-telescope/telescope.nvim',
-
-})
-
 
 GITHUB_URL = function(name)
 	return string.format("https://github.com/%s", name)
