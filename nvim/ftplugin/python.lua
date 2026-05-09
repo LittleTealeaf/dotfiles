@@ -20,8 +20,6 @@ vim.lsp.start({
 			Github('mfussenegger/nvim-dap-python'),
 			Github('mfussenegger/nvim-dap'),
 		})
-require('dap-python').setup('uv')
+		require('dap-python').setup()
 	end
 })
-
-

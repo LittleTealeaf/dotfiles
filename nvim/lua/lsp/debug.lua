@@ -2,52 +2,17 @@
 vim.pack.add({
 	Github('mfussenegger/nvim-dap'),
 	Github('rcarriga/nvim-dap-ui'),
-	Github('theHamsta/nvim-dap-virtual-text'),
-	Github('nvim-neotest/nvim-nio'),
+	Github('igorlfs/nvim-dap-view'),
 })
-
 
 local dap = require('dap')
-local dapui = require('dapui')
-local virtual_text = require('nvim-dap-virtual-text')
-
-
-virtual_text.setup({})
-dapui.setup({
-	controls = {
-		enabled = true,
-		element = 'console'
-	},
-	floating = {
-		border = 'rounded'
-	},
-	layouts = {
-		{
-			position = "bottom",
-			size = 10,
-			elements = {
-				{
-					id = 'watches',
-					size = 0.4
-				},
-				{
-					id = "console",
-					size = 0.6
-				},
-			}
-		},
-	}
-})
-
-
-require('lsp.debug-adapters')
 
 
 dap.defaults.fallback.exception_breakpoints = { 'raised', 'uncaught', 'rust_panic' }
 
-dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-dap.listeners.before.event_exited['dapui_config'] = dapui.close
+-- dap.listeners.after.event_initialized['dap_view_config'] = dap_view.open
+-- dap.listeners.before.event_terminated['dap_view_config'] = dap_view.close
+-- dap.listeners.before.event_exited['dap_view_config'] = dap_view.close
 
 
 vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
@@ -70,19 +35,24 @@ vim.keymap.set('n', '<leader>dt', dap.terminate, { desc = "Terminate" })
 vim.keymap.set('n', '<leader>du', dap.run_last, { desc = "Run Last" })
 
 
+---- DAP VIEW
 
-vim.keymap.set('n', '<leader>dk', function() dapui.eval(nil, { enter = true }) end, { desc = "Evaluate Selected" })
-vim.keymap.set('n', '<leader>dv', function() dapui.float_element('scopes', { enter = true }) end, { desc = "Scopes" })
-vim.keymap.set('n', '<leader>dw', function() dapui.float_element('watches', { enter = true }) end, { desc = "Watches" })
-vim.keymap.set('n', '<leader>de', function()
-	local input = vim.fn.input("Evaluate: ")
-	if input ~= nil then
-		dapui.eval(input, { enter = true })
-	end
-end, { desc = "Evaluate" }
-)
-vim.keymap.set('n', '<leader>dr', function() dapui.float_element('repl', { enter = true }) end, { desc = "repl" })
-vim.keymap.set('n', '<leader>dd', dapui.toggle, { desc = "Toggle UI" })
-vim.keymap.set('n', '<leader>df', function() dapui.float_element('stacks', { enter = true }) end, { desc = "Stacks" })
-vim.keymap.set('n', '<leader>dj', function() dapui.float_element('brgeakpoints', { enter = true }) end,
-	{ desc = "Breakpoints" })
+local dap_view = require('dap-view')
+
+dap_view.setup({
+	auto_toggle = true,
+	windows = {
+		terminal = {
+			position = "right"
+		}
+	},
+	virtual_text = {
+		enabled = true,
+	}
+})
+
+
+
+vim.keymap.set('n', '<leader>dd', function() dap_view.toggle(true) end, { desc = "Toggle Dap View" })
+vim.keymap.set('n', '<leader>dk', dap_view.hover, { desc = "Dap View Hover" })
+vim.keymap.set('n', '<leader>dw', dap_view.add_expr, { desc = "Show Watches" })

@@ -20,22 +20,6 @@ local function execute_command(command, args, cwd)
 			}
 		},
 	})
-
-
-
-	-- TODO
-	-- local Terminal = require('toggleterm.terminal').Terminal
-	-- local shell = require('rustaceanvim.shell')
-	--
-	-- Terminal:new({
-	-- 	cmd = shell.make_command_from_args(command, args),
-	-- 	dir = cwd,
-	-- 	close_on_exit = false,
-	-- 	auto_scroll = true,
-	-- 	on_open = function(t)
-	-- 		vim.api.nvim_buf_set_keymap(t.bufnr, 'n', 'q', '<cmd>close<CR>', { noremap = true, silent = true })
-	-- 	end
-	-- }):toggle()
 end
 
 
