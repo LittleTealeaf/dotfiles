@@ -5,11 +5,12 @@ Nightly = vim.version().api_prerelease
 
 if Scrollback then
 	require('scrollback')
+else
+	require('lsp')
 end
 
 require('config.options')
 require('config.keybinds')
-require('lsp')
 require('plugins')
 
 

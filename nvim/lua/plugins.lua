@@ -27,9 +27,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
 			github('jghauser/mkdir.nvim'),
 			github('sitiom/nvim-numbertoggle'),
 			github('folke/flash.nvim'),
+			github('windwp/nvim-autopairs')
 		})
 
 		require('gitsigns').setup()
+		require('nvim-autopairs').setup()
 		require('plugins.snacks')
 		require('plugins.lualine')
 		require('plugins.rustaceanvim')
