@@ -101,27 +101,27 @@ vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, 
 -- Oil.nvim integration using Snacks.picker
 
 local function oil_prompt(callback)
-  -- Use Snacks.picker.pick to define a custom process source
-  Snacks.picker.pick({
-    title = "Open Directory",
+	-- Use Snacks.picker.pick to define a custom process source
+	Snacks.picker.pick({
+		title = "Open Directory",
 		finder = "proc",
-    cmd = "fd",
-    args = { "--type", "d", "--hidden", "--exclude", ".git" },
-    layout = "select",
-    -- Important: transform ensures the picker UI handles the items as directories
-    transform = function(item)
-      item.file = item.text
-      item.dir = true
-    end,
-    actions = {
-      confirm = function(picker, item)
-        picker:close()
-        if item and item.file then
-          callback(item.file)
-        end
-      end,
-    },
-  })
+		cmd = "fd",
+		args = { "--type", "d", "--hidden", "--exclude", ".git" },
+		layout = "select",
+		-- Important: transform ensures the picker UI handles the items as directories
+		transform = function(item)
+			item.file = item.text
+			item.dir = true
+		end,
+		actions = {
+			confirm = function(picker, item)
+				picker:close()
+				if item and item.file then
+					callback(item.file)
+				end
+			end,
+		},
+	})
 end
 
 vim.keymap.set(
