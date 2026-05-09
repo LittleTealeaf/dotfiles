@@ -1,4 +1,3 @@
-
 vim.pack.add({
 	Github('catppuccin/nvim'),
 	Github('stevearc/oil.nvim'),
@@ -19,19 +18,22 @@ vim.api.nvim_create_autocmd("VimEnter", {
 			Github('lewis6991/gitsigns.nvim'),
 			Github('folke/snacks.nvim'),
 			Github('nvim-treesitter/nvim-treesitter'),
+			Github('nvim-treesitter/nvim-treesitter-textobjects'),
 			Github('mrcjkb/rustaceanvim'),
 			Github('nvim-lualine/lualine.nvim'),
 			Github('jghauser/mkdir.nvim'),
 			Github('sitiom/nvim-numbertoggle'),
 			Github('folke/flash.nvim'),
 			Github('windwp/nvim-autopairs'),
-			Github('folke/which-key.nvim')
+			Github('windwp/nvim-ts-autotag'),
+			Github('folke/which-key.nvim'),
 		})
 
 		require('gitsigns').setup()
 		require('nvim-autopairs').setup()
 		require('plugins.snacks')
 		require('plugins.lualine')
+		require('plugins.treesitter')
 		require('plugins.rustaceanvim')
 		require('plugins.flash')
 		require('which-key').setup()
