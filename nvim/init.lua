@@ -1,3 +1,5 @@
+require('vim._core.ui2').enable()
+
 Scrollback = os.getenv('KITTY_SCROLLBACK_NVIM') == 'true'
 Transparent = (os.getenv("NVIM_TRANSPARENT") or "1") == "1"
 BorderedWindows = (os.getenv("NVIM_BORDERED_WINDOWS") or "0") == "1"
