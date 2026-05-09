@@ -1,11 +1,7 @@
-vim.pack.add({
-	'https://github.com/folke/snacks.nvim',
-	'https://github.com/stevearc/oil.nvim',
-})
+local snacks = require('snacks')
+local oil = require('oil')
 
-local Snacks = require('snacks')
-
-Snacks.setup({
+snacks.setup({
 	lazygit = { enabled = true },
 	rename = { enabled = true },
 	input = {
@@ -77,39 +73,38 @@ Snacks.setup({
 
 
 -- Files & Search
-vim.keymap.set("n", "<leader>fd", function() Snacks.picker.smart() end, { desc = "Smart" })
-vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end,
+vim.keymap.set("n", "<leader>fd", function() snacks.picker.smart() end, { desc = "Smart" })
+vim.keymap.set("n", "<leader>ff", function() snacks.picker.files() end,
 	{ desc = "Find Files (No Preview)" })
-vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>fl", function() Snacks.picker.lines() end, { desc = "Search Buffer" })
+vim.keymap.set("n", "<leader>fg", function() snacks.picker.grep() end, { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>fl", function() snacks.picker.lines() end, { desc = "Search Buffer" })
 
 -- Buffers & History
-vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fo", function() Snacks.picker.recent() end, { desc = "Old Files" })
+vim.keymap.set("n", "<leader>fb", function() snacks.picker.buffers() end, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fo", function() snacks.picker.recent() end, { desc = "Old Files" })
 
 -- LSP & Commands
-vim.keymap.set("n", "<leader>fs", function() Snacks.picker.lsp_symbols() end,
+vim.keymap.set("n", "<leader>fs", function() snacks.picker.lsp_symbols() end,
 	{ desc = "Buffer Symbols" })
-vim.keymap.set("n", "<leader>fa", function() Snacks.picker.lsp_workspace_symbols() end,
+vim.keymap.set("n", "<leader>fa", function() snacks.picker.lsp_workspace_symbols() end,
 	{ desc = "Workspace Symbols" })
-vim.keymap.set("n", "<leader>fr", function() Snacks.picker.lsp_references() end,
+vim.keymap.set("n", "<leader>fr", function() snacks.picker.lsp_references() end,
 	{ desc = "LSP References" })
-vim.keymap.set("n", "<leader>fc", function() Snacks.picker.commands() end, { desc = "Commands" })
-vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end, { desc = "Help Tags" })
+vim.keymap.set("n", "<leader>fc", function() snacks.picker.commands() end, { desc = "Commands" })
+vim.keymap.set("n", "<leader>fh", function() snacks.picker.help() end, { desc = "Help Tags" })
 
 -- Lazy git
-vim.keymap.set("n", "<leader>gl", function() Snacks.lazygit() end, { desc = "Lazy Git" })
+vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
 
 -- Terminal
-vim.keymap.set({ "n", "t" }, "<C-\\>", function() Snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
+vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
 
 
 
 -- Oil.nvim integration using Snacks.picker
 
-local oil = require('oil')
 local function oil_prompt(callback)
-	Snacks.picker.files({
+	snacks.picker.files({
 		title = "Open Directory",
 		cmd = "fd",
 		args = { "-td" }, -- Only show directories
@@ -146,11 +141,11 @@ vim.api.nvim_create_autocmd("User", {
 	pattern = "OilActionsPost",
 	callback = function(event)
 		if event.data.actions[1].type == "move" then
-			Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
+			snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
 		end
 	end,
 })
 
 vim.api.nvim_create_user_command('Highlights', function()
-	Snacks.picker.highlights({ preview = true })
+	snacks.picker.highlights({ preview = { enabled = true } })
 end, { desc = 'Open Snacks highlights picker' })

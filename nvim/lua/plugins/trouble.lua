@@ -1,8 +1,4 @@
-vim.pack.add({
-	'https://github.com/folke/trouble.nvim',
-	'https://github.com/nvim-tree/nvim-web-devicons',
-})
-
+local trouble = require('trouble')
 
 vim.api.nvim_create_autocmd('FileType', {
 	pattern = 'qf',
@@ -15,7 +11,6 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 
-local trouble = require('trouble')
 
 trouble.setup({
 	focus = true,

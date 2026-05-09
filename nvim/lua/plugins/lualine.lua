@@ -1,11 +1,3 @@
-vim.pack.add({
-	'https://github.com/stevearc/oil.nvim',
-	'https://github.com/nvim-tree/nvim-web-devicons',
-	'https://github.com/folke/trouble.nvim',
-	'https://github.com/nvim-lualine/lualine.nvim',
-})
-
-
 local trouble = require('trouble')
 local lualine = require('lualine')
 

@@ -1,7 +1,3 @@
-vim.pack.add({
-	"https://github.com/mrcjkb/rustaceanvim"
-})
-
 local function lspcmd(params)
 	return function()
 		vim.cmd.RustLsp(params)
