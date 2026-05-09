@@ -1,0 +1,119 @@
+
+vim.o.complete = ".,o"
+vim.o.completeopt = "fuzzy,menuone,noselect"
+vim.o.autocomplete = true
+vim.o.pumheight = 15
+
+vim.api.nvim_create_user_command('Format', function()
+	vim.lsp.buf.format()
+end, {})
+
+
+vim.diagnostic.config({
+	update_in_insert = true,
+	float = {
+		border = BorderedWindows and "rounded" or "none"
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "󰌵",
+		},
+	}
+})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
+	callback = function(args)
+		local bufnr = args.buf
+
+		local function opts(desc)
+			return {
+				silent = true,
+				buffer = bufnr,
+				desc = desc
+			}
+		end
+
+
+		vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({border = "rounded"}) end, opts("Hover Definition"))
+
+		vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end,
+			opts("Format File"))
+
+		vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts("Goto Definition"))
+		vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, opts("Goto Declaration"))
+		vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, opts("Goto Implementation"))
+		vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, opts("Rename Symbol"))
+		vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, opts("Open Errors"))
+		vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, opts("Code Action"))
+
+		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts("Goto Prev Diagnostic"))
+		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts("Goto Next Diagnostic"))
+
+		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
+	end
+})
+
+
+local function has_words_before()
+	local col = vim.fn.col('.') - 1
+	return col ~= 0 and vim.fn.getline('.'):sub(col, col):match('%s') == nil
+end
+
+
+vim.keymap.set('i', '<Tab>', function()
+	if vim.fn.pumvisible() == 1 then
+		return '<C-n>'                          -- Next item in popup menu
+	elseif vim.snippet.active({ direction = 1 }) then
+		return '<cmd>lua vim.snippet.jump(1)<CR>' -- Neovim 0.10+ native snippet jump
+	elseif has_words_before() then
+		return '<C-x><C-o>'                     -- Trigger built-in Omnifunc
+	else
+		return '<Tab>'                          -- Fallback
+	end
+end, { expr = true, replace_keycodes = true, desc = "Autocomplete/Snippet Next" })
+
+vim.keymap.set('i', '<S-Tab>', function()
+	if vim.fn.pumvisible() == 1 then
+		return '<C-p>' -- Previous item in popup menu
+	elseif vim.snippet.active({ direction = -1 }) then
+		return '<cmd>lua vim.snippet.jump(-1)<CR>'
+	else
+		return '<S-Tab>' -- Fallback
+	end
+end, { expr = true, replace_keycodes = true, desc = "Autocomplete/Snippet Prev" })
+
+vim.keymap.set('i', '<CR>', function()
+	if vim.fn.pumvisible() == 1 then
+		return '<C-y>' -- Built-in keystroke to Accept selection
+	else
+		return '<CR>' -- Fallback
+	end
+end, { expr = true, replace_keycodes = true, desc = "Confirm Autocomplete" })
+
+vim.keymap.set('i', '<C-e>', function()
+	if vim.fn.pumvisible() == 1 then
+		return '<C-e>' -- Built-in keystroke to Cancel completion
+	else
+		return '<C-e>' -- Fallback
+	end
+end, { expr = true, replace_keycodes = true, desc = "Cancel Autocomplete" })
+
+
+vim.api.nvim_create_autocmd("LspProgress", {
+	---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
+	callback = function(ev)
+		local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+		vim.notify(vim.lsp.status(), "info", {
+			id = "lsp_progress",
+			title = "LSP Progress",
+			opts = function(notif)
+				notif.icon = ev.data.params.value.kind == "end" and " "
+						or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+			end,
+		})
+	end,
+})

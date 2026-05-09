@@ -1,6 +1,5 @@
 vim.pack.add({
 	'https://github.com/folke/flash.nvim',
-	'https://github.com/folke/which-key.nvim'
 })
 
 
@@ -22,11 +21,9 @@ flash.setup({
 	}
 })
 
-local wk = require("which-key")
 
-wk.add({
-	{ "<c-s>", function() require('flash').toggle() end,            desc = "Toggle Flash Search", mode = "c" },
-	{ "<a-/>", function() require('flash').treesitter_search() end, desc = "Treesitter Search",   mode = { "n", "x", "o" } },
-	{ "s",     function() require('flash').treesitter() end,        desc = "Treesitter",          mode = "x" },
-	{ "<c-/>", function() require('flash').jump() end,              desc = "Flash",               mode = { "n", "x", "o" } },
-})
+vim.keymap.set("c", "<c-s>", function() flash.toggle() end, { desc = "Toggle Flash Search" })
+vim.keymap.set({ "n", "x", "o" }, "<a-/>", function() flash.treesitter_search() end,
+	{ desc = "Treesitter Search" })
+vim.keymap.set("x", "s", function() flash.treesitter() end, { desc = "Treesitter" })
+vim.keymap.set({ "n", "x", "o" }, "<c-/>", function() flash.jump() end, { desc = "Flash" })

@@ -3,7 +3,6 @@ local cmd = vim.cmd
 local g = vim.g
 local o = vim.o
 
-
 o.sidescroll = 1
 o.sidescrolloff = 999
 g.mapleader = ';'
@@ -46,18 +45,3 @@ cmd([[
 		autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
 	augroup END
 ]])
-
-vim.diagnostic.config({
-	update_in_insert = true,
-	float = {
-		border = BorderedWindows and "rounded" or "none"
-	},
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "󰌵",
-		},
-	}
-})

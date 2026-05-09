@@ -1,15 +1,18 @@
 vim.pack.add({
-	'https://github.com/folke/snacks.nvim'
+	'https://github.com/folke/snacks.nvim',
+	'https://github.com/stevearc/oil.nvim',
 })
 
-require("snacks").setup({
+local Snacks = require('snacks')
+
+Snacks.setup({
 	lazygit = { enabled = true },
 	rename = { enabled = true },
 	input = {
 		enabled = true,
 		win = {
 			relative = "cursor",
-			border = TRANSPARENT, -- Ensure TRANSPARENT is defined in your config
+			border = Transparent, -- Ensure TRANSPARENT is defined in your config
 			width = 45,
 		}
 	},
@@ -17,15 +20,25 @@ require("snacks").setup({
 		enabled = true,
 		win = {
 			style = "minimal",
-			border = "none"
+			border = "none",
+			keys = {
+				term_normal = {
+					'<esc>',
+					'<C-\\><C-n>',
+					mode = 't',
+					desc = "Escape to normal mode",
+				}
+			},
 		}
 	},
 	notifier = {
 		enabled = true,
 		style = "minimal",
-		top_down = false
+		top_down = false,
+		margin = { bottom = 1 }
 	},
 	picker = {
+		layout = "select",
 		enabled = true,
 		ui_select = true,
 		actions = {
@@ -62,157 +75,72 @@ require("snacks").setup({
 	},
 })
 
-local wk = require('which-key')
-local Snacks = require('snacks')
 
-wk.add({
-	-- Files & Search
-	{
-		"<leader>ff",
-		function() Snacks.picker.files() end,
-		desc = "Find Files with Preview",
-		icon = ""
-	},
-	{
-		"<leader>fd",
-		function() Snacks.picker.files({ layout = "select" }) end,
-		desc = "Find Files (No Preview)",
-		icon = ""
-	},
-	{
-		"<leader>fg",
-		function() Snacks.picker.grep({ layout = "select" }) end,
-		desc = "Live Grep",
-		icon = "󰪸"
-	},
-	{
-		"<leader>fl",
-		function() Snacks.picker.lines({ layout = "select" }) end,
-		desc = "Search Buffer",
-		icon = "󰱽"
-	},
+-- Files & Search
+vim.keymap.set("n", "<leader>ff", function() Snacks.picker.smart() end, { desc = "Smart" })
+vim.keymap.set("n", "<leader>fd", function() Snacks.picker.files() end,
+	{ desc = "Find Files (No Preview)" })
+vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>fl", function() Snacks.picker.lines() end, { desc = "Search Buffer" })
 
-	-- Buffers & History
-	{
-		"<leader>fb",
-		function() Snacks.picker.buffers({ layout = "select" }) end,
-		desc = "Buffers",
-		icon = "󰾵"
-	},
-	{
-		"<leader>fo",
-		function() Snacks.picker.recent({ layout = "select" }) end,
-		desc = "Old Files",
-		icon = ""
-	},
+-- Buffers & History
+vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fo", function() Snacks.picker.recent() end, { desc = "Old Files" })
 
-	-- LSP & Commands
-	{
-		"<leader>fs",
-		function() Snacks.picker.lsp_symbols({ layout = "select" }) end,
-		desc = "Buffer Symbols",
-		icon = ""
-	},
-	{
-		"<leader>fa",
-		function() Snacks.picker.lsp_workspace_symbols({ layout = "select" }) end,
-		desc = "Workspace Symbols",
-		icon = ""
-	},
-	{
-		"<leader>fr",
-		function() Snacks.picker.lsp_references({ layout = "select" }) end,
-		desc = "LSP References",
-		icon = ""
-	},
-	{
-		"<leader>fc",
-		function() Snacks.picker.commands({ layout = "bottom" }) end, -- "bottom" acts like Ivy
-		desc = "Commands",
-		icon = ""
-	},
-	{
-		"<leader>fh",
-		function() Snacks.picker.help() end,
-		desc = "Help Tags",
-		icon = "󰋖"
-	},
+-- LSP & Commands
+vim.keymap.set("n", "<leader>fs", function() Snacks.picker.lsp_symbols() end,
+	{ desc = "Buffer Symbols" })
+vim.keymap.set("n", "<leader>fa", function() Snacks.picker.lsp_workspace_symbols() end,
+	{ desc = "Workspace Symbols" })
+vim.keymap.set("n", "<leader>fr", function() Snacks.picker.lsp_references() end,
+	{ desc = "LSP References" })
+vim.keymap.set("n", "<leader>fc", function() Snacks.picker.commands() end, { desc = "Commands" })
+vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end, { desc = "Help Tags" })
 
-	-- Lazy git
-	{
-		"<leader>gl",
-		function() Snacks.lazygit() end,
-		desc = "Lazy Git",
-		icon = ""
-	},
+-- Lazy git
+vim.keymap.set("n", "<leader>gl", function() Snacks.lazygit() end, { desc = "Lazy Git" })
 
-	-- Terminal
-	{
-		"<C-\\>",
-		function() Snacks.terminal.toggle() end,
-		desc = "Toggle Terminal",
-		mode = { "n", "t" },
-		icon = ""
-	}
-})
+-- Terminal
+vim.keymap.set({ "n", "t" }, "<C-\\>", function() Snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
+
+
 
 -- Oil.nvim integration using Snacks.picker
-if vim.g.features and vim.g.features.oil then
-	local oil = require('oil')
 
-	local function oil_prompt(callback)
-		Snacks.picker.files({
-			title = "Open Directory",
-			cmd = "fd",
-			args = { "-td" }, -- Only show directories
-			layout = "select",
-			actions = {
-				confirm = function(picker, item)
-					picker:close()
-					if item and item.file then
-						callback(item.file)
-					end
-				end,
-			},
-		})
-	end
-
-	wk.add({
-		{
-			'<leader>fe',
-			function()
-				if oil.get_current_dir() ~= nil then
-					oil_prompt(oil.open)
-				else
-					oil_prompt(oil.open_float)
+local oil = require('oil')
+local function oil_prompt(callback)
+	Snacks.picker.files({
+		title = "Open Directory",
+		cmd = "fd",
+		args = { "-td" }, -- Only show directories
+		layout = "select",
+		actions = {
+			confirm = function(picker, item)
+				picker:close()
+				if item and item.file then
+					callback(item.file)
 				end
 			end,
-			desc = "Open Directory in Float"
 		},
-		{
-			'<leader>eg',
-			function()
-				oil_prompt(oil.open)
-			end,
-			desc = "Open Directory",
-		}
 	})
 end
 
-vim.api.nvim_create_autocmd("LspProgress", {
-	---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
-	callback = function(ev)
-		local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
-		vim.notify(vim.lsp.status(), "info", {
-			id = "lsp_progress",
-			title = "LSP Progress",
-			opts = function(notif)
-				notif.icon = ev.data.params.value.kind == "end" and " "
-						or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-			end,
-		})
+vim.keymap.set(
+	'n',
+	'<leader>fe',
+	function()
+		if oil.get_current_dir() ~= nil then
+			oil_prompt(oil.open)
+		else
+			oil_prompt(oil.open_float)
+		end
 	end,
-})
+	{ desc = "Open Directory in Float" }
+)
+
+vim.keymap.set('n', '<leader>eg', function() oil_prompt(oil.open) end, { desc = "Open Directory" })
+
+
 
 vim.api.nvim_create_autocmd("User", {
 	pattern = "OilActionsPost",

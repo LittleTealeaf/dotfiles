@@ -1,6 +1,6 @@
-vim.pack.add { {
-	src = 'https://github.com/mrcjkb/rustaceanvim',
-} }
+vim.pack.add({
+	"https://github.com/mrcjkb/rustaceanvim"
+})
 
 local function lspcmd(params)
 	return function()
@@ -9,19 +9,21 @@ local function lspcmd(params)
 end
 
 local function execute_from_toggleterm(command, args, cwd)
-	local Terminal = require('toggleterm.terminal').Terminal
-	local shell = require('rustaceanvim.shell')
-
-	Terminal:new({
-		cmd = shell.make_command_from_args(command, args),
-		dir = cwd,
-		close_on_exit = false,
-		auto_scroll = true,
-		on_open = function(t)
-			vim.api.nvim_buf_set_keymap(t.bufnr, 'n', 'q', '<cmd>close<CR>', { noremap = true, silent = true })
-		end
-	}):toggle()
+	-- TODO
+	-- local Terminal = require('toggleterm.terminal').Terminal
+	-- local shell = require('rustaceanvim.shell')
+	--
+	-- Terminal:new({
+	-- 	cmd = shell.make_command_from_args(command, args),
+	-- 	dir = cwd,
+	-- 	close_on_exit = false,
+	-- 	auto_scroll = true,
+	-- 	on_open = function(t)
+	-- 		vim.api.nvim_buf_set_keymap(t.bufnr, 'n', 'q', '<cmd>close<CR>', { noremap = true, silent = true })
+	-- 	end
+	-- }):toggle()
 end
+
 
 vim.g.rustaceanvim = {
 	tools = {
@@ -94,5 +96,6 @@ vim.g.rustaceanvim = {
 				}
 			}
 		end
-	},
+
+	}
 }
