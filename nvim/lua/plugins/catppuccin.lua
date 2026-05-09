@@ -11,6 +11,9 @@ local function custom_highlights(c)
 		FloatBorder = { fg = c.surface0, bg = c.surface0 },
 		FloatTitle = { bg = c.surface0, fg = c.text, style = { 'bold' } },
 
+		NormalFloatAlt = {bg = c.mantle},
+		FloatBorderAlt = {bg = c.mantle, fg = c.mantle},
+
 		-- Autocomplete
 		Pmenu = {bg = c.surface0},
 		PmenuSel = {bg = c.surface1},

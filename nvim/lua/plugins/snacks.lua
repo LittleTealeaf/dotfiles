@@ -2,7 +2,15 @@ local snacks = require('snacks')
 local oil = require('oil')
 
 snacks.setup({
-	lazygit = { enabled = true },
+	lazygit = {
+		enabled = true,
+		win = {
+			border = "rounded",
+			wo = {
+				winhighlight = "NormalFloat:NormalFloatAlt,FloatBorder:FloatBorderAlt"
+			}
+		}
+	},
 	rename = { enabled = true },
 	input = {
 		enabled = true,
@@ -17,6 +25,9 @@ snacks.setup({
 		win = {
 			style = "minimal",
 			border = "none",
+			wo = {
+				winhighlight = "Normal:NormalFloatAlt"
+			},
 			keys = {
 				term_normal = {
 					'<esc>',
