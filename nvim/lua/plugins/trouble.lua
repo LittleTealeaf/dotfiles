@@ -35,3 +35,4 @@ vim.keymap.set("n", "<leader>ts", function() trouble.open('lsp_document_symbols'
 vim.keymap.set("n", "<leader>tq", function() trouble.open('quickfix') end, { desc = "QuickFix" })
 vim.keymap.set("n", "<leader>th", trouble.close, { desc = "Close" })
 vim.keymap.set('n', '<leader>tf', function() trouble.open('snacks_files') end, {desc = "Finder"})
+vim.keymap.set('n', '<leader>td', function() trouble.open('snacks') end, {desc = "Snacks"})
