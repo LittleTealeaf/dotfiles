@@ -48,17 +48,18 @@ snacks.setup({
 		layout = "select",
 		enabled = true,
 		ui_select = true,
-		actions = {
-			-- Custom toggle & move actions
-			toggle_next = function(picker)
-				picker:action("toggle")
-				picker:action("list_down")
-			end,
-			toggle_prev = function(picker)
-				picker:action("toggle")
-				picker:action("list_up")
-			end,
-		},
+		actions = vim.tbl_extend("force", require('trouble.sources.snacks').actions,
+			{
+				-- Custom toggle & move actions
+				toggle_next = function(picker)
+					picker:action("toggle")
+					picker:action("list_down")
+				end,
+				toggle_prev = function(picker)
+					picker:action("toggle")
+					picker:action("list_up")
+				end,
+			}),
 		win = {
 			input = {
 				keys = {
