@@ -11,12 +11,32 @@ local function custom_highlights(c)
 		FloatBorder = { fg = c.surface0, bg = c.surface0 },
 		FloatTitle = { bg = c.surface0, fg = c.text, style = { 'bold' } },
 
-		NormalFloatAlt = {bg = c.mantle},
-		FloatBorderAlt = {bg = c.mantle, fg = c.mantle},
+		-- Lualine
+		LualineRecording = { fg = c.mauve, bg = c.mantle, style = { 'bold' } },
+
+		-- Modicator
+		NormalMode = { fg = c.blue },
+		InsertMode = { fg = c.green },
+		VisualMode = { fg = c.mauve },
+		ReplaceMode = { fg = c.red },
+		CommandMode = { fg = c.teal },
+		SelectMode = { fg = c.red },
+
+		-- Trouble
+		TroubleNormal = { bg = c.mantle },
+
+		NormalFloatAlt = { bg = c.mantle },
+		FloatBorderAlt = { bg = c.mantle, fg = c.mantle },
 
 		-- Autocomplete
-		Pmenu = {bg = c.surface0},
-		PmenuSel = {bg = c.surface1},
+		Pmenu = { bg = c.surface0 },
+		PmenuSel = { bg = c.surface1 },
+
+		-- DAP UI
+		DapUIFloatBorder = { bg = c.mantle, fg = c.mantle },
+		DapUINormalFloat = { bg = c.mantle },
+		DapUIFloatNormal = { bg = c.mantle },
+		DapStoppedLine = { bg = c.surface1 },
 	}
 end
 

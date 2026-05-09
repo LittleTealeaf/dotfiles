@@ -15,4 +15,13 @@ vim.lsp.start({
 			pythonPath = python_path,
 		},
 	},
+	on_attach = function()
+		vim.pack.add({
+			Github('mfussenegger/nvim-dap-python'),
+			Github('mfussenegger/nvim-dap'),
+		})
+require('dap-python').setup('uv')
+	end
 })
+
+

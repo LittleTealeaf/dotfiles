@@ -82,6 +82,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts("Goto Prev Diagnostic"))
 		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts("Goto Next Diagnostic"))
 		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
+
+
+		require('lsp.debug')
 	end
 })
 
