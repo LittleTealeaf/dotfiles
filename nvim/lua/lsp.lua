@@ -1,6 +1,5 @@
-
-vim.o.complete = ".,o"
-vim.o.completeopt = "fuzzy,menuone,noselect"
+vim.o.complete = "o^3"
+vim.o.completeopt = "fuzzy,menuone,noselect,popup"
 vim.o.autocomplete = true
 vim.o.pumheight = 15
 
@@ -24,6 +23,7 @@ vim.diagnostic.config({
 	}
 })
 
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
 	callback = function(args)
@@ -38,22 +38,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 
 
-		vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({border = "rounded"}) end, opts("Hover Definition"))
-
+		-- KEYMAPS
+		vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = "rounded" }) end, opts("Hover Definition"))
 		vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end,
 			opts("Format File"))
-
 		vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts("Goto Definition"))
 		vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, opts("Goto Declaration"))
 		vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, opts("Goto Implementation"))
 		vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, opts("Rename Symbol"))
 		vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, opts("Open Errors"))
 		vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, opts("Code Action"))
-
 		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts("Goto Prev Diagnostic"))
 		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts("Goto Next Diagnostic"))
-
 		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
+
+
+
+
 	end
 })
 

@@ -8,7 +8,7 @@ snacks.setup({
 		enabled = true,
 		win = {
 			relative = "cursor",
-			border = Transparent, -- Ensure TRANSPARENT is defined in your config
+			border = Transparent,
 			width = 45,
 		}
 	},
@@ -73,8 +73,8 @@ snacks.setup({
 
 
 -- Files & Search
-vim.keymap.set("n", "<leader>fd", function() snacks.picker.smart() end, { desc = "Smart" })
-vim.keymap.set("n", "<leader>ff", function() snacks.picker.files() end,
+vim.keymap.set("n", "<leader>ff", function() snacks.picker.smart() end, { desc = "Smart" })
+vim.keymap.set("n", "<leader>fd", function() snacks.picker.files() end,
 	{ desc = "Find Files (No Preview)" })
 vim.keymap.set("n", "<leader>fg", function() snacks.picker.grep() end, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fl", function() snacks.picker.lines() end, { desc = "Search Buffer" })
@@ -147,5 +147,5 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.api.nvim_create_user_command('Highlights', function()
-	snacks.picker.highlights({ preview = { enabled = true } })
+	snacks.picker.highlights()
 end, { desc = 'Open Snacks highlights picker' })

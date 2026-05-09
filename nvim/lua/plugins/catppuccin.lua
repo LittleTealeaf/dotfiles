@@ -10,6 +10,10 @@ local function custom_highlights(c)
 		NvimFloat = { bg = c.surface0 },
 		FloatBorder = { fg = c.surface0, bg = c.surface0 },
 		FloatTitle = { bg = c.surface0, fg = c.text, style = { 'bold' } },
+
+		-- Autocomplete
+		Pmenu = {bg = c.surface0},
+		PmenuSel = {bg = c.surface1},
 	}
 end
 
@@ -46,7 +50,6 @@ catppuccin.setup({
 	integrations = {
 		gitsigns = true,
 		markdown = true,
-		cmp = true,
 		flash = true,
 		dap = true,
 		dap_ui = true,
