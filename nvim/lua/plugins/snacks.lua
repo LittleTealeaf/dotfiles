@@ -98,6 +98,8 @@ vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smar
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
 
+vim.keymap.set('n', '<leader<fn>', picker('notifications'), {desc = "Notifications"})
+
 vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'ivy_split' }), { desc = "Grep" })
 vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'ivy_split' }), { desc = "Grep Word" })
 vim.keymap.set('n', '<leader>fl', picker('lines', {layout = 'ivy_split'}), { desc = "Lines" })
