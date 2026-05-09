@@ -13,7 +13,7 @@ snacks.setup({
 	},
 	rename = { enabled = true },
 	input = {
-		enabled = true,
+		enabled = false,
 		win = {
 			relative = "cursor",
 			border = Transparent,

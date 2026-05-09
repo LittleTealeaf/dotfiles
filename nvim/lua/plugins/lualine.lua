@@ -31,14 +31,6 @@ lualine.setup({
 	extension = { 'trouble', 'oil' },
 	options = {
 		globalstatus = true,
-		disabled_filetypes = {
-			statusline = {
-				'TelescopePrompt',
-				'neo-tree',
-				'toggleterm',
-				'lazygit',
-			}
-		},
 		section_separators = {
 			left = '',
 			right = ''
@@ -72,6 +64,17 @@ lualine.setup({
 			{ 'diff' },
 		},
 		lualine_x = {
+			{
+				'lsp_status',
+				icon = '', -- f013
+				symbols = {
+					spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
+					done = '✓',
+					separator = ' ',
+				},
+				ignore_lsp = {},
+				show_name = true,
+			},
 			{
 				'diagnostics',
 				update_in_insert = true,

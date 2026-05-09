@@ -2,7 +2,6 @@ vim.pack.add({
 	Github('catppuccin/nvim'),
 	Github('stevearc/oil.nvim'),
 	Github('nvim-tree/nvim-web-devicons'),
-	-- Folke Plugins
 	Github('folke/trouble.nvim'),
 })
 
