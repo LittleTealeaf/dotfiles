@@ -95,6 +95,8 @@ end
 -- Pickers
 vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smart" })
 
+vim.keymap.set('n', '<leader>fe', picker('explorer'), {desc = "Explorer"})
+
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
 
@@ -151,19 +153,6 @@ local function oil_prompt(callback)
 		},
 	})
 end
-
-vim.keymap.set(
-	'n',
-	'<leader>fe',
-	function()
-		if oil.get_current_dir() ~= nil then
-			oil_prompt(oil.open)
-		else
-			oil_prompt(oil.open_float)
-		end
-	end,
-	{ desc = "Open Directory in Float" }
-)
 
 vim.keymap.set('n', '<leader>eg', function() oil_prompt(oil.open) end, { desc = "Open Directory" })
 
