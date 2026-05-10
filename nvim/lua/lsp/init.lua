@@ -133,7 +133,11 @@ end, { expr = true, replace_keycodes = true, desc = "Autocomplete/Snippet Prev" 
 
 vim.keymap.set('i', '<C-;>', function()
 	if vim.fn.pumvisible() == 1 then
-		return '<C-y>'
+		if vim.fn.complete_info().selected == -1 then
+			return '<C-n><C-y>'
+		else
+			return '<C-y>'
+		end
 	else
 		return '<C-;>' -- Fallback
 	end
