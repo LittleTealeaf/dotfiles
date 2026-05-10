@@ -36,10 +36,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		require('plugins.rustaceanvim')
 		require('plugins.flash')
 		require('which-key').setup()
-
-		vim.api.nvim_create_autocmd('FileType', {
-			pattern = { '<filetype>' },
-			callback = function() vim.treesitter.start() end,
-		})
 	end
 })

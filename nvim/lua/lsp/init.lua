@@ -5,6 +5,7 @@ vim.o.completeopt = "menu,menuone,noselect,popup"
 vim.o.autocomplete = false
 vim.o.pumheight = 15
 
+
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
 		-- Create a one-shot listener that turns autocomplete back on
@@ -24,7 +25,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.o.autocomplete = false
 	end,
 })
-
 
 
 -- Formatting
@@ -117,11 +117,11 @@ vim.keymap.set('i', '<S-Tab>', function()
 	end
 end, { expr = true, replace_keycodes = true, desc = "Autocomplete/Snippet Prev" })
 
-vim.keymap.set('i', '<CR>', function()
+vim.keymap.set('i', '<C-;>', function()
 	if vim.fn.pumvisible() == 1 then
-		return '<C-y>' -- Built-in keystroke to Accept selection
+		return '<C-y>'
 	else
-		return '<CR>' -- Fallback
+		return '<C-;>' -- Fallback
 	end
 end, { expr = true, replace_keycodes = true, desc = "Confirm Autocomplete" })
 
@@ -132,19 +132,3 @@ vim.keymap.set('i', '<C-e>', function()
 		return '<C-e>' -- Fallback
 	end
 end, { expr = true, replace_keycodes = true, desc = "Cancel Autocomplete" })
-
-
-vim.api.nvim_create_autocmd("LspProgress", {
-	---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
-	callback = function(ev)
-		local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
-		vim.notify(vim.lsp.status(), "info", {
-			id = "lsp_progress",
-			title = "LSP Progress",
-			opts = function(notif)
-				notif.icon = ev.data.params.value.kind == "end" and " "
-						or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-			end,
-		})
-	end,
-})
