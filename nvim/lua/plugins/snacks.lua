@@ -42,7 +42,7 @@ snacks.setup({
 		enabled = true,
 		style = "minimal",
 		top_down = false,
-		margin = { bottom = 1 }
+		margin = { bottom = 1, right = 0 }
 	},
 	picker = {
 		layout = "select",
@@ -74,8 +74,8 @@ snacks.setup({
 					["<C-t>"] = { "trouble_open", mode = { "i", "n" } },
 					["<C-a>"] = { "select_all", mode = { "i", "n" } },
 					["<C-s>"] = { "flash", mode = { "i", "n" } },
-					["<C-u>"] = {"preview_scroll_up", mode={"i", "n"}},
-					["<C-d>"] = {"preview_scroll_down", mode={"i", "n"}},
+					["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+					["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
 				},
 			},
 		},
@@ -98,11 +98,11 @@ vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smar
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
 
-vim.keymap.set('n', '<leader<fn>', picker('notifications'), {desc = "Notifications"})
+vim.keymap.set('n', '<leader<fn>', picker('notifications'), { desc = "Notifications" })
 
 vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'ivy_split' }), { desc = "Grep" })
 vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'ivy_split' }), { desc = "Grep Word" })
-vim.keymap.set('n', '<leader>fl', picker('lines', {layout = 'ivy_split'}), { desc = "Lines" })
+vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'ivy_split' }), { desc = "Lines" })
 
 vim.keymap.set('n', '<leader>fz', picker('lsp_symbols', { layout = 'sidebar' }), { desc = "Lsp Symbols" })
 vim.keymap.set('n', '<leader>fa', picker('lsp_workspace_symbols', { layout = 'sidebar' }), { desc = "Workspace Symbols" })
@@ -142,8 +142,8 @@ local function oil_prompt(callback)
 			item.dir = true
 		end,
 		actions = {
-			confirm = function(picker, item)
-				picker:close()
+			confirm = function(current_picker, item)
+				current_picker:close()
 				if item and item.file then
 					callback(item.file)
 				end

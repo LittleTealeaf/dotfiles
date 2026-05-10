@@ -1,10 +1,13 @@
+local icons = require('icons')
+
+
 -- AUTOCOMPLETION
 
 vim.o.complete = "o"
 vim.o.completeopt = "menu,menuone,noselect,popup"
 vim.o.autocomplete = false
 vim.o.pumheight = 15
-
+vim.opt.shortmess:append("c")
 
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
@@ -59,6 +62,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
 	callback = function(args)
 		local bufnr = args.buf
+
+		vim.lsp.completion.enable(true, args.data.client_id, bufnr, {
+			convert = function(item)
+				-- Customize the menu or kind with icons
+				return {
+					kind = (icons.lsp_kind_icons[item.kind]), -- Add a function icon
+					abbr = item.label,
+					menu = "",
+				}
+			end,
+		})
 
 		local function opts(desc)
 			return {
