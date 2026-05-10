@@ -1,5 +1,7 @@
 local icons = require('icons')
 
+vim.pack.add({ Github('ray-x/lsp_signature.nvim') })
+
 
 -- AUTOCOMPLETION
 
@@ -98,6 +100,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
 
 
+		require('lsp_signature').on_attach({
+			hint_enable = false
+		})
 		require('lsp.debug')
 	end
 })
