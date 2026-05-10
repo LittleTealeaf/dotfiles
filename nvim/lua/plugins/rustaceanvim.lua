@@ -1,3 +1,5 @@
+vim.pack.add({ Github('mrcjkb/rustaceanvim') })
+
 local function lspcmd(params)
 	return function()
 		vim.cmd.RustLsp(params)
@@ -10,7 +12,7 @@ local function execute_command(command, args, cwd)
 	local cmd = shell.make_command_from_args(command, args)
 	snacks.terminal.open(cmd, {
 		cwd = cwd,
-		auto_close=false,
+		auto_close = false,
 		win = {
 			style = "minimal",
 			border = "none",
@@ -49,7 +51,7 @@ vim.g.rustaceanvim = {
 		auto_generate_source_map = true
 	},
 	server = {
-		on_attach = function(client, bufnr)
+		on_attach = function(_, bufnr)
 			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 			vim.keymap.set('n', '<leader>clu', lspcmd { 'debuggables', bang = true },
 				{ buffer = bufnr, desc = "Rust Last Debuggable" })

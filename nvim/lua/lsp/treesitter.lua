@@ -1,3 +1,8 @@
+vim.pack.add({
+	Github('nvim-treesitter/nvim-treesitter'),
+	Github('nvim-treesitter/nvim-treesitter-textobjects'),
+})
+
 require("nvim-treesitter-textobjects").setup({
 	select = {
 		enable = true,

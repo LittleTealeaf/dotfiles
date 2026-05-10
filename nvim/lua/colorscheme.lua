@@ -1,5 +1,8 @@
-local catppuccin = require('catppuccin')
+vim.pack.add({
+	Github('catppuccin/nvim')
+})
 
+local catppuccin = require('catppuccin')
 
 local function custom_highlights(c)
 	return {

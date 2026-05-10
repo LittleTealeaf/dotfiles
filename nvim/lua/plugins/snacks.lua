@@ -1,5 +1,5 @@
+vim.pack.add({ Github('folke/snacks.nvim'), })
 local snacks = require('snacks')
-local oil = require('oil')
 
 snacks.setup({
 	lazygit = {
@@ -11,7 +11,6 @@ snacks.setup({
 			}
 		}
 	},
-	rename = { enabled = true },
 	input = {
 		enabled = false,
 		win = {
@@ -95,7 +94,8 @@ end
 -- Pickers
 vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smart" })
 
-vim.keymap.set('n', '<leader>fe', picker('explorer'), {desc = "Explorer"})
+vim.keymap.set('n', '<leader>fe', picker('explorer'), { desc = "Explorer" })
+vim.keymap.set('n', '<leader>fp', picker('projects', { layout = "default" }), { desc = "Projects" })
 
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
@@ -131,14 +131,12 @@ vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, 
 -- Oil.nvim integration using Snacks.picker
 
 local function oil_prompt(callback)
-	-- Use Snacks.picker.pick to define a custom process source
 	Snacks.picker.pick({
 		title = "Open Directory",
 		finder = "proc",
 		cmd = "fd",
 		args = { "--type", "d", "--hidden", "--exclude", ".git" },
 		layout = "select",
-		-- Important: transform ensures the picker UI handles the items as directories
 		transform = function(item)
 			item.file = item.text
 			item.dir = true
@@ -154,18 +152,7 @@ local function oil_prompt(callback)
 	})
 end
 
-vim.keymap.set('n', '<leader>eg', function() oil_prompt(oil.open) end, { desc = "Open Directory" })
-
-
-
-vim.api.nvim_create_autocmd("User", {
-	pattern = "OilActionsPost",
-	callback = function(event)
-		if event.data.actions[1].type == "move" then
-			snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
-		end
-	end,
-})
+vim.keymap.set('n', '<leader>eg', function() oil_prompt(require('oil').open) end, { desc = "Open Directory" })
 
 vim.api.nvim_create_user_command('Highlights', function()
 	snacks.picker.highlights()

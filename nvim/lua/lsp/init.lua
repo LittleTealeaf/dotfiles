@@ -1,46 +1,3 @@
-local icons = require('icons')
-
-vim.pack.add({ Github('ray-x/lsp_signature.nvim') })
-
-
--- AUTOCOMPLETION
-
-vim.o.complete = "o"
-vim.o.completeopt = "menu,menuone,noselect,popup"
-vim.o.autocomplete = false
-vim.o.pumheight = 15
-vim.opt.shortmess:append("c")
-
-vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		-- Create a one-shot listener that turns autocomplete back on
-		-- only AFTER you've pressed a key in Insert mode
-		vim.api.nvim_create_autocmd("InsertCharPre", {
-			once = true,
-			callback = function()
-				vim.o.autocomplete = true
-			end,
-		})
-	end,
-})
-
--- Turn it back off when leaving Insert mode so it's ready for the next entry
-vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		vim.o.autocomplete = false
-	end,
-})
-
-
--- Formatting
-
-vim.api.nvim_create_user_command('Format', function()
-	vim.lsp.buf.format()
-end, {})
-
-
--- Diagnostics
-
 vim.diagnostic.config({
 	update_in_insert = true,
 	float = {
@@ -56,30 +13,26 @@ vim.diagnostic.config({
 	}
 })
 
+vim.api.nvim_create_user_command('Format', function()
+	vim.lsp.buf.format()
+end, {})
 
-
--- On Attach
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
 	callback = function(args)
-		local bufnr = args.buf
+		vim.pack.add({
+			Github('ray-x/lsp_signature.nvim')
+		})
 
-		vim.lsp.completion.enable(true, args.data.client_id, bufnr, {
-			convert = function(item)
-				-- Customize the menu or kind with icons
-				return {
-					kind = (icons.lsp_kind_icons[item.kind]), -- Add a function icon
-					abbr = item.label,
-					menu = "",
-				}
-			end,
+		require('lsp_signature').on_attach({
+			hint_enable = false
 		})
 
 		local function opts(desc)
 			return {
 				silent = true,
-				buffer = bufnr,
+				buffer = args.buf,
 				desc = desc
 			}
 		end
@@ -98,60 +51,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts("Goto Prev Diagnostic"))
 		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts("Goto Next Diagnostic"))
 		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
-
-
-		require('lsp_signature').on_attach({
-			hint_enable = false
-		})
-		require('lsp.debug')
 	end
+
 })
-
-
-local function has_words_before()
-	local col = vim.fn.col('.') - 1
-	return col ~= 0 and vim.fn.getline('.'):sub(col, col):match('%s') == nil
-end
-
-
-vim.keymap.set('i', '<Tab>', function()
-	if vim.fn.pumvisible() == 1 then
-		return '<C-n>'                          -- Next item in popup menu
-	elseif vim.snippet.active({ direction = 1 }) then
-		return '<cmd>lua vim.snippet.jump(1)<CR>' -- Neovim 0.10+ native snippet jump
-	elseif has_words_before() then
-		return '<C-x><C-o>'                     -- Trigger built-in Omnifunc
-	else
-		return '<Tab>'                          -- Fallback
-	end
-end, { expr = true, replace_keycodes = true, desc = "Autocomplete/Snippet Next" })
-
-vim.keymap.set('i', '<S-Tab>', function()
-	if vim.fn.pumvisible() == 1 then
-		return '<C-p>' -- Previous item in popup menu
-	elseif vim.snippet.active({ direction = -1 }) then
-		return '<cmd>lua vim.snippet.jump(-1)<CR>'
-	else
-		return '<S-Tab>' -- Fallback
-	end
-end, { expr = true, replace_keycodes = true, desc = "Autocomplete/Snippet Prev" })
-
-vim.keymap.set('i', '<C-;>', function()
-	if vim.fn.pumvisible() == 1 then
-		if vim.fn.complete_info().selected == -1 then
-			return '<C-n><C-y>'
-		else
-			return '<C-y>'
-		end
-	else
-		return '<C-;>' -- Fallback
-	end
-end, { expr = true, replace_keycodes = true, desc = "Confirm Autocomplete" })
-
-vim.keymap.set('i', '<C-e>', function()
-	if vim.fn.pumvisible() == 1 then
-		return '<C-e>' -- Built-in keystroke to Cancel completion
-	else
-		return '<C-e>' -- Fallback
-	end
-end, { expr = true, replace_keycodes = true, desc = "Cancel Autocomplete" })

@@ -1,4 +1,4 @@
-local trouble = require('trouble')
+vim.pack.add({ Github('folke/trouble.nvim') })
 
 vim.api.nvim_create_autocmd('FileType', {
 	pattern = 'qf',
@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd('FileType', {
 	end
 })
 
+local trouble = require('trouble')
 
 
 trouble.setup({
@@ -24,8 +25,6 @@ trouble.setup({
 		["<M-CR>"] = "jump_close"
 	},
 	warn_no_results = false,
-	modes = {
-	}
 })
 
 
@@ -34,5 +33,5 @@ vim.keymap.set("n", "<leader>te", function() trouble.open('diagnostics') end, { 
 vim.keymap.set("n", "<leader>ts", function() trouble.open('lsp_document_symbols') end, { desc = "Symbols" })
 vim.keymap.set("n", "<leader>tq", function() trouble.open('quickfix') end, { desc = "QuickFix" })
 vim.keymap.set("n", "<leader>th", trouble.close, { desc = "Close" })
-vim.keymap.set('n', '<leader>tf', function() trouble.open('snacks_files') end, {desc = "Finder"})
-vim.keymap.set('n', '<leader>td', function() trouble.open('snacks') end, {desc = "Snacks"})
+vim.keymap.set('n', '<leader>tf', function() trouble.open('snacks_files') end, { desc = "Finder" })
+vim.keymap.set('n', '<leader>td', function() trouble.open('snacks') end, { desc = "Snacks" })

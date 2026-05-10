@@ -1,3 +1,5 @@
+vim.pack.add({ Github('nvim-lualine/lualine.nvim') })
+
 local trouble = require('trouble')
 local lualine = require('lualine')
 

@@ -1,3 +1,4 @@
+vim.pack.add({ Github('stevearc/oil.nvim') })
 local oil = require('oil')
 local PREFER_FLOAT = false
 
