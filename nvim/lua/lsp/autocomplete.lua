@@ -113,7 +113,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			convert = function(item)
 				-- Customize the menu or kind with icons
 				return {
-					kind = (lsp_kind_icons.lsp_kind_icons[item.kind]), -- Add a function icon
+					kind = (lsp_kind_icons[item.kind]), -- Add a function icon
 					abbr = item.label,
 					menu = "",
 				}

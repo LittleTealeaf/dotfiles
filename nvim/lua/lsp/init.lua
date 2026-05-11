@@ -25,9 +25,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			Github('ray-x/lsp_signature.nvim')
 		})
 
-		require('lsp_signature').on_attach({
+		local lsp_signature = require('lsp_signature')
+
+		lsp_signature.on_attach({
 			hint_enable = false
 		})
+
+		vim.keymap.set({ 'i', 's' }, '<c-k>', lsp_signature.toggle_float_win,
+			{ silent = true, noremap = true, desc = "Toggle Signature" })
 
 		local function opts(desc)
 			return {

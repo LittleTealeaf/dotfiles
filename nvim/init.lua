@@ -22,6 +22,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		require('lsp.dap')
 		require('lsp.treesitter')
 		require('plugins.snacks')
+		require('plugins.rustaceanvim')
+		require('plugins.flash')
 
 		vim.pack.add({
 			Github('lewis6991/gitsigns.nvim'),
