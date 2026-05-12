@@ -10,6 +10,12 @@ vim.pack.add({
 })
 
 require('colorscheme')
+
+if Scrollback then
+	require('scrollback')
+	return
+end
+
 require('lsp')
 require('lsp.autocomplete')
 require('ui.oil')
