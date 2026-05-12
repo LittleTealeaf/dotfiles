@@ -47,28 +47,17 @@ snacks.setup({
 		layout = "select",
 		enabled = true,
 		ui_select = true,
-		actions = vim.tbl_extend("force", require('trouble.sources.snacks').actions,
-			{
-				-- Custom toggle & move actions
-				toggle_next = function(picker)
-					picker:action("toggle")
-					picker:action("list_down")
-				end,
-				toggle_prev = function(picker)
-					picker:action("toggle")
-					picker:action("list_up")
-				end,
-			}),
+		actions = require('trouble.sources.snacks').actions,
 		win = {
 			input = {
 				keys = {
-					["<Esc>"] = { "close", mode = { "n", "i" } },
-					["<A-q>"] = { "close", mode = { "i", "n" } },
+					-- ["<Esc>"] = { "close", mode = { "n", "i" } },
+					-- ["<A-q>"] = { "close", mode = { "i", "n" } },
 					["<Tab>"] = { "list_down", mode = { "i", "n" } },
 					["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
 					["<C-cr>"] = { "toggle", mode = { "i", "n" } }, -- Replaced select_and_next with toggle
-					["<C-Down>"] = { "toggle_next", mode = { "i", "n" } },
-					["<C-Up>"] = { "toggle_prev", mode = { "i", "n" } },
+					["<C-Down>"] = { "select_and_next", mode = { "i", "n" } },
+					["<C-Up>"] = { "select_and_prev", mode = { "i", "n" } },
 					["<C-q>"] = { "qflist", mode = { "i", "n" } },
 					["<C-t>"] = { "trouble_open", mode = { "i", "n" } },
 					["<C-a>"] = { "select_all", mode = { "i", "n" } },
@@ -117,7 +106,7 @@ vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'sidebar' }), { des
 
 -- Git
 vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
-vim.keymap.set("n", "<leader>gs", picker('git_status', {layout = 'default'}), { desc = "Git Status" })
+vim.keymap.set("n", "<leader>gs", picker('git_status', { layout = 'default' }), { desc = "Git Status" })
 vim.keymap.set('n', '<leader>gb', picker('git_branches', { layout = 'dropdown' }), { desc = "Git Branch" })
 
 vim.keymap.set('n', '<leader>gy', picker('git_log', { layout = 'ivy_split' }), { desc = "Git Log" })
