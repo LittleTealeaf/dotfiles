@@ -3,11 +3,18 @@ Transparent = (os.getenv("NVIM_TRANSPARENT") or "1") == "1"
 BorderedWindows = (os.getenv("NVIM_BORDERED_WINDOWS") or "0") == "1"
 Nightly = vim.version().api_prerelease
 
+
 require('core')
 
 vim.pack.add({
 	Github('nvim-tree/nvim-web-devicons'),
 })
+
+if vim.g.neovide then
+	require('neovide')
+	Transparent = false
+end
+
 
 require('colorscheme')
 
