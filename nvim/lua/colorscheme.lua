@@ -59,6 +59,9 @@ local function transparent_override(c, highlights)
 
 		NoiceMini = { bg = '' },
 		WhichKeyFloat = { bg = '' },
+
+		NormalFloatAlt = { bg = '' },
+		FloatBorderAlt = { bg = '', fg = c.mantle },
 	}
 
 	for k, v in pairs(overrides) do
@@ -100,10 +103,11 @@ catppuccin.setup({
 		treesitter = true,
 	},
 	custom_highlights = function(c)
+		local highlights = custom_highlights(c)
 		if Transparent and BorderedWindows then
-			return transparent_override(c, custom_highlights(c))
+			return transparent_override(c, highlights)
 		else
-			return custom_highlights(c)
+			return highlights
 		end
 	end
 })

@@ -96,11 +96,12 @@ vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smar
 
 vim.keymap.set('n', '<leader>fe', picker('explorer'), { desc = "Explorer" })
 vim.keymap.set('n', '<leader>fp', picker('projects', { layout = "default" }), { desc = "Projects" })
+vim.keymap.set('n', '<leader>fb', picker('buffers', { layout = 'default' }), { desc = "Buffers" })
 
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
 
-vim.keymap.set('n', '<leader<fn>', picker('notifications'), { desc = "Notifications" })
+vim.keymap.set('n', '<leader>fn', picker('notifications'), { desc = "Notifications" })
 
 vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'ivy_split' }), { desc = "Grep" })
 vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'ivy_split' }), { desc = "Grep Word" })
@@ -116,8 +117,8 @@ vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'sidebar' }), { des
 
 -- Git
 vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
-vim.keymap.set("n", "<leader>gs", function() snacks.picker.git_status() end, { desc = "Git Status" })
-vim.keymap.set('n', '<leader>gb', snacks.picker.git_branches, { desc = "Git Branch" })
+vim.keymap.set("n", "<leader>gs", picker('git_status', {layout = 'default'}), { desc = "Git Status" })
+vim.keymap.set('n', '<leader>gb', picker('git_branches', { layout = 'dropdown' }), { desc = "Git Branch" })
 
 vim.keymap.set('n', '<leader>gy', picker('git_log', { layout = 'ivy_split' }), { desc = "Git Log" })
 vim.keymap.set('n', '<leader>gu', picker('git_log_file', { layout = 'ivy_split' }), { desc = "Git Log File" })
