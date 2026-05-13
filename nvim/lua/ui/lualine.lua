@@ -17,6 +17,7 @@ local ENV_HOME = tostring(os.getenv('HOME'))
 local function get_current_path()
 	local path = string.gsub(vim.fn.getcwd() or 0, ENV_HOME, '~')
 	path = string.gsub(path, '~/dev/', ' ')
+	path = string.gsub(path, '~/git/', ' ')
 	return path
 end
 
@@ -30,7 +31,7 @@ local function get_recording_name()
 end
 
 lualine.setup({
-	extension = { 'trouble', 'oil' },
+	extensions = { 'trouble', 'oil' },
 	options = {
 		globalstatus = true,
 		section_separators = {

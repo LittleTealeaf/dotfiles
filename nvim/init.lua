@@ -26,17 +26,19 @@ end
 require('lsp')
 require('lsp.autocomplete')
 require('ui.oil')
+require('kitty')
+require('ui.trouble')
+require('plugins.snacks')
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	group = vim.api.nvim_create_augroup('ConfigVimEnter', {}),
 	callback = function()
-		require('ui.trouble')
 		require('ui.lualine')
 		require('lsp.dap')
 		require('lsp.treesitter')
-		require('plugins.snacks')
 		require('plugins.rustaceanvim')
 		require('plugins.flash')
+		require('plugins.marks')
 
 		vim.pack.add({
 			Github('lewis6991/gitsigns.nvim'),

@@ -1,6 +1,28 @@
 vim.pack.add({ Github('folke/snacks.nvim'), })
 local snacks = require('snacks')
 
+
+local picker_actions = require('trouble.sources.snacks').actions
+picker_actions['flash'] = function(picker)
+	require("flash").jump({
+		pattern = "^",
+		label = { after = { 0, 0 } },
+		search = {
+			mode = "search",
+			exclude = {
+				function(win)
+					return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list"
+				end,
+			},
+		},
+		action = function(match)
+			local idx = picker.list:row2idx(match.pos[1])
+			picker.list:_move(idx, true, true)
+		end,
+	})
+end
+
+
 snacks.setup({
 	lazygit = {
 		enabled = true,
@@ -12,13 +34,15 @@ snacks.setup({
 		}
 	},
 	input = {
-		enabled = false,
+		enabled = true,
 		win = {
 			relative = "cursor",
-			border = Transparent,
+			row = 1,
+			border = true,
 			width = 45,
 		}
 	},
+	image = {enabled = true},
 	terminal = {
 		enabled = true,
 		win = {
@@ -47,15 +71,15 @@ snacks.setup({
 		layout = "select",
 		enabled = true,
 		ui_select = true,
-		actions = require('trouble.sources.snacks').actions,
+		actions = picker_actions,
 		win = {
 			input = {
 				keys = {
-					-- ["<Esc>"] = { "close", mode = { "n", "i" } },
+					["<Esc>"] = { "close", mode = { "n", "i" } },
 					-- ["<A-q>"] = { "close", mode = { "i", "n" } },
 					["<Tab>"] = { "list_down", mode = { "i", "n" } },
 					["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-					["<C-cr>"] = { "toggle", mode = { "i", "n" } }, -- Replaced select_and_next with toggle
+					-- ["<C-'>"] = { "toggle", mode = { "i", "n" } },
 					["<C-Down>"] = { "select_and_next", mode = { "i", "n" } },
 					["<C-Up>"] = { "select_and_prev", mode = { "i", "n" } },
 					["<C-q>"] = { "qflist", mode = { "i", "n" } },
@@ -83,26 +107,30 @@ end
 -- Pickers
 vim.keymap.set('n', '<leader>ff', function() snacks.picker() end, { desc = "Smart" })
 
-vim.keymap.set('n', '<leader>fe', picker('explorer'), { desc = "Explorer" })
-vim.keymap.set('n', '<leader>fp', picker('projects', { layout = "default" }), { desc = "Projects" })
+-- Generic
 vim.keymap.set('n', '<leader>fb', picker('buffers', { layout = 'default' }), { desc = "Buffers" })
+vim.keymap.set('n', '<leader>fn', picker('notifications'), { desc = "Notifications" })
 
+-- Files and Folders
+vim.keymap.set('n', '<leader>fp', picker('projects', { layout = "default" }), { desc = "Projects" })
+vim.keymap.set('n', '<leader>fe', picker('explorer'), { desc = "Explorer" })
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
 
-vim.keymap.set('n', '<leader>fn', picker('notifications'), { desc = "Notifications" })
-
+-- Searching
 vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'ivy_split' }), { desc = "Grep" })
 vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'ivy_split' }), { desc = "Grep Word" })
 vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'ivy_split' }), { desc = "Lines" })
+vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'sidebar' }), { desc = "Marks" })
 
+-- LSP
 vim.keymap.set('n', '<leader>fz', picker('lsp_symbols', { layout = 'sidebar' }), { desc = "Lsp Symbols" })
 vim.keymap.set('n', '<leader>fa', picker('lsp_workspace_symbols', { layout = 'sidebar' }), { desc = "Workspace Symbols" })
+vim.keymap.set('n', '<leader>fr', picker('lsp_references', { layout = "default" }), { desc = "LSP References" })
 
+-- Help
 vim.keymap.set('n', '<leader>fc', snacks.picker.commands, { desc = "Commands" })
 vim.keymap.set('n', '<leader>fh', snacks.picker.help, { desc = "Help" })
-
-vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'sidebar' }), { desc = "Marks" })
 
 -- Git
 vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })

@@ -27,6 +27,9 @@ opt.fillchars = { eob = " " }
 opt.smartindent = true
 opt.shortmess:append("cq")
 
+vim.scriptencoding = 'utf-8'
+vim.opt.encoding = 'utf-8'
+
 cmd([[
   nnoremap . ;
   nnoremap \ .

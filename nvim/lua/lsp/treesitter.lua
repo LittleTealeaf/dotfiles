@@ -1,5 +1,4 @@
 vim.pack.add({
-	Github('nvim-treesitter/nvim-treesitter'),
 	Github('nvim-treesitter/nvim-treesitter-textobjects'),
 })
 
@@ -11,7 +10,6 @@ require("nvim-treesitter-textobjects").setup({
 	}
 })
 
-local ts_select = require("nvim-treesitter-textobjects.select")
 
 local maps = {
 	['ia'] = '@assignment.inner',
@@ -43,6 +41,7 @@ local maps = {
 	['as'] = '@statement.outer',
 }
 
+local ts_select = require("nvim-treesitter-textobjects.select")
 for key, query in pairs(maps) do
 	vim.keymap.set({ "x", "o" }, key, function()
 		ts_select.select_textobject(query, "textobjects")

@@ -14,6 +14,11 @@ local function custom_highlights(c)
 		FloatBorder = { fg = c.surface0, bg = c.surface0 },
 		FloatTitle = { bg = c.surface0, fg = c.text, style = { 'bold' } },
 
+		-- Snacks
+		SnacksInputNormal = { bg = c.surface0 },
+		SnacksInputBorder = { fg = c.surface0, bg = c.surface0 },
+		SnacksInputTitle = { fg = c.text, bg = c.surface0, style = { 'bold' } },
+
 		-- Lualine
 		LualineRecording = { fg = c.mauve, bg = c.mantle, style = { 'bold' } },
 
@@ -40,6 +45,7 @@ local function custom_highlights(c)
 		DapUINormalFloat = { bg = c.mantle },
 		DapUIFloatNormal = { bg = c.mantle },
 		DapStoppedLine = { bg = c.surface1 },
+
 	}
 end
 

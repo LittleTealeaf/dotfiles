@@ -49,6 +49,7 @@ disabled = true
 # repo_root_format = "[before_root_path](before_repo_root_style)[repo_root](repo_root_style)[path](style)[read_only](read_only_style) "
 repo_root_format = "[ $repo_root]($style)[$path]($style) "
 repo_root_style = ""
+read_only = ""
 
 [directory.substitutions]
 '~/git' = 'git'

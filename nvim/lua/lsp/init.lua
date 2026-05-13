@@ -13,26 +13,33 @@ vim.diagnostic.config({
 	}
 })
 
+
 vim.api.nvim_create_user_command('Format', function()
 	vim.lsp.buf.format()
 end, {})
+
+local function setup_lsp_signature()
+	vim.pack.add({
+		Github('ray-x/lsp_signature.nvim')
+	})
+	local lsp_signature = require('lsp_signature')
+	lsp_signature.on_attach({
+		hint_enable = false,
+		handler_opts = {
+			border = "none"
+		}
+	})
+
+	vim.keymap.set({ 'i', 's' }, '<c-k>', lsp_signature.toggle_float_win,
+		{ silent = true, noremap = true, desc = "Toggle Signature" })
+end
 
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
 	callback = function(args)
-		vim.pack.add({
-			Github('ray-x/lsp_signature.nvim')
-		})
+		setup_lsp_signature()
 
-		local lsp_signature = require('lsp_signature')
-
-		lsp_signature.on_attach({
-			hint_enable = false
-		})
-
-		vim.keymap.set({ 'i', 's' }, '<c-k>', lsp_signature.toggle_float_win,
-			{ silent = true, noremap = true, desc = "Toggle Signature" })
 
 		local function opts(desc)
 			return {
@@ -41,7 +48,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 				desc = desc
 			}
 		end
-
 
 		-- KEYMAPS
 		vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = "rounded" }) end, opts("Hover Definition"))
