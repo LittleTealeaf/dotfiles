@@ -65,3 +65,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end
 
 })
+
+vim.lsp.enable({
+	'pyright', 'lua_ls', 'taplo', 'gopls'
+})

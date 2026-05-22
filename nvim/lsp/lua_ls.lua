@@ -1,5 +1,5 @@
 ---@type vim.lsp.Config
-local config = {
+return {
 	name = "lua_ls",
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
@@ -24,21 +24,18 @@ local config = {
 			}
 		},
 	},
+	on_attach = function(_, bufnr)
+		local dot_files = os.getenv("DOT_FILES")
+		local cwd = vim.fn.getcwd()
+
+
+		if cwd == dot_files then
+			vim.pack.add({
+				Github('folke/lazydev.nvim'),
+			})
+			require('lazydev').setup({})
+		end
+
+		vim.keymap.set('n', '<leader>clr', '<cmd>luafile %<CR>', { buf = bufnr })
+	end
 }
-
-vim.lsp.start(config)
-
-
-local dot_files = os.getenv("DOT_FILES")
-local cwd = vim.fn.getcwd()
-
-
-if cwd == dot_files then
-	vim.pack.add({
-		'https://github.com/folke/lazydev.nvim'
-	})
-	require('lazydev').setup({})
-end
-
-
-vim.keymap.set('n', '<leader>clr', '<cmd>luafile %<CR>')
