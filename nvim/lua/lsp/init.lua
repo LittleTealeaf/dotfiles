@@ -24,9 +24,15 @@ local function setup_lsp_signature()
 	})
 	local lsp_signature = require('lsp_signature')
 	lsp_signature.on_attach({
+		bind = true,
 		hint_enable = false,
+		hint_prefix = {
+			above = "↙ ", -- when the hint is on the line above the current line
+			current = "← ", -- when the hint is on the same line
+			below = "↖ " -- when the hint is on the line below the current line
+		},
 		handler_opts = {
-			border = "none"
+			border = "rounded"
 		}
 	})
 

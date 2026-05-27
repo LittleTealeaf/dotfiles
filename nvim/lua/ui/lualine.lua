@@ -43,7 +43,6 @@ lualine.setup({
 			right = ''
 		}
 	},
-
 	sections = {
 		lualine_a = {
 			{

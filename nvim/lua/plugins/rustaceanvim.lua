@@ -79,7 +79,7 @@ vim.g.rustaceanvim = {
 					},
 					completion = {
 						postfix = {
-							enable = false
+							enable = true
 						}
 					},
 					check = {
