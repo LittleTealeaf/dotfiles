@@ -42,7 +42,7 @@ snacks.setup({
 			width = 45,
 		}
 	},
-	image = {enabled = true},
+	image = { enabled = true },
 	terminal = {
 		enabled = true,
 		win = {
@@ -115,13 +115,14 @@ vim.keymap.set('n', '<leader>fn', picker('notifications'), { desc = "Notificatio
 vim.keymap.set('n', '<leader>fp', picker('projects', { layout = "default" }), { desc = "Projects" })
 vim.keymap.set('n', '<leader>fe', picker('explorer'), { desc = "Explorer" })
 vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
-vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'select' }), { desc = "Files" })
+vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'default' }), { desc = "Files" })
 
 -- Searching
-vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'ivy_split' }), { desc = "Grep" })
-vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'ivy_split' }), { desc = "Grep Word" })
-vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'ivy_split' }), { desc = "Lines" })
-vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'sidebar' }), { desc = "Marks" })
+vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'default' }), { desc = "Grep" })
+vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'default' }), { desc = "Grep Word" })
+vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'ivy' }), { desc = "Lines" })
+
+vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'dropdown' }), { desc = "Marks" })
 
 -- LSP
 vim.keymap.set('n', '<leader>fz', picker('lsp_symbols', { layout = 'sidebar' }), { desc = "Lsp Symbols" })
@@ -130,16 +131,16 @@ vim.keymap.set('n', '<leader>fr', picker('lsp_references', { layout = "default" 
 
 -- Help
 vim.keymap.set('n', '<leader>fc', snacks.picker.commands, { desc = "Commands" })
-vim.keymap.set('n', '<leader>fh', snacks.picker.help, { desc = "Help" })
+vim.keymap.set('n', '<leader>fh', picker('help', { layout = 'default' }), { desc = "Help" })
 
 -- Git
 vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
 vim.keymap.set("n", "<leader>gs", picker('git_status', { layout = 'default' }), { desc = "Git Status" })
 vim.keymap.set('n', '<leader>gb', picker('git_branches', { layout = 'dropdown' }), { desc = "Git Branch" })
 
-vim.keymap.set('n', '<leader>gy', picker('git_log', { layout = 'ivy_split' }), { desc = "Git Log" })
-vim.keymap.set('n', '<leader>gu', picker('git_log_file', { layout = 'ivy_split' }), { desc = "Git Log File" })
-vim.keymap.set('n', '<leader>gi', picker('git_log_line', { layout = 'ivy_split' }), { desc = "Git Log Line" })
+vim.keymap.set('n', '<leader>gy', picker('git_log', { layout = 'ivy' }), { desc = "Git Log" })
+vim.keymap.set('n', '<leader>gu', picker('git_log_file', { layout = 'ivy' }), { desc = "Git Log File" })
+vim.keymap.set('n', '<leader>gi', picker('git_log_line', { layout = 'ivy' }), { desc = "Git Log Line" })
 
 -- Terminal
 vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
