@@ -41,14 +41,6 @@ I have included a script in the bash directory that will do this for you, as lon
 ./bash/init_bashrc.sh >> ~/.bashrc
 ```
 
-## Git
-
-```bash
-ln -sf "$DOT_FILES/git/gitconfig" ~/.gitconfig
-```
-
-**Make sure to update the git config with the user.name and user.email**
-
 ## Nerd Fonts
 
 Many of the programs and setups used in these dotfiles are reliant on the presence of a nerd font. Nerd Fonts add additional symbols and ligatures that can be used to make better looking terminal applications. 
@@ -62,20 +54,6 @@ Then, navigate into the repository and execute the following command (which will
 
 ```bash
 ./install.sh JetBrainsMono FiraCode
-```
-
-## Oh-My-Posh Setup
-
-I use [Oh-My-Posh](https://ohmyposh.dev) to customize my shell look. You can see instructors to install it [here](https://ohmyposh.dev/docs/installation/linux).
-
-In order to apply the configuration, you will need to follow instructions [here](https://ohmyposh.dev/docs/installation/customize). The configuration file will be located at `$DOT_FILES/omp/theme.omp.json`
-
-I've included some basic examples for different shells I use
-
-### Bash
-Put the following in your .bashrc
-```bash
-eval "$(oh-my-posh init bash --config $DOT_FILES/omp/theme.omp.json)"
 ```
 
 ## Neovim Setup
