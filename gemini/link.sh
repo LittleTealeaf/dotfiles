@@ -18,15 +18,36 @@ fi
 dest="$HOME/.gemini/config"
 src_dir="$DOT_FILES/gemini"
 
-echo -e "  [${BLUE}Syncing${NC}] Syncing Gemini configurations to $dest..."
+echo -e "  [${BLUE}Linking${NC}] Linking Gemini configurations to $dest..."
 
-# Ensure target directories exist
-mkdir -p "$dest/skills"
+# Ensure target parent directory exists
+mkdir -p "$dest"
 
-# Copy GEMINI.md
-cp -rf "$src_dir/GEMINI.md" "$dest/GEMINI.md"
+link_item() {
+    local src="$1"
+    local dest_item="$2"
+    local name="$3"
 
-# Copy directory contents (including hidden files like .gitkeep)
-cp -a "$src_dir/skills/." "$dest/skills/"
+    if [ -e "$dest_item" ] || [ -L "$dest_item" ]; then
+        if [ -L "$dest_item" ] && [ "$(readlink -f "$dest_item")" = "$(readlink -f "$src")" ]; then
+            echo -e "  [${GREEN}Linked${NC}] $dest_item already points to $name"
+            return 0
+        fi
+        local backup="${dest_item}.bak"
+        if [ -e "$backup" ] || [ -L "$backup" ]; then
+            backup="${dest_item}.bak.$(date +%Y%m%d_%H%M%S)"
+        fi
+        echo -e "  [${YELLOW}Backup${NC}] Moving existing $dest_item to $backup"
+        mv "$dest_item" "$backup"
+    fi
 
-echo -e "  [${GREEN}Success${NC}] Copied gemini configurations to $dest"
+    ln -s "$src" "$dest_item"
+    echo -e "  [${GREEN}Created${NC}] Symlinked $dest_item -> $name"
+}
+
+# Link GEMINI.md
+link_item "$src_dir/GEMINI.md" "$dest/GEMINI.md" "gemini/GEMINI.md"
+
+# Link skills directory
+link_item "$src_dir/skills" "$dest/skills" "gemini/skills"
+
