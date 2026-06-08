@@ -1,3 +1,7 @@
+vim.pack.add({
+	Github("neovim/nvim-lspconfig")
+})
+
 vim.diagnostic.config({
 	update_in_insert = true,
 	float = {
@@ -73,5 +77,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.lsp.enable({
-	'pyright', 'lua_ls', 'taplo', 'gopls'
+	'pyright', 'lua_ls', 'taplo', 'gopls', 'clangd', 'ts_ls', 'bashls'
 })
