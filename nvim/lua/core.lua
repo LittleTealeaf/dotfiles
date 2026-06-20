@@ -67,6 +67,12 @@ vim.keymap.set('n', '<leader>wo', '<C-W>o', { silent = true, desc = "Close Other
 vim.keymap.set('n', '<C-w>b', '<cmd>split<CR>', { silent = true, desc = "Split" })
 vim.keymap.set('n', '<C-w><C-b>', '<cmd>split<CR>', { silent = true, desc = "Split" })
 
+local directions = { 'h', 'j', 'k', 'l' }
+for _, dir in ipairs(directions) do
+	vim.keymap.set('n', '<C-' .. dir .. '>', '<C-w>' .. dir)
+end
+
+
 -- Global Functions
 
 Github = function(name)

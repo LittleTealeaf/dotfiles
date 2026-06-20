@@ -1,6 +1,7 @@
 export PATH="$DOT_FILES/bin:$PATH"
 export PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 export DEV="$HOME/dev"
+export EDITOR="nvim"
 
 source $DOT_FILES/bash/fzf.sh
 source $DOT_FILES/bash/functions.sh
