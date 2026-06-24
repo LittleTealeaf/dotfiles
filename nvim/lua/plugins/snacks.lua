@@ -118,15 +118,15 @@ vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'default' }), { desc = "Files" })
 
 -- Searching
-vim.keymap.set('n', '<leader>fg', picker('grep', { layout = 'default' }), { desc = "Grep" })
+vim.keymap.set('n', '<leader>fk', picker('grep', { layout = 'default' }), { desc = "Grep" })
 vim.keymap.set('n', '<leader>fw', picker('grep_word', { layout = 'default' }), { desc = "Grep Word" })
-vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'ivy' }), { desc = "Lines" })
+vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'dropdown' }), { desc = "Lines" })
 
 vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'dropdown' }), { desc = "Marks" })
 
 -- LSP
-vim.keymap.set('n', '<leader>fz', picker('lsp_symbols', { layout = 'sidebar' }), { desc = "Lsp Symbols" })
-vim.keymap.set('n', '<leader>fa', picker('lsp_workspace_symbols', { layout = 'sidebar' }), { desc = "Workspace Symbols" })
+vim.keymap.set('n', '<leader>fz', picker('lsp_symbols', { layout = 'dropdown' }), { desc = "Lsp Symbols" })
+vim.keymap.set('n', '<leader>fa', picker('lsp_workspace_symbols', { layout = 'default' }), { desc = "Workspace Symbols" })
 vim.keymap.set('n', '<leader>fr', picker('lsp_references', { layout = "default" }), { desc = "LSP References" })
 
 -- Help
