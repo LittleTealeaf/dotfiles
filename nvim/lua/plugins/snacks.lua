@@ -114,7 +114,7 @@ vim.keymap.set('n', '<leader>fn', picker('notifications'), { desc = "Notificatio
 -- Files and Folders
 vim.keymap.set('n', '<leader>fp', picker('projects', { layout = "default" }), { desc = "Projects" })
 vim.keymap.set('n', '<leader>fe', picker('explorer'), { desc = "Explorer" })
-vim.keymap.set('n', '<leader>fs', picker('smart', { layout = "select" }), { desc = "Smart" })
+vim.keymap.set('n', '<leader>fj', picker('smart', { layout = "select" }), { desc = "Smart" })
 vim.keymap.set('n', '<leader>fd', picker('files', { layout = 'default' }), { desc = "Files" })
 
 -- Searching
@@ -125,7 +125,7 @@ vim.keymap.set('n', '<leader>fl', picker('lines', { layout = 'dropdown' }), { de
 vim.keymap.set('n', '<leader>fm', picker('marks', { layout = 'dropdown' }), { desc = "Marks" })
 
 -- LSP
-vim.keymap.set('n', '<leader>fz', picker('lsp_symbols', { layout = 'dropdown' }), { desc = "Lsp Symbols" })
+vim.keymap.set('n', '<leader>fs', picker('lsp_symbols', { layout = 'dropdown' }), { desc = "Lsp Symbols" })
 vim.keymap.set('n', '<leader>fa', picker('lsp_workspace_symbols', { layout = 'default' }), { desc = "Workspace Symbols" })
 vim.keymap.set('n', '<leader>fr', picker('lsp_references', { layout = "default" }), { desc = "LSP References" })
 
