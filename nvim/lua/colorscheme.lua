@@ -63,6 +63,10 @@ local function transparent_override(c, highlights)
 		LspInfoBorder = { fg = c.text, bg = '' },
 		CursorLine = { bg = '' },
 
+		SnacksInputNormal = { bg = '' },
+		SnacksInputBorder = { fg = c.surface0, bg = '' },
+		SnacksInputTitle = { fg = c.text, bg = '', style = { 'bold' } },
+
 		NoiceMini = { bg = '' },
 		WhichKeyFloat = { bg = '' },
 
