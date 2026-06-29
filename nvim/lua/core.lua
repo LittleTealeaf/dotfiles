@@ -74,7 +74,6 @@ end
 
 
 -- Global Functions
-
 Github = function(name)
 	return string.format("https://github.com/%s", name)
 end
