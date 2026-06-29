@@ -1,14 +1,5 @@
 vim.pack.add({ Github('folke/trouble.nvim') })
 
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = 'qf',
-	callback = function()
-		vim.schedule(function()
-			vim.cmd('close')
-			vim.cmd('Trouble quickfix')
-		end)
-	end
-})
 
 local trouble = require('trouble')
 
