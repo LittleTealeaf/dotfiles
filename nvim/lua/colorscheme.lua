@@ -22,16 +22,9 @@ local function custom_highlights(c)
 		-- Lualine
 		LualineRecording = { fg = c.mauve, bg = c.mantle, style = { 'bold' } },
 
-		-- Modicator
-		NormalMode = { fg = c.blue },
-		InsertMode = { fg = c.green },
-		VisualMode = { fg = c.mauve },
-		ReplaceMode = { fg = c.red },
-		CommandMode = { fg = c.teal },
-		SelectMode = { fg = c.red },
-
 		-- Trouble
 		TroubleNormal = { bg = c.mantle },
+		TroubleCursorLine = { bg = c.surface1 },
 
 		NormalFloatAlt = { bg = c.mantle },
 		FloatBorderAlt = { bg = c.mantle, fg = c.mantle },
@@ -67,9 +60,6 @@ local function transparent_override(c, highlights)
 		SnacksInputBorder = { fg = c.surface0, bg = '' },
 		SnacksInputTitle = { fg = c.text, bg = '', style = { 'bold' } },
 
-		NoiceMini = { bg = '' },
-		WhichKeyFloat = { bg = '' },
-
 		NormalFloatAlt = { bg = '' },
 		FloatBorderAlt = { bg = '', fg = c.mantle },
 	}
@@ -87,12 +77,13 @@ catppuccin.setup({
 	term_colors = true,
 	show_end_of_buffer = false,
 	integrations = {
-		gitsigns = true,
 		markdown = true,
 		flash = true,
 		dap = true,
-		dap_ui = true,
 		snacks = {
+			enabled = true
+		},
+		trouble = {
 			enabled = true
 		},
 		native_lsp = {

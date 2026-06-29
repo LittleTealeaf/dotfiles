@@ -10,7 +10,11 @@ trouble.setup({
 		size = {
 			height = 12,
 			width = 50
-		}
+		},
+		wo = {
+			cursorline = true,
+			winhighlight = "CursorLine:TroubleCursorLine",
+		},
 	},
 	keys = {
 		["<M-CR>"] = "jump_close"
