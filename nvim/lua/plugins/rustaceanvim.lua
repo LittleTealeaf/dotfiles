@@ -71,7 +71,7 @@ vim.g.rustaceanvim = {
 				{ buffer = bufnr, desc = "Move Item Down" })
 			vim.keymap.set('n', '<leader>clh', lspcmd { 'joinLines' }, { buffer = bufnr, desc = "Join Lines" })
 
-			hover_cmd = lspcmd { 'hover', 'actions' }
+			local hover_cmd = lspcmd { 'hover', 'actions' }
 			vim.keymap.set('n', '<leader>ck', function()
 				hover_cmd()
 				hover_cmd()
