@@ -3,6 +3,17 @@ vim.pack.add({ Github('folke/trouble.nvim') })
 
 local trouble = require('trouble')
 
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = 'qf',
+	group = vim.api.nvim_create_augroup('tea.quickfix_to_trouble', {}),
+	callback = function()
+		vim.schedule(function()
+			vim.cmd('cclose')
+			trouble.open('quickfix')
+		end)
+	end
+})
+
 
 trouble.setup({
 	focus = true,
