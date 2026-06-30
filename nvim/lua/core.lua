@@ -1,15 +1,15 @@
 local opt = vim.opt
-local cmd = vim.cmd
 local g = vim.g
-local o = vim.o
 
 -- Options
 
-o.sidescroll = 1
-o.sidescrolloff = 999
+
+-- o.sidescroll = 1
 g.mapleader = ';'
 g.maplocalleader = ' '
 g.do_filetype_lua = 1
+opt.sidescroll = 1
+opt.sidescrolloff = 999
 opt.showmode = false
 opt.scrolloff = 999
 opt.smartcase = true
@@ -26,34 +26,23 @@ opt.signcolumn = "yes"
 opt.fillchars = { eob = " " }
 opt.smartindent = true
 opt.shortmess:append("cq")
+opt.conceallevel = 1
+opt.encoding = 'utf-8'
 
 vim.scriptencoding = 'utf-8'
-vim.opt.encoding = 'utf-8'
-
-cmd([[
-  nnoremap . ;
-  nnoremap \ .
-  set relativenumber number
-  command! Q :q
-  command! W :w
- 	inoremap <A-i> <Esc>
- 	inoremap <A-a> <Esc>
-	set conceallevel=1
-
- 	augroup RestoreCursorShapeOnExit
- 		autocmd!
-		autocmd VimLeave * set guicursor=a:ver10
-	augroup END
-
-	augroup TerminalSettings
-		autocmd!
-		autocmd TermOpen * setlocal nonumber norelativenumber
-		autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
-	augroup END
-]])
-
 
 -- Base Keymaps
+
+vim.keymap.set('n', '.', ';', { remap = false })
+vim.keymap.set('n', '\\', '.')
+
+
+-- Commands
+vim.api.nvim_create_user_command('Q', 'q', {})
+vim.api.nvim_create_user_command('W', 'w', {})
+
+
+-- Write
 
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>", { silent = true, desc = "Write File" })
 vim.keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { silent = true, desc = "Write All" })
@@ -71,6 +60,29 @@ local directions = { 'h', 'j', 'k', 'l' }
 for _, dir in ipairs(directions) do
 	vim.keymap.set('n', '<C-' .. dir .. '>', '<C-w>' .. dir)
 end
+
+
+-- Terminals
+
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = vim.api.nvim_create_augroup("TermSettings", { clear = true }),
+	pattern = "*",
+	callback = function()
+		vim.opt_local.number = false
+		vim.opt_local.relativenumber = false
+		vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { buffer = true })
+	end
+})
+
+
+--- Cursor Restoration
+vim.api.nvim_create_autocmd("VimLeave", {
+	group = vim.api.nvim_create_augroup("RestoreCursorShapeOnExit", { clear = true }),
+	pattern = "*",
+	callback = function()
+		vim.opt.guicursor = "a:ver10"
+	end
+})
 
 
 -- Global Functions
