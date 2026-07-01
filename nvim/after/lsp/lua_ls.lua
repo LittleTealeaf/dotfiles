@@ -34,8 +34,7 @@ return {
 				Github('folke/lazydev.nvim'),
 			})
 			require('lazydev').setup({})
+			vim.keymap.set('n', '<leader>clr', '<cmd>luafile %<CR>', { buf = bufnr, desc = "Load Lua Script" })
 		end
-
-		vim.keymap.set('n', '<leader>clr', '<cmd>luafile %<CR>', { buf = bufnr })
 	end
 }
