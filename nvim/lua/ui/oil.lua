@@ -1,10 +1,17 @@
 vim.pack.add({ Github('stevearc/oil.nvim') })
 local oil = require('oil')
-local PREFER_FLOAT = false
+local PREFER_FLOAT = true
 
 oil.setup({
 	view_options = {
 		show_hidden = true
+	},
+	confirmation = {
+		border = Transparent and "rounded" or nil
+	},
+	float = {
+		border = "rounded",
+		padding = 3,
 	},
 	keymaps = {
 		['<esc>'] = 'actions.close',
