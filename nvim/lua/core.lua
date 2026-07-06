@@ -71,6 +71,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.opt_local.number = false
 		vim.opt_local.relativenumber = false
 		vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { buffer = true })
+		vim.keymap.set('t', '<C-Esc>', '<Esc>', { buffer = true })
 	end
 })
 

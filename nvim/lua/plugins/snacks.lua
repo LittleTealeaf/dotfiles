@@ -47,17 +47,9 @@ snacks.setup({
 		enabled = true,
 		win = {
 			style = "minimal",
-			border = "none",
+			border = "rounded",
 			wo = {
 				winhighlight = "Normal:NormalFloatAlt"
-			},
-			keys = {
-				term_normal = {
-					'<esc>',
-					'<C-\\><C-n>',
-					mode = 't',
-					desc = "Escape to normal mode",
-				}
 			},
 		}
 	},
