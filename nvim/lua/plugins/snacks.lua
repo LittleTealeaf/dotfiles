@@ -141,7 +141,7 @@ vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, 
 
 -- Oil.nvim integration using Snacks.picker
 
-local function oil_prompt(callback)
+local function oil_prompt()
 	Snacks.picker.pick({
 		title = "Open Directory",
 		finder = "proc",
@@ -156,14 +156,14 @@ local function oil_prompt(callback)
 			confirm = function(current_picker, item)
 				current_picker:close()
 				if item and item.file then
-					callback(item.file)
+					require('oil').open_float(item.file, { preview = { horizontal = true } })
 				end
 			end,
 		},
 	})
 end
 
-vim.keymap.set('n', '<leader>eg', function() oil_prompt(require('oil').open) end, { desc = "Open Directory" })
+vim.keymap.set('n', '<leader>eg', oil_prompt, { desc = "Open Directory" })
 
 vim.api.nvim_create_user_command('Highlights', function()
 	snacks.picker.highlights()

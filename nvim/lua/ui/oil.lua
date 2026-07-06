@@ -36,11 +36,30 @@ vim.keymap.set(
 	end,
 	{ desc = "Open Workspace in Oil" }
 )
+
+vim.keymap.set(
+	'n',
+	'<leader>eq',
+	function()
+		oil.open(vim.uv.cwd(), {})
+	end,
+	{ desc = "Open Workspace in Oil" }
+)
+
 vim.keymap.set(
 	'n',
 	'<leader>er',
 	function()
 		oil.open_float(nil, { preview = { horizontal = true } })
+	end,
+	{ desc = 'Open File Location in Oil' }
+)
+
+vim.keymap.set(
+	'n',
+	'<leader>ef',
+	function()
+		oil.open(nil, {})
 	end,
 	{ desc = 'Open File Location in Oil' }
 )
