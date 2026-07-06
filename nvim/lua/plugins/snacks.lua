@@ -130,9 +130,13 @@ vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Laz
 vim.keymap.set("n", "<leader>gs", picker('git_status', { layout = 'default' }), { desc = "Git Status" })
 vim.keymap.set('n', '<leader>gb', picker('git_branches', { layout = 'dropdown' }), { desc = "Git Branch" })
 
-vim.keymap.set('n', '<leader>gy', picker('git_log', { layout = 'ivy' }), { desc = "Git Log" })
-vim.keymap.set('n', '<leader>gu', picker('git_log_file', { layout = 'ivy' }), { desc = "Git Log File" })
-vim.keymap.set('n', '<leader>gi', picker('git_log_line', { layout = 'ivy' }), { desc = "Git Log Line" })
+vim.keymap.set('n', '<leader>ghg', picker('git_log', { layout = 'ivy' }), { desc = "Git Log" })
+vim.keymap.set('n', '<leader>ghf', picker('git_log_file', { layout = 'ivy' }), { desc = "Git Log File" })
+vim.keymap.set('n', '<leader>ghl', picker('git_log_line', { layout = 'ivy' }), { desc = "Git Log Line" })
+
+-- Github
+vim.keymap.set('n', '<leader>gp', picker('gh_pr', { layout = 'ivy' }), { desc = "Github PRs" })
+vim.keymap.set('n', '<leader>gi', picker('gh_issue', { layout = 'ivy' }), { desc = "Github Issues" })
 
 -- Terminal
 vim.keymap.set({ "n", "t" }, "<C-\\>", function() snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
