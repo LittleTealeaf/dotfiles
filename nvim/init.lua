@@ -27,7 +27,6 @@ require('lsp')
 require('lsp.autocomplete')
 require('ui.oil')
 require('kitty')
-require('ui.trouble')
 require('plugins.snacks')
 
 vim.api.nvim_create_autocmd("VimEnter", {

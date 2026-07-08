@@ -2,25 +2,26 @@ vim.pack.add({ Github('folke/snacks.nvim'), })
 local snacks = require('snacks')
 
 
-local picker_actions = require('trouble.sources.snacks').actions
-picker_actions['flash'] = function(picker)
-	require("flash").jump({
-		pattern = "^",
-		label = { after = { 0, 0 } },
-		search = {
-			mode = "search",
-			exclude = {
-				function(win)
-					return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list"
-				end,
+local picker_actions = {
+	flash = function(picker)
+		require("flash").jump({
+			pattern = "^",
+			label = { after = { 0, 0 } },
+			search = {
+				mode = "search",
+				exclude = {
+					function(win)
+						return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list"
+					end,
+				},
 			},
-		},
-		action = function(match)
-			local idx = picker.list:row2idx(match.pos[1])
-			picker.list:_move(idx, true, true)
-		end,
-	})
-end
+			action = function(match)
+				local idx = picker.list:row2idx(match.pos[1])
+				picker.list:_move(idx, true, true)
+			end,
+		})
+	end
+}
 
 
 snacks.setup({
@@ -75,7 +76,6 @@ snacks.setup({
 					["<C-Down>"] = { "select_and_next", mode = { "i", "n" } },
 					["<C-Up>"] = { "select_and_prev", mode = { "i", "n" } },
 					["<C-q>"] = { "qflist", mode = { "i", "n" } },
-					["<C-t>"] = { "trouble_open", mode = { "i", "n" } },
 					["<C-a>"] = { "select_all", mode = { "i", "n" } },
 					["<C-s>"] = { "flash", mode = { "i", "n" } },
 					["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },

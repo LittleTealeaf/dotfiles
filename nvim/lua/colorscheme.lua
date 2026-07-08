@@ -22,9 +22,6 @@ local function custom_highlights(c)
 		-- Lualine
 		LualineRecording = { fg = c.mauve, bg = c.mantle, style = { 'bold' } },
 
-		-- Trouble
-		TroubleNormal = { bg = c.mantle },
-		TroubleCursorLine = { bg = c.surface1 },
 
 		NormalFloatAlt = { bg = c.mantle },
 		FloatBorderAlt = { bg = c.mantle, fg = c.mantle },
@@ -52,7 +49,6 @@ local function transparent_override(c, highlights)
 
 		FloatBorder = { fg = c.surface1, bg = '' },
 
-		TroubleNormal = { bg = '' },
 		LspInfoBorder = { fg = c.text, bg = '' },
 		CursorLine = { bg = '' },
 

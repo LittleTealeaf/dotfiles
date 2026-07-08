@@ -44,7 +44,6 @@ local function setup_lsp_signature()
 		{ silent = true, noremap = true, desc = "Toggle Signature" })
 end
 
-
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("LspConfiguration", {}),
 	callback = function(args)
@@ -72,6 +71,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts("Goto Prev Diagnostic"))
 		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts("Goto Next Diagnostic"))
 		vim.keymap.set('n', '<leader>cp', '<C-w>}', opts("Open Preview"))
+		vim.keymap.set('n', '<leader>te', vim.diagnostic.setqflist, opts("Open Quickfix Diagnostics"))
+		vim.keymap.set('n', '<leader>tr', vim.lsp.buf.references, opts("References"))
+		vim.keymap.set('n', '<leader>ti', vim.lsp.buf.implementation, opts("Implementation"))
+		vim.keymap.set('n', '<leader>cx', vim.lsp.codelens.run, opts("Code Lens"))
 	end
 
 })

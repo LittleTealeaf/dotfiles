@@ -77,6 +77,21 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 
+-- Quickfix
+
+
+vim.keymap.set('n', '<leader>to', ':copen<CR>', { desc = "Quickfix", silent = true })
+vim.keymap.set('n', '<leader>th', ':cclose<CR>', { desc = "Quickfix", silent = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	group = vim.api.nvim_create_augroup("tea.config.quickfix", { clear = true }),
+	callback = function()
+		vim.keymap.set('n', 'q', ':cclose<CR>', { buffer = true, silent = true })
+	end
+})
+
+
 --- Cursor Restoration
 vim.api.nvim_create_autocmd("VimLeave", {
 	group = vim.api.nvim_create_augroup("RestoreCursorShapeOnExit", { clear = true }),

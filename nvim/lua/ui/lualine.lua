@@ -1,16 +1,6 @@
 vim.pack.add({ Github('nvim-lualine/lualine.nvim') })
 
-local trouble = require('trouble')
 local lualine = require('lualine')
-
-local trouble_symbols = trouble.statusline({
-	mode = "lsp_document_symbols",
-	groups = {},
-	title = false,
-	filter = { range = true },
-	format = "{kind_icon}{symbol.name:Normal}",
-	hl_group = "lualine_c_normal"
-})
 
 local ENV_HOME = tostring(os.getenv('HOME'))
 
@@ -104,13 +94,4 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {
-		lualine_c = {
-			{
-				trouble_symbols.get,
-				cond = trouble_symbols.has
-			}
-		}
-	}
-
 })

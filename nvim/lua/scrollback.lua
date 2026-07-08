@@ -58,7 +58,7 @@ scrollback.setup({
 vim.api.nvim_create_autocmd("VimEnter", {
 	group = vim.api.nvim_create_augroup('ConfigScrollbackVimEnter', {}),
 	callback = function()
-		require('ui.trouble')
+		-- require('ui.trouble')
 		require('ui.lualine')
 		require('plugins.flash')
 		require('plugins.snacks')
