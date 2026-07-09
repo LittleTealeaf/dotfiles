@@ -25,7 +25,7 @@ end
 
 snacks.setup({
 	lazygit = {
-		enabled = true,
+		enabled = vim.fn.executable('lazygit') == 1,
 		win = {
 			border = "rounded",
 			wo = {
@@ -125,7 +125,9 @@ vim.keymap.set('n', '<leader>fc', snacks.picker.commands, { desc = "Commands" })
 vim.keymap.set('n', '<leader>fh', picker('help', { layout = 'default' }), { desc = "Help" })
 
 -- Git
-vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
+if vim.fn.executable('lazygit') == 1 then
+	vim.keymap.set("n", "<leader>gl", function() snacks.lazygit() end, { desc = "Lazy Git" })
+end
 vim.keymap.set("n", "<leader>gs", picker('git_status', { layout = 'default' }), { desc = "Git Status" })
 vim.keymap.set('n', '<leader>gb', picker('git_branches', { layout = 'dropdown' }), { desc = "Git Branch" })
 

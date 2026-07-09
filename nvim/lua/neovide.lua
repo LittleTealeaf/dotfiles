@@ -3,9 +3,16 @@ if not vim.g.neovide then
 end
 
 vim.g.neovide_refresh_rate = 60
-vim.g.neovide_opacity = 0.9
+vim.g.neovide_opacity = 1
 
-vim.o.guifont = "JetbrainsMono NFM:h12"
+
+local uname = vim.loop.os_uname()
+local os = uname.sysname
+if os:find 'Windows' then
+	vim.o.guifont = "JetBrainsMono Nerd Font Mono:10"
+else
+	vim.o.guifont = "JetbrainsMono NFM:h12"
+end
 
 
 local function change_scale_factor(delta)
