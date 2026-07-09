@@ -1,7 +1,6 @@
 Scrollback = os.getenv('KITTY_SCROLLBACK_NVIM') == 'true'
 Transparent = (os.getenv("NVIM_TRANSPARENT") or "1") == "1"
 BorderedWindows = (os.getenv("NVIM_BORDERED_WINDOWS") or "0") == "1"
-Nightly = vim.version().api_prerelease
 
 
 require('core')

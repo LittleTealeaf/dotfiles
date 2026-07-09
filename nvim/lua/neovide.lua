@@ -1,5 +1,9 @@
+if not vim.g.neovide then
+	return {}
+end
+
 vim.g.neovide_refresh_rate = 60
-vim.g.neovide_opacity = 1
+vim.g.neovide_opacity = 0.9
 
 vim.o.guifont = "JetbrainsMono NFM:h12"
 

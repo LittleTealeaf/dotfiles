@@ -71,7 +71,6 @@ snacks.setup({
 					-- ["<A-q>"] = { "close", mode = { "i", "n" } },
 					["<Tab>"] = { "list_down", mode = { "i", "n" } },
 					["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-					-- ["<C-'>"] = { "toggle", mode = { "i", "n" } },
 					["<C-Down>"] = { "select_and_next", mode = { "i", "n" } },
 					["<C-Up>"] = { "select_and_prev", mode = { "i", "n" } },
 					["<C-q>"] = { "qflist", mode = { "i", "n" } },
