@@ -76,6 +76,8 @@ vim.g.rustaceanvim = {
 				hover_cmd()
 				hover_cmd()
 			end, { buffer = bufnr, desc = "Hover Actions" })
+
+			vim.keymap.set('n', '<leader>clm', lspcmd { 'expandMacro' }, { buffer = bufnr, desc = "Expand Macro" })
 		end,
 		settings = function()
 			return {
